@@ -13,7 +13,6 @@ const permutations = [
 ];
 
 export const createRoomId = (compendiumIndex) => {
-  console.log(compendiumIndex);
   const order = permutations[compendiumIndex]
   const words = randomWords({ exactly: 3 })
   const sortedWords = words.sort()

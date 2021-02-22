@@ -1,3 +1,4 @@
+import { usePartyHost, usePartyGuest } from "@compendium/peer-party";
 import { HashRouter, Switch, Route, useParams } from "react-router-dom";
 import { useGame } from "./rooms";
 import Home from "./Home";
@@ -9,20 +10,22 @@ const HomeRoute = () =>
 
 const HostRoute = () => {
   const { roomId } = useParams();
-  const { Host } = useGame(roomId);
+  const { Host, game } = useGame(roomId);
+  const { state, moves } = usePartyHost({ roomId, game });
   return (
     <Route path="/host/:roomId">
-      <Host roomId={roomId}/>
+      <Host roomId={roomId} state={state} moves={moves} />
     </Route>
   )
 }
 
 const GuestRoute = () => {
   const { roomId } = useParams();
-  const { Guest } = useGame(roomId);
+  const { Guest, game } = useGame(roomId);
+  const { state, moves } = usePartyGuest({ roomId, game });
   return (
     <Route path="/guest/:roomId">
-      <Guest roomId={roomId} />
+      <Guest roomId={roomId} state={state} moves={moves}/>
     </Route>
   )
 }
