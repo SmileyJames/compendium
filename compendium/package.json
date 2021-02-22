@@ -1,0 +1,11 @@
+{
+  "name": "@compendium/compendium",
+  "private": true,
+  "main": "index.js",
+  "workspaces": [
+    "tic-tac-toe"
+  ],
+  "dependencies": {
+    "@compendium/tic-tac-toe": "workspace:compendium/tic-tac-toe"
+  }
+}

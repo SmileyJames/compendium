@@ -1,0 +1,7 @@
+{
+  "name": "@compendium/tic-tac-toe-host",
+  "main": "index.js",
+  "dependencies": {
+    "@compendium/tic-tac-toe-game": "workspace:compendium/tic-tac-toe/game"
+  }
+}

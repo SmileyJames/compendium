@@ -1,0 +1,14 @@
+{
+  "name": "@compendium/tic-tac-toe",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "host",
+    "guest",
+    "game"
+  ],
+  "dependencies": {
+    "@compendium/tic-tac-toe-guest": "workspace:compendium/tic-tac-toe/guest",
+    "@compendium/tic-tac-toe-host": "workspace:compendium/tic-tac-toe/host"
+  }
+}

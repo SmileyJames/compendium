@@ -1,0 +1,14 @@
+{
+  "name": "compendium",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/SmileyJames/compendium",
+  "author": "James O'Toole",
+  "workspaces": [
+    "host",
+    "guest",
+    "app",
+    "compendium"
+  ]
+}
