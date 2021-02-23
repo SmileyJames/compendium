@@ -1,3 +1,4 @@
 {
-  "name": "@compendium/tic-tac-toe-game"
+  "name": "@compendium/tic-tac-toe-game",
+  "main": "index.js"
 }
