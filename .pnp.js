@@ -55,13 +55,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
     "fallbackExclusionList": [
       ["@compendium/app", ["workspace:app"]],
-      ["@compendium/compendium", ["workspace:compendium"]],
+      ["@compendium/compendium", ["virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:compendium", "workspace:compendium"]],
       ["@compendium/peer-party", ["virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:peer-party", "workspace:peer-party"]],
       ["@compendium/root", ["workspace:."]],
-      ["@compendium/tic-tac-toe", ["workspace:compendium/tic-tac-toe"]],
+      ["@compendium/tic-tac-toe", ["virtual:61518096874b77ad7c1a718b2e92a21faf0072e3731cbb7bb2a5278c7b800a0e90be2f9ab438b2b47ce119fd0d8152a06152e05112e780f7940df3f96596f587#workspace:compendium/tic-tac-toe", "virtual:cdf21b27b6c3daaf108ceaf7d7fd8d4e6ee508a00b22da3e7f3cf52f396ab9a4a9d21d5bc204824fb8548734b3c861d6a0f94cdbba75f657bc6f6b1016ab750a#workspace:compendium/tic-tac-toe", "workspace:compendium/tic-tac-toe"]],
       ["@compendium/tic-tac-toe-game", ["workspace:compendium/tic-tac-toe/game"]],
       ["@compendium/tic-tac-toe-guest", ["workspace:compendium/tic-tac-toe/guest"]],
-      ["@compendium/tic-tac-toe-host", ["virtual:8c7f5b89e9f27f0987bfd9998364a2945f1661546de4ae28207fde484454654e01b0176bba18dff2089ff252a04ab71a57764305a5d8e89f862ed78ab23c4178#workspace:compendium/tic-tac-toe/host", "workspace:compendium/tic-tac-toe/host"]]
+      ["@compendium/tic-tac-toe-host", ["virtual:3047bd321067d4932deb1ab0f0c575e50e6b231ab3170288c7534bb9cbed70f6df2efb5583493020fbbdc944f28a39cba246cf1414ed0aa9ad5135e408b449b5#workspace:compendium/tic-tac-toe/host", "virtual:e7044e863d72d197971bb6e46f02b99822f4b3f4ac35aa9909bbb1cd2dd931ff6145a0dcf0e43036c1c3601f2f94a3defd970d367ad2659e0adbdeb9e003a73f#workspace:compendium/tic-tac-toe/host", "workspace:compendium/tic-tac-toe/host"]]
     ],
     "fallbackPool": [
       [
@@ -522,7 +522,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "@compendium/compendium",
-        "workspace:compendium"
+        "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:compendium"
       ],
       [
         "@compendium/peer-party",
@@ -530,7 +530,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "@compendium/tic-tac-toe",
-        "workspace:compendium/tic-tac-toe"
+        "virtual:61518096874b77ad7c1a718b2e92a21faf0072e3731cbb7bb2a5278c7b800a0e90be2f9ab438b2b47ce119fd0d8152a06152e05112e780f7940df3f96596f587#workspace:compendium/tic-tac-toe"
       ],
       [
         "@compendium/tic-tac-toe-game",
@@ -542,7 +542,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "@compendium/tic-tac-toe-host",
-        "virtual:8c7f5b89e9f27f0987bfd9998364a2945f1661546de4ae28207fde484454654e01b0176bba18dff2089ff252a04ab71a57764305a5d8e89f862ed78ab23c4178#workspace:compendium/tic-tac-toe/host"
+        "virtual:3047bd321067d4932deb1ab0f0c575e50e6b231ab3170288c7534bb9cbed70f6df2efb5583493020fbbdc944f28a39cba246cf1414ed0aa9ad5135e408b449b5#workspace:compendium/tic-tac-toe/host"
       ],
       [
         "@csstools/convert-colors",
@@ -4186,7 +4186,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "react-dom",
-        "virtual:ecf8f9ddd09e3659a9aa9845a7553b4df6092b5e5055eb4798bb98877e3fbb1d9a7f2a4134574d435dc9aaf54b00204b402898745272d14e669fa16780cd7069#npm:17.0.1"
+        "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"
       ],
       [
         "react-error-overlay",
@@ -9540,7 +9540,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./app/",
           "packageDependencies": [
             ["@compendium/app", "workspace:app"],
-            ["@compendium/compendium", "workspace:compendium"],
+            ["@compendium/compendium", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:compendium"],
             ["@compendium/peer-party", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:peer-party"],
             ["@testing-library/jest-dom", "npm:5.11.9"],
             ["@testing-library/react", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:11.2.5"],
@@ -9548,7 +9548,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lodash", "npm:4.17.21"],
             ["random-words", "npm:1.1.1"],
             ["react", "npm:17.0.1"],
-            ["react-dom", "virtual:ecf8f9ddd09e3659a9aa9845a7553b4df6092b5e5055eb4798bb98877e3fbb1d9a7f2a4134574d435dc9aaf54b00204b402898745272d14e669fa16780cd7069#npm:17.0.1"],
+            ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-router-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:5.2.0"],
             ["react-scripts", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:4.0.2"],
             ["web-vitals", "npm:1.1.0"]
@@ -9557,11 +9557,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@compendium/compendium", [
+        ["virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:compendium", {
+          "packageLocation": "./.yarn/$$virtual/@compendium-compendium-virtual-cdf21b27b6/1/compendium/",
+          "packageDependencies": [
+            ["@compendium/compendium", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:compendium"],
+            ["@compendium/tic-tac-toe", "virtual:cdf21b27b6c3daaf108ceaf7d7fd8d4e6ee508a00b22da3e7f3cf52f396ab9a4a9d21d5bc204824fb8548734b3c861d6a0f94cdbba75f657bc6f6b1016ab750a#workspace:compendium/tic-tac-toe"],
+            ["@types/react-router-dom", null],
+            ["react-router-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:5.2.0"]
+          ],
+          "packagePeers": [
+            "@types/react-router-dom",
+            "react-router-dom"
+          ],
+          "linkType": "SOFT",
+        }],
         ["workspace:compendium", {
           "packageLocation": "./compendium/",
           "packageDependencies": [
             ["@compendium/compendium", "workspace:compendium"],
-            ["@compendium/tic-tac-toe", "workspace:compendium/tic-tac-toe"]
+            ["@compendium/tic-tac-toe", "virtual:61518096874b77ad7c1a718b2e92a21faf0072e3731cbb7bb2a5278c7b800a0e90be2f9ab438b2b47ce119fd0d8152a06152e05112e780f7940df3f96596f587#workspace:compendium/tic-tac-toe"]
           ],
           "linkType": "SOFT",
         }]
@@ -9617,13 +9631,45 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@compendium/tic-tac-toe", [
+        ["virtual:61518096874b77ad7c1a718b2e92a21faf0072e3731cbb7bb2a5278c7b800a0e90be2f9ab438b2b47ce119fd0d8152a06152e05112e780f7940df3f96596f587#workspace:compendium/tic-tac-toe", {
+          "packageLocation": "./.yarn/$$virtual/@compendium-tic-tac-toe-virtual-3047bd3210/1/compendium/tic-tac-toe/",
+          "packageDependencies": [
+            ["@compendium/tic-tac-toe", "virtual:61518096874b77ad7c1a718b2e92a21faf0072e3731cbb7bb2a5278c7b800a0e90be2f9ab438b2b47ce119fd0d8152a06152e05112e780f7940df3f96596f587#workspace:compendium/tic-tac-toe"],
+            ["@compendium/tic-tac-toe-game", "workspace:compendium/tic-tac-toe/game"],
+            ["@compendium/tic-tac-toe-guest", "workspace:compendium/tic-tac-toe/guest"],
+            ["@compendium/tic-tac-toe-host", "virtual:3047bd321067d4932deb1ab0f0c575e50e6b231ab3170288c7534bb9cbed70f6df2efb5583493020fbbdc944f28a39cba246cf1414ed0aa9ad5135e408b449b5#workspace:compendium/tic-tac-toe/host"],
+            ["@types/react-router-dom", null],
+            ["react-router-dom", null]
+          ],
+          "packagePeers": [
+            "@types/react-router-dom",
+            "react-router-dom"
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:cdf21b27b6c3daaf108ceaf7d7fd8d4e6ee508a00b22da3e7f3cf52f396ab9a4a9d21d5bc204824fb8548734b3c861d6a0f94cdbba75f657bc6f6b1016ab750a#workspace:compendium/tic-tac-toe", {
+          "packageLocation": "./.yarn/$$virtual/@compendium-tic-tac-toe-virtual-e7044e863d/1/compendium/tic-tac-toe/",
+          "packageDependencies": [
+            ["@compendium/tic-tac-toe", "virtual:cdf21b27b6c3daaf108ceaf7d7fd8d4e6ee508a00b22da3e7f3cf52f396ab9a4a9d21d5bc204824fb8548734b3c861d6a0f94cdbba75f657bc6f6b1016ab750a#workspace:compendium/tic-tac-toe"],
+            ["@compendium/tic-tac-toe-game", "workspace:compendium/tic-tac-toe/game"],
+            ["@compendium/tic-tac-toe-guest", "workspace:compendium/tic-tac-toe/guest"],
+            ["@compendium/tic-tac-toe-host", "virtual:e7044e863d72d197971bb6e46f02b99822f4b3f4ac35aa9909bbb1cd2dd931ff6145a0dcf0e43036c1c3601f2f94a3defd970d367ad2659e0adbdeb9e003a73f#workspace:compendium/tic-tac-toe/host"],
+            ["@types/react-router-dom", null],
+            ["react-router-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:5.2.0"]
+          ],
+          "packagePeers": [
+            "@types/react-router-dom",
+            "react-router-dom"
+          ],
+          "linkType": "SOFT",
+        }],
         ["workspace:compendium/tic-tac-toe", {
           "packageLocation": "./compendium/tic-tac-toe/",
           "packageDependencies": [
             ["@compendium/tic-tac-toe", "workspace:compendium/tic-tac-toe"],
             ["@compendium/tic-tac-toe-game", "workspace:compendium/tic-tac-toe/game"],
             ["@compendium/tic-tac-toe-guest", "workspace:compendium/tic-tac-toe/guest"],
-            ["@compendium/tic-tac-toe-host", "virtual:8c7f5b89e9f27f0987bfd9998364a2945f1661546de4ae28207fde484454654e01b0176bba18dff2089ff252a04ab71a57764305a5d8e89f862ed78ab23c4178#workspace:compendium/tic-tac-toe/host"]
+            ["@compendium/tic-tac-toe-host", "virtual:3047bd321067d4932deb1ab0f0c575e50e6b231ab3170288c7534bb9cbed70f6df2efb5583493020fbbdc944f28a39cba246cf1414ed0aa9ad5135e408b449b5#workspace:compendium/tic-tac-toe/host"]
           ],
           "linkType": "SOFT",
         }]
@@ -9647,7 +9693,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-react", "virtual:ecf8f9ddd09e3659a9aa9845a7553b4df6092b5e5055eb4798bb98877e3fbb1d9a7f2a4134574d435dc9aaf54b00204b402898745272d14e669fa16780cd7069#npm:7.12.13"],
             ["@compendium/tic-tac-toe-game", "workspace:compendium/tic-tac-toe/game"],
             ["react", "npm:17.0.1"],
-            ["react-dom", "virtual:ecf8f9ddd09e3659a9aa9845a7553b4df6092b5e5055eb4798bb98877e3fbb1d9a7f2a4134574d435dc9aaf54b00204b402898745272d14e669fa16780cd7069#npm:17.0.1"],
+            ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
             ["styled-components", "virtual:ecf8f9ddd09e3659a9aa9845a7553b4df6092b5e5055eb4798bb98877e3fbb1d9a7f2a4134574d435dc9aaf54b00204b402898745272d14e669fa16780cd7069#npm:5.2.1"]
           ],
@@ -9655,10 +9701,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@compendium/tic-tac-toe-host", [
-        ["virtual:8c7f5b89e9f27f0987bfd9998364a2945f1661546de4ae28207fde484454654e01b0176bba18dff2089ff252a04ab71a57764305a5d8e89f862ed78ab23c4178#workspace:compendium/tic-tac-toe/host", {
-          "packageLocation": "./.yarn/$$virtual/@compendium-tic-tac-toe-host-virtual-3d05a76f6a/1/compendium/tic-tac-toe/host/",
+        ["virtual:3047bd321067d4932deb1ab0f0c575e50e6b231ab3170288c7534bb9cbed70f6df2efb5583493020fbbdc944f28a39cba246cf1414ed0aa9ad5135e408b449b5#workspace:compendium/tic-tac-toe/host", {
+          "packageLocation": "./.yarn/$$virtual/@compendium-tic-tac-toe-host-virtual-738f99b387/1/compendium/tic-tac-toe/host/",
           "packageDependencies": [
-            ["@compendium/tic-tac-toe-host", "virtual:8c7f5b89e9f27f0987bfd9998364a2945f1661546de4ae28207fde484454654e01b0176bba18dff2089ff252a04ab71a57764305a5d8e89f862ed78ab23c4178#workspace:compendium/tic-tac-toe/host"],
+            ["@compendium/tic-tac-toe-host", "virtual:3047bd321067d4932deb1ab0f0c575e50e6b231ab3170288c7534bb9cbed70f6df2efb5583493020fbbdc944f28a39cba246cf1414ed0aa9ad5135e408b449b5#workspace:compendium/tic-tac-toe/host"],
             ["@babel/cli", "virtual:ecf8f9ddd09e3659a9aa9845a7553b4df6092b5e5055eb4798bb98877e3fbb1d9a7f2a4134574d435dc9aaf54b00204b402898745272d14e669fa16780cd7069#npm:7.13.0"],
             ["@babel/core", "npm:7.13.1"],
             ["@babel/preset-react", "virtual:ecf8f9ddd09e3659a9aa9845a7553b4df6092b5e5055eb4798bb98877e3fbb1d9a7f2a4134574d435dc9aaf54b00204b402898745272d14e669fa16780cd7069#npm:7.12.13"],
@@ -9666,15 +9712,46 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", null],
             ["@types/react-dom", null],
             ["@types/react-is", null],
+            ["@types/react-router-dom", null],
             ["react", "npm:17.0.1"],
-            ["react-dom", "virtual:ecf8f9ddd09e3659a9aa9845a7553b4df6092b5e5055eb4798bb98877e3fbb1d9a7f2a4134574d435dc9aaf54b00204b402898745272d14e669fa16780cd7069#npm:17.0.1"],
+            ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
+            ["react-router-dom", null],
             ["styled-components", "virtual:ecf8f9ddd09e3659a9aa9845a7553b4df6092b5e5055eb4798bb98877e3fbb1d9a7f2a4134574d435dc9aaf54b00204b402898745272d14e669fa16780cd7069#npm:5.2.1"]
           ],
           "packagePeers": [
             "@types/react-dom",
             "@types/react-is",
-            "@types/react"
+            "@types/react-router-dom",
+            "@types/react",
+            "react-router-dom"
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:e7044e863d72d197971bb6e46f02b99822f4b3f4ac35aa9909bbb1cd2dd931ff6145a0dcf0e43036c1c3601f2f94a3defd970d367ad2659e0adbdeb9e003a73f#workspace:compendium/tic-tac-toe/host", {
+          "packageLocation": "./.yarn/$$virtual/@compendium-tic-tac-toe-host-virtual-71c87b8164/1/compendium/tic-tac-toe/host/",
+          "packageDependencies": [
+            ["@compendium/tic-tac-toe-host", "virtual:e7044e863d72d197971bb6e46f02b99822f4b3f4ac35aa9909bbb1cd2dd931ff6145a0dcf0e43036c1c3601f2f94a3defd970d367ad2659e0adbdeb9e003a73f#workspace:compendium/tic-tac-toe/host"],
+            ["@babel/cli", "virtual:ecf8f9ddd09e3659a9aa9845a7553b4df6092b5e5055eb4798bb98877e3fbb1d9a7f2a4134574d435dc9aaf54b00204b402898745272d14e669fa16780cd7069#npm:7.13.0"],
+            ["@babel/core", "npm:7.13.1"],
+            ["@babel/preset-react", "virtual:ecf8f9ddd09e3659a9aa9845a7553b4df6092b5e5055eb4798bb98877e3fbb1d9a7f2a4134574d435dc9aaf54b00204b402898745272d14e669fa16780cd7069#npm:7.12.13"],
+            ["@compendium/tic-tac-toe-game", "workspace:compendium/tic-tac-toe/game"],
+            ["@types/react", null],
+            ["@types/react-dom", null],
+            ["@types/react-is", null],
+            ["@types/react-router-dom", null],
+            ["react", "npm:17.0.1"],
+            ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
+            ["react-is", "npm:17.0.1"],
+            ["react-router-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:5.2.0"],
+            ["styled-components", "virtual:ecf8f9ddd09e3659a9aa9845a7553b4df6092b5e5055eb4798bb98877e3fbb1d9a7f2a4134574d435dc9aaf54b00204b402898745272d14e669fa16780cd7069#npm:5.2.1"]
+          ],
+          "packagePeers": [
+            "@types/react-dom",
+            "@types/react-is",
+            "@types/react-router-dom",
+            "@types/react",
+            "react-router-dom"
           ],
           "linkType": "SOFT",
         }],
@@ -9687,7 +9764,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-react", "virtual:ecf8f9ddd09e3659a9aa9845a7553b4df6092b5e5055eb4798bb98877e3fbb1d9a7f2a4134574d435dc9aaf54b00204b402898745272d14e669fa16780cd7069#npm:7.12.13"],
             ["@compendium/tic-tac-toe-game", "workspace:compendium/tic-tac-toe/game"],
             ["react", "npm:17.0.1"],
-            ["react-dom", "virtual:ecf8f9ddd09e3659a9aa9845a7553b4df6092b5e5055eb4798bb98877e3fbb1d9a7f2a4134574d435dc9aaf54b00204b402898745272d14e669fa16780cd7069#npm:17.0.1"],
+            ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
             ["styled-components", "virtual:ecf8f9ddd09e3659a9aa9845a7553b4df6092b5e5055eb4798bb98877e3fbb1d9a7f2a4134574d435dc9aaf54b00204b402898745272d14e669fa16780cd7069#npm:5.2.1"]
           ],
@@ -10471,7 +10548,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", null],
             ["@types/react-dom", null],
             ["react", "npm:17.0.1"],
-            ["react-dom", "virtual:ecf8f9ddd09e3659a9aa9845a7553b4df6092b5e5055eb4798bb98877e3fbb1d9a7f2a4134574d435dc9aaf54b00204b402898745272d14e669fa16780cd7069#npm:17.0.1"]
+            ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"]
           ],
           "packagePeers": [
             "@types/react-dom",
@@ -22264,10 +22341,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:ecf8f9ddd09e3659a9aa9845a7553b4df6092b5e5055eb4798bb98877e3fbb1d9a7f2a4134574d435dc9aaf54b00204b402898745272d14e669fa16780cd7069#npm:17.0.1", {
-          "packageLocation": "./.yarn/$$virtual/react-dom-virtual-a24457fc71/0/cache/react-dom-npm-17.0.1-588d0088ca-6a70028fbe.zip/node_modules/react-dom/",
+        ["virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1", {
+          "packageLocation": "./.yarn/$$virtual/react-dom-virtual-7a767e0bce/0/cache/react-dom-npm-17.0.1-588d0088ca-6a70028fbe.zip/node_modules/react-dom/",
           "packageDependencies": [
-            ["react-dom", "virtual:ecf8f9ddd09e3659a9aa9845a7553b4df6092b5e5055eb4798bb98877e3fbb1d9a7f2a4134574d435dc9aaf54b00204b402898745272d14e669fa16780cd7069#npm:17.0.1"],
+            ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["@types/react", null],
             ["loose-envify", "npm:1.4.0"],
             ["object-assign", "npm:4.1.1"],
@@ -24332,7 +24409,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["css-to-react-native", "npm:3.0.0"],
             ["hoist-non-react-statics", "npm:3.3.2"],
             ["react", "npm:17.0.1"],
-            ["react-dom", "virtual:ecf8f9ddd09e3659a9aa9845a7553b4df6092b5e5055eb4798bb98877e3fbb1d9a7f2a4134574d435dc9aaf54b00204b402898745272d14e669fa16780cd7069#npm:17.0.1"],
+            ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
             ["shallowequal", "npm:1.1.0"],
             ["supports-color", "npm:5.5.0"]

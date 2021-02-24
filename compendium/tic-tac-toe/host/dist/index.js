@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { NOUGHTS, CROSSES } from "@compendium/tic-tac-toe-game";
 const Tile = styled.div`
@@ -18,6 +19,7 @@ const Board = styled.div`
 
 const Host = ({
   state,
+  roomId,
   moves,
   connections
 }) => {
@@ -30,6 +32,13 @@ const Host = ({
       });
     }
   }, [connections]);
+
+  if (connections.length < 2) {
+    return /*#__PURE__*/React.createElement(Link, {
+      to: `/guest/${roomId}`
+    }, window.location.host, "/guest/", roomId);
+  }
+
   return /*#__PURE__*/React.createElement(Board, null, state.board && state.board.map((value, position) => /*#__PURE__*/React.createElement(Tile, {
     key: position
   }, value === NOUGHTS ? "O" : null, value === CROSSES ? "X" : null)));

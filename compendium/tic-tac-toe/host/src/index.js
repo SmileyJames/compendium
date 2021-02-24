@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { NOUGHTS, CROSSES } from "@compendium/tic-tac-toe-game";
 
@@ -18,13 +19,19 @@ const Board = styled.div`
   height: 30em;
 `;
 
-const Host = ({ state, moves, connections }) => {
+const Host = ({ state, roomId, moves, connections }) => {
   useEffect(() => {
     if (connections.length >= 2) {
       const [crossesConnId, noughtsConnId] = connections;
       moves.startGame({ crossesConnId, noughtsConnId });
     }
   }, [connections])
+
+  if (connections.length < 2) {
+    return (
+      <Link to={`/guest/${roomId}`}>{window.location.host}/guest/{roomId}</Link>
+    )
+  }
 
   return (
     <Board>

@@ -1771,6 +1771,8 @@ __metadata:
   resolution: "@compendium/compendium@workspace:compendium"
   dependencies:
     "@compendium/tic-tac-toe": "workspace:compendium/tic-tac-toe"
+  peerDependencies:
+    react-router-dom: "*"
   languageName: unknown
   linkType: soft
 
@@ -1843,6 +1845,7 @@ __metadata:
     react: "*"
     react-dom: "*"
     react-is: "*"
+    react-router-dom: "*"
   languageName: unknown
   linkType: soft
 
@@ -1853,6 +1856,8 @@ __metadata:
     "@compendium/tic-tac-toe-game": "workspace:compendium/tic-tac-toe/game"
     "@compendium/tic-tac-toe-guest": "workspace:compendium/tic-tac-toe/guest"
     "@compendium/tic-tac-toe-host": "workspace:compendium/tic-tac-toe/host"
+  peerDependencies:
+    react-router-dom: "*"
   languageName: unknown
   linkType: soft
 
