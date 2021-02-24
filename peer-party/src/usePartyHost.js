@@ -2,13 +2,11 @@ import { useRef, useState, useEffect } from "react";
 import { isString, isObject, isInteger } from "lodash";
 import Peer from "peerjs";
 
-
 const validateEvent = (event, validMoves) => (
   event &&
   isString(event.move) && 
   isObject(event.args) &&
-  isInteger(event.index) &&
-  validMoves.findIndex(event.move)
+  validMoves.findIndex((m) => m === event.move) > -1
 )
 
 const usePartyHost = ({ roomId, game }) => {
@@ -21,8 +19,11 @@ const usePartyHost = ({ roomId, game }) => {
   const connectionLogSizeMap = useRef({});
 
   const [state, setState] = useState({});
+  const [connections, setConnections] = useState([]);
 
   useEffect(() => {
+
+    if (!game) return;
 
     moves.current = new Proxy({}, {
       get: (_, move) => (args) => {
@@ -33,38 +34,49 @@ const usePartyHost = ({ roomId, game }) => {
 
     let timeouts = {};
     peer.current = new Peer(roomId);
-    peer.current.on("connection", (conn) => {
+    peer.current.on("open", () => {
+      peer.current.on("connection", (conn) => {
 
+        setConnections((conns) => [...conns, conn.peer]);
+        connectionLogSizeMap.current[conn.peer] = 0
 
-      conn.on("data", ({ index, ...event }) => {
-        // Update log sizes mapped to connection ids
-        connectionLogSizeMap.current[conn.peer] = index
+        conn.on("data", ({ index, ...event }) => {
 
-        if (!validateEvent(event, Object.keys(game.guestMoves))) return;
+          // Update log sizes mapped to connection ids
+          if (!isInteger(index)) return;
+          connectionLogSizeMap.current[conn.peer] = index
 
-        // Add to event log
-        eventLog.current.push(event);
+          if (!validateEvent(event, Object.keys(game.guestMoves))) return;
 
-        // Apply events to state
-        setState(o =>
-          game.guestMoves[event.move]({ state: o, connectionId: event.connectionId, args: event.args }),
-        )
-      })
+          // Add to event log
+          eventLog.current.push({ ...event, connectionId: conn.peer });
 
+          // Apply events to state
+          setState(o => {
+            try {
+              return game.guestMoves[event.move]({ state: o, connectionId: conn.peer, args: event.args })
+            } catch (e) {
+              console.error(e);
+              return o;
+            }
+          })
+        })
 
-      const ticker = (tick) => () => {
-        tick()
-        timeouts[conn.peer] = setTimeout(ticker(tick), 500)
-      }
-
-      ticker(() => {
-        const numSent = connectionLogSizeMap.current[conn.peer];
-        if (eventLog.current.length > numSent) {
-          conn.send(eventLog.slice(numSent));
+        const ticker = (tick) => () => {
+          tick()
+          timeouts[conn.peer] = setTimeout(ticker(tick), 500)
         }
-      })()
+
+        ticker(() => {
+          const numSent = connectionLogSizeMap.current[conn.peer];
+          if (eventLog.current.length > numSent) {
+            const evts = eventLog.current.slice(numSent);
+            conn.send(evts);
+          }
+        })()
 
 
+      })
     })
 
     return () => {
@@ -75,7 +87,7 @@ const usePartyHost = ({ roomId, game }) => {
   }, [roomId, game])
 
     
-  return { state, moves: moves.current }
+  return { state, moves: moves.current, connections }
 }
 
 export default usePartyHost;

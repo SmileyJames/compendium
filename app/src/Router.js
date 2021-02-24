@@ -1,41 +1,39 @@
 import { usePartyHost, usePartyGuest } from "@compendium/peer-party";
 import { HashRouter, Switch, Route, useParams } from "react-router-dom";
-import { useGame } from "./rooms";
+import { useGame, useConnectionId } from "./rooms";
 import Home from "./Home";
-
-const HomeRoute = () => 
-  <Route exact path="/">
-    <Home />
-  </Route>
 
 const HostRoute = () => {
   const { roomId } = useParams();
   const { Host, game } = useGame(roomId);
-  const { state, moves } = usePartyHost({ roomId, game });
+  const { state, moves, connections } = usePartyHost({ roomId, game });
   return (
-    <Route path="/host/:roomId">
-      <Host roomId={roomId} state={state} moves={moves} />
-    </Route>
+    Host && <Host roomId={roomId} state={state} moves={moves} connections={connections} />
   )
 }
 
 const GuestRoute = () => {
+  const id = useConnectionId();
   const { roomId } = useParams();
   const { Guest, game } = useGame(roomId);
-  const { state, moves } = usePartyGuest({ roomId, game });
+  const { state, moves } = usePartyGuest({ id, roomId, game });
   return (
-    <Route path="/guest/:roomId">
-      <Guest roomId={roomId} state={state} moves={moves}/>
-    </Route>
+    Guest && <Guest connectionId={id} roomId={roomId} state={state} moves={moves}/>
   )
 }
 
 const Router = () =>
   <HashRouter>
     <Switch>
-      <HomeRoute/>
-      <HostRoute/>
-      <GuestRoute/>
+      <Route path="/host/:roomId">
+        <HostRoute/>
+      </Route>
+      <Route path="/guest/:roomId">
+        <GuestRoute/>
+      </Route>
+      <Route exact path="/">
+        <Home/>
+      </Route>
     </Switch>
   </HashRouter>
 

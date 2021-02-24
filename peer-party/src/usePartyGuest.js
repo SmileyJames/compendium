@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import Peer from "peerjs";
+import cloneDeep from "lodash/cloneDeep";
 
-const usePartyGuest = ({ roomId, game }) => {
+const usePartyGuest = ({ id, roomId, game }) => {
 
   const peer = useRef();
   const conn = useRef();
@@ -13,26 +14,46 @@ const usePartyGuest = ({ roomId, game }) => {
 
   useEffect(() => {
 
-    moves.current = new Proxy({}, {
-      get: (_, move) => (args) => {
-        setCache(c => game.guestMoves[move]({ state: c, args, connectionId: peer.current.id }))
-        conn.current.send({ index: logSize.current, move, args })
-      }
-    });
+    if (!id || !game) return undefined;
 
-    peer.current = new Peer();
-    conn.current = peer.current.connect(roomId);
+    peer.current = new Peer(id);
 
-    conn.current.on("data", (events) => {
-      logSize.current += events.length;
+    peer.current.on("open", () => {
+      conn.current = peer.current.connect(roomId);
 
-      state.current = events.reduce(
-        ({ move, args, connectionId }, o) => game.guestMoves[move]({ state: o, args, connectionId }),
-        state.current);
 
-      setCache(state.current);
+      conn.current.on("data", (events) => {
 
-      conn.current.send({ index: logSize.current })
+        logSize.current += events.length;
+
+        const reduceMove = (o, { move, args, connectionId }) => {
+          const reducer = connectionId === roomId ? game.hostMoves[move] : game.guestMoves[move];
+          try {
+            return reducer({ state: o, args, connectionId });
+          } catch (e) {
+            console.error(e);
+            return o;
+          }
+        }
+        state.current = events.reduce(reduceMove, cloneDeep(state.current));
+        setCache(() => cloneDeep(state.current));
+
+        conn.current.send({ index: logSize.current })
+      });
+
+      moves.current = new Proxy({}, {
+        get: (_, move) => (args) => {
+          setCache(c => {
+            try {
+              return game.guestMoves[move]({ state: c, args, connectionId: peer.current.id })
+            } catch (e) {
+              console.error(e);
+              return c;
+            }
+          })
+          conn.current.send({ index: logSize.current, move, args })
+        }
+      });
     });
 
     return () => {
@@ -40,7 +61,7 @@ const usePartyGuest = ({ roomId, game }) => {
       peer.current = null;
     }
 
-  }, [roomId, game])
+  }, [id, roomId, game])
 
 
   return { state: cache, moves: moves.current }

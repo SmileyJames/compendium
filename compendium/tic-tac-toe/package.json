@@ -8,6 +8,7 @@
     "game"
   ],
   "dependencies": {
+    "@compendium/tic-tac-toe-game": "workspace:compendium/tic-tac-toe/game",
     "@compendium/tic-tac-toe-guest": "workspace:compendium/tic-tac-toe/guest",
     "@compendium/tic-tac-toe-host": "workspace:compendium/tic-tac-toe/host"
   }

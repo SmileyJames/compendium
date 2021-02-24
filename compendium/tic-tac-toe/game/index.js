@@ -1,5 +1,5 @@
-const NOUGHTS = 1;
-const CROSSES = 2;
+export const NOUGHTS = 1;
+export const CROSSES = 2;
 
 const startGame = ({ state, connectionId, args }) => ({
   crossesPlayer: args.crossesConnId,
@@ -21,7 +21,8 @@ const fillSquare = ({ state, connectionId, args }) => {
     throw new Error('Position filled');
   }
 
-  const board = [...state.board.splice(args.position, 1, player)];
+  const board = [...state.board];
+  board.splice(args.position, 1, player);
 
   return ({
     ...state,
@@ -30,13 +31,13 @@ const fillSquare = ({ state, connectionId, args }) => {
 }
 
 const TicTacToe = {
-  clientMoves: [
+  guestMoves: {
     fillSquare,
-  ],
+  },
   
-  hostMoves: [
+  hostMoves: {
     startGame,
-  ],
+  },
 }
 
 export default TicTacToe;

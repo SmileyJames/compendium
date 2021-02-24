@@ -1,7 +1,20 @@
 {
   "name": "@compendium/tic-tac-toe-guest",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "yarn babel src --out-dir dist",
+    "build:watch": "yarn babel src --watch --out-dir dist"
+  },
   "dependencies": {
-    "@compendium/tic-tac-toe-game": "workspace:compendium/tic-tac-toe/game"
+    "@compendium/tic-tac-toe-game": "workspace:compendium/tic-tac-toe/game",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-is": "^17.0.1",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.1",
+    "@babel/preset-react": "^7.12.13"
   }
 }
