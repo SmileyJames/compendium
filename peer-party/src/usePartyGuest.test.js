@@ -1,28 +1,31 @@
+jest.mock('peerjs')
 import Peer from "peerjs";
 import { renderHook, act } from '@testing-library/react-hooks';
 import usePartyGuest from "./usePartyGuest";
+import PeerJS from "peerjs";
 
-let dataCallback;
-jest.mock('peerjs', () => (
-  jest.fn().mockImplementation(() => ({
-    connect: () => ({
-      on: (eventName, callback) => {
-        if (eventName === "data") {
-          dataCallback = callback;
-        } else {
-          callback();
-        }
-      },
-      send: () => {},
-    }),
-    on: (_, callback) => callback(),
-    id: "id",
-    destroy: () => {},
-  }))
-));
+let mockReceiveSync;
+const mockSendEmit = jest.fn();
+
+PeerJS.mockImplementation(() => ({
+  connect: () => ({
+    on: (eventName, callback) => {
+      if (eventName === "data") {
+        mockReceiveSync = callback;
+      } else {
+        callback();
+      }
+    },
+    send: mockSendEmit,
+  }),
+  on: (_, callback) => callback(),
+  id: "id",
+  destroy: () => {},
+}))
 
 const start = () => ({ number: 0 });
-const increment = ({ state: { number } }) => ({ number: number + 1 });
+const increment = ({ args, state: { number } }) =>
+  ({ number: number + (args && args.value || 1) });
 
 const game = {
   guestMoves: {
@@ -33,7 +36,7 @@ const game = {
 };
 
 describe("usePartyGuest", () => {
-  test("A simple test of local guest state management (pre-emptive)", () => {
+  test("Test state is maintained correctly whilst emitting from guest and syncing from host", () => {
     const { rerender, result } = renderHook(() =>
       usePartyGuest({ id: "hello", roomId: "hello-world", game })
     );
@@ -50,11 +53,45 @@ describe("usePartyGuest", () => {
     })
 
     expect(result.current.state.number).toBe(0);
+    expect(mockSendEmit).toHaveBeenCalledWith({
+      args: undefined,
+      index: 0,
+      move: "start",
+    });
 
     act(() => {
       result.current.moves.increment();
     })
 
     expect(result.current.state.number).toBe(1);
+    expect(mockSendEmit).toHaveBeenLastCalledWith({
+      args: undefined,
+      index: 0,
+      move: "increment",
+    });
+
+    act(() => {
+      mockReceiveSync([
+        { move: "start" },
+        { move: "increment" },
+      ])
+    })
+
+    expect(result.current.state.number).toBe(1);
+    expect(mockSendEmit).toHaveBeenLastCalledWith({
+      index: 2,
+    });
+
+    act(() => {
+      mockReceiveSync([
+        { connectionId: "unique-id", args: { value: 5 }, move: "increment" },
+      ])
+    })
+
+    expect(result.current.state.number).toBe(6);
+    expect(mockSendEmit).toHaveBeenLastCalledWith({
+      index: 3,
+    });
+
   });
 });
