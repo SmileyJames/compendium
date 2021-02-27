@@ -9,6 +9,8 @@ const validateEvent = (event, validMoves) => (
   validMoves.findIndex((m) => m === event.move) > -1
 )
 
+const hasHostMove = (game, move) => Boolean(game.hostMoves[move])
+
 const usePartyHost = ({ roomId, game }) => {
 
   const moves = useRef();
@@ -26,10 +28,18 @@ const usePartyHost = ({ roomId, game }) => {
     if (!game) return;
 
     moves.current = new Proxy({}, {
-      get: (_, move) => (args) => {
-        setState(o => game.hostMoves[move]({ state: o, connectionId: roomId, args }))
-        eventLog.current.push({ move, args, connectionId: roomId })
-      }
+      get: (_, move) => (
+        hasHostMove(game, move)
+        ? ((args) => {
+            setState(o => game.hostMoves[move]({
+              state: o,
+              connectionId: roomId,
+              args
+            }))
+            eventLog.current.push({ move, args, connectionId: roomId })
+          })
+        : Reflect.get(...arguments)
+      )
     });
 
     let timeouts = {};
