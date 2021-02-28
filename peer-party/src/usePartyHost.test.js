@@ -2,6 +2,7 @@ import PeerJS from "peerjs";
 import { renderHook, act } from '@testing-library/react-hooks';
 import usePartyHost from "./usePartyHost";
 
+jest.useFakeTimers();
 jest.mock('peerjs')
 
 let mockReceiveEmit;
@@ -30,7 +31,7 @@ PeerJS.mockImplementation(() => ({
 
 const start = () => ({ number: 0 });
 const increment = ({ args, state: { number } }) =>
-  ({ number: number + (args && (args.value || 1)) });
+  ({ number: number + ((args && args.value) || 1) });
 
 const game = {
   guestMoves: {
@@ -44,7 +45,7 @@ const game = {
 
 describe("usePartyHost", () => {
   test("The host can call moves locally and maintains a local state", () => {
-    const { result } = renderHook(() =>
+    const { unmount, result } = renderHook(() =>
       usePartyHost({ roomId: "hello-world", game })
     );
 
@@ -99,5 +100,7 @@ describe("usePartyHost", () => {
     expect(mockSendSync).toHaveBeenLastCalledWith([
       { args: { value: 2 }, connectionId: "hello", move: "increment" }
     ])
+
+    unmount();
   });
 });

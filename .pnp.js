@@ -4249,6 +4249,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:4.0.2"
       ],
       [
+        "react-storage-hooks",
+        "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:4.0.1"
+      ],
+      [
         "read-pkg",
         "npm:2.0.0"
       ],
@@ -11120,7 +11124,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lodash", "npm:4.17.21"],
             ["peerjs", "npm:1.3.1"],
             ["react", "npm:17.0.1"],
-            ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"]
+            ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
+            ["react-storage-hooks", "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:4.0.1"],
+            ["uuid", "npm:8.3.2"]
           ],
           "packagePeers": [
             "@types/react",
@@ -11143,7 +11149,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lodash", "npm:4.17.21"],
             ["peerjs", "npm:1.3.1"],
             ["react", "npm:17.0.1"],
-            ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"]
+            ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
+            ["react-storage-hooks", "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:4.0.1"],
+            ["uuid", "npm:8.3.2"]
           ],
           "linkType": "SOFT",
         }]
@@ -24370,6 +24378,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/typescript",
             "react",
             "typescript"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["react-storage-hooks", [
+        ["npm:4.0.1", {
+          "packageLocation": "./.yarn/cache/react-storage-hooks-npm-4.0.1-f17316c8fb-89afe645c1.zip/node_modules/react-storage-hooks/",
+          "packageDependencies": [
+            ["react-storage-hooks", "npm:4.0.1"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:4.0.1", {
+          "packageLocation": "./.yarn/$$virtual/react-storage-hooks-virtual-8ee8abd610/0/cache/react-storage-hooks-npm-4.0.1-f17316c8fb-89afe645c1.zip/node_modules/react-storage-hooks/",
+          "packageDependencies": [
+            ["react-storage-hooks", "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:4.0.1"],
+            ["@types/react", null],
+            ["react", "npm:17.0.1"]
+          ],
+          "packagePeers": [
+            "@types/react",
+            "react"
           ],
           "linkType": "HARD",
         }]

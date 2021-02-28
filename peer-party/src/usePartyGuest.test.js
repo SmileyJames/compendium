@@ -2,6 +2,7 @@ import { renderHook, act } from '@testing-library/react-hooks';
 import usePartyGuest from "./usePartyGuest";
 import PeerJS from "peerjs";
 
+jest.useFakeTimers();
 jest.mock('peerjs')
 let mockReceiveSync;
 const mockSendEmit = jest.fn();
@@ -23,8 +24,12 @@ PeerJS.mockImplementation(() => ({
 }))
 
 const start = () => ({ number: 0 });
-const increment = ({ args, state: { number } }) =>
-  ({ number: number + (args && (args.value || 1)) });
+const increment = ({ args, state: { number } }) => {
+  const increase = (args && args.value) ? args.value : 1;
+  const num = number || 0;
+  const output = ({ number: num + increase });
+  return output;
+}
 
 const game = {
   guestMoves: {
@@ -36,12 +41,12 @@ const game = {
 
 describe("usePartyGuest", () => {
   test("State is maintained correctly whilst emitting from guest and syncing from host", () => {
-    const { rerender, result } = renderHook(() =>
+    const { unmount, rerender, result } = renderHook(() =>
       usePartyGuest({ id: "hello", roomId: "hello-world", game })
     );
 
     expect(result.current.state).toBeTruthy();
-    expect(result.current.moves).toBeFalsy();
+    expect(result.current.moves).toBeTruthy();
 
     rerender();
 
@@ -92,5 +97,6 @@ describe("usePartyGuest", () => {
       index: 3,
     });
 
+    unmount();
   });
 });

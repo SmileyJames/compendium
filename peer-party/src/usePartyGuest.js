@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from "react";
-import cloneDeep from "lodash/cloneDeep";
+import { useEffect, useRef } from "react";
 import { constructMoves, constructReducer, constructPeer, destructPeer } from "./shared";
-// import { usePersist } from "./persist";
+import { useStorageState } from 'react-storage-hooks';
+import { v4 as uuid } from "uuid";
 
 const connect = ({ roomId, peer, conn }) => {
   conn.current = peer.current.connect(roomId);
@@ -49,8 +49,9 @@ const useConnection = ({ conn, connectionId, roomId, onOpen, onData, dependants 
     constructPeer({ peer, id: connectionId })
 
     peer.current.on("open", () => {
-      onOpen();
+      console.log("open guest");
       connect({ conn, peer, roomId });
+      onOpen();
       conn.current.on("data", onData);
     });
 
@@ -60,19 +61,30 @@ const useConnection = ({ conn, connectionId, roomId, onOpen, onData, dependants 
 }
 
 const usePartyGuest = ({ roomId, game }) => {
-  // const [state, setState] = usePersist(`guestState-${roomId}`, {});
-  // const [logSize, setLogSize] = usePersist(`logSize-${roomId}`, 0);
-  const [{ state, cache }, setState] = useState({ state: {}, cache: {} });
-  const [logSize, setLogSize] = useState(0);
-  const [id, setId] = useState("totally-rrandom...");
   const conn = useRef();
-
   const moves = useRef();
 
-  console.log(logSize);
+  const [{ cache }, setState] = useStorageState(
+    window.localStorage,
+    `guestState-${roomId}`,
+    { state: {}, cache: {} }
+  );
+  const [logSize, setLogSize] = useStorageState(
+    window.localStorage,
+    `logSize-${roomId}`,
+    0
+  );
+  const [id, setId] = useStorageState(
+    window.localStorage,
+    `id-${roomId}`,
+    null
+  );
+  useEffect(() => {
+    if (id) return;
+    setId(() => uuid()) 
+  }, [id, setId])
 
   const onOpen = () => {
-    console.log("moves", moves);
     constructMovesHandler({ conn, connectionId: id, moves, setState, roomId, game, logSize })
   }
   const onData = (events) => {
@@ -81,11 +93,10 @@ const usePartyGuest = ({ roomId, game }) => {
     sync({ setState, roomId, game, events })
   }
   const dependants = [
-   , conn, moves, roomId, setState,
+    conn, moves, roomId, setState,
     game, logSize, setLogSize, onData, onOpen
   ];
   useConnection({ conn, connectionId: id, roomId, onOpen, onData, dependants })
-
 
   return { state: cache, moves: moves.current }
 }
