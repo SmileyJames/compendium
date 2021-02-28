@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { isString, isObject, isInteger } from "lodash";
-import Peer from "peerjs";
+import { constructMoves, constructReducer, constructPeer, destructPeer } from "./shared";
 
 const validateEvent = (event, validMoves) => (
   event &&
@@ -9,25 +9,11 @@ const validateEvent = (event, validMoves) => (
   validMoves.findIndex((m) => m === event.move) > -1
 )
 
-const hasHostMove = (game, move) => Boolean(game.hostMoves[move])
-
 const constructMovesHandler = ({ moves, game, setState, roomId, setEventLog }) => {
-  moves.current = new Proxy({}, {
-    get: (_, move) => (
-      hasHostMove(game, move)
-        ? (args) => logEvent({ setEventLog, event: { move, args }, connectionId: roomId })
-        : Reflect.get(...arguments)
-    )
-  });
-}
-
-const constructPeer = ({ peer, roomId }) => {
-  peer.current = new Peer(roomId);
-}
-
-const destructPeer = ({ peer }) => {
-  peer.current.destroy();
-  peer.current = null;
+  const handleMove = ({ move, args }) => {
+    logEvent({ setEventLog, event: { move, args }, connectionId: roomId })
+  };
+  constructMoves({ game, connectionId: roomId, roomId, moves, handleMove });
 }
 
 const appendConnection = ({ setConnections, conn }) => {
@@ -43,20 +29,8 @@ const logEvent = ({ setEventLog, event, connectionId }) => {
 }
 
 const updateState = ({ roomId, setState, game, events }) => {
-  setState(state => {
-    try {
-      return events.reduce(
-        (o, event) => {
-          const moves = (event.connectionId === roomId ? game.hostMoves : game.guestMoves);
-          return moves[event.move]({ state: o, connectionId: event.connectionId, args: event.args });
-        },
-        state
-      );
-    } catch (e) {
-      console.error(e);
-      return state;
-    }
-  })
+  const reducer = constructReducer({ game, roomId, events })
+  setState(reducer);
 }
 
 const useConnections = ({ game, roomId, setState, eventLog, setEventLog }) => {
@@ -65,7 +39,7 @@ const useConnections = ({ game, roomId, setState, eventLog, setEventLog }) => {
   const connectionLogSizeMap = useRef({});
 
   useEffect(() => {
-    constructPeer({ peer, roomId });
+    constructPeer({ peer, id: roomId });
     peer.current.on("open", () => {
       peer.current.on("connection", (conn) => {
 
@@ -119,8 +93,6 @@ const usePartyHost = ({ roomId, game }) => {
     updateState({ roomId, setState, game, events });
     logSize.current = eventLog.length;
   }, [roomId, game, eventLog, logSize])
-
-  console.log("state", state);
 
   return { state, moves: moves.current, connections: connections.map(({ peer }) => peer) }
 }
