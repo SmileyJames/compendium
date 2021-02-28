@@ -1,6 +1,8 @@
 import { useRef, useState, useEffect } from "react";
 import { isString, isObject, isInteger } from "lodash";
 import { constructMoves, constructReducer, constructPeer, destructPeer } from "./shared";
+// import { usePersist } from "./persist";
+
 
 const validateEvent = (event, validMoves) => (
   event &&
@@ -67,8 +69,10 @@ const useConnections = ({ game, roomId, setState, eventLog, setEventLog }) => {
 
 const usePartyHost = ({ roomId, game }) => {
   const moves = useRef();
-  const logSize = useRef(0);
-  const [state, setState] = useState({});
+  const logSize = useRef();
+  // const [state, setState]  = usePersist(`hostState-${roomId}`, {});
+  // const [eventLog, setEventLog] = usePersist(`eventLog-${roomId}`, []);
+  const [state, setState]  = useState({});
   const [eventLog, setEventLog] = useState([]);
   const { connections, connectionLogSizeMap } = useConnections({ game, roomId, setState, eventLog, setEventLog })
 
