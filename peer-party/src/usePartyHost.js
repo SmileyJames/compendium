@@ -60,7 +60,7 @@ const useConnections = ({ game, roomId, setState, eventLog, setEventLog }) => {
     return () => {
       destructPeer({ peer });
     }
-  }, [])
+  }, [game, roomId, setEventLog])
 
   return { eventLog, connections, connectionLogSizeMap }
 }

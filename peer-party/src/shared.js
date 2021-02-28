@@ -32,10 +32,10 @@ export const constructMoves = ({ game, connectionId, roomId, moves, handleMove }
   moves.current = new Proxy({}, {
     get: (_, move) => {
       try {
-        const moveFn = getMoveFunction({ connectionId, roomId, game, move })
+        getMoveFunction({ connectionId, roomId, game, move })
         return (args) => handleMove({ move, args });
       } catch (e) {
-        return Reflect.get(...arguments)
+        return Reflect.get(...window.arguments)
       }
     }
   });

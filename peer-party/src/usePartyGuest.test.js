@@ -1,9 +1,8 @@
-jest.mock('peerjs')
-import Peer from "peerjs";
 import { renderHook, act } from '@testing-library/react-hooks';
 import usePartyGuest from "./usePartyGuest";
 import PeerJS from "peerjs";
 
+jest.mock('peerjs')
 let mockReceiveSync;
 const mockSendEmit = jest.fn();
 
@@ -25,7 +24,7 @@ PeerJS.mockImplementation(() => ({
 
 const start = () => ({ number: 0 });
 const increment = ({ args, state: { number } }) =>
-  ({ number: number + (args && args.value || 1) });
+  ({ number: number + (args && (args.value || 1)) });
 
 const game = {
   guestMoves: {
@@ -36,7 +35,7 @@ const game = {
 };
 
 describe("usePartyGuest", () => {
-  test("Test state is maintained correctly whilst emitting from guest and syncing from host", () => {
+  test("State is maintained correctly whilst emitting from guest and syncing from host", () => {
     const { rerender, result } = renderHook(() =>
       usePartyGuest({ id: "hello", roomId: "hello-world", game })
     );
