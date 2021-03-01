@@ -46,7 +46,7 @@ describe("usePartyGuest", () => {
     );
 
     expect(result.current.state).toBeTruthy();
-    expect(result.current.moves).toBeTruthy();
+    expect(result.current.moves).toBeFalsy();
 
     rerender();
 
@@ -76,25 +76,25 @@ describe("usePartyGuest", () => {
 
     act(() => {
       mockReceiveSync([
-        { move: "start" },
-        { move: "increment" },
+        { index: 0, move: "start" },
+        { index: 1, move: "increment" },
       ])
     })
 
     expect(result.current.state.number).toBe(1);
     expect(mockSendEmit).toHaveBeenLastCalledWith({
-      index: 2,
+      index: 1,
     });
 
     act(() => {
       mockReceiveSync([
-        { connectionId: "unique-id", args: { value: 5 }, move: "increment" },
+        { index: 2, connectionId: "unique-id", args: { value: 5 }, move: "increment" },
       ])
     })
 
     expect(result.current.state.number).toBe(6);
     expect(mockSendEmit).toHaveBeenLastCalledWith({
-      index: 3,
+      index: 2,
     });
 
     unmount();

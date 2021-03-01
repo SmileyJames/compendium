@@ -58,7 +58,7 @@ describe("usePartyHost", () => {
 
     expect(result.current.state.number).toBe(0);
     expect(mockSendSync).toHaveBeenCalledWith([
-      { args: undefined, connectionId: "hello-world", move: "start" }
+      { index: 0, args: undefined, connectionId: "hello-world", move: "start" }
     ])
 
     act(() => {
@@ -67,13 +67,13 @@ describe("usePartyHost", () => {
 
     expect(result.current.state.number).toBe(1);
     expect(mockSendSync).toHaveBeenLastCalledWith([
-      { args: undefined, connectionId: "hello-world", move: "start" },
-      { args: undefined, connectionId: "hello-world", move: "increment" }
+      { index: 0, args: undefined, connectionId: "hello-world", move: "start" },
+      { index: 1, args: undefined, connectionId: "hello-world", move: "increment" }
     ])
 
     act(() => {
       mockReceiveEmit({
-        index: 2,
+        index: 1,
       })
     })
 
@@ -84,21 +84,21 @@ describe("usePartyHost", () => {
     })
     expect(result.current.state.number).toBe(2);
     expect(mockSendSync).toHaveBeenLastCalledWith([
-      { args: undefined, connectionId: "hello-world", move: "increment" }
+      { index: 2, args: undefined, connectionId: "hello-world", move: "increment" }
     ])
 
     act(() => {
       mockReceiveEmit({
-        index: 3,
+        index: 1,
         move: "increment",
         args: { value: 2 },
       })
     })
 
     expect(result.current.state.number).toBe(4);
-
     expect(mockSendSync).toHaveBeenLastCalledWith([
-      { args: { value: 2 }, connectionId: "hello", move: "increment" }
+      { index: 2, args: undefined, connectionId: "hello-world", move: "increment" },
+      { index: 3, args: { value: 2 }, connectionId: "hello", move: "increment" }
     ])
 
     unmount();

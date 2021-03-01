@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useMemo } from "react";
 import { isString, isObject, isInteger } from "lodash";
 import { constructMoves, constructReducer, constructPeer, destructPeer } from "./shared";
 import { useStorageState } from 'react-storage-hooks';
@@ -42,19 +42,15 @@ const useConnections = ({ game, roomId, setState, eventLog, setEventLog }) => {
 
   useEffect(() => {
     constructPeer({ peer, id: roomId });
-        console.log("moiumt");
     peer.current.on("open", () => {
-        console.log("open");
       peer.current.on("connection", (conn) => {
-
-        console.log("connect");
 
         appendConnection({ setConnections, conn });
         updateLogSizeMap({ conn, connectionLogSizeMap });
 
         conn.on("data", ({ index, ...event }) => {
           if (!isInteger(index)) return;
-          updateLogSizeMap({ conn, connectionLogSizeMap, size: index });
+          updateLogSizeMap({ conn, connectionLogSizeMap, size: index + 1 });
 
           if (!validateEvent(event, Object.keys(game.guestMoves))) return;
 
@@ -85,6 +81,7 @@ const usePartyHost = ({ roomId, game }) => {
     []
   );
   const { connections, connectionLogSizeMap } = useConnections({ game, roomId, setState, eventLog, setEventLog })
+  const connectionIds = useMemo(() => connections.map(({ peer }) => peer), [connections])
 
   useEffect(() => {
     if (!game) return;
@@ -95,21 +92,21 @@ const usePartyHost = ({ roomId, game }) => {
     for (const connection of connections) {
       const numSent = connectionLogSizeMap.current[connection.peer];
       if (eventLog.length > numSent) {
-        const events = eventLog.slice(numSent);
+        const events = eventLog.slice(numSent)
+          .map((e, i) => ({ ...e, index: numSent + i }));
         connection.send(events);
       }
     }
   }, [connections, connectionLogSizeMap, eventLog]);
 
   useEffect(() => {
-    const events = eventLog.slice(logSize.current);
+    const events = eventLog.slice(logSize.current || 0);
     if (!roomId || !game || !events.length) return;
     updateState({ roomId, setState, game, events });
     logSize.current = eventLog.length;
   }, [setState, roomId, game, eventLog, logSize])
 
-  console.log("connections", connections.map(({ peer }) => peer))
-  return { state, moves: moves.current, connections: connections.map(({ peer }) => peer) }
+  return { state, moves: moves.current, connections: connectionIds }
 }
 
 export default usePartyHost;
