@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { constructMoves, constructReducer, constructPeer, destructPeer } from "./shared";
-import { useStorageState } from 'react-storage-hooks';
+import { useStorageState } from './persist';
 import { v4 as uuid } from "uuid";
 
 const connect = ({ roomId, peer, conn }) => {

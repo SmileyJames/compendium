@@ -2689,10 +2689,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:5.1.8"
       ],
       [
-        "immediate",
-        "npm:3.0.6"
-      ],
-      [
         "immer",
         "npm:7.0.9"
       ],
@@ -3177,10 +3173,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:0.4.1"
       ],
       [
-        "lie",
-        "npm:3.1.1"
-      ],
-      [
         "lines-and-columns",
         "npm:1.1.6"
       ],
@@ -3195,10 +3187,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [
         "loader-utils",
         "npm:2.0.0"
-      ],
-      [
-        "localforage",
-        "npm:1.9.0"
       ],
       [
         "locate-path",
@@ -4247,10 +4235,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [
         "react-scripts",
         "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:4.0.2"
-      ],
-      [
-        "react-storage-hooks",
-        "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:4.0.1"
       ],
       [
         "read-pkg",
@@ -11120,12 +11104,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", null],
             ["babel-jest", "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:26.6.3"],
             ["jest", "npm:26.6.3"],
-            ["localforage", "npm:1.9.0"],
             ["lodash", "npm:4.17.21"],
             ["peerjs", "npm:1.3.1"],
             ["react", "npm:17.0.1"],
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
-            ["react-storage-hooks", "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:4.0.1"],
             ["uuid", "npm:8.3.2"]
           ],
           "packagePeers": [
@@ -11145,12 +11127,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/react-hooks", "virtual:29fd00f995b33745eab8128c4c7cef8f5a82c4bafc7d6475370328bde6c93f66f91aa22c6effebab97f04080e5a749b7dea8e6e98f6431e08b6183f4c84d066b#npm:5.0.3"],
             ["babel-jest", "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:26.6.3"],
             ["jest", "npm:26.6.3"],
-            ["localforage", "npm:1.9.0"],
             ["lodash", "npm:4.17.21"],
             ["peerjs", "npm:1.3.1"],
             ["react", "npm:17.0.1"],
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
-            ["react-storage-hooks", "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:4.0.1"],
             ["uuid", "npm:8.3.2"]
           ],
           "linkType": "SOFT",
@@ -19065,15 +19045,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["immediate", [
-        ["npm:3.0.6", {
-          "packageLocation": "./.yarn/cache/immediate-npm-3.0.6-c27588a2d3-e86d4d20e2.zip/node_modules/immediate/",
-          "packageDependencies": [
-            ["immediate", "npm:3.0.6"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["immer", [
         ["npm:7.0.9", {
           "packageLocation": "./.yarn/cache/immer-npm-7.0.9-83e7165eca-20fba3dabd.zip/node_modules/immer/",
@@ -20830,16 +20801,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["lie", [
-        ["npm:3.1.1", {
-          "packageLocation": "./.yarn/cache/lie-npm-3.1.1-91350720d9-33a07ffeb7.zip/node_modules/lie/",
-          "packageDependencies": [
-            ["lie", "npm:3.1.1"],
-            ["immediate", "npm:3.0.6"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["lines-and-columns", [
         ["npm:1.1.6", {
           "packageLocation": "./.yarn/cache/lines-and-columns-npm-1.1.6-23e74fab67-798b80ed7a.zip/node_modules/lines-and-columns/",
@@ -20899,16 +20860,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["big.js", "npm:5.2.2"],
             ["emojis-list", "npm:3.0.0"],
             ["json5", "npm:2.2.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["localforage", [
-        ["npm:1.9.0", {
-          "packageLocation": "./.yarn/cache/localforage-npm-1.9.0-5c11c66e94-0645f5ec6f.zip/node_modules/localforage/",
-          "packageDependencies": [
-            ["localforage", "npm:1.9.0"],
-            ["lie", "npm:3.1.1"]
           ],
           "linkType": "HARD",
         }]
@@ -24378,28 +24329,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/typescript",
             "react",
             "typescript"
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["react-storage-hooks", [
-        ["npm:4.0.1", {
-          "packageLocation": "./.yarn/cache/react-storage-hooks-npm-4.0.1-f17316c8fb-89afe645c1.zip/node_modules/react-storage-hooks/",
-          "packageDependencies": [
-            ["react-storage-hooks", "npm:4.0.1"]
-          ],
-          "linkType": "SOFT",
-        }],
-        ["virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:4.0.1", {
-          "packageLocation": "./.yarn/$$virtual/react-storage-hooks-virtual-8ee8abd610/0/cache/react-storage-hooks-npm-4.0.1-f17316c8fb-89afe645c1.zip/node_modules/react-storage-hooks/",
-          "packageDependencies": [
-            ["react-storage-hooks", "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:4.0.1"],
-            ["@types/react", null],
-            ["react", "npm:17.0.1"]
-          ],
-          "packagePeers": [
-            "@types/react",
-            "react"
           ],
           "linkType": "HARD",
         }]

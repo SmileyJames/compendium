@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect, useMemo } from "react";
 import { isString, isObject, isInteger } from "lodash";
 import { constructMoves, constructReducer, constructPeer, destructPeer } from "./shared";
-import { useStorageState } from 'react-storage-hooks';
+import { useStorageState } from './persist';
 
 
 const validateEvent = (event, validMoves) => (
