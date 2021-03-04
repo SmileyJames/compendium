@@ -18,7 +18,11 @@ PeerJS.mockImplementation(() => ({
     },
     send: mockSendEmit,
   }),
-  on: (_, callback) => callback(),
+  on: (eventName, callback) => {
+    if (eventName === "open") {
+      callback();
+    }
+  },
   id: "id",
   destroy: () => {},
 }))

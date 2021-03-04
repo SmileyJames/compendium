@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { constructMoves, constructReducer, constructPeer, destructPeer } from "./shared";
-import { useStorageState } from './persist';
+import { constructMoves, constructReducer } from "./shared";
+import { usePeer } from "./peer";
+import { useStorageState } from "./persist";
 import { v4 as uuid } from "uuid";
 
 const connect = ({ roomId, peer, conn }) => {
-  if (conn.current && conn.current.open && conn.current.peer === roomId) return;
-  conn.current = peer.current.connect(roomId);
+  conn.current = peer.connect(roomId);
 }
 
 const increaseLogSize = ({ setLogSize, value }) => setLogSize(logSize => logSize + value)
@@ -43,28 +43,23 @@ const constructMovesHandler = ({ conn, connectionId, moves, setState, game, logS
 }
 
 const useConnection = ({ id, roomId }) => {
-  const peer = useRef();
   const conn = useRef();
-  const [open, setOpen] = useState(false);
   const [data, setData] = useState([]);
 
-  const onData = (data) => setData((stream) => [...stream, ...data]);
+  const open = usePeer(id, (peer) => {
+    if (conn.current && conn.current.open && conn.current.peer === roomId) return;
+    connect({ conn, peer, roomId });
+
+    const onData = (data) => setData((stream) => [...stream, ...data]);
+    conn.current.on("data", onData);
+
+    conn.current.on("close", () => connect({ conn, peer, roomId }));
+    conn.current.on("error", (error) => console.error(error));
+
+  }, [conn, roomId]);
+
   const clearData = () => setData([]);
-
-  useEffect(() => {
-    if (!roomId) return;
-
-    constructPeer({ peer, id })
-    peer.current.on("open", () => {
-      connect({ conn, peer, roomId });
-      !open && setOpen(true);
-      conn.current.on("data", onData);
-    })
-
-    return () => destructPeer({ peer })
-  }, [id, open, roomId])
-
-  return { conn, isOpen: open, data, clearData }
+  return { conn, open, data, clearData }
 }
 
 const usePartyGuest = ({ roomId, game }) => {
@@ -83,23 +78,23 @@ const usePartyGuest = ({ roomId, game }) => {
     `logSize-${roomId}`,
     0
   );
-  const { conn, isOpen, data, clearData } = useConnection({ id, roomId })
+  const { conn, open, data, clearData } = useConnection({ id, roomId })
   const moves = useRef();
 
   useEffect(() => {
-    if (!isOpen) return;
+    if (!open) return;
     constructMovesHandler({ conn, connectionId: id, moves, setState, roomId, game, logSize })
-  }, [isOpen, conn, id, moves, setState, roomId, game, logSize])
+  }, [open, conn, id, moves, setState, roomId, game, logSize])
 
   useEffect(() => {
-    if (!isOpen || !conn.current || !data || !data.length) return;
+    if (!open || !conn.current || !data || !data.length) return;
     const events = [...data]
     console.log("events", events);
     clearData();
     ack({ conn, logSize: events[events.length - 1].index })
     increaseLogSize({ setLogSize, value: events.length });
     sync({ setState, roomId, game, events })
-  }, [data, clearData, conn, game, isOpen, logSize, roomId, setLogSize, setState])
+  }, [data, clearData, conn, game, open, logSize, roomId, setLogSize, setState])
 
   console.log("data", data);
 

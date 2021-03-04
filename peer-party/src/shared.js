@@ -1,14 +1,3 @@
-import Peer from "peerjs";
-
-export const constructPeer = ({ peer, id }) => {
-  peer.current = new Peer(id);
-}
-
-export const destructPeer = ({ peer }) => {
-  peer.current.destroy();
-  peer.current = null;
-}
-
 const getMoveFunction = ({ connectionId, roomId, game, move }) => (
   (connectionId === roomId ? game.hostMoves : game.guestMoves)[move]
 )

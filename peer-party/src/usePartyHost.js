@@ -1,8 +1,8 @@
 import { useRef, useState, useEffect, useMemo } from "react";
 import { isString, isObject, isInteger } from "lodash";
-import { constructMoves, constructReducer, constructPeer, destructPeer } from "./shared";
+import { constructMoves, constructReducer } from "./shared";
+import { usePeer } from "./peer";
 import { useStorageState } from './persist';
-
 
 const validateEvent = (event, validMoves) => (
   event &&
@@ -36,32 +36,21 @@ const updateState = ({ roomId, setState, game, events }) => {
 }
 
 const useConnections = ({ game, roomId, setState, eventLog, setEventLog }) => {
-  const peer = useRef();
   const [connections, setConnections] = useState([]);
   const connectionLogSizeMap = useRef({});
 
-  useEffect(() => {
-    constructPeer({ peer, id: roomId });
-    peer.current.on("open", () => {
-      peer.current.on("connection", (conn) => {
+  usePeer(roomId, (peer) => {
+    peer.on("connection", (conn) => {
+      appendConnection({ setConnections, conn });
+      updateLogSizeMap({ conn, connectionLogSizeMap });
 
-        appendConnection({ setConnections, conn });
-        updateLogSizeMap({ conn, connectionLogSizeMap });
-
-        conn.on("data", ({ index, ...event }) => {
-          if (!isInteger(index)) return;
-          updateLogSizeMap({ conn, connectionLogSizeMap, size: index + 1 });
-
-          if (!validateEvent(event, Object.keys(game.guestMoves))) return;
-
-          logEvent({ setEventLog, event, connectionId: conn.peer })
-
-        })
+      conn.on("data", ({ index, ...event }) => {
+        if (!isInteger(index)) return;
+        updateLogSizeMap({ conn, connectionLogSizeMap, size: index + 1 });
+        if (!validateEvent(event, Object.keys(game.guestMoves))) return;
+        logEvent({ setEventLog, event, connectionId: conn.peer })
       })
     })
-    return () => {
-      destructPeer({ peer });
-    }
   }, [game, roomId, setEventLog])
 
   return { eventLog, connections, connectionLogSizeMap }
