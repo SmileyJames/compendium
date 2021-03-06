@@ -1,5 +1,9 @@
+const getMoves = ({ connectionId, roomId, game }) => (
+  connectionId === roomId ? game.hostMoves : game.guestMoves
+);
+
 const getMoveFunction = ({ connectionId, roomId, game, move }) => (
-  (connectionId === roomId ? game.hostMoves : game.guestMoves)[move]
+  getMoves({ connectionId, roomId, game })[move]
 )
 
 export const constructReducer = ({ game, events, roomId }) => (state) => {
@@ -19,12 +23,16 @@ export const constructReducer = ({ game, events, roomId }) => (state) => {
 
 export const constructMoves = ({ game, connectionId, roomId, moves, handleMove }) => {
   moves.current = new Proxy({}, {
-    get: (_, move) => {
-      try {
-        getMoveFunction({ connectionId, roomId, game, move })
-        return (args) => handleMove({ move, args });
-      } catch (e) {
-        return Reflect.get(...window.arguments)
+    get: (target, key, receiver) => {
+      if (key === Symbol.iterator) {
+        return getMoves({ connectionId, roomId, game }).keys().bind(target);
+      } else {
+        try {
+          getMoveFunction({ connectionId, roomId, game, move: key })
+          return (args) => handleMove({ move: key, args });
+        } catch (e) {
+          return Reflect.get(target, key, receiver);
+        }
       }
     }
   });

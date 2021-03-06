@@ -36,12 +36,12 @@ const TileOrButton = ({
 const Guest = ({
   state,
   moves
-}) => /*#__PURE__*/React.createElement(Board, null, state.board && state.board.map((value, position) => /*#__PURE__*/React.createElement(TileOrButton, {
+}) => /*#__PURE__*/React.createElement(React.Fragment, null, moves ? null : /*#__PURE__*/React.createElement("p", null, "Disconnected"), /*#__PURE__*/React.createElement(Board, null, state.board && state.board.map((value, position) => /*#__PURE__*/React.createElement(TileOrButton, {
   key: position,
   value: value,
-  onClick: () => moves.fillSquare({
+  onClick: () => moves && moves.fillSquare({
     position
   })
-})));
+}))));
 
 export default Guest;

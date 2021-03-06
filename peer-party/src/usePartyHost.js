@@ -22,6 +22,10 @@ const appendConnection = ({ setConnections, conn }) => {
   setConnections((conns) => [...conns, conn]);
 }
 
+const removeConnection = ({ setConnections, conn }) => {
+  setConnections((conns) => conns.filter(c => c !== conn))
+}
+
 const updateLogSizeMap = ({ conn, connectionLogSizeMap, size = 0 }) => {
   connectionLogSizeMap.current[conn.peer] = size
 }
@@ -42,7 +46,6 @@ const useConnections = ({ game, roomId, setState, eventLog, setEventLog }) => {
   usePeer(roomId, (peer) => {
     peer.on("connection", (conn) => {
       appendConnection({ setConnections, conn });
-      updateLogSizeMap({ conn, connectionLogSizeMap });
 
       conn.on("data", ({ index, ...event }) => {
         if (!isInteger(index)) return;
@@ -50,10 +53,19 @@ const useConnections = ({ game, roomId, setState, eventLog, setEventLog }) => {
         if (!validateEvent(event, Object.keys(game.guestMoves))) return;
         logEvent({ setEventLog, event, connectionId: conn.peer })
       })
-    })
-  }, [game, roomId, setEventLog])
 
-  return { eventLog, connections, connectionLogSizeMap }
+      conn.on("close", () => {
+        removeConnection({ setConnections, conn });
+      });
+
+      conn.on("error", (error) => {
+        console.error(conn.peer, error)
+      });
+    })
+
+  }, [game, roomId])
+
+  return { connections, connectionLogSizeMap }
 }
 
 const usePartyHost = ({ roomId, game }) => {
@@ -79,8 +91,8 @@ const usePartyHost = ({ roomId, game }) => {
 
   useEffect(() => {
     for (const connection of connections) {
-      const numSent = connectionLogSizeMap.current[connection.peer];
-      if (eventLog.length > numSent) {
+      const numSent = connectionLogSizeMap.current[connection.peer] || 0;
+      if (eventLog.length !== numSent) {
         const events = eventLog.slice(numSent)
           .map((e, i) => ({ ...e, index: numSent + i }));
         connection.send(events);

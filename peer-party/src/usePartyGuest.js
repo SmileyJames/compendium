@@ -53,7 +53,9 @@ const useConnection = ({ id, roomId }) => {
     const onData = (data) => setData((stream) => [...stream, ...data]);
     conn.current.on("data", onData);
 
-    conn.current.on("close", () => connect({ conn, peer, roomId }));
+    conn.current.on("close", () => {
+      conn.current = null;
+    });
     conn.current.on("error", (error) => console.error(error));
 
   }, [conn, roomId]);
@@ -89,14 +91,11 @@ const usePartyGuest = ({ roomId, game }) => {
   useEffect(() => {
     if (!open || !conn.current || !data || !data.length) return;
     const events = [...data]
-    console.log("events", events);
     clearData();
     ack({ conn, logSize: events[events.length - 1].index })
     increaseLogSize({ setLogSize, value: events.length });
     sync({ setState, roomId, game, events })
   }, [data, clearData, conn, game, open, logSize, roomId, setLogSize, setState])
-
-  console.log("data", data);
 
   return { state: cache, moves: moves.current }
 }

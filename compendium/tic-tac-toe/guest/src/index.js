@@ -38,11 +38,14 @@ const TileOrButton = ({ value, onClick }) =>
       </Tile>
 
 const Guest = ({ state, moves }) => (
-  <Board>
-    {state.board && state.board.map((value, position) =>
-      <TileOrButton key={position} value={value} onClick={() => moves.fillSquare({ position })} />
-    )}
-  </Board>
+  <>
+    {moves ? null : <p>Disconnected</p>}
+    <Board>
+      {state.board && state.board.map((value, position) =>
+        <TileOrButton key={position} value={value} onClick={() => moves && moves.fillSquare({ position })} />
+      )}
+    </Board>
+  </>
 )
 
 export default Guest;

@@ -21,27 +21,28 @@ const Board = styled.div`
 
 const Host = ({ state, roomId, moves, connections }) => {
   useEffect(() => {
-    if (connections.length >= 2) {
+    if (!state.board && connections.length >= 2) {
       const [crossesConnId, noughtsConnId] = connections;
       moves.startGame({ crossesConnId, noughtsConnId });
     }
   }, [connections])
 
-  if (connections.length < 2) {
-    return (
-      <Link to={`/guest/${roomId}`}>{window.location.host}/guest/{roomId}</Link>
-    )
-  }
-
   return (
-    <Board>
-      {state.board && state.board.map((value, position) => (
-        <Tile key={position}>
-          {value === NOUGHTS ? "O" : null}
-          {value === CROSSES ? "X" : null}
-        </Tile>
-      ))}
-    </Board>
+    <>
+      {connections.length < 2 && (
+        <Link to={`/guest/${roomId}`}>
+          {window.location.host}#/guest/{roomId}
+        </Link>
+      )}
+      <Board>
+        {state.board && state.board.map((value, position) => (
+          <Tile key={position}>
+            {value === NOUGHTS ? "O" : null}
+            {value === CROSSES ? "X" : null}
+          </Tile>
+        ))}
+      </Board>
+    </>
   );
 }
 

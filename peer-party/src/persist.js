@@ -19,7 +19,6 @@ export const useStorageState = (store, key, defaultValue) => {
   });
 
   useEffect(() => {
-    console.log("store", state);
     store.setItem(key, JSON.stringify(state));
   }, [key, state]);
 

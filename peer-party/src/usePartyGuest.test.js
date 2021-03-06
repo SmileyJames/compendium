@@ -12,8 +12,6 @@ PeerJS.mockImplementation(() => ({
     on: (eventName, callback) => {
       if (eventName === "data") {
         mockReceiveSync = callback;
-      } else {
-        callback();
       }
     },
     send: mockSendEmit,

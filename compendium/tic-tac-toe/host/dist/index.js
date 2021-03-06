@@ -24,7 +24,7 @@ const Host = ({
   connections
 }) => {
   useEffect(() => {
-    if (connections.length >= 2) {
+    if (!state.board && connections.length >= 2) {
       const [crossesConnId, noughtsConnId] = connections;
       moves.startGame({
         crossesConnId,
@@ -32,17 +32,11 @@ const Host = ({
       });
     }
   }, [connections]);
-
-  if (connections.length < 2) {
-    return /*#__PURE__*/React.createElement(Link, {
-      to: `/guest/${roomId}`
-    }, window.location.host, "/guest/", roomId);
-  }
-
-  return /*#__PURE__*/React.createElement(Board, null, state.board && state.board.map((value, position) => /*#__PURE__*/React.createElement(Tile, {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, connections.length < 2 && /*#__PURE__*/React.createElement(Link, {
+    to: `/guest/${roomId}`
+  }, window.location.host, "#/guest/", roomId), /*#__PURE__*/React.createElement(Board, null, state.board && state.board.map((value, position) => /*#__PURE__*/React.createElement(Tile, {
     key: position
-  }, value === NOUGHTS ? "O" : null, value === CROSSES ? "X" : null)));
+  }, value === NOUGHTS ? "O" : null, value === CROSSES ? "X" : null))));
 };
 
 export default Host;
-//# sourceMappingURL=index.js.map
