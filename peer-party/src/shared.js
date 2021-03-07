@@ -21,21 +21,16 @@ export const constructReducer = ({ game, events, roomId }) => (state) => {
   }
 }
 
-export const constructMoves = ({ game, connectionId, roomId, moves, handleMove }) => {
-  moves.current = new Proxy({}, {
+export const constructMoves = ({ game, connectionId, roomId, handleMove }) => {
+  return new Proxy({}, {
     get: (target, key, receiver) => {
-      console.log("key", key)
-      if (key === Symbol.iterator) {
-        const moves = getMoves({ connectionId, roomId, game });
-        console.log(",moves", moves);
-        return moves && moves.keys().bind(target)[Symbol.iterator]
+      const moves = getMoves({ connectionId, roomId, game });
+      if (moves.hasOwnProperty(key)) {
+        return (args) => handleMove({ move: key, args });
+      } else if (key === Symbol.iterator && moves) {
+        return moves.keys().bind(target)[Symbol.iterator]
       } else {
-        try {
-          getMoveFunction({ connectionId, roomId, game, move: key })
-          return (args) => handleMove({ move: key, args });
-        } catch (e) {
-          return Reflect.get(target, key, receiver);
-        }
+        return Reflect.get(target, key, receiver);
       }
     }
   });

@@ -40,7 +40,7 @@ const Guest = ({
 }) => /*#__PURE__*/React.createElement(React.Fragment, null, connected ? null : /*#__PURE__*/React.createElement("p", null, "Disconnected.."), /*#__PURE__*/React.createElement(Board, null, state.board && state.board.map((value, position) => /*#__PURE__*/React.createElement(TileOrButton, {
   key: position,
   value: value,
-  onClick: () => connected && moves.current.fillSquare({
+  onClick: () => connected && moves.fillSquare({
     position
   })
 }))));

@@ -8,14 +8,17 @@ const connect = ({ roomId, peer, conn }) => {
   conn.current = peer.connect(roomId);
 }
 
-const increaseLogSize = ({ setLogSize, value }) => setLogSize(logSize => logSize + value)
+const logSizeToIndex = logSize => {
+  const index = logSize - 1;
+  return (index < 0) ? null : index;
+};
 
 const ack = ({ conn, logSize }) => {
-  conn.current.send({ index: logSize - 1 })
+  conn.current.send({ index: logSizeToIndex(logSize) })
 }
 
 const emit = ({ conn, logSize, move, args }) => {
-  conn.current.send({ index: logSize, move, args })
+  conn.current.send({ index: logSizeToIndex(logSize), move, args })
 }
 
 const sync = ({ setState, setCache, roomId, game, events }) => {
@@ -34,12 +37,12 @@ const preempt = ({ setState, game, move, args, connectionId, roomId }) => {
   }));
 }
 
-const constructMovesHandler = ({ conn, connectionId, moves, setState, game, logSize, roomId }) => {
+const constructMovesHandler = ({ conn, connectionId, setMoves, setState, game, logSize, roomId }) => {
   const handleMove = ({ move, args }) => {
     preempt({ setState, game, move, args, roomId, connectionId })
     emit({ conn, move, args, logSize })
   }
-  constructMoves({ game, connectionId, roomId, moves, handleMove });
+  setMoves(() => constructMoves({ game, connectionId, roomId, handleMove }));
 }
 
 const useConnection = ({ id, roomId }) => {
@@ -90,11 +93,11 @@ const usePartyGuest = ({ roomId, game }) => {
     0
   );
   const { connected, conn, data, clearData } = useConnection({ id, roomId })
-  const moves = useRef();
+  const [moves, setMoves] = useState(null);
   useEffect(() => {
     if (!connected) return;
-    constructMovesHandler({ conn, connectionId: id, moves, setState, roomId, game, logSize })
-  }, [connected, conn.current, id, moves.current, setState, roomId, game, logSize])
+    constructMovesHandler({ conn, connectionId: id, setMoves, setState, roomId, game, logSize })
+  }, [connected, conn.current, id, setMoves, setState, roomId, game, logSize])
 
   useEffect(() => {
     if (!conn.current) return;
@@ -105,7 +108,7 @@ const usePartyGuest = ({ roomId, game }) => {
     if (!data || !data.length) return;
     const events = [...data]
     clearData();
-    increaseLogSize({ setLogSize, value: events.length });
+    setLogSize(events[events.length - 1].index + 1);
     sync({ setState, roomId, game, events })
   }, [data, clearData, game, roomId, setLogSize, setState])
 

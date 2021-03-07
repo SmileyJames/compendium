@@ -42,7 +42,7 @@ const Guest = ({ connected, state, moves }) => (
     {connected ? null : <p>Disconnected..</p>}
     <Board>
       {state.board && state.board.map((value, position) =>
-        <TileOrButton key={position} value={value} onClick={() => connected && moves.current.fillSquare({ position })} />
+        <TileOrButton key={position} value={value} onClick={() => connected && moves.fillSquare({ position })} />
       )}
     </Board>
   </>

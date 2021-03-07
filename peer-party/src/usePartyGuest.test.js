@@ -63,7 +63,7 @@ describe("usePartyGuest", () => {
     expect(result.current.state.number).toBe(0);
     expect(mockSendEmit).toHaveBeenCalledWith({
       args: undefined,
-      index: 0,
+      index: null,
       move: "start",
     });
 
@@ -74,7 +74,7 @@ describe("usePartyGuest", () => {
     expect(result.current.state.number).toBe(1);
     expect(mockSendEmit).toHaveBeenLastCalledWith({
       args: undefined,
-      index: 0,
+      index: null,
       move: "increment",
     });
 

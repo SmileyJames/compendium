@@ -11,11 +11,11 @@ const validateEvent = (event, validMoves) => (
   validMoves.findIndex((m) => m === event.move) > -1
 )
 
-const constructMovesHandler = ({ moves, game, setState, roomId, setEventLog }) => {
+const constructMovesHandler = ({ setMoves, game, setState, roomId, setEventLog }) => {
   const handleMove = ({ move, args }) => {
     logEvent({ setEventLog, event: { move, args }, connectionId: roomId })
   };
-  constructMoves({ game, connectionId: roomId, roomId, moves, handleMove });
+  setMoves(() => constructMoves({ game, connectionId: roomId, roomId, handleMove }))
 }
 
 const appendConnection = ({ setConnections, conn }) => {
@@ -50,10 +50,16 @@ const useConnections = ({ game, roomId, setState, eventLog, setEventLog }) => {
       });
 
       conn.on("data", ({ index, ...event }) => {
-        if (!isInteger(index)) return;
-        updateLogSizeMap({ conn, connectionLogSizeMap, size: index + 1 });
-        if (!validateEvent(event, Object.keys(game.guestMoves))) return;
-        logEvent({ setEventLog, event, connectionId: conn.peer })
+        if (isInteger(index)) {
+          updateLogSizeMap({ conn, connectionLogSizeMap, size: index + 1 });
+        }
+        
+        if (
+          (isInteger(index) || index === null) &&
+          validateEvent(event, Object.keys(game.guestMoves))
+        ) {
+          logEvent({ setEventLog, event, connectionId: conn.peer });
+        }
       })
 
       conn.on("close", () => {
@@ -71,7 +77,7 @@ const useConnections = ({ game, roomId, setState, eventLog, setEventLog }) => {
 }
 
 const usePartyHost = ({ roomId, game }) => {
-  const moves = useRef();
+  const [moves, setMoves] = useState(null);
   const logSize = useRef();
   const [state, setState]  = useStorageState(
     window.localStorage,
@@ -88,7 +94,7 @@ const usePartyHost = ({ roomId, game }) => {
 
   useEffect(() => {
     if (!game) return;
-    constructMovesHandler({ moves, game, setState, roomId, setEventLog });
+    constructMovesHandler({ setMoves, game, setState, roomId, setEventLog });
   }, [roomId, game, setState, setEventLog]);
 
   useEffect(() => {
