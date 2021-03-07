@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export const useStorageState = (store, key, defaultValue) => {
+const usePersist = (store, key, defaultValue) => {
   const [state, setState] = useState(
     () => (
       JSON.parse(store.getItem(key)) || 
@@ -24,3 +24,5 @@ export const useStorageState = (store, key, defaultValue) => {
 
   return [state, setState];
 }
+
+export default usePersist;

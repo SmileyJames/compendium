@@ -1,4 +1,4 @@
-import usePartyHost from "./usePartyHost";
-import usePartyGuest from "./usePartyGuest";
+import usePartyHost from "./host/usePartyHost";
+import usePartyGuest from "./guest/usePartyGuest";
 
 export { usePartyHost, usePartyGuest }

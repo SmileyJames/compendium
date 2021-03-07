@@ -8,7 +8,7 @@ const destructPeer = ({ setPeer }) => {
   })
 };
 
-export const usePeer = (id) => {
+const usePeer = (id) => {
   const [peer, setPeer] = useState();
   const [open, setOpen] = useState(false);
   const [attempts, countAttempt] = useReducer(a => a + 1, 0);
@@ -48,3 +48,5 @@ export const usePeer = (id) => {
 
   return { open, peer }
 }
+
+export default usePeer;
