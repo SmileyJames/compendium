@@ -19,10 +19,6 @@ export const usePeer = (id, onOpen, dependants) => {
 
     constructPeer({ peer, id });
 
-    const timeout = setTimeout(() => {
-      !open && setOpen(o => o); // retry if not open in 100ms
-    }, 100);
-
     peer.current.on("open", () => {
       setOpen(true)
       onOpen(peer.current)

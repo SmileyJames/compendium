@@ -100,9 +100,9 @@ const usePartyGuest = ({ roomId, game }) => {
   }, [connected, conn.current, id, setMoves, setState, roomId, game, logSize])
 
   useEffect(() => {
-    if (!conn.current) return;
+    if (!connected) return;
     ack({ conn, logSize })
-  }, [conn.current, logSize]);
+  }, [connected, conn.current, logSize]);
 
   useEffect(() => {
     if (!data || !data.length) return;

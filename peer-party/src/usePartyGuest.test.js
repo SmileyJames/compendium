@@ -50,10 +50,6 @@ describe("usePartyGuest", () => {
     );
 
     expect(result.current.state).toBeTruthy();
-    expect(result.current.moves).toBeFalsy();
-
-    rerender();
-
     expect(result.current.moves).toBeTruthy();
 
     act(() => {
