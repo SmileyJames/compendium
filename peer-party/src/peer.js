@@ -1,39 +1,50 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useReducer } from "react";
 import Peer from "peerjs";
 
-const constructPeer = ({ peer, id }) => {
-  peer.current = new Peer(id);
-}
+const destructPeer = ({ setPeer }) => {
+  setPeer(peer => {
+    peer && peer.destroy();
+    return null
+  })
+};
 
-const destructPeer = ({ peer }) => {
-  peer.current.destroy();
-  peer.current = null;
-}
-
-export const usePeer = (id, onOpen, dependants) => {
-  const peer = useRef();
+export const usePeer = (id) => {
+  const [peer, setPeer] = useState();
   const [open, setOpen] = useState(false);
+  const [attempts, countAttempt] = useReducer(a => a + 1, 0);
 
   useEffect(() => {
     if (open) return;
 
-    constructPeer({ peer, id });
+    const peer = new Peer(id);
+    setPeer(peer);
 
-    peer.current.on("open", () => {
-      setOpen(true)
-      onOpen(peer.current)
+    const retry = () => {
+      setOpen(false);
+      destructPeer({ setPeer });
+      countAttempt();
+    };
+
+    let timeout = setTimeout(retry, 1000);
+
+    peer.on("open", () => {
+      clearTimeout(timeout);
+      setOpen(true);
     });
 
-    const onConnectionClosed = () => setOpen(false);
-    peer.current.on("close", onConnectionClosed);
-    peer.current.on("disconnected", onConnectionClosed);
-    peer.current.on("error", onConnectionClosed);
+    const onConnectionClosed = () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(retry, 1000);
+    }
+    peer.on("close", onConnectionClosed);
+    peer.on("disconnected", onConnectionClosed);
+    peer.on("error", onConnectionClosed);
 
     return () => {
-      destructPeer({ peer });
+      destructPeer({ setPeer });
       clearTimeout(timeout);
     }
-  }, dependants)
+  }, [attempts, id])
 
-  return open;
+  return { open, peer }
 }

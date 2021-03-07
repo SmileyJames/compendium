@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useReducer } from "react";
 import { constructMoves, constructReducer } from "./shared";
 import { usePeer } from "./peer";
 import { useStorageState } from "./persist";
@@ -47,14 +47,25 @@ const constructMovesHandler = ({ conn, connectionId, setMoves, setState, game, l
 
 const useConnection = ({ id, roomId }) => {
   const conn = useRef();
+  const { open, peer } = usePeer(id);
   const [data, setData] = useState([]);
   const [connected, setConnected] = useState(false);
+  const [attempts, countAttempt] = useReducer(a => a + 1, 0);
 
-  const open = usePeer(id, (peer) => {
-    if (conn.current && conn.current.open && conn.current.peer === roomId) return;
+  useEffect(() => {
+    if (!open || connected) return;
+
     connect({ conn, peer, roomId });
 
+    const retry = () => {
+      conn.current = null;
+      setConnected(false);
+      countAttempt();
+    }
+    const timeout = setTimeout(retry, 1000);
+
     conn.current.on("open", () => {
+      clearTimeout(timeout);
       setConnected(true); 
     });
 
@@ -63,14 +74,15 @@ const useConnection = ({ id, roomId }) => {
     });
 
     conn.current.on("close", () => {
-      conn.current = null;
+      clearTimeout(timeout);
+      retry();
     });
 
     conn.current.on("error", (error) => {
       console.error(error)
     });
 
-  }, [conn, roomId]);
+  }, [attempts, open, connected, roomId]);
 
   const clearData = () => setData([]);
   return { connected: open && connected, conn, data, clearData }
@@ -100,7 +112,7 @@ const usePartyGuest = ({ roomId, game }) => {
   }, [connected, conn.current, id, setMoves, setState, roomId, game, logSize])
 
   useEffect(() => {
-    if (!connected) return;
+    if (!conn.current || !connected) return;
     ack({ conn, logSize })
   }, [connected, conn.current, logSize]);
 

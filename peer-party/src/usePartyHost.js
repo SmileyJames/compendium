@@ -40,10 +40,12 @@ const updateState = ({ roomId, setState, game, events }) => {
 }
 
 const useConnections = ({ game, roomId, setState, eventLog, setEventLog }) => {
+  const { peer } = usePeer(roomId);
   const [connections, setConnections] = useState([]);
   const connectionLogSizeMap = useRef({});
 
-  usePeer(roomId, (peer) => {
+  useEffect(() => {
+    if (!peer) return;
     peer.on("connection", (conn) => {
       conn.on("open", () => {
         appendConnection({ setConnections, conn });
@@ -71,7 +73,7 @@ const useConnections = ({ game, roomId, setState, eventLog, setEventLog }) => {
       });
     })
 
-  }, [game, roomId])
+  }, [peer, game, roomId])
 
   return { connections, connectionLogSizeMap }
 }
