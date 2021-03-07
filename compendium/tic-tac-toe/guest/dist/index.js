@@ -34,12 +34,13 @@ const TileOrButton = ({
 }) : /*#__PURE__*/React.createElement(Tile, null, value === NOUGHTS ? "O" : null, value === CROSSES ? "X" : null);
 
 const Guest = ({
+  connected,
   state,
   moves
-}) => /*#__PURE__*/React.createElement(React.Fragment, null, moves ? null : /*#__PURE__*/React.createElement("p", null, "Disconnected"), /*#__PURE__*/React.createElement(Board, null, state.board && state.board.map((value, position) => /*#__PURE__*/React.createElement(TileOrButton, {
+}) => /*#__PURE__*/React.createElement(React.Fragment, null, connected ? null : /*#__PURE__*/React.createElement("p", null, "Disconnected.."), /*#__PURE__*/React.createElement(Board, null, state.board && state.board.map((value, position) => /*#__PURE__*/React.createElement(TileOrButton, {
   key: position,
   value: value,
-  onClick: () => moves && moves.fillSquare({
+  onClick: () => connected && moves.current.fillSquare({
     position
   })
 }))));

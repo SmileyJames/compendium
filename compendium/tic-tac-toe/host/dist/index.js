@@ -26,7 +26,7 @@ const Host = ({
   useEffect(() => {
     if (!state.board && connections.length >= 2) {
       const [crossesConnId, noughtsConnId] = connections;
-      moves.startGame({
+      moves.current.startGame({
         crossesConnId,
         noughtsConnId
       });
@@ -40,3 +40,4 @@ const Host = ({
 };
 
 export default Host;
+//# sourceMappingURL=index.js.map
