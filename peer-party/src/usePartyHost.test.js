@@ -12,9 +12,11 @@ PeerJS.mockImplementation(() => ({
     if (eventName === "connection") {
       callback({
         peer: "hello",
-        on: (_eventName, callback) => {
+        on: (_eventName, _callback) => {
           if (_eventName === "data") {
-            mockReceiveEmit = callback;
+            mockReceiveEmit = _callback;
+          } else if (_eventName === "open") {
+            _callback();
           }
         },
         send: mockSendSync,

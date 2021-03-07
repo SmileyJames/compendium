@@ -37,12 +37,12 @@ const TileOrButton = ({ value, onClick }) =>
         {value === CROSSES ? "X" : null}
       </Tile>
 
-const Guest = ({ state, moves }) => (
+const Guest = ({ connected, state, moves }) => (
   <>
-    {moves ? null : <p>Disconnected</p>}
+    {connected ? null : <p>Disconnected..</p>}
     <Board>
       {state.board && state.board.map((value, position) =>
-        <TileOrButton key={position} value={value} onClick={() => moves && moves.fillSquare({ position })} />
+        <TileOrButton key={position} value={value} onClick={() => connected && moves.current.fillSquare({ position })} />
       )}
     </Board>
   </>

@@ -23,7 +23,7 @@ const Host = ({ state, roomId, moves, connections }) => {
   useEffect(() => {
     if (!state.board && connections.length >= 2) {
       const [crossesConnId, noughtsConnId] = connections;
-      moves.startGame({ crossesConnId, noughtsConnId });
+      moves.current.startGame({ crossesConnId, noughtsConnId });
     }
   }, [connections])
 

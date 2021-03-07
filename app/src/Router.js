@@ -16,9 +16,9 @@ const GuestRoute = () => {
   const id = useConnectionId();
   const { roomId } = useParams();
   const { Guest, game } = useGame(roomId);
-  const { state, moves } = usePartyGuest({ id, roomId, game });
+  const { connected, state, moves } = usePartyGuest({ id, roomId, game });
   return (
-    Guest && <Guest connectionId={id} roomId={roomId} state={state} moves={moves}/>
+    Guest && <Guest connectionId={id} roomId={roomId} connected={connected} state={state} moves={moves}/>
   )
 }
 

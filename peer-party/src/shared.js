@@ -24,8 +24,11 @@ export const constructReducer = ({ game, events, roomId }) => (state) => {
 export const constructMoves = ({ game, connectionId, roomId, moves, handleMove }) => {
   moves.current = new Proxy({}, {
     get: (target, key, receiver) => {
+      console.log("key", key)
       if (key === Symbol.iterator) {
-        return getMoves({ connectionId, roomId, game }).keys().bind(target);
+        const moves = getMoves({ connectionId, roomId, game });
+        console.log(",moves", moves);
+        return moves && moves.keys().bind(target)[Symbol.iterator]
       } else {
         try {
           getMoveFunction({ connectionId, roomId, game, move: key })
