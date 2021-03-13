@@ -1606,7 +1606,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "commander",
-        "npm:4.1.1"
+        "npm:2.20.3"
       ],
       [
         "common-tags",
@@ -2049,6 +2049,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:6.5.4"
       ],
       [
+        "email-addresses",
+        "npm:3.1.0"
+      ],
+      [
         "emittery",
         "npm:0.7.2"
       ],
@@ -2329,6 +2333,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:1.0.0"
       ],
       [
+        "filename-reserved-regex",
+        "npm:1.0.0"
+      ],
+      [
+        "filenamify",
+        "npm:1.2.1"
+      ],
+      [
+        "filenamify-url",
+        "npm:1.0.0"
+      ],
+      [
         "filesize",
         "npm:6.1.0"
       ],
@@ -2346,7 +2362,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "find-cache-dir",
-        "npm:2.1.0"
+        "npm:3.3.1"
       ],
       [
         "find-up",
@@ -2410,7 +2426,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "fs-extra",
-        "npm:9.1.0"
+        "npm:8.1.0"
       ],
       [
         "fs-minipass",
@@ -2475,6 +2491,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [
         "getpass",
         "npm:0.1.7"
+      ],
+      [
+        "gh-pages",
+        "npm:3.1.0"
       ],
       [
         "glob",
@@ -2663,6 +2683,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [
         "human-signals",
         "npm:1.1.1"
+      ],
+      [
+        "humanize-url",
+        "npm:1.0.1"
       ],
       [
         "iconv-lite",
@@ -3254,7 +3278,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "make-dir",
-        "npm:2.1.0"
+        "npm:3.1.0"
       ],
       [
         "makeerror",
@@ -4769,6 +4793,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:3.1.1"
       ],
       [
+        "strip-outer",
+        "npm:1.0.1"
+      ],
+      [
+        "strip-url-auth",
+        "npm:1.0.1"
+      ],
+      [
         "style-loader",
         "virtual:4e44f3562a37979133472905a8d61e0f66c0b23920b58c619f5932431f2634a8fb91a1a7aea124543772edbec2832809b671c41e250a0a907702a5371624e1e0#npm:1.3.0"
       ],
@@ -4905,6 +4937,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:2.0.2"
       ],
       [
+        "trim-repeated",
+        "npm:1.0.0"
+      ],
+      [
         "tryer",
         "npm:1.0.1"
       ],
@@ -5006,7 +5042,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "universalify",
-        "npm:2.0.0"
+        "npm:0.1.2"
       ],
       [
         "unpipe",
@@ -5351,7 +5387,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
             ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
             ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
-            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"]
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
+            ["gh-pages", "npm:3.1.0"]
           ],
           "linkType": "SOFT",
         }]
@@ -11056,6 +11093,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "npm:5.11.9"],
             ["@testing-library/react", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:11.2.5"],
             ["@testing-library/user-event", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:12.7.2"],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
             ["lodash", "npm:4.17.21"],
             ["random-words", "npm:1.1.1"],
             ["react", "npm:17.0.1"],
@@ -11074,6 +11123,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@compendium/compendium", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:compendium"],
             ["@compendium/tic-tac-toe", "virtual:cdf21b27b6c3daaf108ceaf7d7fd8d4e6ee508a00b22da3e7f3cf52f396ab9a4a9d21d5bc204824fb8548734b3c861d6a0f94cdbba75f657bc6f6b1016ab750a#workspace:compendium/tic-tac-toe"],
             ["@types/react-router-dom", null],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
             ["react-router-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:5.2.0"]
           ],
           "packagePeers": [
@@ -11086,7 +11147,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./compendium/",
           "packageDependencies": [
             ["@compendium/compendium", "workspace:compendium"],
-            ["@compendium/tic-tac-toe", "virtual:61518096874b77ad7c1a718b2e92a21faf0072e3731cbb7bb2a5278c7b800a0e90be2f9ab438b2b47ce119fd0d8152a06152e05112e780f7940df3f96596f587#workspace:compendium/tic-tac-toe"]
+            ["@compendium/tic-tac-toe", "virtual:61518096874b77ad7c1a718b2e92a21faf0072e3731cbb7bb2a5278c7b800a0e90be2f9ab438b2b47ce119fd0d8152a06152e05112e780f7940df3f96596f587#workspace:compendium/tic-tac-toe"],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"]
           ],
           "linkType": "SOFT",
         }]
@@ -11102,7 +11175,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/runtime", "npm:7.13.8"],
             ["@testing-library/react-hooks", "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:5.0.3"],
             ["@types/react", null],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
             ["babel-jest", "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:26.6.3"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
             ["jest", "npm:26.6.3"],
             ["lodash", "npm:4.17.21"],
             ["peerjs", "npm:1.3.1"],
@@ -11125,7 +11210,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-env", "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:7.13.8"],
             ["@babel/runtime", "npm:7.13.8"],
             ["@testing-library/react-hooks", "virtual:29fd00f995b33745eab8128c4c7cef8f5a82c4bafc7d6475370328bde6c93f66f91aa22c6effebab97f04080e5a749b7dea8e6e98f6431e08b6183f4c84d066b#npm:5.0.3"],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
             ["babel-jest", "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:26.6.3"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
             ["jest", "npm:26.6.3"],
             ["lodash", "npm:4.17.21"],
             ["peerjs", "npm:1.3.1"],
@@ -11152,7 +11249,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
             ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
             ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
-            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"]
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
+            ["gh-pages", "npm:3.1.0"]
           ],
           "linkType": "SOFT",
         }]
@@ -11166,6 +11264,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@compendium/tic-tac-toe-guest", "workspace:compendium/tic-tac-toe/guest"],
             ["@compendium/tic-tac-toe-host", "virtual:3047bd321067d4932deb1ab0f0c575e50e6b231ab3170288c7534bb9cbed70f6df2efb5583493020fbbdc944f28a39cba246cf1414ed0aa9ad5135e408b449b5#workspace:compendium/tic-tac-toe/host"],
             ["@types/react-router-dom", null],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
             ["react-router-dom", null]
           ],
           "packagePeers": [
@@ -11182,6 +11292,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@compendium/tic-tac-toe-guest", "workspace:compendium/tic-tac-toe/guest"],
             ["@compendium/tic-tac-toe-host", "virtual:e7044e863d72d197971bb6e46f02b99822f4b3f4ac35aa9909bbb1cd2dd931ff6145a0dcf0e43036c1c3601f2f94a3defd970d367ad2659e0adbdeb9e003a73f#workspace:compendium/tic-tac-toe/host"],
             ["@types/react-router-dom", null],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
             ["react-router-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:5.2.0"]
           ],
           "packagePeers": [
@@ -11196,7 +11318,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@compendium/tic-tac-toe", "workspace:compendium/tic-tac-toe"],
             ["@compendium/tic-tac-toe-game", "workspace:compendium/tic-tac-toe/game"],
             ["@compendium/tic-tac-toe-guest", "workspace:compendium/tic-tac-toe/guest"],
-            ["@compendium/tic-tac-toe-host", "virtual:3047bd321067d4932deb1ab0f0c575e50e6b231ab3170288c7534bb9cbed70f6df2efb5583493020fbbdc944f28a39cba246cf1414ed0aa9ad5135e408b449b5#workspace:compendium/tic-tac-toe/host"]
+            ["@compendium/tic-tac-toe-host", "virtual:3047bd321067d4932deb1ab0f0c575e50e6b231ab3170288c7534bb9cbed70f6df2efb5583493020fbbdc944f28a39cba246cf1414ed0aa9ad5135e408b449b5#workspace:compendium/tic-tac-toe/host"],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"]
           ],
           "linkType": "SOFT",
         }]
@@ -11205,7 +11339,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ["workspace:compendium/tic-tac-toe/game", {
           "packageLocation": "./compendium/tic-tac-toe/game/",
           "packageDependencies": [
-            ["@compendium/tic-tac-toe-game", "workspace:compendium/tic-tac-toe/game"]
+            ["@compendium/tic-tac-toe-game", "workspace:compendium/tic-tac-toe/game"],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"]
           ],
           "linkType": "SOFT",
         }]
@@ -11219,6 +11365,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/core", "npm:7.13.1"],
             ["@babel/preset-react", "virtual:ecf8f9ddd09e3659a9aa9845a7553b4df6092b5e5055eb4798bb98877e3fbb1d9a7f2a4134574d435dc9aaf54b00204b402898745272d14e669fa16780cd7069#npm:7.12.13"],
             ["@compendium/tic-tac-toe-game", "workspace:compendium/tic-tac-toe/game"],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
             ["react", "npm:17.0.1"],
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
@@ -11240,6 +11398,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", null],
             ["@types/react-is", null],
             ["@types/react-router-dom", null],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
             ["react", "npm:17.0.1"],
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
@@ -11267,6 +11437,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", null],
             ["@types/react-is", null],
             ["@types/react-router-dom", null],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
             ["react", "npm:17.0.1"],
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
@@ -11290,6 +11472,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/core", "npm:7.13.1"],
             ["@babel/preset-react", "virtual:ecf8f9ddd09e3659a9aa9845a7553b4df6092b5e5055eb4798bb98877e3fbb1d9a7f2a4134574d435dc9aaf54b00204b402898745272d14e669fa16780cd7069#npm:7.12.13"],
             ["@compendium/tic-tac-toe-game", "workspace:compendium/tic-tac-toe/game"],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
             ["react", "npm:17.0.1"],
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
@@ -16666,6 +16860,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["email-addresses", [
+        ["npm:3.1.0", {
+          "packageLocation": "./.yarn/cache/email-addresses-npm-3.1.0-332eec577b-657c0cd22f.zip/node_modules/email-addresses/",
+          "packageDependencies": [
+            ["email-addresses", "npm:3.1.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["emittery", [
         ["npm:0.7.2", {
           "packageLocation": "./.yarn/cache/emittery-npm-0.7.2-4a6f20265e-34acfef519.zip/node_modules/emittery/",
@@ -17860,6 +18063,38 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["filename-reserved-regex", [
+        ["npm:1.0.0", {
+          "packageLocation": "./.yarn/cache/filename-reserved-regex-npm-1.0.0-5f811f7513-3e68d59ab8.zip/node_modules/filename-reserved-regex/",
+          "packageDependencies": [
+            ["filename-reserved-regex", "npm:1.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["filenamify", [
+        ["npm:1.2.1", {
+          "packageLocation": "./.yarn/cache/filenamify-npm-1.2.1-3a2a0f712b-e728fb0020.zip/node_modules/filenamify/",
+          "packageDependencies": [
+            ["filenamify", "npm:1.2.1"],
+            ["filename-reserved-regex", "npm:1.0.0"],
+            ["strip-outer", "npm:1.0.1"],
+            ["trim-repeated", "npm:1.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["filenamify-url", [
+        ["npm:1.0.0", {
+          "packageLocation": "./.yarn/cache/filenamify-url-npm-1.0.0-91e5277c89-aca589e180.zip/node_modules/filenamify-url/",
+          "packageDependencies": [
+            ["filenamify-url", "npm:1.0.0"],
+            ["filenamify", "npm:1.2.1"],
+            ["humanize-url", "npm:1.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["filesize", [
         ["npm:6.1.0", {
           "packageLocation": "./.yarn/cache/filesize-npm-6.1.0-2e4a55b596-5c0c4be486.zip/node_modules/filesize/",
@@ -18357,6 +18592,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["getpass", "npm:0.1.7"],
             ["assert-plus", "npm:1.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["gh-pages", [
+        ["npm:3.1.0", {
+          "packageLocation": "./.yarn/cache/gh-pages-npm-3.1.0-ac227ed26d-cd329b21f2.zip/node_modules/gh-pages/",
+          "packageDependencies": [
+            ["gh-pages", "npm:3.1.0"],
+            ["async", "npm:2.6.3"],
+            ["commander", "npm:2.20.3"],
+            ["email-addresses", "npm:3.1.0"],
+            ["filenamify-url", "npm:1.0.0"],
+            ["find-cache-dir", "npm:3.3.1"],
+            ["fs-extra", "npm:8.1.0"],
+            ["globby", "npm:6.1.0"]
           ],
           "linkType": "HARD",
         }]
@@ -18977,6 +19228,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/human-signals-npm-1.1.1-616b2586c2-cac115f635.zip/node_modules/human-signals/",
           "packageDependencies": [
             ["human-signals", "npm:1.1.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["humanize-url", [
+        ["npm:1.0.1", {
+          "packageLocation": "./.yarn/cache/humanize-url-npm-1.0.1-ee29b77626-12c3f677a5.zip/node_modules/humanize-url/",
+          "packageDependencies": [
+            ["humanize-url", "npm:1.0.1"],
+            ["normalize-url", "npm:1.9.1"],
+            ["strip-url-auth", "npm:1.0.1"]
           ],
           "linkType": "HARD",
         }]
@@ -26156,6 +26418,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["strip-outer", [
+        ["npm:1.0.1", {
+          "packageLocation": "./.yarn/cache/strip-outer-npm-1.0.1-4ed024bb0a-5a01031e8b.zip/node_modules/strip-outer/",
+          "packageDependencies": [
+            ["strip-outer", "npm:1.0.1"],
+            ["escape-string-regexp", "npm:1.0.5"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["strip-url-auth", [
+        ["npm:1.0.1", {
+          "packageLocation": "./.yarn/cache/strip-url-auth-npm-1.0.1-2bb8524f3b-3b0b45e942.zip/node_modules/strip-url-auth/",
+          "packageDependencies": [
+            ["strip-url-auth", "npm:1.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["style-loader", [
         ["npm:1.3.0", {
           "packageLocation": "./.yarn/cache/style-loader-npm-1.3.0-2047b33843-4654b5178c.zip/node_modules/style-loader/",
@@ -26660,6 +26941,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["tr46", "npm:2.0.2"],
             ["punycode", "npm:2.1.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["trim-repeated", [
+        ["npm:1.0.0", {
+          "packageLocation": "./.yarn/cache/trim-repeated-npm-1.0.0-1152152315-f65350e327.zip/node_modules/trim-repeated/",
+          "packageDependencies": [
+            ["trim-repeated", "npm:1.0.0"],
+            ["escape-string-regexp", "npm:1.0.5"]
           ],
           "linkType": "HARD",
         }]

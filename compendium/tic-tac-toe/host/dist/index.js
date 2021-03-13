@@ -40,4 +40,3 @@ const Host = ({
 };
 
 export default Host;
-//# sourceMappingURL=index.js.map
