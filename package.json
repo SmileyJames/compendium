@@ -4,8 +4,7 @@
   "version": "1.0.1",
   "main": "index.js",
   "repository": "https://github.com/SmileyJames/compendium",
-  "author": "James O'Toole",
-  "workspaces": [
+  "author": "James O'Toole", "workspaces": [
     "app",
     "peer-party",
     "compendium"
@@ -22,16 +21,23 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
-    "eslint-plugin-testing-library": "^3.9.0"
+    "eslint-plugin-testing-library": "^3.9.0",
+    "husky": "4",
+    "lint-staged": "^10.5.4"
   },
   "scripts": {
     "lint": "yarn workspaces foreach -p run lint",
     "lint:fix": "yarn workspaces foreach -p run lint:fix",
     "test": "yarn workspaces foreach -p run test",
-    "build": "yarn workspaces foreach -pt run build",
-    "deploy": "gh-pages -d ./app/build"
+    "build": "yarn workspaces foreach -pt run build"
   },
-  "dependencies": {
-    "gh-pages": "^3.1.0"
+  "lint-staged": {
+    "*.js": "eslint --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test"
+    }
   }
 }
