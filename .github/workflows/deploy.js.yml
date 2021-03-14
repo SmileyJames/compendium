@@ -27,4 +27,8 @@ jobs:
     - run: yarn lint
     - run: yarn build
     - run: yarn test
-    - run: yarn deploy
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@4.1.0
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: app/build # The folder the action should deploy.
