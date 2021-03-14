@@ -8,6 +8,8 @@ const destructPeer = ({ setPeer }) => {
   })
 };
 
+const opts = { host: "peerjs.92k.de", secure: true };
+
 const usePeer = (id) => {
   const [peer, setPeer] = useState();
   const [open, setOpen] = useState(false);
@@ -16,7 +18,7 @@ const usePeer = (id) => {
   useEffect(() => {
     if (open) return;
 
-    const peer = new Peer(id);
+    const peer = new Peer(id, opts);
     setPeer(peer);
 
     const retry = () => {
