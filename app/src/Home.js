@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { createRoomId } from "./rooms";
-import compendium from "@compendium/compendium";
+import compendium from "./compendium";
 
 const NewGame = ({ onNewGame }) => {
   const [value, set] = useState(0);

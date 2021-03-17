@@ -4,10 +4,11 @@
   "version": "1.0.1",
   "main": "index.js",
   "repository": "https://github.com/SmileyJames/compendium",
-  "author": "James O'Toole", "workspaces": [
+  "author": "James O'Toole",
+  "workspaces": [
     "app",
     "peer-party",
-    "compendium"
+    "compendium/*"
   ],
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.0.0",
@@ -23,13 +24,15 @@
     "eslint-plugin-react-hooks": "^4.0.8",
     "eslint-plugin-testing-library": "^3.9.0",
     "husky": "4",
-    "lint-staged": "^10.5.4"
+    "lint-staged": "^10.5.4",
+    "plop": "^2.7.4"
   },
   "scripts": {
     "lint": "yarn workspaces foreach -p run lint",
     "lint:fix": "yarn workspaces foreach -p run lint:fix",
     "test": "yarn workspaces foreach -p run test",
-    "build": "yarn workspaces foreach -pt run build"
+    "build": "yarn workspaces foreach -pt run build",
+    "plop": "plop"
   },
   "lint-staged": {
     "*.js": "eslint --fix"

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import compendium from "@compendium/compendium";
+import compendium from "./compendium";
 import randomWords from "random-words";
 import isEqual from "lodash/isEqual";
 

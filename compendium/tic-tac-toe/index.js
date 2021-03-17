@@ -4,4 +4,6 @@ import Guest from "@compendium/tic-tac-toe-guest";
 
 const name = "Tic Tac Toe";
 
-export default { name, Host, Guest, game };
+const TicTacToe = { name, Host, Guest, game };
+
+export default TicTacToe;

@@ -1,15 +1,14 @@
 import React from 'react';
 
-import compendium from "@compendium/compendium";
+import TicTacToe from "@compendium/tic-tac-toe";
 
-const TicTacToeHost = compendium[0].Host;
 
 export default {
   title: 'Tic Tac Toe Host',
-  component: TicTacToeHost,
+  component: TicTacToe.Host,
 };
 
-const Template = (args) => <TicTacToeHost {...args} />;
+const Template = (args) => <TicTacToe.Host {...args} />;
 
 export const EmptyBoard = Template.bind({});
 EmptyBoard.args = {
