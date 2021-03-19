@@ -1,6 +1,6 @@
 # Compendium
 
-A compendium of games
+A compendium of games.
 
 ## Getting Started
 
@@ -24,6 +24,19 @@ The app package contains the application, that's where the server can be started
 ```
 cd app
 yarn start # yarn start will start the development server
+yarn start-storybook # Render game's React components in given example states
 ```
 
 The app README has helpful commands listed also.
+
+## Creating a New Game
+
+A compendium has many games! Let's make another!
+
+```
+yarn plop
+# Answer prompts for the plop template generator
+cd app
+yarn add @compendium/my-game
+yarn start-storybook # Your newly generated game's components will we run by storybook
+```
