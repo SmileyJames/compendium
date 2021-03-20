@@ -1,5 +1,5 @@
 import React from 'react';
-import PlayingCard from "@compendium/playing-card";
+import PlayingCard, { ACE } from "@compendium/playing-card";
 
 
 export default {
@@ -9,8 +9,8 @@ export default {
 
 const Template = ({ value, suit }) => <PlayingCard value={value} suit={suit} />
 
-export const PlayingCardStory = Template.bind({});
-PlayingCardStory.args = {
-  value: 3,
-  suit: "H",
+export const AceOfSpades = Template.bind({});
+AceOfSpades.args = {
+  value: ACE,
+  suit: "S",
 };

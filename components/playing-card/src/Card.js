@@ -78,22 +78,16 @@ class Card extends Component {
 }
 
 class CardBack extends Card {
-  constructor(props) {
-    super(props)
-    this.colour = props.back
-  }
-
   getAlt() {
     return '🂠 Card Back'
   }
 
   getSrc() {
-    if (this.colour === 'R') {
+    if (this.props.colour === 'R') {
       return RED_BACK
-    } else if (this.colour === 'B') {
+    } else if (this.props.colour === 'B') {
       return BLUE_BACK
     }
-    throw new Error('Card back not found')
   }
 }
 
