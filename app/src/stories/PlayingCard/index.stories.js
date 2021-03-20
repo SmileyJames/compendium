@@ -7,9 +7,10 @@ export default {
   component: PlayingCard,
 };
 
-const Template = (args) => <PlayingCard {...args} />;
+const Template = ({ value, suit }) => <PlayingCard value={value} suit={suit} />
 
 export const PlayingCardStory = Template.bind({});
 PlayingCardStory.args = {
-  children: "Hello world",
+  value: 3,
+  suit: "H",
 };
