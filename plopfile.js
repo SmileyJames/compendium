@@ -33,64 +33,64 @@ module.exports = (plop) => {
       // Root game package
       {
         type: 'add',
-        path: 'compendium/{{ packageName }}/README.md',
+        path: 'games/{{ packageName }}/README.md',
         templateFile: 'templates/game/README.md.hbs'
       },
       {
         type: 'add',
-        path: 'compendium/{{ packageName }}/index.js',
+        path: 'games/{{ packageName }}/index.js',
         templateFile: 'templates/game/index.js.hbs'
       },
       {
         type: 'add',
-        path: 'compendium/{{ packageName }}/package.json',
+        path: 'games/{{ packageName }}/package.json',
         templateFile: 'templates/game/package.json.hbs'
       },
       // Client package
       {
         type: 'add',
-        path: 'compendium/{{ packageName }}/client/README.md',
+        path: 'games/{{ packageName }}/client/README.md',
         templateFile: 'templates/game/client/README.md.hbs'
       },
       {
         type: 'add',
-        path: 'compendium/{{ packageName }}/client/package.json',
+        path: 'games/{{ packageName }}/client/package.json',
         templateFile: 'templates/game/client/package.json.hbs'
       },
       {
         type: 'add',
-        path: 'compendium/{{ packageName }}/client/src/index.js',
+        path: 'games/{{ packageName }}/client/src/index.js',
         templateFile: 'templates/game/client/src/index.js.hbs'
       },
       {
         type: 'add',
-        path: 'compendium/{{ packageName }}/client/babel.config.json',
+        path: 'games/{{ packageName }}/client/babel.config.json',
         templateFile: 'templates/game/client/babel.config.json.hbs'
       },
       {
         type: 'add',
-        path: 'compendium/{{ packageName }}/client/src/Host.js',
+        path: 'games/{{ packageName }}/client/src/Host.js',
         templateFile: 'templates/game/client/src/Host.js.hbs'
       },
       {
         type: 'add',
-        path: 'compendium/{{ packageName }}/client/src/Guest.js',
+        path: 'games/{{ packageName }}/client/src/Guest.js',
         templateFile: 'templates/game/client/src/Guest.js.hbs'
       },
       // Game rules package
       {
         type: 'add',
-        path: 'compendium/{{ packageName }}/game/README.md',
+        path: 'games/{{ packageName }}/game/README.md',
         templateFile: 'templates/game/game/README.md.hbs'
       },
       {
         type: 'add',
-        path: 'compendium/{{ packageName }}/game/package.json',
+        path: 'games/{{ packageName }}/game/package.json',
         templateFile: 'templates/game/game/package.json.hbs'
       },
       {
         type: 'add',
-        path: 'compendium/{{ packageName }}/game/src/index.js',
+        path: 'games/{{ packageName }}/game/src/index.js',
         templateFile: 'templates/game/game/src/index.js.hbs'
       },
     ]
