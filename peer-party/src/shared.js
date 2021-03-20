@@ -1,3 +1,14 @@
+import seedrandom from "seedrandom";
+
+export const isSecretMove = ({ connectionId, roomId, game, move }) => {
+  const moveFn = getMoveFunction({ connectionId, roomId, game, move });
+  try {
+    return (moveFn({}) instanceof Function);
+  } catch (e) {
+    return false;
+  }
+}
+
 const getMoves = ({ connectionId, roomId, game }) => (
   connectionId === roomId ? game.hostMoves : game.guestMoves
 );
@@ -11,7 +22,12 @@ export const constructReducer = ({ game, events, roomId }) => (state) => {
     return events.reduce(
       (o, event) => {
         const moveFn = getMoveFunction({ connectionId: event.connectionId, roomId, game, move: event.move })
-        return moveFn({ state: o, connectionId: event.connectionId, args: event.args });
+        let output = moveFn({ state: o, connectionId: event.connectionId, args: event.args });
+        if (output instanceof Function && event.seed) {
+          const rng = seedrandom(event.seed);
+          output = output(rng);
+        }
+        return output;
       },
       state
     );

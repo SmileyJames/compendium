@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { constructMoves, constructReducer } from "../shared";
+import { constructMoves, constructReducer, isSecretMove } from "../shared";
 import { logSizeToIndex } from "./funcs";
 
 export const emit = ({ conn, logSize, move, args }) => {
@@ -16,7 +16,9 @@ export const preempt = ({ setState, game, move, args, connectionId, roomId }) =>
 
 export const constructMovesHandler = ({ conn, connectionId, setMoves, setState, game, logSize, roomId }) => {
   const handleMove = ({ move, args }) => {
-    preempt({ setState, game, move, args, roomId, connectionId })
+    if (!isSecretMove({ connectionId, roomId, game, move })) {
+      preempt({ setState, game, move, args, roomId, connectionId })
+    }
     emit({ conn, move, args, logSize })
   }
   setMoves(() => constructMoves({ game, connectionId, roomId, handleMove }));

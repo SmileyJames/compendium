@@ -34,11 +34,16 @@ const increment = ({ args, state: { number } }) => {
   const output = ({ number: num + increase });
   return output;
 }
+const flipCoin = ({ state }) => (random) => ({
+  ...state,
+  flipped: random() > 0.5
+});
 
 const game = {
   guestMoves: {
     start,
     increment,
+    flipCoin,
   },
   hostMoves: {}
 };
@@ -95,6 +100,43 @@ describe("usePartyGuest", () => {
     expect(result.current.state.number).toBe(6);
     expect(mockSendEmit).toHaveBeenLastCalledWith({
       index: 2,
+    });
+
+    // random move
+    act(() => {
+      result.current.moves.flipCoin();
+    })
+
+    // state stays the same
+    expect(result.current.state.number).toBe(6);
+    expect(result.current.state.flipped).toBe(undefined);
+    // emit with secret request
+    expect(mockSendEmit).toHaveBeenLastCalledWith({
+      args: undefined,
+      index: 2,
+      move: "flipCoin",
+    });
+
+
+    // Receive seed for a move with randomness
+    act(() => {
+      mockReceiveSync([
+        {
+          index: 3,
+          connectionId: "unique-id",
+          seed: "server_secret_decision",
+          args: {},
+          move: "flipCoin",
+        }
+      ])
+    })
+
+    console.log(result.current.state);
+    // state is updated using seeded RNG
+    expect(result.current.state.number).toBe(6);
+    expect(result.current.state.flipped).toBe(true);
+    expect(mockSendEmit).toHaveBeenLastCalledWith({
+      index: 3,
     });
 
     unmount();

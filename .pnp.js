@@ -5728,6 +5728,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:2.12.0"
       ],
       [
+        "seedrandom",
+        "npm:3.0.5"
+      ],
+      [
         "select",
         "npm:1.1.2"
       ],
@@ -15170,6 +15174,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["peerjs", "npm:1.3.1"],
             ["react", "npm:17.0.1"],
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
+            ["seedrandom", "npm:3.0.5"],
             ["uuid", "npm:8.3.2"]
           ],
           "packagePeers": [
@@ -15205,6 +15210,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["peerjs", "npm:1.3.1"],
             ["react", "npm:17.0.1"],
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
+            ["seedrandom", "npm:3.0.5"],
             ["uuid", "npm:8.3.2"]
           ],
           "linkType": "SOFT",
@@ -34809,6 +34815,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/sdp-npm-2.12.0-51e8c6a24c-674e4342b2.zip/node_modules/sdp/",
           "packageDependencies": [
             ["sdp", "npm:2.12.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["seedrandom", [
+        ["npm:3.0.5", {
+          "packageLocation": "./.yarn/cache/seedrandom-npm-3.0.5-6946e8f8db-8ca859bd79.zip/node_modules/seedrandom/",
+          "packageDependencies": [
+            ["seedrandom", "npm:3.0.5"]
           ],
           "linkType": "HARD",
         }]

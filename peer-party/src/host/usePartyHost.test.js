@@ -25,17 +25,22 @@ PeerJS.mockImplementation(() => ({
       callback();
     }
   },
-  id: "hello-world",
+  id: "room-id",
   destroy: () => {},
 }))
 
 const start = () => ({ number: 0 });
 const increment = ({ args, state: { number } }) =>
   ({ number: number + ((args && args.value) || 1) });
+const flipCoin = ({ state }) => (random) => ({
+  ...state,
+  flipped: random() > 0.5
+});
 
 const game = {
   guestMoves: {
     increment,
+    flipCoin,
   },
   hostMoves: {
     start,
@@ -46,7 +51,7 @@ const game = {
 describe("usePartyHost", () => {
   test("The host can call moves locally and maintains a local state", () => {
     const { unmount, result } = renderHook(() =>
-      usePartyHost({ roomId: "hello-world", game })
+      usePartyHost({ roomId: "room-id", game })
     );
 
     expect(result.current.state).toBeTruthy();
@@ -58,7 +63,7 @@ describe("usePartyHost", () => {
 
     expect(result.current.state.number).toBe(0);
     expect(mockSendSync).toHaveBeenCalledWith([
-      { index: 0, args: undefined, connectionId: "hello-world", move: "start" }
+      { index: 0, args: undefined, connectionId: "room-id", move: "start" }
     ])
 
     act(() => {
@@ -67,8 +72,8 @@ describe("usePartyHost", () => {
 
     expect(result.current.state.number).toBe(1);
     expect(mockSendSync).toHaveBeenLastCalledWith([
-      { index: 0, args: undefined, connectionId: "hello-world", move: "start" },
-      { index: 1, args: undefined, connectionId: "hello-world", move: "increment" }
+      { index: 0, args: undefined, connectionId: "room-id", move: "start" },
+      { index: 1, args: undefined, connectionId: "room-id", move: "increment" }
     ])
 
     act(() => {
@@ -84,7 +89,7 @@ describe("usePartyHost", () => {
     })
     expect(result.current.state.number).toBe(2);
     expect(mockSendSync).toHaveBeenLastCalledWith([
-      { index: 2, args: undefined, connectionId: "hello-world", move: "increment" }
+      { index: 2, args: undefined, connectionId: "room-id", move: "increment" }
     ])
 
     act(() => {
@@ -97,8 +102,21 @@ describe("usePartyHost", () => {
 
     expect(result.current.state.number).toBe(4);
     expect(mockSendSync).toHaveBeenLastCalledWith([
-      { index: 2, args: undefined, connectionId: "hello-world", move: "increment" },
+      { index: 2, args: undefined, connectionId: "room-id", move: "increment" },
       { index: 3, args: { value: 2 }, connectionId: "hello", move: "increment" }
+    ])
+
+    act(() => {
+      mockReceiveEmit({
+        index: 3,
+        move: "flipCoin",
+        args: {},
+      })
+    })
+
+    expect(result.current.state.flipped).toBe(true);
+    expect(mockSendSync).toHaveBeenLastCalledWith([
+      { index: 4, args: {}, connectionId: "hello", move: "flipCoin", seed: 0.8619044772223384 }
     ])
 
     unmount();

@@ -22,7 +22,7 @@ const updateLogSizeMap = ({ conn, connectionLogSizeMap, size = 0 }) => {
   connectionLogSizeMap.current[conn.peer] = size
 }
 
-const useConnections = ({ game, roomId, eventLog, setEventLog }) => {
+const useConnections = ({ game, roomId, eventLog, setEventLog, random }) => {
   const { peer } = usePeer(roomId);
   const [connections, setConnections] = useState([]);
   const connectionLogSizeMap = useRef({});
@@ -43,7 +43,7 @@ const useConnections = ({ game, roomId, eventLog, setEventLog }) => {
           (isInteger(index) || index === null) &&
           validateEvent(event, Object.keys(game.guestMoves))
         ) {
-          logEvent({ setEventLog, event, connectionId: conn.peer });
+          logEvent({ setEventLog, event, connectionId: conn.peer, roomId, game, random });
         }
       })
 

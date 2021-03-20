@@ -1,3 +1,4 @@
+import seedrandom from "seedrandom";
 import { useRef, useState, useEffect, useMemo } from "react";
 import { constructMoves, constructReducer } from "../shared";
 import { useStateStore, useEventLogStore } from "./stores";
@@ -7,12 +8,13 @@ import useMoves from "./useMoves";
 import useSendSyncs from "./useSendSyncs";
 
 
-const usePartyHost = ({ roomId, game }) => {
+const usePartyHost = ({ roomId, game, secret }) => {
+  const random = useMemo(() => seedrandom(secret || roomId), [secret, roomId]);
   const { eventLog, setEventLog } = useEventLogStore(roomId);
   const { state } = useGameState({ roomId, game, eventLog });
-  const { connections, connectionLogSizeMap } = useConnections({ game, roomId, eventLog, setEventLog })
+  const { connections, connectionLogSizeMap } = useConnections({ game, roomId, eventLog, setEventLog, random})
   const connectionIds = useMemo(() => connections.map(({ peer }) => peer), [connections])
-  const { moves } = useMoves({ roomId, game, setEventLog });
+  const { moves } = useMoves({ roomId, game, setEventLog, random });
   useSendSyncs({ connections, connectionLogSizeMap, eventLog });
   return { state, moves, connections: connectionIds }
 }
