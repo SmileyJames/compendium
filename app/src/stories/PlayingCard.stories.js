@@ -1,5 +1,5 @@
 import React from 'react';
-import PlayingCard, { ACE, KING, QUEEN, PlayingCardBack, Hand } from "@compendium/playing-card";
+import PlayingCard, { ACE, KING, QUEEN, PlayingCardBack, Hand, FeltTable } from "@compendium/playing-card";
 
 
 export default {
@@ -36,12 +36,14 @@ RedBackedCard.args = {
 };
 
 export const ExampleHand = () => (
-  <Hand>
-    <PlayingCard order={0} value={ACE} suit="H"/>
-    <PlayingCard order={0} value={7} suit="D"/>
-    <PlayingCard order={0} value={KING} suit="D"/>
-    <PlayingCard order={2} canBeSelected={true} value={KING} suit="C"/>
-    <PlayingCard order={3} canBeSelected={true} isSelected={true} selectColor="cyan" value={QUEEN} suit="S"/>
-    <PlayingCard order={1} canBeSelected={true} isSelected={true} value={2} suit="H"/>
-  </Hand>
+  <FeltTable>
+    <Hand>
+      <PlayingCard order={0} value={ACE} suit="H"/>
+      <PlayingCard order={0} value={7} suit="D"/>
+      <PlayingCard order={0} value={KING} suit="D"/>
+      <PlayingCard order={2} canBeSelected={true} value={KING} suit="C"/>
+      <PlayingCard order={3} canBeSelected={true} isSelected={true} selectColor="cyan" value={QUEEN} suit="S"/>
+      <PlayingCard order={1} canBeSelected={true} isSelected={true} value={2} suit="H"/>
+    </Hand>
+  </FeltTable>
 );
