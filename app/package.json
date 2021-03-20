@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@compendium/peer-party": "workspace:peer-party",
-    "@compendium/tic-tac-toe": "workspace:compendium/tic-tac-toe",
+    "@compendium/tic-tac-toe": "workspace:games/tic-tac-toe",
     "lodash": "^4.17.21",
     "random-words": "^1.1.1",
     "react": "^17.0.1",

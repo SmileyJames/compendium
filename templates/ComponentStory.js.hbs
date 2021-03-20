@@ -1,0 +1,15 @@
+import React from 'react';
+import {{ camelCasedName }} from "@compendium/{{ packageName }}";
+
+
+export default {
+  title: '{{ verboseName }}',
+  component: {{ camelCasedName }},
+};
+
+const Template = (args) => <{{ camelCasedName }} {...args} />;
+
+export const {{ camelCasedName }}Story = Template.bind({});
+{{ camelCasedName }}Story.args = {
+  children: "Hello world",
+};

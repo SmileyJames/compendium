@@ -2511,7 +2511,7 @@ __metadata:
   resolution: "@compendium/app@workspace:app"
   dependencies:
     "@compendium/peer-party": "workspace:peer-party"
-    "@compendium/tic-tac-toe": "workspace:compendium/tic-tac-toe"
+    "@compendium/tic-tac-toe": "workspace:games/tic-tac-toe"
     "@mdx-js/react": ^1.6.22
     "@storybook/addon-actions": ^6.1.21
     "@storybook/addon-docs": ^6.1.21
@@ -2602,9 +2602,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@compendium/tic-tac-toe-game@workspace:compendium/tic-tac-toe/game":
+"@compendium/tic-tac-toe-game@workspace:games/tic-tac-toe/game":
   version: 0.0.0-use.local
-  resolution: "@compendium/tic-tac-toe-game@workspace:compendium/tic-tac-toe/game"
+  resolution: "@compendium/tic-tac-toe-game@workspace:games/tic-tac-toe/game"
   dependencies:
     "@typescript-eslint/eslint-plugin": ^4.0.0
     "@typescript-eslint/parser": ^4.0.0
@@ -2621,14 +2621,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@compendium/tic-tac-toe-guest@workspace:compendium/tic-tac-toe/guest":
+"@compendium/tic-tac-toe-guest@workspace:games/tic-tac-toe/guest":
   version: 0.0.0-use.local
-  resolution: "@compendium/tic-tac-toe-guest@workspace:compendium/tic-tac-toe/guest"
+  resolution: "@compendium/tic-tac-toe-guest@workspace:games/tic-tac-toe/guest"
   dependencies:
     "@babel/cli": ^7.13.0
     "@babel/core": ^7.13.1
     "@babel/preset-react": ^7.12.13
-    "@compendium/tic-tac-toe-game": "workspace:compendium/tic-tac-toe/game"
+    "@compendium/tic-tac-toe-game": "workspace:games/tic-tac-toe/game"
     "@typescript-eslint/eslint-plugin": ^4.0.0
     "@typescript-eslint/parser": ^4.0.0
     babel-eslint: ^10.0.0
@@ -2648,14 +2648,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@compendium/tic-tac-toe-host@workspace:compendium/tic-tac-toe/host":
+"@compendium/tic-tac-toe-host@workspace:games/tic-tac-toe/host":
   version: 0.0.0-use.local
-  resolution: "@compendium/tic-tac-toe-host@workspace:compendium/tic-tac-toe/host"
+  resolution: "@compendium/tic-tac-toe-host@workspace:games/tic-tac-toe/host"
   dependencies:
     "@babel/cli": ^7.13.0
     "@babel/core": ^7.13.1
     "@babel/preset-react": ^7.12.13
-    "@compendium/tic-tac-toe-game": "workspace:compendium/tic-tac-toe/game"
+    "@compendium/tic-tac-toe-game": "workspace:games/tic-tac-toe/game"
     "@typescript-eslint/eslint-plugin": ^4.0.0
     "@typescript-eslint/parser": ^4.0.0
     babel-eslint: ^10.0.0
@@ -2680,13 +2680,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@compendium/tic-tac-toe@workspace:compendium/tic-tac-toe":
+"@compendium/tic-tac-toe@workspace:games/tic-tac-toe":
   version: 0.0.0-use.local
-  resolution: "@compendium/tic-tac-toe@workspace:compendium/tic-tac-toe"
+  resolution: "@compendium/tic-tac-toe@workspace:games/tic-tac-toe"
   dependencies:
-    "@compendium/tic-tac-toe-game": "workspace:compendium/tic-tac-toe/game"
-    "@compendium/tic-tac-toe-guest": "workspace:compendium/tic-tac-toe/guest"
-    "@compendium/tic-tac-toe-host": "workspace:compendium/tic-tac-toe/host"
+    "@compendium/tic-tac-toe-game": "workspace:games/tic-tac-toe/game"
+    "@compendium/tic-tac-toe-guest": "workspace:games/tic-tac-toe/guest"
+    "@compendium/tic-tac-toe-host": "workspace:games/tic-tac-toe/host"
     "@typescript-eslint/eslint-plugin": ^4.0.0
     "@typescript-eslint/parser": ^4.0.0
     babel-eslint: ^10.0.0

@@ -8,7 +8,8 @@
   "workspaces": [
     "app",
     "peer-party",
-    "compendium/*"
+    "games/*",
+    "components/*"
   ],
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.0.0",

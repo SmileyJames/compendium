@@ -95,4 +95,54 @@ module.exports = (plop) => {
       },
     ]
   });
+
+  plop.setGenerator('component', {
+    description: 'A re-usable React component and a story',
+    prompts: [
+      {
+        type: 'input',
+        name: 'packageName',
+        message: 'Please enter the package name of your game. (lower-cased-kebab-sticked)'
+      },
+      {
+        type: 'input',
+        name: 'camelCasedName',
+        message: 'Please enter the component name of your game. (CamelCased)'
+      },
+      {
+        type: 'input',
+        name: 'verboseName',
+        message: 'Please enter the verbose name of your game. (Like a Title)'
+      }
+    ],
+    actions: [
+      // Story
+      {
+        type: 'add',
+        path: 'app/src/stories/{{ camelCasedName }}/index.stories.js',
+        templateFile: 'templates/ComponentStory.js.hbs'
+      },
+      // Component package
+      {
+        type: 'add',
+        path: 'components/{{ packageName }}/README.md',
+        templateFile: 'templates/component/README.md.hbs'
+      },
+      {
+        type: 'add',
+        path: 'components/{{ packageName }}/package.json',
+        templateFile: 'templates/component/package.json.hbs'
+      },
+      {
+        type: 'add',
+        path: 'components/{{ packageName }}/babel.config.json',
+        templateFile: 'templates/component/babel.config.json.hbs'
+      },
+      {
+        type: 'add',
+        path: 'components/{{ packageName }}/src/index.js',
+        templateFile: 'templates/component/src/index.js.hbs'
+      },
+    ]
+  });
 }
