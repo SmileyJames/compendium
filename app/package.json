@@ -5,6 +5,7 @@
   "dependencies": {
     "@compendium/emoji": "workspace:components/emoji",
     "@compendium/peer-party": "workspace:peer-party",
+    "@compendium/players": "workspace:components/players",
     "@compendium/playing-card": "workspace:components/playing-card",
     "@compendium/tic-tac-toe": "workspace:games/tic-tac-toe",
     "@compendium/whist": "workspace:games/whist",

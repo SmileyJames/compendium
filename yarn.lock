@@ -2512,6 +2512,7 @@ __metadata:
   dependencies:
     "@compendium/emoji": "workspace:components/emoji"
     "@compendium/peer-party": "workspace:peer-party"
+    "@compendium/players": "workspace:components/players"
     "@compendium/playing-card": "workspace:components/playing-card"
     "@compendium/tic-tac-toe": "workspace:games/tic-tac-toe"
     "@compendium/whist": "workspace:games/whist"
@@ -2613,6 +2614,79 @@ __metadata:
     uuid: ^8.3.2
   peerDependencies:
     react: "*"
+  languageName: unknown
+  linkType: soft
+
+"@compendium/players-client@workspace:components/players/client":
+  version: 0.0.0-use.local
+  resolution: "@compendium/players-client@workspace:components/players/client"
+  dependencies:
+    "@babel/cli": ^7.13.0
+    "@babel/core": ^7.13.1
+    "@babel/preset-react": ^7.12.13
+    "@typescript-eslint/eslint-plugin": ^4.0.0
+    "@typescript-eslint/parser": ^4.0.0
+    babel-eslint: ^10.0.0
+    eslint: ^7.5.0
+    eslint-config-react-app: ^6.0.0
+    eslint-plugin-flowtype: ^5.2.0
+    eslint-plugin-import: ^2.22.0
+    eslint-plugin-jest: ^24.0.0
+    eslint-plugin-jsx-a11y: ^6.3.1
+    eslint-plugin-react: ^7.20.3
+    eslint-plugin-react-hooks: ^4.0.8
+    eslint-plugin-testing-library: ^3.9.0
+    react: ^17.0.1
+    react-dom: ^17.0.1
+    react-is: ^17.0.1
+    styled-components: ^5.2.1
+  peerDependencies:
+    react: "*"
+    react-dom: "*"
+    react-is: "*"
+    react-router-dom: "*"
+  languageName: unknown
+  linkType: soft
+
+"@compendium/players-game@workspace:components/players/game":
+  version: 0.0.0-use.local
+  resolution: "@compendium/players-game@workspace:components/players/game"
+  dependencies:
+    "@typescript-eslint/eslint-plugin": ^4.0.0
+    "@typescript-eslint/parser": ^4.0.0
+    babel-eslint: ^10.0.0
+    eslint: ^7.5.0
+    eslint-config-react-app: ^6.0.0
+    eslint-plugin-flowtype: ^5.2.0
+    eslint-plugin-import: ^2.22.0
+    eslint-plugin-jest: ^24.0.0
+    eslint-plugin-jsx-a11y: ^6.3.1
+    eslint-plugin-react: ^7.20.3
+    eslint-plugin-react-hooks: ^4.0.8
+    eslint-plugin-testing-library: ^3.9.0
+  languageName: unknown
+  linkType: soft
+
+"@compendium/players@workspace:components/players":
+  version: 0.0.0-use.local
+  resolution: "@compendium/players@workspace:components/players"
+  dependencies:
+    "@compendium/players-client": "workspace:components/players/client"
+    "@compendium/players-game": "workspace:components/players/game"
+    "@typescript-eslint/eslint-plugin": ^4.0.0
+    "@typescript-eslint/parser": ^4.0.0
+    babel-eslint: ^10.0.0
+    eslint: ^7.5.0
+    eslint-config-react-app: ^6.0.0
+    eslint-plugin-flowtype: ^5.2.0
+    eslint-plugin-import: ^2.22.0
+    eslint-plugin-jest: ^24.0.0
+    eslint-plugin-jsx-a11y: ^6.3.1
+    eslint-plugin-react: ^7.20.3
+    eslint-plugin-react-hooks: ^4.0.8
+    eslint-plugin-testing-library: ^3.9.0
+  peerDependencies:
+    react-router-dom: "*"
   languageName: unknown
   linkType: soft
 
