@@ -12,6 +12,7 @@
     "lint:fix": "eslint --fix src"
   },
   "dependencies": {
+    "emoji-mart": "^3.0.1",
     "styled-components": "^5.2.1",
     "twemoji": "^13.0.2"
   },

@@ -1,53 +1,30 @@
-import React, { useState, useReducer } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import Emoji from "@compendium/emoji";
-import { Picker } from 'emoji-mart';
-import 'emoji-mart/css/emoji-mart.css';
+import Emoji, { EmojiPicker } from "@compendium/emoji";
 
-const Background = styled.div`
-  background-color: rgba(0, 0, 0, 0.8);
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const Wrapper = styled.div`
-  display: inline-block;
-`;
- 
-const EmojiPicker = ({ onSelectEmoji, onHide }) => {
-  const onSelect = (emoji) => {
-    onSelectEmoji(emoji.native);
-  }
-  return (
-    <Background tabIndex onKeyPress={onHide} onClick={onHide}>
-      <Wrapper onClick={(e) => e.stopPropagation()}>
-        <Picker onSelect={onSelect} set="twitter" />
-      </Wrapper>
-    </Background>
-  );
-};
-
-const Name = styled.h1`
-
+const Row = styled.div`
+  text-align: center;
 `;
 
 const Main = styled.main`
   display: flex;
-  flex-direction: column;
+  flex-direction: column;d
 `;
 
 const Input = styled.input`
-
+  border-radius: 0.2em;
+  border: solid 1px grey;
+  padding: 0.3em 0.6em;
+  margin: 0.6em
 `;
 
 const Button = styled.button`
-
+  border-radius: 0.2em;
+  background-color: rgb(10, 50, 200);
+  color: white;
+  border: solid 1px grey;
+  padding: 0.3em 0.6em;
+  margin: 0.6em
 `;
 
 const SmallSquare = styled.div`
@@ -79,11 +56,20 @@ const JoinScreen = ({ moves }) => {
         <SmallSquare tabindex onKeyPress={showPicker} onClick={showPicker}>
           <Emoji emoji={emoji}/>
         </SmallSquare>
-        <Name>{name}</Name>
-        <Input onChange={(e) => setName(e.target.value)} value={name}/>
-        <Button onKeyPress={join} onClick={join}>
-          Sit down to Play
-        </Button>
+        <Row>
+          <h1>{name}</h1>
+        </Row>
+        <Row>
+          <label>
+            Nickname
+           <Input onChange={(e) => setName(e.target.value)} value={name}/>
+          </label>
+        </Row>
+        <Row>
+          <Button onKeyPress={join} onClick={join}>
+            Sit down to Play
+          </Button>
+        </Row>
       </Main>
     </>
   );

@@ -2561,6 +2561,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^4.0.0
     "@typescript-eslint/parser": ^4.0.0
     babel-eslint: ^10.0.0
+    emoji-mart: ^3.0.1
     eslint: ^7.5.0
     eslint-config-react-app: ^6.0.0
     eslint-plugin-flowtype: ^5.2.0
@@ -2628,7 +2629,6 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^4.0.0
     "@typescript-eslint/parser": ^4.0.0
     babel-eslint: ^10.0.0
-    emoji-mart: ^3.0.1
     eslint: ^7.5.0
     eslint-config-react-app: ^6.0.0
     eslint-plugin-flowtype: ^5.2.0
