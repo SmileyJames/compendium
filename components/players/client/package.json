@@ -12,6 +12,8 @@
     "lint:fix": "eslint --fix src"
   },
   "dependencies": {
+    "@compendium/emoji": "workspace:components/emoji",
+    "emoji-mart": "^3.0.1",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {

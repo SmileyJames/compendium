@@ -83,7 +83,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
     "fallbackExclusionList": [
       ["@compendium/app", ["workspace:app"]],
-      ["@compendium/emoji", ["virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:components/emoji", "workspace:components/emoji"]],
+      ["@compendium/emoji", ["virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:components/emoji", "virtual:74f2cf57a0bd99be069cac2f592aaa05f1ad6a876c33b6722dd0beefb7e0b165f8c6550d4caf972f0b7b567fd8f63d3b7d6fae52fc296ad472867bd71dbcb4c2#workspace:components/emoji", "workspace:components/emoji"]],
       ["@compendium/peer-party", ["virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:peer-party", "workspace:peer-party"]],
       ["@compendium/players", ["virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:components/players", "workspace:components/players"]],
       ["@compendium/players-client", ["virtual:0d508d540b85e7c7c35cb2036d5732fa27138c464c529dc63287ac845af2cbe4937a3d58bd7ddff24800e25543864ad2798dd6201283b450c89fc983faf99aed#workspace:components/players/client", "virtual:57883f63139ee9c11eb4c34d1d0c0b95420a0425c5e164ca590ff00c102d34da186b0b78781f224f7a1b234989cfc48060df5cac61f93f92de83f54cb7df0adf#workspace:components/players/client", "workspace:components/players/client"]],
@@ -2726,6 +2726,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [
         "emittery",
         "npm:0.7.2"
+      ],
+      [
+        "emoji-mart",
+        "virtual:d6370e081492dd0979bec2892f07dff8f3541fc2ef115bc66613cc78746363b7432018d49fc5bae5fcd32e77d2aea105594ab4cdebad1bab22cf5c51e5bf63ac#npm:3.0.1"
       ],
       [
         "emoji-regex",
@@ -15272,6 +15276,48 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
+        ["virtual:74f2cf57a0bd99be069cac2f592aaa05f1ad6a876c33b6722dd0beefb7e0b165f8c6550d4caf972f0b7b567fd8f63d3b7d6fae52fc296ad472867bd71dbcb4c2#workspace:components/emoji", {
+          "packageLocation": "./.yarn/$$virtual/@compendium-emoji-virtual-0c80a80de1/1/components/emoji/",
+          "packageDependencies": [
+            ["@compendium/emoji", "virtual:74f2cf57a0bd99be069cac2f592aaa05f1ad6a876c33b6722dd0beefb7e0b165f8c6550d4caf972f0b7b567fd8f63d3b7d6fae52fc296ad472867bd71dbcb4c2#workspace:components/emoji"],
+            ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
+            ["@babel/core", "npm:7.13.1"],
+            ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@types/react", null],
+            ["@types/react-dom", null],
+            ["@types/react-is", null],
+            ["@types/react-router-dom", null],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
+            ["react", "npm:17.0.1"],
+            ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
+            ["react-is", "npm:17.0.1"],
+            ["react-router-dom", null],
+            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"],
+            ["twemoji", "npm:13.0.2"]
+          ],
+          "packagePeers": [
+            "@types/react-dom",
+            "@types/react-is",
+            "@types/react-router-dom",
+            "@types/react",
+            "react-dom",
+            "react-is",
+            "react-router-dom",
+            "react"
+          ],
+          "linkType": "SOFT",
+        }],
         ["workspace:components/emoji", {
           "packageLocation": "./components/emoji/",
           "packageDependencies": [
@@ -15429,6 +15475,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
             ["@babel/core", "npm:7.13.1"],
             ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@compendium/emoji", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:components/emoji"],
             ["@types/react", null],
             ["@types/react-dom", null],
             ["@types/react-is", null],
@@ -15436,6 +15483,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
             ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
             ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["emoji-mart", "virtual:d6370e081492dd0979bec2892f07dff8f3541fc2ef115bc66613cc78746363b7432018d49fc5bae5fcd32e77d2aea105594ab4cdebad1bab22cf5c51e5bf63ac#npm:3.0.1"],
             ["eslint", "npm:7.20.0"],
             ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
             ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
@@ -15467,6 +15515,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
             ["@babel/core", "npm:7.13.1"],
             ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@compendium/emoji", "virtual:74f2cf57a0bd99be069cac2f592aaa05f1ad6a876c33b6722dd0beefb7e0b165f8c6550d4caf972f0b7b567fd8f63d3b7d6fae52fc296ad472867bd71dbcb4c2#workspace:components/emoji"],
             ["@types/react", null],
             ["@types/react-dom", null],
             ["@types/react-is", null],
@@ -15474,6 +15523,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
             ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
             ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["emoji-mart", "virtual:d6370e081492dd0979bec2892f07dff8f3541fc2ef115bc66613cc78746363b7432018d49fc5bae5fcd32e77d2aea105594ab4cdebad1bab22cf5c51e5bf63ac#npm:3.0.1"],
             ["eslint", "npm:7.20.0"],
             ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
             ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
@@ -15505,9 +15555,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
             ["@babel/core", "npm:7.13.1"],
             ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@compendium/emoji", "virtual:74f2cf57a0bd99be069cac2f592aaa05f1ad6a876c33b6722dd0beefb7e0b165f8c6550d4caf972f0b7b567fd8f63d3b7d6fae52fc296ad472867bd71dbcb4c2#workspace:components/emoji"],
             ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
             ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
             ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["emoji-mart", "virtual:d6370e081492dd0979bec2892f07dff8f3541fc2ef115bc66613cc78746363b7432018d49fc5bae5fcd32e77d2aea105594ab4cdebad1bab22cf5c51e5bf63ac#npm:3.0.1"],
             ["eslint", "npm:7.20.0"],
             ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
             ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
@@ -24373,6 +24425,30 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/emittery-npm-0.7.2-4a6f20265e-34acfef519.zip/node_modules/emittery/",
           "packageDependencies": [
             ["emittery", "npm:0.7.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["emoji-mart", [
+        ["npm:3.0.1", {
+          "packageLocation": "./.yarn/cache/emoji-mart-npm-3.0.1-6e92eda8de-82239f4f25.zip/node_modules/emoji-mart/",
+          "packageDependencies": [
+            ["emoji-mart", "npm:3.0.1"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:d6370e081492dd0979bec2892f07dff8f3541fc2ef115bc66613cc78746363b7432018d49fc5bae5fcd32e77d2aea105594ab4cdebad1bab22cf5c51e5bf63ac#npm:3.0.1", {
+          "packageLocation": "./.yarn/$$virtual/emoji-mart-virtual-df273ae255/0/cache/emoji-mart-npm-3.0.1-6e92eda8de-82239f4f25.zip/node_modules/emoji-mart/",
+          "packageDependencies": [
+            ["emoji-mart", "virtual:d6370e081492dd0979bec2892f07dff8f3541fc2ef115bc66613cc78746363b7432018d49fc5bae5fcd32e77d2aea105594ab4cdebad1bab22cf5c51e5bf63ac#npm:3.0.1"],
+            ["@babel/runtime", "npm:7.13.10"],
+            ["@types/react", null],
+            ["prop-types", "npm:15.7.2"],
+            ["react", "npm:17.0.1"]
+          ],
+          "packagePeers": [
+            "@types/react",
+            "react"
           ],
           "linkType": "HARD",
         }]
