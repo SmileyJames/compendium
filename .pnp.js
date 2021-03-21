@@ -39,6 +39,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:games/tic-tac-toe"
       },
       {
+        "name": "@compendium/whist",
+        "reference": "workspace:games/whist"
+      },
+      {
         "name": "@compendium/peer-party",
         "reference": "workspace:peer-party"
       },
@@ -53,6 +57,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {
         "name": "@compendium/tic-tac-toe-host",
         "reference": "workspace:games/tic-tac-toe/host"
+      },
+      {
+        "name": "@compendium/whist-client",
+        "reference": "workspace:games/whist/client"
+      },
+      {
+        "name": "@compendium/whist-game",
+        "reference": "workspace:games/whist/game"
       }
     ],
     "enableTopLevelFallback": true,
@@ -66,7 +78,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@compendium/tic-tac-toe", ["virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:games/tic-tac-toe", "workspace:games/tic-tac-toe"]],
       ["@compendium/tic-tac-toe-game", ["workspace:games/tic-tac-toe/game"]],
       ["@compendium/tic-tac-toe-guest", ["workspace:games/tic-tac-toe/guest"]],
-      ["@compendium/tic-tac-toe-host", ["virtual:e666b0caf67c8cf724225a1b9bf135ed6a069d56477f50a44cbaef6bfdd4f9b40043593d1c76ab213a292ec34695f786e2b001e568d0f2301e88efd87e02d6df#workspace:games/tic-tac-toe/host", "virtual:ef304ed1c2d3a9a1b0dc7cd1c041ce0c6a4c3ed919f221530f63742961600a3b3237602db9a137f39e86173978c0501882e072387753563631613d15679742db#workspace:games/tic-tac-toe/host", "workspace:games/tic-tac-toe/host"]]
+      ["@compendium/tic-tac-toe-host", ["virtual:e666b0caf67c8cf724225a1b9bf135ed6a069d56477f50a44cbaef6bfdd4f9b40043593d1c76ab213a292ec34695f786e2b001e568d0f2301e88efd87e02d6df#workspace:games/tic-tac-toe/host", "virtual:ef304ed1c2d3a9a1b0dc7cd1c041ce0c6a4c3ed919f221530f63742961600a3b3237602db9a137f39e86173978c0501882e072387753563631613d15679742db#workspace:games/tic-tac-toe/host", "workspace:games/tic-tac-toe/host"]],
+      ["@compendium/whist", ["virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:games/whist", "workspace:games/whist"]],
+      ["@compendium/whist-client", ["virtual:300fdf784651f32ccb8f445f24c44001159f99fa156011f240c6d43b0057116a3d46541c1f07a109ef8b461ce06ad66ee684e18c17256282b900f41cfd4cc817#workspace:games/whist/client", "virtual:4791b8c2c2774148a7aafc3385892f460eaea25ac2531316888ed708cd9172c69fac2af3e17af6dd7101c43d9c41e92d1fdc47b5cdc4b1dc0e89cb268c19ddf6#workspace:games/whist/client", "workspace:games/whist/client"]],
+      ["@compendium/whist-game", ["workspace:games/whist/game"]]
     ],
     "fallbackPool": [
       [
@@ -560,6 +575,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [
         "@compendium/tic-tac-toe-host",
         "virtual:e666b0caf67c8cf724225a1b9bf135ed6a069d56477f50a44cbaef6bfdd4f9b40043593d1c76ab213a292ec34695f786e2b001e568d0f2301e88efd87e02d6df#workspace:games/tic-tac-toe/host"
+      ],
+      [
+        "@compendium/whist",
+        "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:games/whist"
+      ],
+      [
+        "@compendium/whist-client",
+        "virtual:300fdf784651f32ccb8f445f24c44001159f99fa156011f240c6d43b0057116a3d46541c1f07a109ef8b461ce06ad66ee684e18c17256282b900f41cfd4cc817#workspace:games/whist/client"
+      ],
+      [
+        "@compendium/whist-game",
+        "workspace:games/whist/game"
       ],
       [
         "@csstools/convert-colors",
@@ -15138,6 +15165,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@compendium/peer-party", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:peer-party"],
             ["@compendium/playing-card", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:components/playing-card"],
             ["@compendium/tic-tac-toe", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:games/tic-tac-toe"],
+            ["@compendium/whist", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:games/whist"],
             ["@mdx-js/react", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:1.6.22"],
             ["@storybook/addon-actions", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:6.1.21"],
             ["@storybook/addon-docs", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:6.1.21"],
@@ -15612,6 +15640,181 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
             ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@compendium/whist", [
+        ["virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:games/whist", {
+          "packageLocation": "./.yarn/$$virtual/@compendium-whist-virtual-4791b8c2c2/1/games/whist/",
+          "packageDependencies": [
+            ["@compendium/whist", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:games/whist"],
+            ["@compendium/whist-client", "virtual:4791b8c2c2774148a7aafc3385892f460eaea25ac2531316888ed708cd9172c69fac2af3e17af6dd7101c43d9c41e92d1fdc47b5cdc4b1dc0e89cb268c19ddf6#workspace:games/whist/client"],
+            ["@compendium/whist-game", "workspace:games/whist/game"],
+            ["@types/react-router-dom", null],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
+            ["react-router-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:5.2.0"]
+          ],
+          "packagePeers": [
+            "@types/react-router-dom",
+            "react-router-dom"
+          ],
+          "linkType": "SOFT",
+        }],
+        ["workspace:games/whist", {
+          "packageLocation": "./games/whist/",
+          "packageDependencies": [
+            ["@compendium/whist", "workspace:games/whist"],
+            ["@compendium/whist-client", "virtual:300fdf784651f32ccb8f445f24c44001159f99fa156011f240c6d43b0057116a3d46541c1f07a109ef8b461ce06ad66ee684e18c17256282b900f41cfd4cc817#workspace:games/whist/client"],
+            ["@compendium/whist-game", "workspace:games/whist/game"],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@compendium/whist-client", [
+        ["virtual:300fdf784651f32ccb8f445f24c44001159f99fa156011f240c6d43b0057116a3d46541c1f07a109ef8b461ce06ad66ee684e18c17256282b900f41cfd4cc817#workspace:games/whist/client", {
+          "packageLocation": "./.yarn/$$virtual/@compendium-whist-client-virtual-927a2e4a0a/1/games/whist/client/",
+          "packageDependencies": [
+            ["@compendium/whist-client", "virtual:300fdf784651f32ccb8f445f24c44001159f99fa156011f240c6d43b0057116a3d46541c1f07a109ef8b461ce06ad66ee684e18c17256282b900f41cfd4cc817#workspace:games/whist/client"],
+            ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
+            ["@babel/core", "npm:7.13.1"],
+            ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@types/react", null],
+            ["@types/react-dom", null],
+            ["@types/react-is", null],
+            ["@types/react-router-dom", null],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
+            ["react", "npm:17.0.1"],
+            ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
+            ["react-is", "npm:17.0.1"],
+            ["react-router-dom", null],
+            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"]
+          ],
+          "packagePeers": [
+            "@types/react-dom",
+            "@types/react-is",
+            "@types/react-router-dom",
+            "@types/react",
+            "react-router-dom"
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:4791b8c2c2774148a7aafc3385892f460eaea25ac2531316888ed708cd9172c69fac2af3e17af6dd7101c43d9c41e92d1fdc47b5cdc4b1dc0e89cb268c19ddf6#workspace:games/whist/client", {
+          "packageLocation": "./.yarn/$$virtual/@compendium-whist-client-virtual-37ea395af7/1/games/whist/client/",
+          "packageDependencies": [
+            ["@compendium/whist-client", "virtual:4791b8c2c2774148a7aafc3385892f460eaea25ac2531316888ed708cd9172c69fac2af3e17af6dd7101c43d9c41e92d1fdc47b5cdc4b1dc0e89cb268c19ddf6#workspace:games/whist/client"],
+            ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
+            ["@babel/core", "npm:7.13.1"],
+            ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@types/react", null],
+            ["@types/react-dom", null],
+            ["@types/react-is", null],
+            ["@types/react-router-dom", null],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
+            ["react", "npm:17.0.1"],
+            ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
+            ["react-is", "npm:17.0.1"],
+            ["react-router-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:5.2.0"],
+            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"]
+          ],
+          "packagePeers": [
+            "@types/react-dom",
+            "@types/react-is",
+            "@types/react-router-dom",
+            "@types/react",
+            "react-router-dom"
+          ],
+          "linkType": "SOFT",
+        }],
+        ["workspace:games/whist/client", {
+          "packageLocation": "./games/whist/client/",
+          "packageDependencies": [
+            ["@compendium/whist-client", "workspace:games/whist/client"],
+            ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
+            ["@babel/core", "npm:7.13.1"],
+            ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
+            ["react", "npm:17.0.1"],
+            ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
+            ["react-is", "npm:17.0.1"],
+            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@compendium/whist-game", [
+        ["workspace:games/whist/game", {
+          "packageLocation": "./games/whist/game/",
+          "packageDependencies": [
+            ["@compendium/whist-game", "workspace:games/whist/game"],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"]
           ],
           "linkType": "SOFT",
         }]

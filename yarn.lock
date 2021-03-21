@@ -2514,6 +2514,7 @@ __metadata:
     "@compendium/peer-party": "workspace:peer-party"
     "@compendium/playing-card": "workspace:components/playing-card"
     "@compendium/tic-tac-toe": "workspace:games/tic-tac-toe"
+    "@compendium/whist": "workspace:games/whist"
     "@mdx-js/react": ^1.6.22
     "@storybook/addon-actions": ^6.1.21
     "@storybook/addon-docs": ^6.1.21
@@ -2753,6 +2754,79 @@ __metadata:
     "@compendium/tic-tac-toe-game": "workspace:games/tic-tac-toe/game"
     "@compendium/tic-tac-toe-guest": "workspace:games/tic-tac-toe/guest"
     "@compendium/tic-tac-toe-host": "workspace:games/tic-tac-toe/host"
+    "@typescript-eslint/eslint-plugin": ^4.0.0
+    "@typescript-eslint/parser": ^4.0.0
+    babel-eslint: ^10.0.0
+    eslint: ^7.5.0
+    eslint-config-react-app: ^6.0.0
+    eslint-plugin-flowtype: ^5.2.0
+    eslint-plugin-import: ^2.22.0
+    eslint-plugin-jest: ^24.0.0
+    eslint-plugin-jsx-a11y: ^6.3.1
+    eslint-plugin-react: ^7.20.3
+    eslint-plugin-react-hooks: ^4.0.8
+    eslint-plugin-testing-library: ^3.9.0
+  peerDependencies:
+    react-router-dom: "*"
+  languageName: unknown
+  linkType: soft
+
+"@compendium/whist-client@workspace:games/whist/client":
+  version: 0.0.0-use.local
+  resolution: "@compendium/whist-client@workspace:games/whist/client"
+  dependencies:
+    "@babel/cli": ^7.13.0
+    "@babel/core": ^7.13.1
+    "@babel/preset-react": ^7.12.13
+    "@typescript-eslint/eslint-plugin": ^4.0.0
+    "@typescript-eslint/parser": ^4.0.0
+    babel-eslint: ^10.0.0
+    eslint: ^7.5.0
+    eslint-config-react-app: ^6.0.0
+    eslint-plugin-flowtype: ^5.2.0
+    eslint-plugin-import: ^2.22.0
+    eslint-plugin-jest: ^24.0.0
+    eslint-plugin-jsx-a11y: ^6.3.1
+    eslint-plugin-react: ^7.20.3
+    eslint-plugin-react-hooks: ^4.0.8
+    eslint-plugin-testing-library: ^3.9.0
+    react: ^17.0.1
+    react-dom: ^17.0.1
+    react-is: ^17.0.1
+    styled-components: ^5.2.1
+  peerDependencies:
+    react: "*"
+    react-dom: "*"
+    react-is: "*"
+    react-router-dom: "*"
+  languageName: unknown
+  linkType: soft
+
+"@compendium/whist-game@workspace:games/whist/game":
+  version: 0.0.0-use.local
+  resolution: "@compendium/whist-game@workspace:games/whist/game"
+  dependencies:
+    "@typescript-eslint/eslint-plugin": ^4.0.0
+    "@typescript-eslint/parser": ^4.0.0
+    babel-eslint: ^10.0.0
+    eslint: ^7.5.0
+    eslint-config-react-app: ^6.0.0
+    eslint-plugin-flowtype: ^5.2.0
+    eslint-plugin-import: ^2.22.0
+    eslint-plugin-jest: ^24.0.0
+    eslint-plugin-jsx-a11y: ^6.3.1
+    eslint-plugin-react: ^7.20.3
+    eslint-plugin-react-hooks: ^4.0.8
+    eslint-plugin-testing-library: ^3.9.0
+  languageName: unknown
+  linkType: soft
+
+"@compendium/whist@workspace:games/whist":
+  version: 0.0.0-use.local
+  resolution: "@compendium/whist@workspace:games/whist"
+  dependencies:
+    "@compendium/whist-client": "workspace:games/whist/client"
+    "@compendium/whist-game": "workspace:games/whist/game"
     "@typescript-eslint/eslint-plugin": ^4.0.0
     "@typescript-eslint/parser": ^4.0.0
     babel-eslint: ^10.0.0
