@@ -41,7 +41,7 @@ const JoinScreen = ({ moves }) => {
   const hidePicker = () => setPickerIsShown(false);
 
   const join = () => {
-    // moves.newPlayer({ name, emoji }); 
+    moves.joinAsAPlayer({ name, emoji }); 
   }
 
   const onSelectEmoji = (emoji) => {
