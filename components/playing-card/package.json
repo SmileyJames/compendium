@@ -6,7 +6,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "yarn babel src --out-dir dist && cp -r src/cards dist/cards && cp src/felt.png dist/",
+    "build": "yarn babel src --out-dir dist && cpy src/cards dist/cards && cpy src/felt.png dist/",
     "build:watch": "yarn babel src --watch --source-maps --out-dir dist",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src"
@@ -21,6 +21,7 @@
     "@typescript-eslint/eslint-plugin": "^4.0.0",
     "@typescript-eslint/parser": "^4.0.0",
     "babel-eslint": "^10.0.0",
+    "cpy-cli": "^3.1.1",
     "eslint": "^7.5.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-flowtype": "^5.2.0",
