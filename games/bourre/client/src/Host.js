@@ -9,7 +9,10 @@ const Title = styled.h1`
 
 const Host = ({ state, roomId, moves, connections }) => {
   return (
-    <Title>Host</Title>
+    <>
+      <Title>Boureewithanaccent</Title>
+      <p>{state.players.maxPlayers}</p>
+    </>
   );
 };
 

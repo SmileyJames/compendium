@@ -30,7 +30,7 @@ Board.args = {
       ]
     },
     dealer: 0,
-    chips: [0, 0, 0],
+    chips: [4, 2, 0],
     tricks: [0, 0, 0],
     hand: [
       { value: 1, suit: "H" },
