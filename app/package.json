@@ -47,7 +47,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "mkdir -p build && react-scripts build",
     "test": "react-scripts test --watchAll=false",
     "test:watch": "react-scripts test",
     "lint": "yarn eslint src",
