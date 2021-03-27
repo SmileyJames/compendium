@@ -18,5 +18,8 @@
   "scripts": {
     "lint": "eslint index.js",
     "lint:fix": "eslint --fix index.js"
+  },
+  "dependencies": {
+    "@compendium/players-game": "workspace:components/players/game"
   }
 }

@@ -19,38 +19,53 @@ Beginning.args = {
 export const TwoPlayers = Template.bind({});
 TwoPlayers.args = {
   state: {
-    players: [
-      { connectionId: 1, name: "SmileyJames" },
-      { connectionId: 2, name: "Max" },
-    ],
+    players: {
+      maxPlayers: 4,
+      minPlayers: 4,
+      everyonesIn: false,
+      list: [
+        { connectionId: "xxx", name: "SmileyJames", emoji: null },
+        { connectionId: "xox", name: "SmoloyJimes", emoji: null },
+      ]
+    }
   },
   moves: {},
-  connections: [1, 2],
+  connections: ["xxx", "xox"],
 };
 
 export const FourPlayers = Template.bind({});
 FourPlayers.args = {
   state: {
-    players: [
-      { connectionId: 1, name: "SmileyJames" },
-      { connectionId: 2, name: "Max" },
-      { connectionId: 5, name: "Bill" },
-      { connectionId: 6, name: "Bob" },
-    ],
+    players: {
+      maxPlayers: 4,
+      minPlayers: 4,
+      everyonesIn: false,
+      list: [
+        { connectionId: "xxx", name: "SmileyJames", emoji: null },
+        { connectionId: "xox", name: "SmoloyJimes", emoji: null },
+        { connectionId: "oxo", name: "SmaliyJomes", emoji: null },
+        { connectionId: "ooo", name: "JamesSmiley", emoji: null },
+      ]
+    },
   },
   moves: {},
-  connections: [1, 2],
+  connections: ["xxx", "xox", "oxo", "ooo"],
 };
 
 export const GameStarted = Template.bind({});
 GameStarted.args = {
   state: {
-    players: [
-      { connectionId: 1, name: "SmileyJames" },
-      { connectionId: 2, name: "Max" },
-      { connectionId: 5, name: "Bill" },
-      { connectionId: 6, name: "Bob" },
-    ],
+    players: {
+      maxPlayers: 4,
+      minPlayers: 4,
+      everyonesIn: true,
+      list: [
+        { connectionId: "xxx", name: "SmileyJames", emoji: null },
+        { connectionId: "xox", name: "SmoloyJimes", emoji: null },
+        { connectionId: "oxo", name: "SmaliyJomes", emoji: null },
+        { connectionId: "ooo", name: "JamesSmiley", emoji: null },
+      ]
+    },
     trick: 0,
     turn: 0,
     wonLastTrick: null,
@@ -74,18 +89,23 @@ GameStarted.args = {
     ],
   },
   moves: {},
-  connections: [1, 2],
+  connections: ["xxx", "xox", "oxo", "ooo"],
 };
 
 export const FirstTurn = Template.bind({});
 FirstTurn.args = {
   state: {
-    players: [
-      { connectionId: 1, name: "SmileyJames" },
-      { connectionId: 2, name: "Max" },
-      { connectionId: 5, name: "Bill" },
-      { connectionId: 6, name: "Bob" },
-    ],
+    players: {
+      maxPlayers: 4,
+      minPlayers: 4,
+      everyonesIn: true,
+      list: [
+        { connectionId: "xxx", name: "SmileyJames", emoji: null },
+        { connectionId: "xox", name: "SmoloyJimes", emoji: null },
+        { connectionId: "oxo", name: "SmaliyJomes", emoji: null },
+        { connectionId: "ooo", name: "JamesSmiley", emoji: null },
+      ]
+    },
     trick: 0,
     turn: 1, wonLastTrick: null,
     scores: [0, 0, 0, 0],
@@ -109,18 +129,23 @@ FirstTurn.args = {
     ],
   },
   moves: {},
-  connections: [1, 2],
+  connections: ["xxx", "xox", "oxo", "ooo"],
 };
 
 export const LateGame = Template.bind({});
 LateGame.args = {
   state: {
-    players: [
-      { connectionId: 1, name: "SmileyJames" },
-      { connectionId: 2, name: "Max" },
-      { connectionId: 5, name: "Bill" },
-      { connectionId: 6, name: "Bob" },
-    ],
+    players: {
+      maxPlayers: 4,
+      minPlayers: 4,
+      everyonesIn: true,
+      list: [
+        { connectionId: "xxx", name: "SmileyJames", emoji: null },
+        { connectionId: "xox", name: "SmoloyJimes", emoji: null },
+        { connectionId: "oxo", name: "SmaliyJomes", emoji: null },
+        { connectionId: "ooo", name: "JamesSmiley", emoji: null },
+      ]
+    },
     trick: 10,
     turn: 42,
     wonLastTrick: 1, // player index 1: Max
@@ -148,5 +173,5 @@ LateGame.args = {
     ],
   },
   moves: {},
-  connections: [1, 2],
+  connections: ["xxx", "xox", "oxo", "ooo"],
 };

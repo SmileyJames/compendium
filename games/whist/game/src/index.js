@@ -1,18 +1,12 @@
-const startGame = ({ state, connectionId, args }) => {
-  return { board: [] };
-}
-
-const flipCoin = ({ state, connectionId, args }) => (random) => {
-  return { ...state, isHeads: random() > 0.5 }
-}
+import playersGame from "@compendium/players-game";
 
 const game = {
   guestMoves: {
-    flipCoin,
+    ...playersGame.guestMoves,
   },
   
   hostMoves: {
-    startGame,
+    ...playersGame.hostMoves,
   },
 }
 

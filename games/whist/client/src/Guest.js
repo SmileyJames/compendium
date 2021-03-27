@@ -1,8 +1,8 @@
 import React from "react";
-import styled from "styled-components";
+import { withGuestPlayers } from "@compendium/players-client"
 import PlayingCard, { FeltTable, Hand } from "@compendium/playing-card";
 
-const Guest = ({ state, roomId, moves, connectionId }) => {
+const Guest = withGuestPlayers(({ state, roomId, moves, connectionId }) => {
   return (
     <FeltTable>
       <Hand>
@@ -12,6 +12,6 @@ const Guest = ({ state, roomId, moves, connectionId }) => {
       </Hand>
     </FeltTable>
   );
-}
+})
 
 export default Guest;

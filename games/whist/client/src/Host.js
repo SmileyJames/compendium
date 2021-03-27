@@ -1,8 +1,8 @@
 import React from "react";
-import styled from "styled-components";
+import { withHostPlayers } from "@compendium/players-client"
 import PlayingCard, { PlayingCardBack, FeltTable, Hand } from "@compendium/playing-card";
 
-const Host = ({ state, roomId, moves, connections }) => {
+const Host = withHostPlayers(({ state, roomId, moves, connections }) => {
   return (
     <FeltTable>
       <PlayingCardBack colour="R"/>
@@ -13,6 +13,6 @@ const Host = ({ state, roomId, moves, connections }) => {
       </Hand>
     </FeltTable>
   );
-}
+})
 
 export default Host;

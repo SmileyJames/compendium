@@ -3140,6 +3140,7 @@ __metadata:
     "@babel/cli": ^7.13.0
     "@babel/core": ^7.13.1
     "@babel/preset-react": ^7.12.13
+    "@compendium/players-client": "workspace:components/players/client"
     "@compendium/playing-card": "workspace:components/playing-card"
     "@typescript-eslint/eslint-plugin": ^4.0.0
     "@typescript-eslint/parser": ^4.0.0
@@ -3169,6 +3170,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@compendium/whist-game@workspace:games/whist/game"
   dependencies:
+    "@compendium/players-game": "workspace:components/players/game"
     "@typescript-eslint/eslint-plugin": ^4.0.0
     "@typescript-eslint/parser": ^4.0.0
     babel-eslint: ^10.0.0

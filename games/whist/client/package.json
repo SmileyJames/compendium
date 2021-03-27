@@ -12,6 +12,7 @@
     "lint:fix": "eslint --fix src"
   },
   "dependencies": {
+    "@compendium/players-client": "workspace:components/players/client",
     "@compendium/playing-card": "workspace:components/playing-card",
     "styled-components": "^5.2.1"
   },
