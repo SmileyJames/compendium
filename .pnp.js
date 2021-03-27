@@ -39,6 +39,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:components/playing-card"
       },
       {
+        "name": "@compendium/bourre",
+        "reference": "workspace:games/bourre"
+      },
+      {
         "name": "@compendium/tic-tac-toe",
         "reference": "workspace:games/tic-tac-toe"
       },
@@ -57,6 +61,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {
         "name": "@compendium/players-game",
         "reference": "workspace:components/players/game"
+      },
+      {
+        "name": "@compendium/bourre-client",
+        "reference": "workspace:games/bourre/client"
+      },
+      {
+        "name": "@compendium/bourre-game",
+        "reference": "workspace:games/bourre/game"
       },
       {
         "name": "@compendium/tic-tac-toe-game",
@@ -83,6 +95,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
     "fallbackExclusionList": [
       ["@compendium/app", ["workspace:app"]],
+      ["@compendium/bourre", ["virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:games/bourre", "workspace:games/bourre"]],
+      ["@compendium/bourre-client", ["virtual:2c7b90744c7b0db39431c6de4a194b135090245ef8697861e330efedd75bdb92ad187b88b6dbf5f2ff6b0c375fb540304dcd574f7fa4b0139bcce8c67f327d81#workspace:games/bourre/client", "virtual:4b7945a262b0bb1513a6259f854d94b49663d18df76fc11d6ec130feff2adc8abd3ff270df5d855e260dc58cca8b8ea7be3266e9539eb48d3c9d59d7af523704#workspace:games/bourre/client", "workspace:games/bourre/client"]],
+      ["@compendium/bourre-game", ["workspace:games/bourre/game"]],
       ["@compendium/emoji", ["virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:components/emoji", "virtual:74f2cf57a0bd99be069cac2f592aaa05f1ad6a876c33b6722dd0beefb7e0b165f8c6550d4caf972f0b7b567fd8f63d3b7d6fae52fc296ad472867bd71dbcb4c2#workspace:components/emoji", "workspace:components/emoji"]],
       ["@compendium/peer-party", ["virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:peer-party", "workspace:peer-party"]],
       ["@compendium/players", ["virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:components/players", "workspace:components/players"]],
@@ -526,6 +541,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [
         "@compendium/app",
         "workspace:app"
+      ],
+      [
+        "@compendium/bourre",
+        "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:games/bourre"
+      ],
+      [
+        "@compendium/bourre-client",
+        "virtual:2c7b90744c7b0db39431c6de4a194b135090245ef8697861e330efedd75bdb92ad187b88b6dbf5f2ff6b0c375fb540304dcd574f7fa4b0139bcce8c67f327d81#workspace:games/bourre/client"
+      ],
+      [
+        "@compendium/bourre-game",
+        "workspace:games/bourre/game"
       ],
       [
         "@compendium/emoji",
@@ -6958,10 +6985,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0", {
-          "packageLocation": "./.yarn/$$virtual/@babel-cli-virtual-f259b830a1/0/cache/@babel-cli-npm-7.13.0-9f81c38c9f-a887d985e4.zip/node_modules/@babel/cli/",
+        ["virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.13.0", {
+          "packageLocation": "./.yarn/$$virtual/@babel-cli-virtual-5cb267a42f/0/cache/@babel-cli-npm-7.13.0-9f81c38c9f-a887d985e4.zip/node_modules/@babel/cli/",
           "packageDependencies": [
-            ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
+            ["@babel/cli", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.13.0"],
             ["@babel/core", "npm:7.13.1"],
             ["@nicolo-ribaudo/chokidar-2", "npm:2.1.8-no-fsevents"],
             ["@types/babel__core", null],
@@ -10754,6 +10781,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
+        ["virtual:5100da4a48865d0a6643f79f7b09c7c6994cf7d802fb4294aae9b707a841243527b1e061b17db06628fcbcd0d77a51e6bcc4cdd9ac6fee34757e62a899c0bee2#npm:7.12.13", {
+          "packageLocation": "./.yarn/$$virtual/@babel-plugin-syntax-jsx-virtual-089cbec663/0/cache/@babel-plugin-syntax-jsx-npm-7.12.13-25d9e5f368-00a832806d.zip/node_modules/@babel/plugin-syntax-jsx/",
+          "packageDependencies": [
+            ["@babel/plugin-syntax-jsx", "virtual:5100da4a48865d0a6643f79f7b09c7c6994cf7d802fb4294aae9b707a841243527b1e061b17db06628fcbcd0d77a51e6bcc4cdd9ac6fee34757e62a899c0bee2#npm:7.12.13"],
+            ["@babel/core", "npm:7.13.1"],
+            ["@babel/helper-plugin-utils", "npm:7.12.13"],
+            ["@types/babel__core", null]
+          ],
+          "packagePeers": [
+            "@babel/core",
+            "@types/babel__core"
+          ],
+          "linkType": "HARD",
+        }],
         ["virtual:53123d3d881427c2622bac0ea18a5fa89f92db8b64545171e69b72cbf466b1b7066f71576f5bf718d1f3eb9b5040c385e84f46fa7df5c861c7d17d322cfe562a#npm:7.12.13", {
           "packageLocation": "./.yarn/$$virtual/@babel-plugin-syntax-jsx-virtual-8c8f1c8281/0/cache/@babel-plugin-syntax-jsx-npm-7.12.13-25d9e5f368-00a832806d.zip/node_modules/@babel/plugin-syntax-jsx/",
           "packageDependencies": [
@@ -10815,20 +10856,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@babel/plugin-syntax-jsx", "virtual:b48d15c67085557e5910eaa05d796d61ef319a3e283b6eebf19bf754f0d08a6a84bb1d770fcfef56b9b5a8bebf0c74d28af9943537276e34ed32488aecf65895#npm:7.12.13"],
             ["@babel/core", "npm:7.12.3"],
-            ["@babel/helper-plugin-utils", "npm:7.12.13"],
-            ["@types/babel__core", null]
-          ],
-          "packagePeers": [
-            "@babel/core",
-            "@types/babel__core"
-          ],
-          "linkType": "HARD",
-        }],
-        ["virtual:cf034db3f5ed7cd5cdda4efb13da0dd640efdc9e91dd8a07c5ba0db782a2f7ead9108e6b74f84e7c26c287a2e748280ea5e3173da87a8e82a23a8021ad257014#npm:7.12.13", {
-          "packageLocation": "./.yarn/$$virtual/@babel-plugin-syntax-jsx-virtual-d6aefeae41/0/cache/@babel-plugin-syntax-jsx-npm-7.12.13-25d9e5f368-00a832806d.zip/node_modules/@babel/plugin-syntax-jsx/",
-          "packageDependencies": [
-            ["@babel/plugin-syntax-jsx", "virtual:cf034db3f5ed7cd5cdda4efb13da0dd640efdc9e91dd8a07c5ba0db782a2f7ead9108e6b74f84e7c26c287a2e748280ea5e3173da87a8e82a23a8021ad257014#npm:7.12.13"],
-            ["@babel/core", "npm:7.13.1"],
             ["@babel/helper-plugin-utils", "npm:7.12.13"],
             ["@types/babel__core", null]
           ],
@@ -14565,11 +14592,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["virtual:80b6b3acd1d7d0f8347856b941b4fe76d4866b4f0dabb14614a2f036bf4c50902788fe85648e4bd49c310aee400f65d703de1c4a3eeee1d8de065f48368483a9#npm:7.12.13", {
-          "packageLocation": "./.yarn/$$virtual/@babel-plugin-transform-react-display-name-virtual-8421b04629/0/cache/@babel-plugin-transform-react-display-name-npm-7.12.13-f97efd7cb0-00fa4736cc.zip/node_modules/@babel/plugin-transform-react-display-name/",
+        ["virtual:616f8ce008f3d6aec19f41f61074ca1bf312c7656dec2e18e67496367f67c5562aa05ce443988f9e3c030d76ad681bfabee31215acb79789e0a5646f7c3f72cb#npm:7.12.13", {
+          "packageLocation": "./.yarn/$$virtual/@babel-plugin-transform-react-display-name-virtual-3a567ecbd7/0/cache/@babel-plugin-transform-react-display-name-npm-7.12.13-f97efd7cb0-00fa4736cc.zip/node_modules/@babel/plugin-transform-react-display-name/",
           "packageDependencies": [
-            ["@babel/plugin-transform-react-display-name", "virtual:80b6b3acd1d7d0f8347856b941b4fe76d4866b4f0dabb14614a2f036bf4c50902788fe85648e4bd49c310aee400f65d703de1c4a3eeee1d8de065f48368483a9#npm:7.12.13"],
-            ["@babel/core", null],
+            ["@babel/plugin-transform-react-display-name", "virtual:616f8ce008f3d6aec19f41f61074ca1bf312c7656dec2e18e67496367f67c5562aa05ce443988f9e3c030d76ad681bfabee31215acb79789e0a5646f7c3f72cb#npm:7.12.13"],
+            ["@babel/core", "npm:7.13.1"],
             ["@babel/helper-plugin-utils", "npm:7.12.13"],
             ["@types/babel__core", null]
           ],
@@ -14579,11 +14606,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["virtual:989b1248b250f6587a68112026af6be5318e8b6ca2b2f5a6f23e7fddbf21cab2d6d7012128b3f989df463dd46372a5492b2052808934688fa1f8f3cc0e6158f5#npm:7.12.13", {
-          "packageLocation": "./.yarn/$$virtual/@babel-plugin-transform-react-display-name-virtual-527d194082/0/cache/@babel-plugin-transform-react-display-name-npm-7.12.13-f97efd7cb0-00fa4736cc.zip/node_modules/@babel/plugin-transform-react-display-name/",
+        ["virtual:80b6b3acd1d7d0f8347856b941b4fe76d4866b4f0dabb14614a2f036bf4c50902788fe85648e4bd49c310aee400f65d703de1c4a3eeee1d8de065f48368483a9#npm:7.12.13", {
+          "packageLocation": "./.yarn/$$virtual/@babel-plugin-transform-react-display-name-virtual-8421b04629/0/cache/@babel-plugin-transform-react-display-name-npm-7.12.13-f97efd7cb0-00fa4736cc.zip/node_modules/@babel/plugin-transform-react-display-name/",
           "packageDependencies": [
-            ["@babel/plugin-transform-react-display-name", "virtual:989b1248b250f6587a68112026af6be5318e8b6ca2b2f5a6f23e7fddbf21cab2d6d7012128b3f989df463dd46372a5492b2052808934688fa1f8f3cc0e6158f5#npm:7.12.13"],
-            ["@babel/core", "npm:7.13.1"],
+            ["@babel/plugin-transform-react-display-name", "virtual:80b6b3acd1d7d0f8347856b941b4fe76d4866b4f0dabb14614a2f036bf4c50902788fe85648e4bd49c310aee400f65d703de1c4a3eeee1d8de065f48368483a9#npm:7.12.13"],
+            ["@babel/core", null],
             ["@babel/helper-plugin-utils", "npm:7.12.13"],
             ["@types/babel__core", null]
           ],
@@ -14666,15 +14693,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["virtual:989b1248b250f6587a68112026af6be5318e8b6ca2b2f5a6f23e7fddbf21cab2d6d7012128b3f989df463dd46372a5492b2052808934688fa1f8f3cc0e6158f5#npm:7.12.17", {
-          "packageLocation": "./.yarn/$$virtual/@babel-plugin-transform-react-jsx-virtual-cf034db3f5/0/cache/@babel-plugin-transform-react-jsx-npm-7.12.17-7a8476b1af-1435e662f9.zip/node_modules/@babel/plugin-transform-react-jsx/",
+        ["virtual:616f8ce008f3d6aec19f41f61074ca1bf312c7656dec2e18e67496367f67c5562aa05ce443988f9e3c030d76ad681bfabee31215acb79789e0a5646f7c3f72cb#npm:7.12.17", {
+          "packageLocation": "./.yarn/$$virtual/@babel-plugin-transform-react-jsx-virtual-5100da4a48/0/cache/@babel-plugin-transform-react-jsx-npm-7.12.17-7a8476b1af-1435e662f9.zip/node_modules/@babel/plugin-transform-react-jsx/",
           "packageDependencies": [
-            ["@babel/plugin-transform-react-jsx", "virtual:989b1248b250f6587a68112026af6be5318e8b6ca2b2f5a6f23e7fddbf21cab2d6d7012128b3f989df463dd46372a5492b2052808934688fa1f8f3cc0e6158f5#npm:7.12.17"],
+            ["@babel/plugin-transform-react-jsx", "virtual:616f8ce008f3d6aec19f41f61074ca1bf312c7656dec2e18e67496367f67c5562aa05ce443988f9e3c030d76ad681bfabee31215acb79789e0a5646f7c3f72cb#npm:7.12.17"],
             ["@babel/core", "npm:7.13.1"],
             ["@babel/helper-annotate-as-pure", "npm:7.12.13"],
             ["@babel/helper-module-imports", "npm:7.12.13"],
             ["@babel/helper-plugin-utils", "npm:7.12.13"],
-            ["@babel/plugin-syntax-jsx", "virtual:cf034db3f5ed7cd5cdda4efb13da0dd640efdc9e91dd8a07c5ba0db782a2f7ead9108e6b74f84e7c26c287a2e748280ea5e3173da87a8e82a23a8021ad257014#npm:7.12.13"],
+            ["@babel/plugin-syntax-jsx", "virtual:5100da4a48865d0a6643f79f7b09c7c6994cf7d802fb4294aae9b707a841243527b1e061b17db06628fcbcd0d77a51e6bcc4cdd9ac6fee34757e62a899c0bee2#npm:7.12.13"],
             ["@babel/types", "npm:7.12.17"],
             ["@types/babel__core", null]
           ],
@@ -14743,12 +14770,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["virtual:80b6b3acd1d7d0f8347856b941b4fe76d4866b4f0dabb14614a2f036bf4c50902788fe85648e4bd49c310aee400f65d703de1c4a3eeee1d8de065f48368483a9#npm:7.12.17", {
-          "packageLocation": "./.yarn/$$virtual/@babel-plugin-transform-react-jsx-development-virtual-76123f589a/0/cache/@babel-plugin-transform-react-jsx-development-npm-7.12.17-2163247b98-30f9dfd8a6.zip/node_modules/@babel/plugin-transform-react-jsx-development/",
+        ["virtual:616f8ce008f3d6aec19f41f61074ca1bf312c7656dec2e18e67496367f67c5562aa05ce443988f9e3c030d76ad681bfabee31215acb79789e0a5646f7c3f72cb#npm:7.12.17", {
+          "packageLocation": "./.yarn/$$virtual/@babel-plugin-transform-react-jsx-development-virtual-1ea377db58/0/cache/@babel-plugin-transform-react-jsx-development-npm-7.12.17-2163247b98-30f9dfd8a6.zip/node_modules/@babel/plugin-transform-react-jsx-development/",
           "packageDependencies": [
-            ["@babel/plugin-transform-react-jsx-development", "virtual:80b6b3acd1d7d0f8347856b941b4fe76d4866b4f0dabb14614a2f036bf4c50902788fe85648e4bd49c310aee400f65d703de1c4a3eeee1d8de065f48368483a9#npm:7.12.17"],
-            ["@babel/core", null],
-            ["@babel/plugin-transform-react-jsx", "virtual:eed1695825880881646ec55a89d4001def13af38dbc18c4a4363da6b3a2df5c7e166fedc11d3b03f1c57f751719130a9c366f3965d7f7f32cb61e405eaa9f261#npm:7.12.17"],
+            ["@babel/plugin-transform-react-jsx-development", "virtual:616f8ce008f3d6aec19f41f61074ca1bf312c7656dec2e18e67496367f67c5562aa05ce443988f9e3c030d76ad681bfabee31215acb79789e0a5646f7c3f72cb#npm:7.12.17"],
+            ["@babel/core", "npm:7.13.1"],
+            ["@babel/plugin-transform-react-jsx", "virtual:616f8ce008f3d6aec19f41f61074ca1bf312c7656dec2e18e67496367f67c5562aa05ce443988f9e3c030d76ad681bfabee31215acb79789e0a5646f7c3f72cb#npm:7.12.17"],
             ["@types/babel__core", null]
           ],
           "packagePeers": [
@@ -14757,12 +14784,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["virtual:989b1248b250f6587a68112026af6be5318e8b6ca2b2f5a6f23e7fddbf21cab2d6d7012128b3f989df463dd46372a5492b2052808934688fa1f8f3cc0e6158f5#npm:7.12.17", {
-          "packageLocation": "./.yarn/$$virtual/@babel-plugin-transform-react-jsx-development-virtual-6a6f585078/0/cache/@babel-plugin-transform-react-jsx-development-npm-7.12.17-2163247b98-30f9dfd8a6.zip/node_modules/@babel/plugin-transform-react-jsx-development/",
+        ["virtual:80b6b3acd1d7d0f8347856b941b4fe76d4866b4f0dabb14614a2f036bf4c50902788fe85648e4bd49c310aee400f65d703de1c4a3eeee1d8de065f48368483a9#npm:7.12.17", {
+          "packageLocation": "./.yarn/$$virtual/@babel-plugin-transform-react-jsx-development-virtual-76123f589a/0/cache/@babel-plugin-transform-react-jsx-development-npm-7.12.17-2163247b98-30f9dfd8a6.zip/node_modules/@babel/plugin-transform-react-jsx-development/",
           "packageDependencies": [
-            ["@babel/plugin-transform-react-jsx-development", "virtual:989b1248b250f6587a68112026af6be5318e8b6ca2b2f5a6f23e7fddbf21cab2d6d7012128b3f989df463dd46372a5492b2052808934688fa1f8f3cc0e6158f5#npm:7.12.17"],
-            ["@babel/core", "npm:7.13.1"],
-            ["@babel/plugin-transform-react-jsx", "virtual:989b1248b250f6587a68112026af6be5318e8b6ca2b2f5a6f23e7fddbf21cab2d6d7012128b3f989df463dd46372a5492b2052808934688fa1f8f3cc0e6158f5#npm:7.12.17"],
+            ["@babel/plugin-transform-react-jsx-development", "virtual:80b6b3acd1d7d0f8347856b941b4fe76d4866b4f0dabb14614a2f036bf4c50902788fe85648e4bd49c310aee400f65d703de1c4a3eeee1d8de065f48368483a9#npm:7.12.17"],
+            ["@babel/core", null],
+            ["@babel/plugin-transform-react-jsx", "virtual:eed1695825880881646ec55a89d4001def13af38dbc18c4a4363da6b3a2df5c7e166fedc11d3b03f1c57f751719130a9c366f3965d7f7f32cb61e405eaa9f261#npm:7.12.17"],
             ["@types/babel__core", null]
           ],
           "packagePeers": [
@@ -14855,11 +14882,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["virtual:80b6b3acd1d7d0f8347856b941b4fe76d4866b4f0dabb14614a2f036bf4c50902788fe85648e4bd49c310aee400f65d703de1c4a3eeee1d8de065f48368483a9#npm:7.12.1", {
-          "packageLocation": "./.yarn/$$virtual/@babel-plugin-transform-react-pure-annotations-virtual-387ef14d4c/0/cache/@babel-plugin-transform-react-pure-annotations-npm-7.12.1-6f59dfc11e-b1984954da.zip/node_modules/@babel/plugin-transform-react-pure-annotations/",
+        ["virtual:616f8ce008f3d6aec19f41f61074ca1bf312c7656dec2e18e67496367f67c5562aa05ce443988f9e3c030d76ad681bfabee31215acb79789e0a5646f7c3f72cb#npm:7.12.1", {
+          "packageLocation": "./.yarn/$$virtual/@babel-plugin-transform-react-pure-annotations-virtual-926849e598/0/cache/@babel-plugin-transform-react-pure-annotations-npm-7.12.1-6f59dfc11e-b1984954da.zip/node_modules/@babel/plugin-transform-react-pure-annotations/",
           "packageDependencies": [
-            ["@babel/plugin-transform-react-pure-annotations", "virtual:80b6b3acd1d7d0f8347856b941b4fe76d4866b4f0dabb14614a2f036bf4c50902788fe85648e4bd49c310aee400f65d703de1c4a3eeee1d8de065f48368483a9#npm:7.12.1"],
-            ["@babel/core", null],
+            ["@babel/plugin-transform-react-pure-annotations", "virtual:616f8ce008f3d6aec19f41f61074ca1bf312c7656dec2e18e67496367f67c5562aa05ce443988f9e3c030d76ad681bfabee31215acb79789e0a5646f7c3f72cb#npm:7.12.1"],
+            ["@babel/core", "npm:7.13.1"],
             ["@babel/helper-annotate-as-pure", "npm:7.12.13"],
             ["@babel/helper-plugin-utils", "npm:7.12.13"],
             ["@types/babel__core", null]
@@ -14870,11 +14897,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["virtual:989b1248b250f6587a68112026af6be5318e8b6ca2b2f5a6f23e7fddbf21cab2d6d7012128b3f989df463dd46372a5492b2052808934688fa1f8f3cc0e6158f5#npm:7.12.1", {
-          "packageLocation": "./.yarn/$$virtual/@babel-plugin-transform-react-pure-annotations-virtual-57a66f11bb/0/cache/@babel-plugin-transform-react-pure-annotations-npm-7.12.1-6f59dfc11e-b1984954da.zip/node_modules/@babel/plugin-transform-react-pure-annotations/",
+        ["virtual:80b6b3acd1d7d0f8347856b941b4fe76d4866b4f0dabb14614a2f036bf4c50902788fe85648e4bd49c310aee400f65d703de1c4a3eeee1d8de065f48368483a9#npm:7.12.1", {
+          "packageLocation": "./.yarn/$$virtual/@babel-plugin-transform-react-pure-annotations-virtual-387ef14d4c/0/cache/@babel-plugin-transform-react-pure-annotations-npm-7.12.1-6f59dfc11e-b1984954da.zip/node_modules/@babel/plugin-transform-react-pure-annotations/",
           "packageDependencies": [
-            ["@babel/plugin-transform-react-pure-annotations", "virtual:989b1248b250f6587a68112026af6be5318e8b6ca2b2f5a6f23e7fddbf21cab2d6d7012128b3f989df463dd46372a5492b2052808934688fa1f8f3cc0e6158f5#npm:7.12.1"],
-            ["@babel/core", "npm:7.13.1"],
+            ["@babel/plugin-transform-react-pure-annotations", "virtual:80b6b3acd1d7d0f8347856b941b4fe76d4866b4f0dabb14614a2f036bf4c50902788fe85648e4bd49c310aee400f65d703de1c4a3eeee1d8de065f48368483a9#npm:7.12.1"],
+            ["@babel/core", null],
             ["@babel/helper-annotate-as-pure", "npm:7.12.13"],
             ["@babel/helper-plugin-utils", "npm:7.12.13"],
             ["@types/babel__core", null]
@@ -16646,16 +16673,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13", {
-          "packageLocation": "./.yarn/$$virtual/@babel-preset-react-virtual-989b1248b2/0/cache/@babel-preset-react-npm-7.12.13-027b790324-b5e652172e.zip/node_modules/@babel/preset-react/",
+        ["virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13", {
+          "packageLocation": "./.yarn/$$virtual/@babel-preset-react-virtual-616f8ce008/0/cache/@babel-preset-react-npm-7.12.13-027b790324-b5e652172e.zip/node_modules/@babel/preset-react/",
           "packageDependencies": [
-            ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
             ["@babel/core", "npm:7.13.1"],
             ["@babel/helper-plugin-utils", "npm:7.12.13"],
-            ["@babel/plugin-transform-react-display-name", "virtual:989b1248b250f6587a68112026af6be5318e8b6ca2b2f5a6f23e7fddbf21cab2d6d7012128b3f989df463dd46372a5492b2052808934688fa1f8f3cc0e6158f5#npm:7.12.13"],
-            ["@babel/plugin-transform-react-jsx", "virtual:989b1248b250f6587a68112026af6be5318e8b6ca2b2f5a6f23e7fddbf21cab2d6d7012128b3f989df463dd46372a5492b2052808934688fa1f8f3cc0e6158f5#npm:7.12.17"],
-            ["@babel/plugin-transform-react-jsx-development", "virtual:989b1248b250f6587a68112026af6be5318e8b6ca2b2f5a6f23e7fddbf21cab2d6d7012128b3f989df463dd46372a5492b2052808934688fa1f8f3cc0e6158f5#npm:7.12.17"],
-            ["@babel/plugin-transform-react-pure-annotations", "virtual:989b1248b250f6587a68112026af6be5318e8b6ca2b2f5a6f23e7fddbf21cab2d6d7012128b3f989df463dd46372a5492b2052808934688fa1f8f3cc0e6158f5#npm:7.12.1"],
+            ["@babel/plugin-transform-react-display-name", "virtual:616f8ce008f3d6aec19f41f61074ca1bf312c7656dec2e18e67496367f67c5562aa05ce443988f9e3c030d76ad681bfabee31215acb79789e0a5646f7c3f72cb#npm:7.12.13"],
+            ["@babel/plugin-transform-react-jsx", "virtual:616f8ce008f3d6aec19f41f61074ca1bf312c7656dec2e18e67496367f67c5562aa05ce443988f9e3c030d76ad681bfabee31215acb79789e0a5646f7c3f72cb#npm:7.12.17"],
+            ["@babel/plugin-transform-react-jsx-development", "virtual:616f8ce008f3d6aec19f41f61074ca1bf312c7656dec2e18e67496367f67c5562aa05ce443988f9e3c030d76ad681bfabee31215acb79789e0a5646f7c3f72cb#npm:7.12.17"],
+            ["@babel/plugin-transform-react-pure-annotations", "virtual:616f8ce008f3d6aec19f41f61074ca1bf312c7656dec2e18e67496367f67c5562aa05ce443988f9e3c030d76ad681bfabee31215acb79789e0a5646f7c3f72cb#npm:7.12.1"],
             ["@types/babel__core", null]
           ],
           "packagePeers": [
@@ -16961,6 +16988,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./app/",
           "packageDependencies": [
             ["@compendium/app", "workspace:app"],
+            ["@compendium/bourre", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:games/bourre"],
             ["@compendium/emoji", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:components/emoji"],
             ["@compendium/peer-party", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:peer-party"],
             ["@compendium/players", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:components/players"],
@@ -17003,14 +17031,189 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "SOFT",
         }]
       ]],
+      ["@compendium/bourre", [
+        ["virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:games/bourre", {
+          "packageLocation": "./.yarn/$$virtual/@compendium-bourre-virtual-4b7945a262/1/games/bourre/",
+          "packageDependencies": [
+            ["@compendium/bourre", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:games/bourre"],
+            ["@compendium/bourre-client", "virtual:4b7945a262b0bb1513a6259f854d94b49663d18df76fc11d6ec130feff2adc8abd3ff270df5d855e260dc58cca8b8ea7be3266e9539eb48d3c9d59d7af523704#workspace:games/bourre/client"],
+            ["@compendium/bourre-game", "workspace:games/bourre/game"],
+            ["@types/react-router-dom", null],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
+            ["react-router-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:5.2.0"]
+          ],
+          "packagePeers": [
+            "@types/react-router-dom",
+            "react-router-dom"
+          ],
+          "linkType": "SOFT",
+        }],
+        ["workspace:games/bourre", {
+          "packageLocation": "./games/bourre/",
+          "packageDependencies": [
+            ["@compendium/bourre", "workspace:games/bourre"],
+            ["@compendium/bourre-client", "virtual:2c7b90744c7b0db39431c6de4a194b135090245ef8697861e330efedd75bdb92ad187b88b6dbf5f2ff6b0c375fb540304dcd574f7fa4b0139bcce8c67f327d81#workspace:games/bourre/client"],
+            ["@compendium/bourre-game", "workspace:games/bourre/game"],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@compendium/bourre-client", [
+        ["virtual:2c7b90744c7b0db39431c6de4a194b135090245ef8697861e330efedd75bdb92ad187b88b6dbf5f2ff6b0c375fb540304dcd574f7fa4b0139bcce8c67f327d81#workspace:games/bourre/client", {
+          "packageLocation": "./.yarn/$$virtual/@compendium-bourre-client-virtual-6b46c3c90d/1/games/bourre/client/",
+          "packageDependencies": [
+            ["@compendium/bourre-client", "virtual:2c7b90744c7b0db39431c6de4a194b135090245ef8697861e330efedd75bdb92ad187b88b6dbf5f2ff6b0c375fb540304dcd574f7fa4b0139bcce8c67f327d81#workspace:games/bourre/client"],
+            ["@babel/cli", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.13.0"],
+            ["@babel/core", "npm:7.13.1"],
+            ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
+            ["@types/react", null],
+            ["@types/react-dom", null],
+            ["@types/react-is", null],
+            ["@types/react-router-dom", null],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
+            ["react", "npm:17.0.1"],
+            ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
+            ["react-is", "npm:17.0.1"],
+            ["react-router-dom", null],
+            ["styled-components", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1"]
+          ],
+          "packagePeers": [
+            "@types/react-dom",
+            "@types/react-is",
+            "@types/react-router-dom",
+            "@types/react",
+            "react-router-dom"
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:4b7945a262b0bb1513a6259f854d94b49663d18df76fc11d6ec130feff2adc8abd3ff270df5d855e260dc58cca8b8ea7be3266e9539eb48d3c9d59d7af523704#workspace:games/bourre/client", {
+          "packageLocation": "./.yarn/$$virtual/@compendium-bourre-client-virtual-43becee820/1/games/bourre/client/",
+          "packageDependencies": [
+            ["@compendium/bourre-client", "virtual:4b7945a262b0bb1513a6259f854d94b49663d18df76fc11d6ec130feff2adc8abd3ff270df5d855e260dc58cca8b8ea7be3266e9539eb48d3c9d59d7af523704#workspace:games/bourre/client"],
+            ["@babel/cli", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.13.0"],
+            ["@babel/core", "npm:7.13.1"],
+            ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
+            ["@types/react", null],
+            ["@types/react-dom", null],
+            ["@types/react-is", null],
+            ["@types/react-router-dom", null],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
+            ["react", "npm:17.0.1"],
+            ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
+            ["react-is", "npm:17.0.1"],
+            ["react-router-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:5.2.0"],
+            ["styled-components", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1"]
+          ],
+          "packagePeers": [
+            "@types/react-dom",
+            "@types/react-is",
+            "@types/react-router-dom",
+            "@types/react",
+            "react-router-dom"
+          ],
+          "linkType": "SOFT",
+        }],
+        ["workspace:games/bourre/client", {
+          "packageLocation": "./games/bourre/client/",
+          "packageDependencies": [
+            ["@compendium/bourre-client", "workspace:games/bourre/client"],
+            ["@babel/cli", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.13.0"],
+            ["@babel/core", "npm:7.13.1"],
+            ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
+            ["react", "npm:17.0.1"],
+            ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
+            ["react-is", "npm:17.0.1"],
+            ["styled-components", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@compendium/bourre-game", [
+        ["workspace:games/bourre/game", {
+          "packageLocation": "./games/bourre/game/",
+          "packageDependencies": [
+            ["@compendium/bourre-game", "workspace:games/bourre/game"],
+            ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
+            ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
+            ["eslint", "npm:7.20.0"],
+            ["eslint-config-react-app", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.0.0"],
+            ["eslint-plugin-flowtype", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:5.2.2"],
+            ["eslint-plugin-import", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:2.22.1"],
+            ["eslint-plugin-jest", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:24.1.5"],
+            ["eslint-plugin-jsx-a11y", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:6.4.1"],
+            ["eslint-plugin-react", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:7.22.0"],
+            ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
+            ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
       ["@compendium/emoji", [
         ["virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:components/emoji", {
           "packageLocation": "./.yarn/$$virtual/@compendium-emoji-virtual-4fefafd080/1/components/emoji/",
           "packageDependencies": [
             ["@compendium/emoji", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:components/emoji"],
-            ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
+            ["@babel/cli", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.13.0"],
             ["@babel/core", "npm:7.13.1"],
-            ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
             ["@types/react", null],
             ["@types/react-dom", null],
             ["@types/react-is", null],
@@ -17032,7 +17235,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
             ["react-router-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:5.2.0"],
-            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"],
+            ["styled-components", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1"],
             ["twemoji", "npm:13.0.2"]
           ],
           "packagePeers": [
@@ -17050,9 +17253,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/@compendium-emoji-virtual-0c80a80de1/1/components/emoji/",
           "packageDependencies": [
             ["@compendium/emoji", "virtual:74f2cf57a0bd99be069cac2f592aaa05f1ad6a876c33b6722dd0beefb7e0b165f8c6550d4caf972f0b7b567fd8f63d3b7d6fae52fc296ad472867bd71dbcb4c2#workspace:components/emoji"],
-            ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
+            ["@babel/cli", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.13.0"],
             ["@babel/core", "npm:7.13.1"],
-            ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
             ["@types/react", null],
             ["@types/react-dom", null],
             ["@types/react-is", null],
@@ -17074,7 +17277,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
             ["react-router-dom", null],
-            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"],
+            ["styled-components", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1"],
             ["twemoji", "npm:13.0.2"]
           ],
           "packagePeers": [
@@ -17093,9 +17296,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./components/emoji/",
           "packageDependencies": [
             ["@compendium/emoji", "workspace:components/emoji"],
-            ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
+            ["@babel/cli", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.13.0"],
             ["@babel/core", "npm:7.13.1"],
-            ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
             ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
             ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
             ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
@@ -17112,7 +17315,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:17.0.1"],
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
-            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"],
+            ["styled-components", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1"],
             ["twemoji", "npm:13.0.2"]
           ],
           "linkType": "SOFT",
@@ -17244,10 +17447,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/@compendium-players-client-virtual-d6370e0814/1/components/players/client/",
           "packageDependencies": [
             ["@compendium/players-client", "virtual:0d508d540b85e7c7c35cb2036d5732fa27138c464c529dc63287ac845af2cbe4937a3d58bd7ddff24800e25543864ad2798dd6201283b450c89fc983faf99aed#workspace:components/players/client"],
-            ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
+            ["@babel/cli", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.13.0"],
             ["@babel/core", "npm:7.13.1"],
             ["@babel/preset-env", "virtual:d6370e081492dd0979bec2892f07dff8f3541fc2ef115bc66613cc78746363b7432018d49fc5bae5fcd32e77d2aea105594ab4cdebad1bab22cf5c51e5bf63ac#npm:7.13.12"],
-            ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
             ["@compendium/emoji", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:components/emoji"],
             ["@testing-library/react", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:11.2.5"],
             ["@testing-library/user-event", "virtual:d6370e081492dd0979bec2892f07dff8f3541fc2ef115bc66613cc78746363b7432018d49fc5bae5fcd32e77d2aea105594ab4cdebad1bab22cf5c51e5bf63ac#npm:13.0.16"],
@@ -17273,7 +17476,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
             ["react-router-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:5.2.0"],
-            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"]
+            ["styled-components", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1"]
           ],
           "packagePeers": [
             "@types/react-dom",
@@ -17288,10 +17491,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/@compendium-players-client-virtual-74f2cf57a0/1/components/players/client/",
           "packageDependencies": [
             ["@compendium/players-client", "virtual:57883f63139ee9c11eb4c34d1d0c0b95420a0425c5e164ca590ff00c102d34da186b0b78781f224f7a1b234989cfc48060df5cac61f93f92de83f54cb7df0adf#workspace:components/players/client"],
-            ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
+            ["@babel/cli", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.13.0"],
             ["@babel/core", "npm:7.13.1"],
             ["@babel/preset-env", "virtual:d6370e081492dd0979bec2892f07dff8f3541fc2ef115bc66613cc78746363b7432018d49fc5bae5fcd32e77d2aea105594ab4cdebad1bab22cf5c51e5bf63ac#npm:7.13.12"],
-            ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
             ["@compendium/emoji", "virtual:74f2cf57a0bd99be069cac2f592aaa05f1ad6a876c33b6722dd0beefb7e0b165f8c6550d4caf972f0b7b567fd8f63d3b7d6fae52fc296ad472867bd71dbcb4c2#workspace:components/emoji"],
             ["@testing-library/react", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:11.2.5"],
             ["@testing-library/user-event", "virtual:d6370e081492dd0979bec2892f07dff8f3541fc2ef115bc66613cc78746363b7432018d49fc5bae5fcd32e77d2aea105594ab4cdebad1bab22cf5c51e5bf63ac#npm:13.0.16"],
@@ -17317,7 +17520,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
             ["react-router-dom", null],
-            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"]
+            ["styled-components", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1"]
           ],
           "packagePeers": [
             "@types/react-dom",
@@ -17332,10 +17535,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./components/players/client/",
           "packageDependencies": [
             ["@compendium/players-client", "workspace:components/players/client"],
-            ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
+            ["@babel/cli", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.13.0"],
             ["@babel/core", "npm:7.13.1"],
             ["@babel/preset-env", "virtual:d6370e081492dd0979bec2892f07dff8f3541fc2ef115bc66613cc78746363b7432018d49fc5bae5fcd32e77d2aea105594ab4cdebad1bab22cf5c51e5bf63ac#npm:7.13.12"],
-            ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
             ["@compendium/emoji", "virtual:74f2cf57a0bd99be069cac2f592aaa05f1ad6a876c33b6722dd0beefb7e0b165f8c6550d4caf972f0b7b567fd8f63d3b7d6fae52fc296ad472867bd71dbcb4c2#workspace:components/emoji"],
             ["@testing-library/react", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:11.2.5"],
             ["@testing-library/user-event", "virtual:d6370e081492dd0979bec2892f07dff8f3541fc2ef115bc66613cc78746363b7432018d49fc5bae5fcd32e77d2aea105594ab4cdebad1bab22cf5c51e5bf63ac#npm:13.0.16"],
@@ -17356,7 +17559,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:17.0.1"],
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
-            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"]
+            ["styled-components", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1"]
           ],
           "linkType": "SOFT",
         }]
@@ -17390,9 +17593,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/@compendium-playing-card-virtual-352a48b143/1/components/playing-card/",
           "packageDependencies": [
             ["@compendium/playing-card", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:components/playing-card"],
-            ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
+            ["@babel/cli", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.13.0"],
             ["@babel/core", "npm:7.13.1"],
-            ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
             ["@types/react", null],
             ["@types/react-dom", null],
             ["@types/react-is", null],
@@ -17414,7 +17617,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
             ["react-router-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:5.2.0"],
-            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"]
+            ["styled-components", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1"]
           ],
           "packagePeers": [
             "@types/react-dom",
@@ -17431,9 +17634,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/@compendium-playing-card-virtual-4b835ceafa/1/components/playing-card/",
           "packageDependencies": [
             ["@compendium/playing-card", "virtual:927a2e4a0acb51f808c584e7db9fb8a1397686b0c4b47d32e4bfa6661d48fcbf0dbcf3c12e0dd1ab539403f1ad05f1dc66f026ee134a69a8223f9c94b88091e8#workspace:components/playing-card"],
-            ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
+            ["@babel/cli", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.13.0"],
             ["@babel/core", "npm:7.13.1"],
-            ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
             ["@types/react", null],
             ["@types/react-dom", null],
             ["@types/react-is", null],
@@ -17455,7 +17658,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
             ["react-router-dom", null],
-            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"]
+            ["styled-components", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1"]
           ],
           "packagePeers": [
             "@types/react-dom",
@@ -17473,9 +17676,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./components/playing-card/",
           "packageDependencies": [
             ["@compendium/playing-card", "workspace:components/playing-card"],
-            ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
+            ["@babel/cli", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.13.0"],
             ["@babel/core", "npm:7.13.1"],
-            ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
             ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
             ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
             ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
@@ -17492,7 +17695,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:17.0.1"],
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
-            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"]
+            ["styled-components", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1"]
           ],
           "linkType": "SOFT",
         }]
@@ -17599,9 +17802,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./games/tic-tac-toe/guest/",
           "packageDependencies": [
             ["@compendium/tic-tac-toe-guest", "workspace:games/tic-tac-toe/guest"],
-            ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
+            ["@babel/cli", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.13.0"],
             ["@babel/core", "npm:7.13.1"],
-            ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
             ["@compendium/tic-tac-toe-game", "workspace:games/tic-tac-toe/game"],
             ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
             ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
@@ -17618,7 +17821,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:17.0.1"],
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
-            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"]
+            ["styled-components", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1"]
           ],
           "linkType": "SOFT",
         }]
@@ -17628,9 +17831,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/@compendium-tic-tac-toe-host-virtual-0fbd498991/1/games/tic-tac-toe/host/",
           "packageDependencies": [
             ["@compendium/tic-tac-toe-host", "virtual:e666b0caf67c8cf724225a1b9bf135ed6a069d56477f50a44cbaef6bfdd4f9b40043593d1c76ab213a292ec34695f786e2b001e568d0f2301e88efd87e02d6df#workspace:games/tic-tac-toe/host"],
-            ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
+            ["@babel/cli", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.13.0"],
             ["@babel/core", "npm:7.13.1"],
-            ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
             ["@compendium/tic-tac-toe-game", "workspace:games/tic-tac-toe/game"],
             ["@types/react", null],
             ["@types/react-dom", null],
@@ -17652,7 +17855,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
             ["react-router-dom", null],
-            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"]
+            ["styled-components", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1"]
           ],
           "packagePeers": [
             "@types/react-dom",
@@ -17667,9 +17870,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/@compendium-tic-tac-toe-host-virtual-29ab4cb6c2/1/games/tic-tac-toe/host/",
           "packageDependencies": [
             ["@compendium/tic-tac-toe-host", "virtual:ef304ed1c2d3a9a1b0dc7cd1c041ce0c6a4c3ed919f221530f63742961600a3b3237602db9a137f39e86173978c0501882e072387753563631613d15679742db#workspace:games/tic-tac-toe/host"],
-            ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
+            ["@babel/cli", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.13.0"],
             ["@babel/core", "npm:7.13.1"],
-            ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
             ["@compendium/tic-tac-toe-game", "workspace:games/tic-tac-toe/game"],
             ["@types/react", null],
             ["@types/react-dom", null],
@@ -17691,7 +17894,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
             ["react-router-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:5.2.0"],
-            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"]
+            ["styled-components", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1"]
           ],
           "packagePeers": [
             "@types/react-dom",
@@ -17706,9 +17909,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./games/tic-tac-toe/host/",
           "packageDependencies": [
             ["@compendium/tic-tac-toe-host", "workspace:games/tic-tac-toe/host"],
-            ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
+            ["@babel/cli", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.13.0"],
             ["@babel/core", "npm:7.13.1"],
-            ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
             ["@compendium/tic-tac-toe-game", "workspace:games/tic-tac-toe/game"],
             ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
             ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
@@ -17725,7 +17928,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:17.0.1"],
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
-            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"]
+            ["styled-components", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1"]
           ],
           "linkType": "SOFT",
         }]
@@ -17785,9 +17988,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/@compendium-whist-client-virtual-927a2e4a0a/1/games/whist/client/",
           "packageDependencies": [
             ["@compendium/whist-client", "virtual:300fdf784651f32ccb8f445f24c44001159f99fa156011f240c6d43b0057116a3d46541c1f07a109ef8b461ce06ad66ee684e18c17256282b900f41cfd4cc817#workspace:games/whist/client"],
-            ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
+            ["@babel/cli", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.13.0"],
             ["@babel/core", "npm:7.13.1"],
-            ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
             ["@compendium/playing-card", "virtual:927a2e4a0acb51f808c584e7db9fb8a1397686b0c4b47d32e4bfa6661d48fcbf0dbcf3c12e0dd1ab539403f1ad05f1dc66f026ee134a69a8223f9c94b88091e8#workspace:components/playing-card"],
             ["@types/react", null],
             ["@types/react-dom", null],
@@ -17809,7 +18012,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
             ["react-router-dom", null],
-            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"]
+            ["styled-components", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1"]
           ],
           "packagePeers": [
             "@types/react-dom",
@@ -17824,9 +18027,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/@compendium-whist-client-virtual-37ea395af7/1/games/whist/client/",
           "packageDependencies": [
             ["@compendium/whist-client", "virtual:4791b8c2c2774148a7aafc3385892f460eaea25ac2531316888ed708cd9172c69fac2af3e17af6dd7101c43d9c41e92d1fdc47b5cdc4b1dc0e89cb268c19ddf6#workspace:games/whist/client"],
-            ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
+            ["@babel/cli", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.13.0"],
             ["@babel/core", "npm:7.13.1"],
-            ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
             ["@compendium/playing-card", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:components/playing-card"],
             ["@types/react", null],
             ["@types/react-dom", null],
@@ -17848,7 +18051,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
             ["react-router-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:5.2.0"],
-            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"]
+            ["styled-components", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1"]
           ],
           "packagePeers": [
             "@types/react-dom",
@@ -17863,9 +18066,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./games/whist/client/",
           "packageDependencies": [
             ["@compendium/whist-client", "workspace:games/whist/client"],
-            ["@babel/cli", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.13.0"],
+            ["@babel/cli", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.13.0"],
             ["@babel/core", "npm:7.13.1"],
-            ["@babel/preset-react", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:7.12.13"],
+            ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
             ["@compendium/playing-card", "virtual:927a2e4a0acb51f808c584e7db9fb8a1397686b0c4b47d32e4bfa6661d48fcbf0dbcf3c12e0dd1ab539403f1ad05f1dc66f026ee134a69a8223f9c94b88091e8#workspace:components/playing-card"],
             ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
             ["@typescript-eslint/parser", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
@@ -17882,7 +18085,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:17.0.1"],
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
-            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"]
+            ["styled-components", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1"]
           ],
           "linkType": "SOFT",
         }]
@@ -22956,6 +23159,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
+        ["virtual:7508c4a08e62dc759b099bb7078a9a6bc0ded227b5cf01b5f2f030ceef4f25b7f895a7e8b6e7c571d8e8a4e2e71fada63b6dca7fd095cfadbabd9dab4e302977#npm:1.12.0", {
+          "packageLocation": "./.yarn/$$virtual/babel-plugin-styled-components-virtual-4963c20422/0/cache/babel-plugin-styled-components-npm-1.12.0-9429650896-6490bd07b4.zip/node_modules/babel-plugin-styled-components/",
+          "packageDependencies": [
+            ["babel-plugin-styled-components", "virtual:7508c4a08e62dc759b099bb7078a9a6bc0ded227b5cf01b5f2f030ceef4f25b7f895a7e8b6e7c571d8e8a4e2e71fada63b6dca7fd095cfadbabd9dab4e302977#npm:1.12.0"],
+            ["@babel/helper-annotate-as-pure", "npm:7.12.13"],
+            ["@babel/helper-module-imports", "npm:7.12.13"],
+            ["@types/styled-components", null],
+            ["babel-plugin-syntax-jsx", "npm:6.18.0"],
+            ["lodash", "npm:4.17.21"],
+            ["styled-components", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1"]
+          ],
+          "packagePeers": [
+            "@types/styled-components",
+            "styled-components"
+          ],
+          "linkType": "HARD",
+        }],
         ["virtual:b20d05a8c0f835e8a6e77452517ced5c9983e0721397c02868652d40fd3754845c2081d77a81f4dc2be5a81d25238741ca1aa58e3b713540fe1187d3848e9538#npm:1.12.0", {
           "packageLocation": "./.yarn/$$virtual/babel-plugin-styled-components-virtual-f30e907adb/0/cache/babel-plugin-styled-components-npm-1.12.0-9429650896-6490bd07b4.zip/node_modules/babel-plugin-styled-components/",
           "packageDependencies": [
@@ -22966,23 +23186,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-plugin-syntax-jsx", "npm:6.18.0"],
             ["lodash", "npm:4.17.21"],
             ["styled-components", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:5.2.1"]
-          ],
-          "packagePeers": [
-            "@types/styled-components",
-            "styled-components"
-          ],
-          "linkType": "HARD",
-        }],
-        ["virtual:c52f19864d6a60fa9224b85a3dcd519c8fae9d7a279262a765c13035dae82617f50dfa8a92a117e8d2a55c29f8e4ffd5abc6bf00921c415eec2f0f116749c23b#npm:1.12.0", {
-          "packageLocation": "./.yarn/$$virtual/babel-plugin-styled-components-virtual-212654fc12/0/cache/babel-plugin-styled-components-npm-1.12.0-9429650896-6490bd07b4.zip/node_modules/babel-plugin-styled-components/",
-          "packageDependencies": [
-            ["babel-plugin-styled-components", "virtual:c52f19864d6a60fa9224b85a3dcd519c8fae9d7a279262a765c13035dae82617f50dfa8a92a117e8d2a55c29f8e4ffd5abc6bf00921c415eec2f0f116749c23b#npm:1.12.0"],
-            ["@babel/helper-annotate-as-pure", "npm:7.12.13"],
-            ["@babel/helper-module-imports", "npm:7.12.13"],
-            ["@types/styled-components", null],
-            ["babel-plugin-syntax-jsx", "npm:6.18.0"],
-            ["lodash", "npm:4.17.21"],
-            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"]
           ],
           "packagePeers": [
             "@types/styled-components",
@@ -38825,10 +39028,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1", {
-          "packageLocation": "./.yarn/$$virtual/styled-components-virtual-c52f19864d/0/cache/styled-components-npm-5.2.1-e180c24b63-c27911be08.zip/node_modules/styled-components/",
+        ["virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1", {
+          "packageLocation": "./.yarn/$$virtual/styled-components-virtual-7508c4a08e/0/cache/styled-components-npm-5.2.1-e180c24b63-c27911be08.zip/node_modules/styled-components/",
           "packageDependencies": [
-            ["styled-components", "virtual:4fefafd080b6b4bf694ece141b73360da1179f6ca1124bff0ca6bd25d430d7805204457cd3aab20ee08de1cd91c3f58960558aeeef7f8d4442d6b9f8a4a9d53a#npm:5.2.1"],
+            ["styled-components", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:5.2.1"],
             ["@babel/helper-module-imports", "npm:7.12.13"],
             ["@babel/traverse", "npm:7.13.0"],
             ["@emotion/is-prop-valid", "npm:0.8.8"],
@@ -38837,7 +39040,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", null],
             ["@types/react-dom", null],
             ["@types/react-is", null],
-            ["babel-plugin-styled-components", "virtual:c52f19864d6a60fa9224b85a3dcd519c8fae9d7a279262a765c13035dae82617f50dfa8a92a117e8d2a55c29f8e4ffd5abc6bf00921c415eec2f0f116749c23b#npm:1.12.0"],
+            ["babel-plugin-styled-components", "virtual:7508c4a08e62dc759b099bb7078a9a6bc0ded227b5cf01b5f2f030ceef4f25b7f895a7e8b6e7c571d8e8a4e2e71fada63b6dca7fd095cfadbabd9dab4e302977#npm:1.12.0"],
             ["css-to-react-native", "npm:3.0.0"],
             ["hoist-non-react-statics", "npm:3.3.2"],
             ["react", "npm:17.0.1"],

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@compendium/bourre": "workspace:games/bourre",
     "@compendium/emoji": "workspace:components/emoji",
     "@compendium/peer-party": "workspace:peer-party",
     "@compendium/players": "workspace:components/players",
