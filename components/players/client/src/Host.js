@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 const Main = styled.main`
@@ -17,6 +17,14 @@ const Item = styled.div`
   padding: .4em;
   border: solid 1px gray;
 `;
+
+const Button = styled.button`
+
+`;
+
+const checkIfCanStartGame = ({ state: { players } }) => (
+  players.list.length >= players.minPlayers
+);
 
 const PlayerList = ({ children, players }) => {
   return (
@@ -38,11 +46,21 @@ const HowToJoin = ({ roomId }) => (
 )
 
 const Host = ({ state, roomId, moves, connections, children }) => {
+  useEffect(() => moves?.initPlayers && moves.initPlayers(), [moves]);
   if (!state.players) return null;
   if (state.players.everyonesIn) return children;
+  const canStartGame = checkIfCanStartGame({ state });
   return (
     <PlayerList players={state.players.list}>
       <HowToJoin roomId={roomId}/>
+      {canStartGame && (
+        <Button
+          onClick={() => moves.startGame()}
+          onKeyPress={() => moves.startGame()}
+        >
+          Start Game
+        </Button>
+      )}
     </PlayerList>
   )
 };

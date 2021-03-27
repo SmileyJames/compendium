@@ -996,7 +996,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "@testing-library/jest-dom",
-        "npm:5.11.9"
+        "npm:5.11.10"
       ],
       [
         "@testing-library/react",
@@ -17455,6 +17455,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-env", "virtual:d6370e081492dd0979bec2892f07dff8f3541fc2ef115bc66613cc78746363b7432018d49fc5bae5fcd32e77d2aea105594ab4cdebad1bab22cf5c51e5bf63ac#npm:7.13.12"],
             ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
             ["@compendium/emoji", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#workspace:components/emoji"],
+            ["@testing-library/jest-dom", "npm:5.11.10"],
             ["@testing-library/react", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:11.2.5"],
             ["@testing-library/user-event", "virtual:d6370e081492dd0979bec2892f07dff8f3541fc2ef115bc66613cc78746363b7432018d49fc5bae5fcd32e77d2aea105594ab4cdebad1bab22cf5c51e5bf63ac#npm:13.0.16"],
             ["@types/react", null],
@@ -17499,6 +17500,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-env", "virtual:d6370e081492dd0979bec2892f07dff8f3541fc2ef115bc66613cc78746363b7432018d49fc5bae5fcd32e77d2aea105594ab4cdebad1bab22cf5c51e5bf63ac#npm:7.13.12"],
             ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
             ["@compendium/emoji", "virtual:74f2cf57a0bd99be069cac2f592aaa05f1ad6a876c33b6722dd0beefb7e0b165f8c6550d4caf972f0b7b567fd8f63d3b7d6fae52fc296ad472867bd71dbcb4c2#workspace:components/emoji"],
+            ["@testing-library/jest-dom", "npm:5.11.10"],
             ["@testing-library/react", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:11.2.5"],
             ["@testing-library/user-event", "virtual:d6370e081492dd0979bec2892f07dff8f3541fc2ef115bc66613cc78746363b7432018d49fc5bae5fcd32e77d2aea105594ab4cdebad1bab22cf5c51e5bf63ac#npm:13.0.16"],
             ["@types/react", null],
@@ -17543,6 +17545,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-env", "virtual:d6370e081492dd0979bec2892f07dff8f3541fc2ef115bc66613cc78746363b7432018d49fc5bae5fcd32e77d2aea105594ab4cdebad1bab22cf5c51e5bf63ac#npm:7.13.12"],
             ["@babel/preset-react", "virtual:43becee820183c603683067bee9ad47b382e73608a6273e841c5934ab23504ab8c8c5065b263b478296c4a490e9de92eb2554d6e2449b20cbbec41b3c272b308#npm:7.12.13"],
             ["@compendium/emoji", "virtual:74f2cf57a0bd99be069cac2f592aaa05f1ad6a876c33b6722dd0beefb7e0b165f8c6550d4caf972f0b7b567fd8f63d3b7d6fae52fc296ad472867bd71dbcb4c2#workspace:components/emoji"],
+            ["@testing-library/jest-dom", "npm:5.11.10"],
             ["@testing-library/react", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:11.2.5"],
             ["@testing-library/user-event", "virtual:d6370e081492dd0979bec2892f07dff8f3541fc2ef115bc66613cc78746363b7432018d49fc5bae5fcd32e77d2aea105594ab4cdebad1bab22cf5c51e5bf63ac#npm:13.0.16"],
             ["@typescript-eslint/eslint-plugin", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.15.2"],
@@ -20360,6 +20363,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@testing-library/jest-dom", [
+        ["npm:5.11.10", {
+          "packageLocation": "./.yarn/cache/@testing-library-jest-dom-npm-5.11.10-0c42cd523e-25bf4cd9f6.zip/node_modules/@testing-library/jest-dom/",
+          "packageDependencies": [
+            ["@testing-library/jest-dom", "npm:5.11.10"],
+            ["@babel/runtime", "npm:7.12.18"],
+            ["@types/testing-library__jest-dom", "npm:5.9.5"],
+            ["aria-query", "npm:4.2.2"],
+            ["chalk", "npm:3.0.0"],
+            ["css", "npm:3.0.0"],
+            ["css.escape", "npm:1.5.1"],
+            ["lodash", "npm:4.17.21"],
+            ["redent", "npm:3.0.0"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:5.11.9", {
           "packageLocation": "./.yarn/cache/@testing-library-jest-dom-npm-5.11.9-ad0c7dbe3e-c285c044ed.zip/node_modules/@testing-library/jest-dom/",
           "packageDependencies": [

@@ -87,6 +87,10 @@ const findConnectionIsPlayer = ({ players, connectionId }) => (
   players.findIndex(player => player.connectionId === connectionId) > -1
 )
 
+const checkIfGameIsFull = ({ state: { players } }) => (
+  players.list.length > players.maxPlayers
+);
+
 const Guest = ({ children, state, roomId, moves, connectionId }) => {
   if (!state.players) {
     return <Waiting/>;
@@ -97,7 +101,8 @@ const Guest = ({ children, state, roomId, moves, connectionId }) => {
   if (state.players.everyonesIn) {
     return isPlayer ? children : <Spectator/>;
   }  else {
-    return isPlayer ? <Waiting/> : <JoinScreen moves={moves}/>;
+    const gameIsFull = checkIfGameIsFull({ state });
+    return isPlayer || gameIsFull ? <Waiting/> : <JoinScreen moves={moves}/>;
   }
 }
 
