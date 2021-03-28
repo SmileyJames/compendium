@@ -1,4 +1,3 @@
-yarn workspace @compendium/app run build
 yarn workspace @compendium/emoji run build
 yarn workspace @compendium/playing-card run build
 yarn workspace @compendium/players-client run build
