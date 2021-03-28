@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import Emoji from "@compendium/emoji";
 
 const Main = styled.main`
   display: flex;
@@ -18,6 +19,13 @@ const Item = styled.div`
   border: solid 1px gray;
 `;
 
+const Square = styled.div`
+  width: 2em;
+  height: 2em;
+  padding: 0.3em;
+  display: inline-block;
+`;
+
 const Button = styled.button`
 
 `;
@@ -31,7 +39,12 @@ const PlayerList = ({ children, players }) => {
     <Main>
       <Section>
         {players.map(({ name, emoji }, index) => (
-          <Item key={index}>{name}</Item>
+          <Item key={index}>
+            <Square>
+              {emoji && <Emoji emoji={emoji}/>}
+            </Square>
+            {name}
+          </Item>
         ))}
       </Section>
       <Article>

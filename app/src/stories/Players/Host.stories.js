@@ -40,7 +40,7 @@ OnePlayer.args = {
       minPlayers: 4,
       everyonesIn: false,
       list: [
-        { connectionId: "xxx", name: "SmileyJames", emoji: null },
+        { connectionId: "xxx", name: "SmileyJames", emoji: "🍆" },
       ],
     },
   },
@@ -57,10 +57,10 @@ ManyPlayers.args = {
       minPlayers: 4,
       everyonesIn: false,
       list: [
-        { connectionId: "xxx", name: "SmileyJames", emoji: null },
-        { connectionId: "xox", name: "SmoloyJimes", emoji: null },
-        { connectionId: "oxo", name: "SmaliyJomes", emoji: null },
-        { connectionId: "ooo", name: "JamesSmiley", emoji: null },
+        { connectionId: "xxx", name: "SmileyJames", emoji: "🍆" },
+        { connectionId: "xox", name: "SmoloyJimes", emoji: "🚗" },
+        { connectionId: "oxo", name: "SmaliyJomes", emoji: "🧘" },
+        { connectionId: "ooo", name: "JamesSmiley", emoji: "😍" },
       ]
     }
   },
@@ -77,10 +77,10 @@ EveryoneIsIn.args = {
       minPlayers: 4,
       everyonesIn: true,
       list: [
-        { connectionId: "xxx", name: "SmileyJames", emoji: null },
-        { connectionId: "xox", name: "SmoloyJimes", emoji: null },
-        { connectionId: "oxo", name: "SmaliyJomes", emoji: null },
-        { connectionId: "ooo", name: "JamesSmiley", emoji: null },
+        { connectionId: "xxx", name: "SmileyJames", emoji: "🍆" },
+        { connectionId: "xox", name: "SmoloyJimes", emoji: "🚗" },
+        { connectionId: "oxo", name: "SmaliyJomes", emoji: "🧘" },
+        { connectionId: "ooo", name: "JamesSmiley", emoji: "😍" },
       ]
     }
   },
