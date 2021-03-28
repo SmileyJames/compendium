@@ -32,7 +32,7 @@
     "lint": "yarn workspaces foreach -p run lint",
     "lint:fix": "yarn workspaces foreach -p run lint:fix",
     "test": "yarn workspaces foreach -p run test",
-    "build": "yarn workspaces foreach -pt run build",
+    "build": "yarn workspaces foreach -Apt run build",
     "plop": "plop"
   },
   "lint-staged": {
