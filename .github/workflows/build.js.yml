@@ -23,8 +23,8 @@ jobs:
     - run: ls
     - run: yarn install --immutable --immutable-cache
     - run: yarn run lint
-    - run: yarn run test
     - run: yarn run build:ci
+    - run: yarn run test
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@4.1.0
       with:
