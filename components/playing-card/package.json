@@ -6,7 +6,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "yarn babel src --out-dir dist && cpy src/cards dist/cards && cpy src/felt.png dist/",
+    "build": "yarn babel src --out-dir dist",
     "build:watch": "yarn babel src --watch --source-maps --out-dir dist",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src"
