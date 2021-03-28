@@ -37,7 +37,7 @@
     "test": "jest",
     "build": "yarn workspaces foreach -p run build",
     "build:ci": "bash ./scripts/buildCI.sh",
-    "build:app": "yarn workspace @compendium/app run build",
+    "build:app": "CI=false yarn workspace @compendium/app run build",
     "plop": "plop"
   },
   "lint-staged": {
