@@ -1,6 +1,7 @@
 import { usePartyHost, usePartyGuest } from "@compendium/peer-party";
 import { HashRouter, Switch, Route, useParams } from "react-router-dom";
-import { useGame, useConnectionId } from "./rooms";
+import useGame from "./useGame";
+import useConnectionId from "./useConnectionId";
 import Home from "./Home";
 
 const HostRoute = () => {
