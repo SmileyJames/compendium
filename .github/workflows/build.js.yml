@@ -20,12 +20,11 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - run: yarn --version
-    - run: pwd
+    - run: ls
     - run: yarn
-    - run: yarn lint
-    - run: yarn build:ci
-    - run: yarn test
+    - run: yarn workspaces run lint
+    - run: yarn workspaces run build
+    - run: yarn workspaces run test
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@4.1.0
       with:
