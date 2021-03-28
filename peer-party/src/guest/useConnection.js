@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, useReducer } from "react";
 import usePeer from "../usePeer";
 
 export const connect = ({ roomId, peer, conn }) => {
-  conn.current = peer.connect(roomId);
+  conn.current = peer.connect(roomId,  { serialization: "json" });
 }
 
 const useConnection = ({ id, roomId }) => {
