@@ -27,7 +27,7 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: "🔨"
-    - run: yarn run build:app
+    - run: CI=0 yarn run build:app
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@4.1.0
       with:
