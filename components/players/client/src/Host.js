@@ -45,8 +45,13 @@ const HowToJoin = ({ roomId }) => (
   <h1>Join: {roomId}</h1>
 )
 
-const Host = ({ state, roomId, moves, connections, children }) => {
-  useEffect(() => moves?.initPlayers && moves.initPlayers(), [moves]);
+const Host = ({ state, roomId, moves, connections, maxPlayers, minPlayers, children }) => {
+  useEffect(() => {
+    if (!state.players && moves?.initPlayers) {
+      moves.initPlayers({ maxPlayers, minPlayers });
+    }
+  }, [state.players, moves]);
+
   if (!state.players) return null;
   if (state.players.everyonesIn) return children;
   const canStartGame = checkIfCanStartGame({ state });

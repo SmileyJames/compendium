@@ -33,15 +33,15 @@ const SmallSquare = styled.div`
   margin: 0 auto;
 `;
 
-const JoinScreen = ({ moves }) => {
-  const [name, setName] = useState();
+const JoinScreen = ({ onJoin }) => {
+  const [name, setName] = useState("");
   const [emoji, setEmoji] = useState('😎');
   const [pickerIsShown, setPickerIsShown] = useState(false);
   const showPicker = () => setPickerIsShown(true);
   const hidePicker = () => setPickerIsShown(false);
 
   const join = () => {
-    moves.joinAsAPlayer({ name, emoji }); 
+    name?.length && onJoin({ name, emoji })
   }
 
   const onSelectEmoji = (emoji) => {
@@ -53,7 +53,7 @@ const JoinScreen = ({ moves }) => {
     <>
       {pickerIsShown && <EmojiPicker onHide={hidePicker} onSelectEmoji={onSelectEmoji} />}
       <Main>
-        <SmallSquare tabindex onKeyPress={showPicker} onClick={showPicker}>
+        <SmallSquare tabIndex={0} onKeyPress={showPicker} onClick={showPicker}>
           <Emoji emoji={emoji}/>
         </SmallSquare>
         <Row>
@@ -66,7 +66,7 @@ const JoinScreen = ({ moves }) => {
           </label>
         </Row>
         <Row>
-          <Button onKeyPress={join} onClick={join}>
+          <Button type="button" onKeyPress={join} onClick={join}>
             Sit down to Play
           </Button>
         </Row>
@@ -98,11 +98,15 @@ const Guest = ({ children, state, roomId, moves, connectionId }) => {
 
   const isPlayer = findConnectionIsPlayer({ players: state.players.list, connectionId });
 
+  const onJoin = ({ name, emoji }) => {
+    moves.joinAsAPlayer({ name, emoji });
+  }
+
   if (state.players.everyonesIn) {
     return isPlayer ? children : <Spectator/>;
-  }  else {
+  } else {
     const gameIsFull = checkIfGameIsFull({ state });
-    return isPlayer || gameIsFull ? <Waiting/> : <JoinScreen moves={moves}/>;
+    return isPlayer || gameIsFull ? <Waiting/> : <JoinScreen onJoin={onJoin}/>;
   }
 }
 

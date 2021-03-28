@@ -10,8 +10,8 @@ const withGuestPlayers = (Component) => ({ children, ...props }) => (
     </Guest>
 )
 
-const withHostPlayers = (Component) => ({ children, ...props }) => (
-    <Host {...props}>
+const withHostPlayers = (options, Component) => ({ children, ...props }) => (
+    <Host {...options} {...props}>
         <Component {...props}>
             {children}
         </Component>

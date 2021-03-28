@@ -10,8 +10,8 @@ describe("Players Host component", () => {
     const moves = {
       initPlayers: jest.fn(),
     };
-    render(<Host moves={moves} state={{}} />);
-    expect(moves.initPlayers).toHaveBeenCalled()
+    render(<Host maxPlayers={2} minPlayers={2} moves={moves} state={{}} />);
+    expect(moves.initPlayers).toHaveBeenCalledWith({ maxPlayers: 2, minPlayers: 2 })
   });
 
   test("Start game when there is enough players", () => {
