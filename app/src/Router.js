@@ -1,23 +1,29 @@
+import { ThemeProvider } from "styled-components";
 import { usePartyHost, usePartyGuest } from "@compendium/peer-party";
 import { HashRouter, Switch, Route, useParams } from "react-router-dom";
 import useGame from "./useGame";
 import Home from "./Home";
+import baseTheme from "./theme"
 
 const HostRoute = () => {
   const { roomId } = useParams();
-  const { Host, game } = useGame(roomId);
+  const { theme, Host, game } = useGame(roomId);
   const { state, moves, connections } = usePartyHost({ roomId, game });
   return (
-    Host && <Host roomId={roomId} state={state} moves={moves} connections={connections} />
+    <ThemeProvider theme={theme || baseTheme}>
+      {Host && <Host roomId={roomId} state={state} moves={moves} connections={connections} />}
+    </ThemeProvider>
   )
 }
 
 const GuestRoute = () => {
   const { roomId } = useParams();
-  const { Guest, game } = useGame(roomId);
+  const { theme,  Guest, game } = useGame(roomId);
   const { connectionId, connected, state, moves } = usePartyGuest({ roomId, game });
   return (
-    Guest && <Guest connectionId={connectionId} roomId={roomId} connected={connected} state={state} moves={moves}/>
+    <ThemeProvider theme={theme || baseTheme}>
+      {Guest && <Guest connectionId={connectionId} roomId={roomId} connected={connected} state={state} moves={moves}/>}
+    </ThemeProvider>
   )
 }
 
@@ -31,7 +37,9 @@ const Router = () =>
         <GuestRoute/>
       </Route>
       <Route exact path="/">
-        <Home/>
+        <ThemeProvider theme={baseTheme}>
+          <Home/>
+        </ThemeProvider>
       </Route>
     </Switch>
   </HashRouter>
