@@ -131,7 +131,6 @@ describe("usePartyGuest", () => {
       ])
     })
 
-    console.log(result.current.state);
     // state is updated using seeded RNG
     expect(result.current.state.number).toBe(6);
     expect(result.current.state.flipped).toBe(true);

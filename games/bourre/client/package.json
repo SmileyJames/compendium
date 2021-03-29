@@ -6,8 +6,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "yarn babel src --out-dir dist",
-    "build:watch": "yarn babel src --watch --source-maps --out-dir dist",
+    "build": "yarn babel src --out-dir dist --ignore '**/*.test.js'",
+    "build:watch": "yarn babel src --watch --source-maps --out-dir dist --ignore '**/*.test.js'",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src"
   },

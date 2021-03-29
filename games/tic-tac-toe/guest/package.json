@@ -2,8 +2,8 @@
   "name": "@compendium/tic-tac-toe-guest",
   "main": "dist/index.js",
   "scripts": {
-    "build": "yarn babel src --out-dir dist",
-    "build:watch": "yarn babel src --watch --out-dir dist",
+    "build": "yarn babel src --out-dir dist --ignore '**/*.test.js'",
+    "build:watch": "yarn babel src --watch --out-dir dist --ignore '**/*.test.js'",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src"
   },
