@@ -12,7 +12,7 @@ const usePartyGuest = ({ roomId, game }) => {
   useAck({ connected, conn, logSize });
   useSync({ data, clearData, game, roomId, setState, setLogSize });
   const { moves } = useMoves({ connected, conn, id, setState, roomId, game, logSize });
-  return { connected, state: cache, moves }
+  return { connectionId: id, connected, state: cache, moves }
 }
 
 export default usePartyGuest;

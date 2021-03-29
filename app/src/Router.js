@@ -1,7 +1,6 @@
 import { usePartyHost, usePartyGuest } from "@compendium/peer-party";
 import { HashRouter, Switch, Route, useParams } from "react-router-dom";
 import useGame from "./useGame";
-import useConnectionId from "./useConnectionId";
 import Home from "./Home";
 
 const HostRoute = () => {
@@ -14,12 +13,11 @@ const HostRoute = () => {
 }
 
 const GuestRoute = () => {
-  const id = useConnectionId();
   const { roomId } = useParams();
   const { Guest, game } = useGame(roomId);
-  const { connected, state, moves } = usePartyGuest({ id, roomId, game });
+  const { connectionId, connected, state, moves } = usePartyGuest({ roomId, game });
   return (
-    Guest && <Guest connectionId={id} roomId={roomId} connected={connected} state={state} moves={moves}/>
+    Guest && <Guest connectionId={connectionId} roomId={roomId} connected={connected} state={state} moves={moves}/>
   )
 }
 

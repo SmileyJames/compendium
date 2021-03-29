@@ -56,6 +56,7 @@ describe("usePartyGuest", () => {
 
     expect(result.current.state).toBeTruthy();
     expect(result.current.moves).toBeTruthy();
+    expect(result.current.connectionId.length).toBe(36);
 
     act(() => {
       result.current.moves.start();
