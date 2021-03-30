@@ -6,14 +6,13 @@
     "dist"
   ],
   "scripts": {
-    "build": "yarn babel src --out-dir dist --ignore '**/*.test.js'",
-    "build:watch": "yarn babel src --watch --source-maps --out-dir dist --ignore '**/*.test.js'",
+    "build": "yarn babel src --root-mode upward --out-dir dist --ignore '**/*.test.js'",
+    "build:watch": "yarn babel src --root-mode upward --watch --source-maps --out-dir dist --ignore '**/*.test.js'",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src"
   },
   "dependencies": {
     "emoji-mart": "^3.0.1",
-    "styled-components": "^5.2.1",
     "twemoji": "^13.0.2"
   },
   "devDependencies": {
@@ -40,6 +39,7 @@
     "react": "*",
     "react-dom": "*",
     "react-is": "*",
-    "react-router-dom": "*"
+    "react-router-dom": "*",
+    "styled-components": "*"
   }
 }

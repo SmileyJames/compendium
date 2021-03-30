@@ -2,17 +2,13 @@
   "name": "@compendium/tic-tac-toe-guest",
   "main": "dist/index.js",
   "scripts": {
-    "build": "yarn babel src --out-dir dist --ignore '**/*.test.js'",
-    "build:watch": "yarn babel src --watch --out-dir dist --ignore '**/*.test.js'",
+    "build": "yarn babel src --root-mode upward --out-dir dist --ignore '**/*.test.js'",
+    "build:watch": "yarn babel src --root-mode upward --watch --out-dir dist --ignore '**/*.test.js'",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src"
   },
   "dependencies": {
-    "@compendium/tic-tac-toe-game": "workspace:games/tic-tac-toe/game",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-is": "^17.0.1",
-    "styled-components": "^5.2.1"
+    "@compendium/tic-tac-toe-game": "workspace:games/tic-tac-toe/game"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.0",
@@ -29,6 +25,15 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
-    "eslint-plugin-testing-library": "^3.9.0"
+    "eslint-plugin-testing-library": "^3.9.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-is": "^17.0.1"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*",
+    "react-is": "*",
+    "styled-components": "*"
   }
 }

@@ -6,15 +6,14 @@
     "dist"
   ],
   "scripts": {
-    "build": "yarn babel src --out-dir dist --ignore '**/*.test.js'",
-    "build:watch": "yarn babel src --watch --source-maps --out-dir dist --ignore '**/*.test.js'",
+    "build": "yarn babel src --out-dir dist --root-mode upward --ignore '**/*.test.js'",
+    "build:watch": "yarn babel src --root-mode upward --watch --source-maps --out-dir dist --ignore '**/*.test.js'",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src"
   },
   "dependencies": {
     "@compendium/players-client": "workspace:components/players/client",
-    "@compendium/playing-card": "workspace:components/playing-card",
-    "styled-components": "^5.2.1"
+    "@compendium/playing-card": "workspace:components/playing-card"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.0",
@@ -40,6 +39,6 @@
     "react": "*",
     "react-dom": "*",
     "react-is": "*",
-    "react-router-dom": "*"
+    "styled-components": "*"
   }
 }

@@ -6,16 +6,15 @@
     "dist"
   ],
   "scripts": {
-    "build": "yarn babel src --out-dir dist --ignore '**/*.test.js'",
-    "build:watch": "yarn babel src --watch --source-maps --out-dir dist --ignore '**/*.test.js'",
+    "build": "yarn babel src  --root-mode upward --out-dir dist --ignore '**/*.test.js'",
+    "build:watch": "yarn babel src  --root-mode upward --watch --source-maps --out-dir dist --ignore '**/*.test.js'",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src",
     "test": "jest",
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@compendium/emoji": "workspace:components/emoji",
-    "styled-components": "^5.2.1"
+    "@compendium/emoji": "workspace:components/emoji"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.0",
@@ -41,12 +40,14 @@
     "jest": "^26.6.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-is": "^17.0.1"
+    "react-is": "^17.0.1",
+    "styled-components": "^5.2.1"
   },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*",
     "react-is": "*",
-    "react-router-dom": "*"
+    "react-router-dom": "*",
+    "styled-components": "*"
   }
 }

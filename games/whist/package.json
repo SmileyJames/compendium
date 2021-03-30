@@ -11,7 +11,8 @@
     "@compendium/whist-game": "workspace:games/whist/game"
   },
   "peerDependencies": {
-    "react-router-dom": "*"
+    "react-router-dom": "*",
+    "styled-components": "*"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.0.0",

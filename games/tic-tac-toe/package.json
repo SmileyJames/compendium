@@ -13,7 +13,8 @@
     "@compendium/tic-tac-toe-host": "workspace:games/tic-tac-toe/host"
   },
   "peerDependencies": {
-    "react-router-dom": "*"
+    "react-router-dom": "*",
+    "styled-components": "*"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.0.0",
