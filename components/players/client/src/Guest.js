@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Emoji, { EmojiPicker } from "@compendium/emoji";
-import { Flex, Box, Button } from "rebass/styled-components";
+import { Flex, Box, Button, Text } from "rebass/styled-components";
 import { Input, Label } from "@rebass/forms/styled-components";
 
 const JoinScreen = ({ onJoin }) => {
@@ -27,8 +27,10 @@ const JoinScreen = ({ onJoin }) => {
         <Box width={'10em'} height={'10em'} onKeyPress={showPicker} onClick={showPicker}>
           <Emoji emoji={emoji}/>
         </Box>
-        <Box>
-          <h1>{name}</h1>
+        <Box my={2}>
+          <Text fontSize={[ 3, 4, 5 ]} fontWeight='bold' color='primary'>
+            {name}
+          </Text>
         </Box>
         <Box>
           <Label htmlFor="nickname">Nickname</Label>
@@ -45,11 +47,19 @@ const JoinScreen = ({ onJoin }) => {
 }
 
 const Spectator = () => (
-  <h1>You are a Spectator</h1>
+  <Flex height="100vh" justifyContent="center" alignItems="center">
+    <Text fontSize={[ 3, 4, 5 ]} fontWeight='bold' color='primary'>
+      You are a Spectator
+    </Text>
+  </Flex>
 )
 
 const Waiting = () => (
-  <h1>Be patient, the host is setting up your game.</h1>
+  <Flex height="100vh" justifyContent="center" alignItems="center">
+    <Text fontSize={[ 3, 4, 5 ]} fontWeight='bold' color='primary'>
+      Be patient, the host is setting up your game.
+    </Text>
+  </Flex>
 )
 
 const findConnectionIsPlayer = ({ players, connectionId }) => (
