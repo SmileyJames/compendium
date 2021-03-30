@@ -1,34 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import Emoji from "@compendium/emoji";
-
-const Main = styled.main`
-  display: flex;
-`;
-
-const Section = styled.section`
-  flex-grow: 1; 
-`;
-
-const Article = styled.article`
-  flex-grow: 3; 
-`;
-
-const Item = styled.div`
-  padding: .4em;
-  border: solid 1px gray;
-`;
-
-const Square = styled.div`
-  width: 2em;
-  height: 2em;
-  padding: 0.3em;
-  display: inline-block;
-`;
-
-const Button = styled.button`
-
-`;
+import { Flex, Box, Button, Text } from "rebass/styled-components";
 
 const checkIfCanStartGame = ({ state: { players } }) => (
   players.list.length >= players.minPlayers
@@ -36,26 +9,28 @@ const checkIfCanStartGame = ({ state: { players } }) => (
 
 const PlayerList = ({ children, players }) => {
   return (
-    <Main>
-      <Section>
+    <Flex>
+      <Box flexGrow={1}>
         {players.map(({ name, emoji }, index) => (
-          <Item key={index}>
-            <Square>
+          <Flex alignItems="center"  key={index}>
+            <Box width="2em" height="2em" my={2} mx={3}>
               {emoji && <Emoji emoji={emoji}/>}
-            </Square>
+            </Box>
             {name}
-          </Item>
+          </Flex>
         ))}
-      </Section>
-      <Article>
+      </Box>
+      <Box flexGrow={3}>
         {children}
-      </Article>
-    </Main>
+      </Box>
+    </Flex>
   );
 }
 
 const HowToJoin = ({ roomId }) => (
-  <h1>Join: {roomId}</h1>
+  <Text fontSize={[ 3, 4, 5 ]} fontWeight='bold' color='secondary'>
+    Join: {roomId}
+  </Text>
 )
 
 const Host = ({ state, roomId, moves, connections, maxPlayers, minPlayers, children }) => {
@@ -70,15 +45,18 @@ const Host = ({ state, roomId, moves, connections, maxPlayers, minPlayers, child
   const canStartGame = checkIfCanStartGame({ state });
   return (
     <PlayerList players={state.players.list}>
-      <HowToJoin roomId={roomId}/>
-      {canStartGame && (
-        <Button
-          onClick={() => moves.startGame()}
-          onKeyPress={() => moves.startGame()}
-        >
-          Start Game
-        </Button>
-      )}
+      <Flex height="100%" flexDirection="column" alignItems="center" justifyContent="space-around">
+        <HowToJoin roomId={roomId}/>
+        {canStartGame && (
+          <Button
+            my={2}
+            onClick={() => moves.startGame()}
+            onKeyPress={() => moves.startGame()}
+          >
+            Start Game
+          </Button>
+        )}
+      </Flex>
     </PlayerList>
   )
 };
