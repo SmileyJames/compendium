@@ -3057,6 +3057,7 @@ __metadata:
     "@babel/preset-env": ^7.13.12
     "@babel/preset-react": ^7.12.13
     "@compendium/emoji": "workspace:components/emoji"
+    "@rebass/forms": ^4.0.6
     "@testing-library/jest-dom": ^5.11.10
     "@testing-library/react": ^11.2.5
     "@testing-library/user-event": ^13.0.16
@@ -3077,6 +3078,7 @@ __metadata:
     react: ^17.0.1
     react-dom: ^17.0.1
     react-is: ^17.0.1
+    rebass: ^4.0.7
     styled-components: ^5.2.1
   peerDependencies:
     react: "*"

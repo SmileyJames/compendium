@@ -14,7 +14,9 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@compendium/emoji": "workspace:components/emoji"
+    "@compendium/emoji": "workspace:components/emoji",
+    "@rebass/forms": "^4.0.6",
+    "rebass": "^4.0.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.0",

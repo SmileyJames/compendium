@@ -1,37 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Emoji, { EmojiPicker } from "@compendium/emoji";
-
-const Row = styled.div`
-  text-align: center;
-`;
-
-const Main = styled.main`
-  display: flex;
-  flex-direction: column;d
-`;
-
-const Input = styled.input`
-  border-radius: 0.2em;
-  border: solid 1px grey;
-  padding: 0.3em 0.6em;
-  margin: 0.6em
-`;
-
-const Button = styled.button`
-  border-radius: 0.2em;
-  background-color: rgb(10, 50, 200);
-  color: white;
-  border: solid 1px grey;
-  padding: 0.3em 0.6em;
-  margin: 0.6em
-`;
-
-const SmallSquare = styled.div`
-  width: 10em;
-  height: 10em;
-  margin: 0 auto;
-`;
+import { Flex, Box, Button } from "rebass/styled-components";
+import { Input, Label } from "@rebass/forms/styled-components";
 
 const JoinScreen = ({ onJoin }) => {
   const [name, setName] = useState("");
@@ -52,25 +23,23 @@ const JoinScreen = ({ onJoin }) => {
   return (
     <>
       {pickerIsShown && <EmojiPicker onHide={hidePicker} onSelectEmoji={onSelectEmoji} />}
-      <Main>
-        <SmallSquare tabIndex={0} onKeyPress={showPicker} onClick={showPicker}>
+      <Flex my={5} alignItems="center" flexDirection="column">
+        <Box width={'10em'} height={'10em'} onKeyPress={showPicker} onClick={showPicker}>
           <Emoji emoji={emoji}/>
-        </SmallSquare>
-        <Row>
+        </Box>
+        <Box>
           <h1>{name}</h1>
-        </Row>
-        <Row>
-          <label>
-            Nickname
-           <Input onChange={(e) => setName(e.target.value)} value={name}/>
-          </label>
-        </Row>
-        <Row>
-          <Button type="button" onKeyPress={join} onClick={join}>
+        </Box>
+        <Box>
+          <Label htmlFor="nickname">Nickname</Label>
+          <Input id="nickname" onChange={(e) => setName(e.target.value)} value={name}/>
+        </Box>
+        <Box my={3}>
+          <Button variant="primary" onKeyPress={join} onClick={join}>
             Sit down to Play
           </Button>
-        </Row>
-      </Main>
+        </Box>
+      </Flex>
     </>
   );
 }
