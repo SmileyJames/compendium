@@ -9,7 +9,7 @@ export const emit = ({ conn, logSize, move, args }) => {
 export const preempt = ({ setState, game, move, args, connectionId, roomId }) => {
   const reducer = constructReducer({ game, roomId, events: [{ move, args, connectionId }] })
   setState(({ state, cache }) => ({
-    cache: reducer(state),
+    cache: reducer(cache),
     state,
   }));
 }

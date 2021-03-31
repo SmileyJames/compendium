@@ -29,13 +29,13 @@ PeerJS.mockImplementation(() => ({
   destroy: () => {},
 }))
 
-const start = () => ({ number: 0 });
-const increment = ({ args, state: { number } }) =>
-  ({ number: number + ((args && args.value) || 1) });
-const flipCoin = ({ state }) => (random) => ({
+const start = jest.fn(() => ({ number: 0 }));
+const increment = jest.fn(({ args, state: { number } }) =>
+  ({ number: number + ((args && args.value) || 1) }));
+const flipCoin = jest.fn(({ state }) => (random) => ({
   ...state,
   flipped: random() > 0.5
-});
+}));
 
 const game = {
   guestMoves: {
@@ -61,6 +61,12 @@ describe("usePartyHost", () => {
       result.current.moves.start();
     })
 
+    expect(start).toHaveBeenLastCalledWith({
+      args: undefined,
+      connectionId: "room-id",
+      roomId: "room-id",
+      state: {}
+    });
     expect(result.current.state.number).toBe(0);
     expect(mockSendSync).toHaveBeenCalledWith([
       { index: 0, args: undefined, connectionId: "room-id", move: "start" }
@@ -70,6 +76,14 @@ describe("usePartyHost", () => {
       result.current.moves.increment();
     })
 
+    expect(increment).toHaveBeenLastCalledWith({
+      args: undefined,
+      connectionId: "room-id",
+      roomId: "room-id",
+      state: {
+        number: 0,
+      }
+    });
     expect(result.current.state.number).toBe(1);
     expect(mockSendSync).toHaveBeenLastCalledWith([
       { index: 0, args: undefined, connectionId: "room-id", move: "start" },
@@ -87,6 +101,15 @@ describe("usePartyHost", () => {
     act(() => {
       result.current.moves.increment();
     })
+
+    expect(increment).toHaveBeenLastCalledWith({
+      args: undefined,
+      connectionId: "room-id",
+      roomId: "room-id",
+      state: {
+        number: 1,
+      }
+    });
     expect(result.current.state.number).toBe(2);
     expect(mockSendSync).toHaveBeenLastCalledWith([
       { index: 2, args: undefined, connectionId: "room-id", move: "increment" }
@@ -100,6 +123,14 @@ describe("usePartyHost", () => {
       })
     })
 
+    expect(increment).toHaveBeenLastCalledWith({
+      args: { value: 2 },
+      connectionId: "hello",
+      roomId: "room-id",
+      state: {
+        number: 2,
+      }
+    });
     expect(result.current.state.number).toBe(4);
     expect(mockSendSync).toHaveBeenLastCalledWith([
       { index: 2, args: undefined, connectionId: "room-id", move: "increment" },

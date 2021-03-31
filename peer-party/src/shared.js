@@ -22,7 +22,7 @@ export const constructReducer = ({ game, events, roomId }) => (state) => {
     return events.reduce(
       (o, event) => {
         const moveFn = getMoveFunction({ connectionId: event.connectionId, roomId, game, move: event.move })
-        let output = moveFn({ state: o, connectionId: event.connectionId, args: event.args });
+        let output = moveFn({ state: o, roomId, connectionId: event.connectionId, args: event.args });
         if (output instanceof Function && event.seed) {
           const rng = seedrandom(event.seed);
           output = output(rng);

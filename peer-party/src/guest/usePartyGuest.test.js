@@ -27,17 +27,17 @@ PeerJS.mockImplementation(() => ({
   destroy: () => {},
 }))
 
-const start = () => ({ number: 0 });
-const increment = ({ args, state: { number } }) => {
+const start = jest.fn(() => ({ number: 0 }));
+const increment = jest.fn(({ args, state: { number } }) => {
   const increase = (args && args.value) ? args.value : 1;
   const num = number || 0;
   const output = ({ number: num + increase });
   return output;
-}
-const flipCoin = ({ state }) => (random) => ({
+})
+const flipCoin = jest.fn(({ state }) => (random) => ({
   ...state,
   flipped: random() > 0.5
-});
+}));
 
 const game = {
   guestMoves: {
@@ -61,7 +61,13 @@ describe("usePartyGuest", () => {
     act(() => {
       result.current.moves.start();
     })
-
+    
+    expect(game.guestMoves.start).toHaveBeenLastCalledWith({
+      state: {},
+      args: undefined,
+      connectionId: result.current.connectionId,
+      roomId: "hello-world",
+    })
     expect(result.current.state.number).toBe(0);
     expect(mockSendEmit).toHaveBeenCalledWith({
       args: undefined,
@@ -73,6 +79,12 @@ describe("usePartyGuest", () => {
       result.current.moves.increment();
     })
 
+    expect(game.guestMoves.increment).toHaveBeenLastCalledWith({
+      state: { number: 0 },
+      args: undefined,
+      connectionId: result.current.connectionId,
+      roomId: "hello-world",
+    })
     expect(result.current.state.number).toBe(1);
     expect(mockSendEmit).toHaveBeenLastCalledWith({
       args: undefined,
@@ -108,6 +120,8 @@ describe("usePartyGuest", () => {
       result.current.moves.flipCoin();
     })
 
+    // can't prempt, so expect a check is secret move
+    expect(game.guestMoves.flipCoin).toHaveBeenCalledWith({})
     // state stays the same
     expect(result.current.state.number).toBe(6);
     expect(result.current.state.flipped).toBe(undefined);
