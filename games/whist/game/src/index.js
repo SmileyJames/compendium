@@ -1,5 +1,9 @@
 import playersGame from "@compendium/players-game";
 
+const startGame = () => {}
+
+const deal = () => {}
+
 const game = {
   guestMoves: {
     ...playersGame.guestMoves,
@@ -7,6 +11,8 @@ const game = {
   
   hostMoves: {
     ...playersGame.hostMoves,
+    startGame,
+    deal,
   },
 }
 
