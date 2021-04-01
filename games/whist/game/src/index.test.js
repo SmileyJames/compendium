@@ -1,4 +1,9 @@
 import whist from "./index";
+import { constructDeckOfCards } from "@compendium/playing-card";
+
+const orderedDeckOfPlayingCards = constructDeckOfCards();
+const shuffledDeckOfPlayingCards = [];
+const shuffledHand = []
 
 describe("whist game rules", () => {
   describe("Everyone is in, let's start the game...", () => {
