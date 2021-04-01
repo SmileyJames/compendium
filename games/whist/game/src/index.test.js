@@ -43,7 +43,7 @@ describe("whist game rules", () => {
 
   });
 
-  describe("Secretly shuffle and deal the cards", () => {
+  describe.skip("Secretly shuffle and deal the cards", () => {
 
     test("from the host's perspective", () => {
       const state = { players };
