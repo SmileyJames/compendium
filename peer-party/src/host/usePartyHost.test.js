@@ -1,6 +1,7 @@
 import PeerJS from "peerjs";
 import { renderHook, act } from '@testing-library/react-hooks';
 import usePartyHost from "./usePartyHost";
+import { withRandom } from "../random";
 
 jest.useFakeTimers();
 jest.mock('peerjs')
@@ -32,10 +33,14 @@ PeerJS.mockImplementation(() => ({
 const start = jest.fn(() => ({ number: 0 }));
 const increment = jest.fn(({ args, state: { number } }) =>
   ({ number: number + ((args && args.value) || 1) }));
-const flipCoin = jest.fn(({ state }) => (random) => ({
-  ...state,
-  flipped: random() > 0.5
-}));
+const flipCoin = withRandom(
+  jest.fn(
+    ({ state, random }) => ({
+      ...state,
+      flipped: random() > 0.5
+    })
+  )
+);
 
 const game = {
   guestMoves: {
@@ -146,9 +151,7 @@ describe("usePartyHost", () => {
     })
 
     expect(result.current.state.flipped).toBe(true);
-    expect(mockSendSync).toHaveBeenLastCalledWith([
-      { index: 4, args: {}, connectionId: "hello", move: "flipCoin", seed: 0.8619044772223384 }
-    ])
+    expect(mockSendSync).toHaveBeenCalled();
 
     unmount();
   });

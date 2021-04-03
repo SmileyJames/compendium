@@ -1,19 +1,11 @@
 import seedrandom from "seedrandom";
-
-export const isSecretMove = ({ connectionId, roomId, game, move }) => {
-  const moveFn = getMoveFunction({ connectionId, roomId, game, move });
-  try {
-    return (moveFn({}) instanceof Function);
-  } catch (e) {
-    return false;
-  }
-}
+import { isRandomMove } from "./random";
 
 const getMoves = ({ connectionId, roomId, game }) => (
   connectionId === roomId ? game.hostMoves : game.guestMoves
 );
 
-const getMoveFunction = ({ connectionId, roomId, game, move }) => (
+export const getMove = ({ connectionId, roomId, game, move }) => (
   getMoves({ connectionId, roomId, game })[move]
 )
 
@@ -21,13 +13,15 @@ export const constructReducer = ({ game, events, roomId }) => (state) => {
   try {
     return events.reduce(
       (o, event) => {
-        const moveFn = getMoveFunction({ connectionId: event.connectionId, roomId, game, move: event.move })
-        let output = moveFn({ state: o, roomId, connectionId: event.connectionId, args: event.args });
-        if (output instanceof Function && event.seed) {
-          const rng = seedrandom(event.seed);
-          output = output(rng);
+        const moveFn = getMove({ connectionId: event.connectionId, roomId, game, move: event.move })
+        let opts = { state: o, roomId, connectionId: event.connectionId, args: event.args };
+        if (isRandomMove(moveFn)) {
+          if (event.seed == null) {
+            throw Error('Random moves require a seed from the host');
+          }
+          opts.random = seedrandom(event.seed);
         }
-        return output;
+        return moveFn(opts);
       },
       state
     );

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { constructMoves, constructReducer, isSecretMove } from "../shared";
+import { getMove, constructMoves, constructReducer, isSecretMove } from "../shared";
 import { logSizeToIndex } from "./funcs";
+import { isRandomMove } from "../random";
 
 export const emit = ({ conn, logSize, move, args }) => {
   conn.current.send({ index: logSizeToIndex(logSize), move, args })
@@ -16,7 +17,8 @@ export const preempt = ({ setState, game, move, args, connectionId, roomId }) =>
 
 export const constructMovesHandler = ({ conn, connectionId, setMoves, setState, game, logSize, roomId }) => {
   const handleMove = ({ move, args }) => {
-    if (!isSecretMove({ connectionId, roomId, game, move })) {
+    const moveFn = getMove({ connectionId, roomId, game, move })
+    if (!isRandomMove(moveFn)) {
       preempt({ setState, game, move, args, roomId, connectionId })
     }
     emit({ conn, move, args, logSize })

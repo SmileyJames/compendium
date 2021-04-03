@@ -1,5 +1,6 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 import usePartyGuest from "./usePartyGuest";
+import { withRandom } from "../random";
 import PeerJS from "peerjs";
 
 jest.useFakeTimers();
@@ -34,10 +35,14 @@ const increment = jest.fn(({ args, state: { number } }) => {
   const output = ({ number: num + increase });
   return output;
 })
-const flipCoin = jest.fn(({ state }) => (random) => ({
-  ...state,
-  flipped: random() > 0.5
-}));
+const flipCoin = withRandom(
+  jest.fn(
+    ({ state, random }) => ({
+      ...state,
+      flipped: random() > 0.5
+    })
+  )
+);
 
 const game = {
   guestMoves: {
@@ -120,8 +125,7 @@ describe("usePartyGuest", () => {
       result.current.moves.flipCoin();
     })
 
-    // can't prempt, so expect a check is secret move
-    expect(game.guestMoves.flipCoin).toHaveBeenCalledWith({})
+    expect(game.guestMoves.flipCoin).not.toHaveBeenCalled();
     // state stays the same
     expect(result.current.state.number).toBe(6);
     expect(result.current.state.flipped).toBe(undefined);

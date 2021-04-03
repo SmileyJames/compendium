@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { constructReducer } from "../shared";
 
-const sync = ({ setState, setCache, roomId, game, events }) => {
+const sync = ({ setState, roomId, game, events }) => {
   const reducer = constructReducer({ game, roomId, events })
   setState(({ state }) => {
     const newState = reducer(state);

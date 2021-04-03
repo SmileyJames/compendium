@@ -1,7 +1,6 @@
 import seedrandom from "seedrandom";
-import { useRef, useState, useEffect, useMemo } from "react";
-import { constructMoves, constructReducer } from "../shared";
-import { useStateStore, useEventLogStore } from "./stores";
+import { useMemo } from "react";
+import { useEventLogStore } from "./stores";
 import useGameState from "./useGameState";
 import useConnections from "./useConnections";
 import useMoves from "./useMoves";
