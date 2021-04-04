@@ -1,7 +1,8 @@
+import PeerJS from "peerjs";
 import { renderHook, act } from '@testing-library/react-hooks';
 import usePartyGuest from "./usePartyGuest";
-import { withRandom } from "../random";
-import PeerJS from "peerjs";
+import { withRandom, shuffle } from "../random";
+import { withSecret, revealSecret } from "../secret";
 
 jest.useFakeTimers();
 jest.mock('peerjs')
@@ -43,17 +44,49 @@ const flipCoin = withRandom(
     })
   )
 );
+const dealCards = withSecret(
+  jest.fn(
+      ({ state, random, contextId }) => {
+          const deck = shuffle({ random, array: state.deck });
+          const playerIndex = state.connections.findIndex(conn => conn === contextId)
+          const hand = deck.filter((_, index) => (index % playerIndex) === 0)
+          return { ...state, deck: [], hand };
+      }
+  )
+)
+
+const revealACard = withSecret(
+  jest.fn(
+      ({ state, connectionId, contextId }) => {
+          const newState = { ...state };
+          const firstCard = revealSecret(connectionId, state => state.hand[0]);
+          if (connectionId === contextId) {
+              const [_, ...newHand] = state.hand;
+              newState.hand = newHand;
+          }
+          newState.revealedCard = firstCard;
+          return newState;
+      }
+  )
+)
 
 const game = {
   guestMoves: {
     start,
     increment,
     flipCoin,
+    revealACard,
   },
-  hostMoves: {}
+  hostMoves: {
+    dealCards,
+  }
 };
 
 describe("usePartyGuest", () => {
+  beforeEach(() => {
+    window.localStorage.clear();
+  });
+
   test("State is maintained correctly whilst emitting from guest and syncing from host", () => {
     const { unmount, rerender, result } = renderHook(() =>
       usePartyGuest({ id: "hello", roomId: "hello-world", game })
@@ -159,4 +192,67 @@ describe("usePartyGuest", () => {
 
     unmount();
   });
+
+  describe("Secret - Guest", () => {
+
+    // A guest get's their hand when a host deals out the cards
+    test("when the host's sync's it's secret move, the guest applies the patch to their state", () => {
+        const { result } = renderHook(() =>
+            usePartyGuest({ id: "hello", roomId: "hello-world", game })
+        );
+
+        act(() => {
+            mockReceiveSync([
+              { index: 0, move: "dealCards", connectionId: "hello-world", patch: {
+                  hand: [[1, 2, 3]],
+              } },
+            ])
+        })
+
+        expect(result.current.state).toStrictEqual({
+          hand: [1, 2, 3]
+        });
+        expect(dealCards).not.toHaveBeenCalled();
+    })
+
+    // A guest can reveal a card from their secret hand
+    test("guest makes a secret move and applies a patch (to the guest's state) sent by the host", () => {
+      const { result } = renderHook(() =>
+        usePartyGuest({ id: "hello", roomId: "hello-world", game })
+      );
+
+      act(() => {
+        result.current.moves.revealACard();
+      });
+
+      expect(mockSendEmit).toHaveBeenLastCalledWith({
+        args: undefined,
+        index: null,
+        move: "revealACard",
+      });
+
+      expect(revealACard).not.toHaveBeenCalled();
+      expect(result.current.state).toStrictEqual({});
+
+      act(() => {
+        mockReceiveSync([
+          {
+            index: 0,
+            move: "dealCards",
+            connectionId: "hello-world",
+            patch: {
+              hand: [[1, 2, 3], [2, 3]],
+              revealedCard: [1],
+            }
+          },
+        ])
+      });
+
+      expect(revealACard).not.toHaveBeenCalled();
+      expect(result.current.state).toStrictEqual({
+        hand: [2, 3],
+        revealedCard: 1,
+      })
+    })
+  })
 });

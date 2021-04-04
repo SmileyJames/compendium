@@ -2711,6 +2711,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:3.5.0"
       ],
       [
+        "diff-match-patch",
+        "npm:1.0.5"
+      ],
+      [
         "diff-sequences",
         "npm:26.6.2"
       ],
@@ -4229,6 +4233,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [
         "json5",
         "npm:2.2.0"
+      ],
+      [
+        "jsondiffpatch",
+        "npm:0.4.1"
       ],
       [
         "jsonfile",
@@ -15995,6 +16003,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
             ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
             ["jest", "npm:26.6.3"],
+            ["jsondiffpatch", "npm:0.4.1"],
             ["lodash", "npm:4.17.21"],
             ["peerjs", "npm:1.3.2"],
             ["react", "npm:17.0.1"],
@@ -16031,6 +16040,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react-hooks", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.2.0"],
             ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:3.10.1"],
             ["jest", "npm:26.6.3"],
+            ["jsondiffpatch", "npm:0.4.1"],
             ["lodash", "npm:4.17.21"],
             ["peerjs", "npm:1.3.2"],
             ["react", "npm:17.0.1"],
@@ -25459,6 +25469,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["diff-match-patch", [
+        ["npm:1.0.5", {
+          "packageLocation": "./.yarn/cache/diff-match-patch-npm-1.0.5-f715ad1381-4694f40dbf.zip/node_modules/diff-match-patch/",
+          "packageDependencies": [
+            ["diff-match-patch", "npm:1.0.5"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["diff-sequences", [
         ["npm:26.6.2", {
           "packageLocation": "./.yarn/cache/diff-sequences-npm-26.6.2-fbf1967570-dd1eb6e52f.zip/node_modules/diff-sequences/",
@@ -31044,6 +31063,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["json5", "npm:2.2.0"],
             ["minimist", "npm:1.2.5"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["jsondiffpatch", [
+        ["npm:0.4.1", {
+          "packageLocation": "./.yarn/cache/jsondiffpatch-npm-0.4.1-dc8e09c6f1-1dbcabd803.zip/node_modules/jsondiffpatch/",
+          "packageDependencies": [
+            ["jsondiffpatch", "npm:0.4.1"],
+            ["chalk", "npm:2.4.2"],
+            ["diff-match-patch", "npm:1.0.5"]
           ],
           "linkType": "HARD",
         }]
