@@ -48,8 +48,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "mkdir -p build && react-scripts build",
-    "test": "react-scripts test --watchAll=false",
-    "test:watch": "react-scripts test",
+    "test": "react-scripts test --watchAll=false --modulePaths=src",
+    "test:watch": "react-scripts test --modulePaths=src",
     "lint": "yarn eslint src",
     "lint:fix": "yarn eslint --fix src",
     "storybook": "start-storybook -p 6006 -s public",
@@ -66,5 +66,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+   "jest": {
+    "moduleNameMapper": {
+      "^games(.*)$": "<rootDir>/src/games$1",
+      "^components(.*)$": "<rootDir>/src/components$1"
+    }
   }
 }

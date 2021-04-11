@@ -1,5 +1,5 @@
 import whist from "./index";
-import { constructDeckOfCards } from "@compendium/playing-card";
+import { constructDeckOfCards } from "components/playing-card";
 
 const orderedDeckOfPlayingCards = constructDeckOfCards();
 const shuffledDeckOfPlayingCards = [];

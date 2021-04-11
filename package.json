@@ -30,13 +30,11 @@
     "plop": "^2.7.4"
   },
   "scripts": {
-    "lint": "bash ./scripts/lint.sh",
-    "lint:fix": "bash ./scripts/lintFix.sh",
-    "test": "jest",
-    "build": "yarn workspaces foreach -p run build",
-    "build:ci": "bash ./scripts/buildCI.sh",
+    "lint": "yarn workspaces foreach -p run lint",
+    "test": "yarn workspaces foreach -p run test",
+    "build:peer-party": "yarn workspace @compendium/peer-party run build",
     "build:app": "CI=false yarn workspace @compendium/app run build",
-    "plop": "plop"
+    "generate": "plop"
   },
   "lint-staged": {
     "*.js": "eslint --fix"

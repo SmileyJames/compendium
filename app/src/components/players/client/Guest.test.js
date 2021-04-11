@@ -3,9 +3,6 @@ import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Guest from "./Guest";
 
-
-jest.mock("@compendium/emoji", () => jest.fn(() => null));
-
 const moves = {
   joinAsAPlayer: jest.fn(),
 }

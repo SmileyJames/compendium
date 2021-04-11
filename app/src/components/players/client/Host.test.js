@@ -4,8 +4,6 @@ import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Host from "./Host";
 
-jest.mock("@compendium/emoji", () => null)
-
 describe("Players Host component", () => {
 
   test("Initialises state on mount", () => {
