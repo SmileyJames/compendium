@@ -5,34 +5,6 @@ __metadata:
   version: 4
   cacheKey: 7
 
-"@babel/cli@npm:^7.13.14":
-  version: 7.13.14
-  resolution: "@babel/cli@npm:7.13.14"
-  dependencies:
-    "@nicolo-ribaudo/chokidar-2": 2.1.8-no-fsevents
-    chokidar: ^3.4.0
-    commander: ^4.0.1
-    convert-source-map: ^1.1.0
-    fs-readdir-recursive: ^1.1.0
-    glob: ^7.0.0
-    lodash: ^4.17.19
-    make-dir: ^2.1.0
-    slash: ^2.0.0
-    source-map: ^0.5.0
-  peerDependencies:
-    "@babel/core": ^7.0.0-0
-  dependenciesMeta:
-    "@nicolo-ribaudo/chokidar-2":
-      optional: true
-    chokidar:
-      optional: true
-  bin:
-    babel: ./bin/babel.js
-    babel-external-helpers: ./bin/babel-external-helpers.js
-  checksum: 6259a752460c92685ce6c4d4a63f2010081add799388bce003b8a2278e9ce94fd6b470ab511fbab509da2034631539d030932059ca343b1a09433ed88032e91f
-  languageName: node
-  linkType: hard
-
 "@babel/code-frame@npm:7.10.4":
   version: 7.10.4
   resolution: "@babel/code-frame@npm:7.10.4"
@@ -2633,13 +2605,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@compendium/app@workspace:app"
   dependencies:
-    "@compendium/bourre": "workspace:games/bourre"
-    "@compendium/emoji": "workspace:components/emoji"
     "@compendium/peer-party": "workspace:peer-party"
-    "@compendium/players": "workspace:components/players"
-    "@compendium/playing-card": "workspace:components/playing-card"
-    "@compendium/tic-tac-toe": "workspace:games/tic-tac-toe"
-    "@compendium/whist": "workspace:games/whist"
     "@mdx-js/react": ^1.6.22
     "@rebass/forms": ^4.0.6
     "@rebass/preset": ^4.0.5
@@ -2656,6 +2622,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^4.0.0
     "@typescript-eslint/parser": ^4.0.0
     babel-eslint: ^10.0.0
+    emoji-mart: ^3.0.1
     eslint: ^7.5.0
     eslint-config-react-app: ^6.0.0
     eslint-plugin-flowtype: ^5.2.0
@@ -2675,115 +2642,8 @@ __metadata:
     rebass: ^4.0.7
     styled-components: ^5.2.3
     themeprovider-storybook: ^1.7.1
-    web-vitals: ^1.1.0
-  languageName: unknown
-  linkType: soft
-
-"@compendium/bourre-client@workspace:games/bourre/client":
-  version: 0.0.0-use.local
-  resolution: "@compendium/bourre-client@workspace:games/bourre/client"
-  dependencies:
-    "@babel/cli": ^7.13.14
-    "@babel/core": ^7.13.14
-    "@babel/preset-react": ^7.13.13
-    "@compendium/playing-card": "workspace:components/playing-card"
-    "@typescript-eslint/eslint-plugin": ^4.0.0
-    "@typescript-eslint/parser": ^4.0.0
-    babel-eslint: ^10.0.0
-    eslint: ^7.5.0
-    eslint-config-react-app: ^6.0.0
-    eslint-plugin-flowtype: ^5.2.0
-    eslint-plugin-import: ^2.22.0
-    eslint-plugin-jest: ^24.0.0
-    eslint-plugin-jsx-a11y: ^6.3.1
-    eslint-plugin-react: ^7.20.3
-    eslint-plugin-react-hooks: ^4.0.8
-    eslint-plugin-testing-library: ^3.9.0
-    react: ^17.0.1
-    react-dom: ^17.0.1
-    react-is: ^17.0.1
-  peerDependencies:
-    react: "*"
-    react-dom: "*"
-    react-is: "*"
-    react-router-dom: "*"
-    styled-components: "*"
-  languageName: unknown
-  linkType: soft
-
-"@compendium/bourre-game@workspace:games/bourre/game":
-  version: 0.0.0-use.local
-  resolution: "@compendium/bourre-game@workspace:games/bourre/game"
-  dependencies:
-    "@typescript-eslint/eslint-plugin": ^4.0.0
-    "@typescript-eslint/parser": ^4.0.0
-    babel-eslint: ^10.0.0
-    eslint: ^7.5.0
-    eslint-config-react-app: ^6.0.0
-    eslint-plugin-flowtype: ^5.2.0
-    eslint-plugin-import: ^2.22.0
-    eslint-plugin-jest: ^24.0.0
-    eslint-plugin-jsx-a11y: ^6.3.1
-    eslint-plugin-react: ^7.20.3
-    eslint-plugin-react-hooks: ^4.0.8
-    eslint-plugin-testing-library: ^3.9.0
-  languageName: unknown
-  linkType: soft
-
-"@compendium/bourre@workspace:games/bourre":
-  version: 0.0.0-use.local
-  resolution: "@compendium/bourre@workspace:games/bourre"
-  dependencies:
-    "@compendium/bourre-client": "workspace:games/bourre/client"
-    "@compendium/bourre-game": "workspace:games/bourre/game"
-    "@typescript-eslint/eslint-plugin": ^4.0.0
-    "@typescript-eslint/parser": ^4.0.0
-    babel-eslint: ^10.0.0
-    eslint: ^7.5.0
-    eslint-config-react-app: ^6.0.0
-    eslint-plugin-flowtype: ^5.2.0
-    eslint-plugin-import: ^2.22.0
-    eslint-plugin-jest: ^24.0.0
-    eslint-plugin-jsx-a11y: ^6.3.1
-    eslint-plugin-react: ^7.20.3
-    eslint-plugin-react-hooks: ^4.0.8
-    eslint-plugin-testing-library: ^3.9.0
-  peerDependencies:
-    react-router-dom: "*"
-    styled-components: "*"
-  languageName: unknown
-  linkType: soft
-
-"@compendium/emoji@workspace:components/emoji":
-  version: 0.0.0-use.local
-  resolution: "@compendium/emoji@workspace:components/emoji"
-  dependencies:
-    "@babel/cli": ^7.13.14
-    "@babel/core": ^7.13.14
-    "@babel/preset-react": ^7.13.13
-    "@typescript-eslint/eslint-plugin": ^4.0.0
-    "@typescript-eslint/parser": ^4.0.0
-    babel-eslint: ^10.0.0
-    emoji-mart: ^3.0.1
-    eslint: ^7.5.0
-    eslint-config-react-app: ^6.0.0
-    eslint-plugin-flowtype: ^5.2.0
-    eslint-plugin-import: ^2.22.0
-    eslint-plugin-jest: ^24.0.0
-    eslint-plugin-jsx-a11y: ^6.3.1
-    eslint-plugin-react: ^7.20.3
-    eslint-plugin-react-hooks: ^4.0.8
-    eslint-plugin-testing-library: ^3.9.0
-    react: ^17.0.1
-    react-dom: ^17.0.1
-    react-is: ^17.0.1
     twemoji: ^13.0.2
-  peerDependencies:
-    react: "*"
-    react-dom: "*"
-    react-is: "*"
-    react-router-dom: "*"
-    styled-components: "*"
+    web-vitals: ^1.1.0
   languageName: unknown
   linkType: soft
 
@@ -2822,126 +2682,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@compendium/players-client@workspace:components/players/client":
-  version: 0.0.0-use.local
-  resolution: "@compendium/players-client@workspace:components/players/client"
-  dependencies:
-    "@babel/cli": ^7.13.14
-    "@babel/core": ^7.13.14
-    "@babel/preset-env": ^7.13.12
-    "@babel/preset-react": ^7.13.13
-    "@compendium/emoji": "workspace:components/emoji"
-    "@rebass/forms": ^4.0.6
-    "@testing-library/jest-dom": ^5.11.10
-    "@testing-library/react": ^11.2.5
-    "@testing-library/user-event": ^13.1.1
-    "@typescript-eslint/eslint-plugin": ^4.0.0
-    "@typescript-eslint/parser": ^4.0.0
-    babel-eslint: ^10.0.0
-    babel-jest: ^26.6.3
-    eslint: ^7.5.0
-    eslint-config-react-app: ^6.0.0
-    eslint-plugin-flowtype: ^5.2.0
-    eslint-plugin-import: ^2.22.0
-    eslint-plugin-jest: ^24.0.0
-    eslint-plugin-jsx-a11y: ^6.3.1
-    eslint-plugin-react: ^7.20.3
-    eslint-plugin-react-hooks: ^4.0.8
-    eslint-plugin-testing-library: ^3.9.0
-    jest: ^26.6.3
-    react: ^17.0.1
-    react-dom: ^17.0.1
-    react-is: ^17.0.1
-    rebass: ^4.0.7
-    styled-components: ^5.2.3
-  peerDependencies:
-    react: "*"
-    react-dom: "*"
-    react-is: "*"
-    react-router-dom: "*"
-    styled-components: "*"
-  languageName: unknown
-  linkType: soft
-
-"@compendium/players-game@workspace:components/players/game":
-  version: 0.0.0-use.local
-  resolution: "@compendium/players-game@workspace:components/players/game"
-  dependencies:
-    "@babel/core": ^7.13.14
-    "@babel/preset-env": ^7.13.12
-    "@typescript-eslint/eslint-plugin": ^4.0.0
-    "@typescript-eslint/parser": ^4.0.0
-    babel-eslint: ^10.0.0
-    eslint: ^7.5.0
-    eslint-config-react-app: ^6.0.0
-    eslint-plugin-flowtype: ^5.2.0
-    eslint-plugin-import: ^2.22.0
-    eslint-plugin-jest: ^24.0.0
-    eslint-plugin-jsx-a11y: ^6.3.1
-    eslint-plugin-react: ^7.20.3
-    eslint-plugin-react-hooks: ^4.0.8
-    eslint-plugin-testing-library: ^3.9.0
-    jest: ^26.6.3
-  languageName: unknown
-  linkType: soft
-
-"@compendium/players@workspace:components/players":
-  version: 0.0.0-use.local
-  resolution: "@compendium/players@workspace:components/players"
-  dependencies:
-    "@compendium/players-client": "workspace:components/players/client"
-    "@compendium/players-game": "workspace:components/players/game"
-    "@typescript-eslint/eslint-plugin": ^4.0.0
-    "@typescript-eslint/parser": ^4.0.0
-    babel-eslint: ^10.0.0
-    eslint: ^7.5.0
-    eslint-config-react-app: ^6.0.0
-    eslint-plugin-flowtype: ^5.2.0
-    eslint-plugin-import: ^2.22.0
-    eslint-plugin-jest: ^24.0.0
-    eslint-plugin-jsx-a11y: ^6.3.1
-    eslint-plugin-react: ^7.20.3
-    eslint-plugin-react-hooks: ^4.0.8
-    eslint-plugin-testing-library: ^3.9.0
-  peerDependencies:
-    react-router-dom: "*"
-    styled-components: "*"
-  languageName: unknown
-  linkType: soft
-
-"@compendium/playing-card@workspace:components/playing-card":
-  version: 0.0.0-use.local
-  resolution: "@compendium/playing-card@workspace:components/playing-card"
-  dependencies:
-    "@babel/cli": ^7.13.14
-    "@babel/core": ^7.13.14
-    "@babel/preset-react": ^7.13.13
-    "@typescript-eslint/eslint-plugin": ^4.0.0
-    "@typescript-eslint/parser": ^4.0.0
-    babel-eslint: ^10.0.0
-    cpy-cli: ^3.1.1
-    eslint: ^7.5.0
-    eslint-config-react-app: ^6.0.0
-    eslint-plugin-flowtype: ^5.2.0
-    eslint-plugin-import: ^2.22.0
-    eslint-plugin-jest: ^24.0.0
-    eslint-plugin-jsx-a11y: ^6.3.1
-    eslint-plugin-react: ^7.20.3
-    eslint-plugin-react-hooks: ^4.0.8
-    eslint-plugin-testing-library: ^3.9.0
-    jest: ^26.6.3
-    react: ^17.0.1
-    react-dom: ^17.0.1
-    react-is: ^17.0.1
-  peerDependencies:
-    react: "*"
-    react-dom: "*"
-    react-is: "*"
-    react-router-dom: "*"
-    styled-components: "*"
-  languageName: unknown
-  linkType: soft
-
 "@compendium/root@workspace:.":
   version: 0.0.0-use.local
   resolution: "@compendium/root@workspace:."
@@ -2965,194 +2705,6 @@ __metadata:
     jest: ^26.6.3
     lint-staged: ^10.5.4
     plop: ^2.7.4
-  languageName: unknown
-  linkType: soft
-
-"@compendium/tic-tac-toe-game@workspace:games/tic-tac-toe/game":
-  version: 0.0.0-use.local
-  resolution: "@compendium/tic-tac-toe-game@workspace:games/tic-tac-toe/game"
-  dependencies:
-    "@typescript-eslint/eslint-plugin": ^4.0.0
-    "@typescript-eslint/parser": ^4.0.0
-    babel-eslint: ^10.0.0
-    eslint: ^7.5.0
-    eslint-config-react-app: ^6.0.0
-    eslint-plugin-flowtype: ^5.2.0
-    eslint-plugin-import: ^2.22.0
-    eslint-plugin-jest: ^24.0.0
-    eslint-plugin-jsx-a11y: ^6.3.1
-    eslint-plugin-react: ^7.20.3
-    eslint-plugin-react-hooks: ^4.0.8
-    eslint-plugin-testing-library: ^3.9.0
-  languageName: unknown
-  linkType: soft
-
-"@compendium/tic-tac-toe-guest@workspace:games/tic-tac-toe/guest":
-  version: 0.0.0-use.local
-  resolution: "@compendium/tic-tac-toe-guest@workspace:games/tic-tac-toe/guest"
-  dependencies:
-    "@babel/cli": ^7.13.14
-    "@babel/core": ^7.13.14
-    "@babel/preset-react": ^7.13.13
-    "@compendium/tic-tac-toe-game": "workspace:games/tic-tac-toe/game"
-    "@typescript-eslint/eslint-plugin": ^4.0.0
-    "@typescript-eslint/parser": ^4.0.0
-    babel-eslint: ^10.0.0
-    eslint: ^7.5.0
-    eslint-config-react-app: ^6.0.0
-    eslint-plugin-flowtype: ^5.2.0
-    eslint-plugin-import: ^2.22.0
-    eslint-plugin-jest: ^24.0.0
-    eslint-plugin-jsx-a11y: ^6.3.1
-    eslint-plugin-react: ^7.20.3
-    eslint-plugin-react-hooks: ^4.0.8
-    eslint-plugin-testing-library: ^3.9.0
-    react: ^17.0.1
-    react-dom: ^17.0.1
-    react-is: ^17.0.1
-  peerDependencies:
-    react: "*"
-    react-dom: "*"
-    react-is: "*"
-    styled-components: "*"
-  languageName: unknown
-  linkType: soft
-
-"@compendium/tic-tac-toe-host@workspace:games/tic-tac-toe/host":
-  version: 0.0.0-use.local
-  resolution: "@compendium/tic-tac-toe-host@workspace:games/tic-tac-toe/host"
-  dependencies:
-    "@babel/cli": ^7.13.14
-    "@babel/core": ^7.13.14
-    "@babel/preset-react": ^7.13.13
-    "@compendium/tic-tac-toe-game": "workspace:games/tic-tac-toe/game"
-    "@typescript-eslint/eslint-plugin": ^4.0.0
-    "@typescript-eslint/parser": ^4.0.0
-    babel-eslint: ^10.0.0
-    eslint: ^7.5.0
-    eslint-config-react-app: ^6.0.0
-    eslint-plugin-flowtype: ^5.2.0
-    eslint-plugin-import: ^2.22.0
-    eslint-plugin-jest: ^24.0.0
-    eslint-plugin-jsx-a11y: ^6.3.1
-    eslint-plugin-react: ^7.20.3
-    eslint-plugin-react-hooks: ^4.0.8
-    eslint-plugin-testing-library: ^3.9.0
-    react: ^17.0.1
-    react-dom: ^17.0.1
-    react-is: ^17.0.1
-  peerDependencies:
-    react: "*"
-    react-dom: "*"
-    react-is: "*"
-    react-router-dom: "*"
-    styled-components: "*"
-  languageName: unknown
-  linkType: soft
-
-"@compendium/tic-tac-toe@workspace:games/tic-tac-toe":
-  version: 0.0.0-use.local
-  resolution: "@compendium/tic-tac-toe@workspace:games/tic-tac-toe"
-  dependencies:
-    "@compendium/tic-tac-toe-game": "workspace:games/tic-tac-toe/game"
-    "@compendium/tic-tac-toe-guest": "workspace:games/tic-tac-toe/guest"
-    "@compendium/tic-tac-toe-host": "workspace:games/tic-tac-toe/host"
-    "@typescript-eslint/eslint-plugin": ^4.0.0
-    "@typescript-eslint/parser": ^4.0.0
-    babel-eslint: ^10.0.0
-    eslint: ^7.5.0
-    eslint-config-react-app: ^6.0.0
-    eslint-plugin-flowtype: ^5.2.0
-    eslint-plugin-import: ^2.22.0
-    eslint-plugin-jest: ^24.0.0
-    eslint-plugin-jsx-a11y: ^6.3.1
-    eslint-plugin-react: ^7.20.3
-    eslint-plugin-react-hooks: ^4.0.8
-    eslint-plugin-testing-library: ^3.9.0
-  peerDependencies:
-    react-router-dom: "*"
-    styled-components: "*"
-  languageName: unknown
-  linkType: soft
-
-"@compendium/whist-client@workspace:games/whist/client":
-  version: 0.0.0-use.local
-  resolution: "@compendium/whist-client@workspace:games/whist/client"
-  dependencies:
-    "@babel/cli": ^7.13.14
-    "@babel/core": ^7.13.14
-    "@babel/preset-react": ^7.13.13
-    "@compendium/players-client": "workspace:components/players/client"
-    "@compendium/playing-card": "workspace:components/playing-card"
-    "@typescript-eslint/eslint-plugin": ^4.0.0
-    "@typescript-eslint/parser": ^4.0.0
-    babel-eslint: ^10.0.0
-    eslint: ^7.5.0
-    eslint-config-react-app: ^6.0.0
-    eslint-plugin-flowtype: ^5.2.0
-    eslint-plugin-import: ^2.22.0
-    eslint-plugin-jest: ^24.0.0
-    eslint-plugin-jsx-a11y: ^6.3.1
-    eslint-plugin-react: ^7.20.3
-    eslint-plugin-react-hooks: ^4.0.8
-    eslint-plugin-testing-library: ^3.9.0
-    react: ^17.0.1
-    react-dom: ^17.0.1
-    react-is: ^17.0.1
-  peerDependencies:
-    react: "*"
-    react-dom: "*"
-    react-is: "*"
-    styled-components: "*"
-  languageName: unknown
-  linkType: soft
-
-"@compendium/whist-game@workspace:games/whist/game":
-  version: 0.0.0-use.local
-  resolution: "@compendium/whist-game@workspace:games/whist/game"
-  dependencies:
-    "@compendium/players-game": "workspace:components/players/game"
-    "@compendium/playing-card": "workspace:components/playing-card"
-    "@typescript-eslint/eslint-plugin": ^4.0.0
-    "@typescript-eslint/parser": ^4.0.0
-    babel-eslint: ^10.0.0
-    eslint: ^7.5.0
-    eslint-config-react-app: ^6.0.0
-    eslint-plugin-flowtype: ^5.2.0
-    eslint-plugin-import: ^2.22.0
-    eslint-plugin-jest: ^24.0.0
-    eslint-plugin-jsx-a11y: ^6.3.1
-    eslint-plugin-react: ^7.20.3
-    eslint-plugin-react-hooks: ^4.0.8
-    eslint-plugin-testing-library: ^3.9.0
-    jest: ^26.6.3
-    styled-components: ^5.2.3
-  peerDependencies:
-    styled-components: "*"
-  languageName: unknown
-  linkType: soft
-
-"@compendium/whist@workspace:games/whist":
-  version: 0.0.0-use.local
-  resolution: "@compendium/whist@workspace:games/whist"
-  dependencies:
-    "@compendium/whist-client": "workspace:games/whist/client"
-    "@compendium/whist-game": "workspace:games/whist/game"
-    "@typescript-eslint/eslint-plugin": ^4.0.0
-    "@typescript-eslint/parser": ^4.0.0
-    babel-eslint: ^10.0.0
-    eslint: ^7.5.0
-    eslint-config-react-app: ^6.0.0
-    eslint-plugin-flowtype: ^5.2.0
-    eslint-plugin-import: ^2.22.0
-    eslint-plugin-jest: ^24.0.0
-    eslint-plugin-jsx-a11y: ^6.3.1
-    eslint-plugin-react: ^7.20.3
-    eslint-plugin-react-hooks: ^4.0.8
-    eslint-plugin-testing-library: ^3.9.0
-  peerDependencies:
-    react-router-dom: "*"
-    styled-components: "*"
   languageName: unknown
   linkType: soft
 
@@ -3660,25 +3212,6 @@ __metadata:
     call-me-maybe: ^1.0.1
     glob-to-regexp: ^0.3.0
   checksum: e01193b783ed7682710a9af87ba05c69d15cc2183eedca36e37c720bbb7d7449f7d5cd8ad15c991f20c5d95cdce1a3a10ef6d82b1bb8a9762a193ad4245cc9da
-  languageName: node
-  linkType: hard
-
-"@nicolo-ribaudo/chokidar-2@npm:2.1.8-no-fsevents":
-  version: 2.1.8-no-fsevents
-  resolution: "@nicolo-ribaudo/chokidar-2@npm:2.1.8-no-fsevents"
-  dependencies:
-    anymatch: ^2.0.0
-    async-each: ^1.0.1
-    braces: ^2.3.2
-    glob-parent: ^3.1.0
-    inherits: ^2.0.3
-    is-binary-path: ^1.0.0
-    is-glob: ^4.0.0
-    normalize-path: ^3.0.0
-    path-is-absolute: ^1.0.0
-    readdirp: ^2.2.1
-    upath: ^1.1.1
-  checksum: 0efeea3b7d9e3c07dc3ded371ba65351a7c30314763f6e2d34849bf58809655f0f9bd71fcd505ab72624cd17e80e738a0bd41aac0d7d8606664817f3fe85cfba
   languageName: node
   linkType: hard
 
@@ -4880,22 +4413,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/jest-dom@npm:^5.11.10":
-  version: 5.11.10
-  resolution: "@testing-library/jest-dom@npm:5.11.10"
-  dependencies:
-    "@babel/runtime": ^7.9.2
-    "@types/testing-library__jest-dom": ^5.9.1
-    aria-query: ^4.2.2
-    chalk: ^3.0.0
-    css: ^3.0.0
-    css.escape: ^1.5.1
-    lodash: ^4.17.15
-    redent: ^3.0.0
-  checksum: 25bf4cd9f6d49c87afe758ebc43ddcf9fb2a974bbf5f6e2979ed2056162ecc0547c396e4a47b6abf9bb646de4aedfb7b6da539cbae2c4a949d903ea396defaf3
-  languageName: node
-  linkType: hard
-
 "@testing-library/jest-dom@npm:^5.11.9":
   version: 5.11.9
   resolution: "@testing-library/jest-dom@npm:5.11.9"
@@ -5211,13 +4728,6 @@ __metadata:
   version: 3.0.3
   resolution: "@types/minimatch@npm:3.0.3"
   checksum: 672ccdac197e8176eed1a9441d0caf8a29a90eb139b1cefdd4c9e71b1c48f5c749f5d101a2d85da15c6259214ebda95072835021407d60330a731a2672964b82
-  languageName: node
-  linkType: hard
-
-"@types/minimist@npm:^1.2.0":
-  version: 1.2.1
-  resolution: "@types/minimist@npm:1.2.1"
-  checksum: 3a6f5fe35f1656b34a4ccd5a5db1c38509d8d5b59625865b8c2b997994fcb0cfde0d9af7c5507b95dc5a0a32a22886c189e505cd2e52a7ef36d3c9982f07ed5a
   languageName: node
   linkType: hard
 
@@ -6406,13 +5916,6 @@ __metadata:
     es-array-method-boxes-properly: ^1.0.0
     is-string: ^1.0.5
   checksum: 303c3eaf7f794149a91903565728f62734854cd7a16ab97ac39508fdf428408babee1b519c6436306a4910ff0c38bc9d21cda6cb82dcc5b5514924be807929b9
-  languageName: node
-  linkType: hard
-
-"arrify@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "arrify@npm:1.0.1"
-  checksum: f1d3bae819f49f51a09da5f5c5ce282e79ca69bbdb32db1d9f6c62b151ef801b74398d007cfe89686e2c5aeb62576a398b9068e5172b7f4e20157aa3284076d3
   languageName: node
   linkType: hard
 
@@ -7760,17 +7263,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"camelcase-keys@npm:^6.2.2":
-  version: 6.2.2
-  resolution: "camelcase-keys@npm:6.2.2"
-  dependencies:
-    camelcase: ^5.3.1
-    map-obj: ^4.0.0
-    quick-lru: ^4.0.1
-  checksum: d4bd5fa5249127be0f5b1aa961da3a9de7d0a578d9524c5013f21c0ed345637eaa1e42bab28a75bbfc8511911ffb30fec4191a9efcec52741c1a3402dc38dd53
-  languageName: node
-  linkType: hard
-
 "camelcase@npm:5.3.1, camelcase@npm:^5.0.0, camelcase@npm:^5.3.1":
   version: 5.3.1
   resolution: "camelcase@npm:5.3.1"
@@ -8002,7 +7494,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chokidar@npm:^3.4.0, chokidar@npm:^3.4.1":
+"chokidar@npm:^3.4.1":
   version: 3.5.1
   resolution: "chokidar@npm:3.5.1"
   dependencies:
@@ -8344,7 +7836,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^4.0.1, commander@npm:^4.1.1":
+"commander@npm:^4.1.1":
   version: 4.1.1
   resolution: "commander@npm:4.1.1"
   checksum: 448585071bf8fb4c0bf9dd52abaee43dea086f801334caec2c8e8c9f456f8abc224c1614ccbbdbf7da5ac2524d230f13cf1fc86c233cf8a041ebecea7df106e9
@@ -8520,7 +8012,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"convert-source-map@npm:1.7.0, convert-source-map@npm:^1.1.0, convert-source-map@npm:^1.4.0, convert-source-map@npm:^1.5.0, convert-source-map@npm:^1.6.0, convert-source-map@npm:^1.7.0":
+"convert-source-map@npm:1.7.0, convert-source-map@npm:^1.4.0, convert-source-map@npm:^1.5.0, convert-source-map@npm:^1.6.0, convert-source-map@npm:^1.7.0":
   version: 1.7.0
   resolution: "convert-source-map@npm:1.7.0"
   dependencies:
@@ -8682,19 +8174,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cpy-cli@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "cpy-cli@npm:3.1.1"
-  dependencies:
-    cpy: ^8.0.0
-    meow: ^6.1.1
-  bin:
-    cpy: cli.js
-  checksum: 122452ce45515a43c03f1023675bce6a48b671849e0919c1093cb0582cb145cb8015037c117c577bb595b0a1931672939596b6fad27cb12c72c56c1c726e526f
-  languageName: node
-  linkType: hard
-
-"cpy@npm:^8.0.0, cpy@npm:^8.1.1":
+"cpy@npm:^8.1.1":
   version: 8.1.2
   resolution: "cpy@npm:8.1.2"
   dependencies:
@@ -9256,17 +8736,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"decamelize-keys@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "decamelize-keys@npm:1.1.0"
-  dependencies:
-    decamelize: ^1.1.0
-    map-obj: ^1.0.0
-  checksum: dbfe6d594810ef134f8e3b8aa1684c854187a225999a0c3871b8c32d8fda886d1832b79b952a53e9557be17a78ec0198b6c26a5a5a35d012d6b18340a4dc6356
-  languageName: node
-  linkType: hard
-
-"decamelize@npm:^1.1.0, decamelize@npm:^1.2.0":
+"decamelize@npm:^1.2.0":
   version: 1.2.0
   resolution: "decamelize@npm:1.2.0"
   checksum: 8ca9d03ea8ac07920f4504e219d18edff2491bdd0a3e05a1e5ca2e9a0bf6333564231de3528b01d5e76c40a38c37bbc1e09cb5a0424714f53dd615ed78ced464
@@ -11404,13 +10874,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-readdir-recursive@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "fs-readdir-recursive@npm:1.1.0"
-  checksum: dec853d7418a9a2c1295d0dbf602505655bebed76474d656d68ed3e06bc84db651325b795509221f186955791965ec0add261919d464cae76dd3b8564f462054
-  languageName: node
-  linkType: hard
-
 "fs-write-stream-atomic@npm:^1.0.8":
   version: 1.0.10
   resolution: "fs-write-stream-atomic@npm:1.0.10"
@@ -11946,13 +11409,6 @@ fsevents@~2.1.1:
     ajv: ^6.12.3
     har-schema: ^2.0.0
   checksum: 01b905cdaa7632c926a962c8127a77b98387935ef3aa0b44dae871eae2592ba6da948a3bdbb3eeceb90fa1599300f16716e50147965a7ea7c4e7c4e57ac69727
-  languageName: node
-  linkType: hard
-
-"hard-rejection@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "hard-rejection@npm:2.1.0"
-  checksum: 27bc09d185ca8131356f0f3391ae5965c5ed8ec9eddf697d604e33c76eb995831e60ac636e5e5839587d0499f29719171c19d0af5fa12e9e7f7c0a1689e22b6f
   languageName: node
   linkType: hard
 
@@ -13270,7 +12726,7 @@ fsevents@~2.1.1:
   languageName: node
   linkType: hard
 
-"is-plain-obj@npm:^1.0.0, is-plain-obj@npm:^1.1.0":
+"is-plain-obj@npm:^1.0.0":
   version: 1.1.0
   resolution: "is-plain-obj@npm:1.1.0"
   checksum: d2eb5a32eacd7c79f3b2fe20552d091805a5ae88a7ca2aa71226bf822e4d690ef046ed2beb795f32666a401dfbf9a25ee3d4acde5426f963d55474468708ad22
@@ -14444,7 +13900,7 @@ fsevents@~2.1.1:
   languageName: node
   linkType: hard
 
-"kind-of@npm:^6.0.0, kind-of@npm:^6.0.2, kind-of@npm:^6.0.3":
+"kind-of@npm:^6.0.0, kind-of@npm:^6.0.2":
   version: 6.0.3
   resolution: "kind-of@npm:6.0.3"
   checksum: 5de5d6577796af87a983199d6350ed41c670abec4a306cc43ca887c1afdbd6b89af9ab00016e3ca17eb7ad89ebfd9bb817d33baa89f855c6c95398a8b8abbf08
@@ -14961,20 +14417,6 @@ fsevents@~2.1.1:
   languageName: node
   linkType: hard
 
-"map-obj@npm:^1.0.0":
-  version: 1.0.1
-  resolution: "map-obj@npm:1.0.1"
-  checksum: e68b20e4fa76efdbba9a7af05b879eb7a6c5ccb7a9d813796de825da4c182fc3dab66f4b2a32a9aefae83db152a0172deb1e19a9c2322c6d412b8f9f81ca51a4
-  languageName: node
-  linkType: hard
-
-"map-obj@npm:^4.0.0":
-  version: 4.2.0
-  resolution: "map-obj@npm:4.2.0"
-  checksum: 0ee5029e6d4482f378292565e3da1b70364f360e141295c6b3bd9164c916d31dcd43be126085dddd2f10d70846660728657d4ea5fa96baa5b40b03b135068600
-  languageName: node
-  linkType: hard
-
 "map-or-similar@npm:^1.5.0":
   version: 1.5.0
   resolution: "map-or-similar@npm:1.5.0"
@@ -15132,25 +14574,6 @@ fsevents@~2.1.1:
     errno: ^0.1.3
     readable-stream: ^2.0.1
   checksum: deb916f33ca09215d6ad58db30854bbf36aaca86e018dcbbbdb7c6160661e8c0b9acdcc23c9931fc6dcd62f3dd5318a7ecab519e3688f7787d0833e5f48c0d0a
-  languageName: node
-  linkType: hard
-
-"meow@npm:^6.1.1":
-  version: 6.1.1
-  resolution: "meow@npm:6.1.1"
-  dependencies:
-    "@types/minimist": ^1.2.0
-    camelcase-keys: ^6.2.2
-    decamelize-keys: ^1.1.0
-    hard-rejection: ^2.1.0
-    minimist-options: ^4.0.2
-    normalize-package-data: ^2.5.0
-    read-pkg-up: ^7.0.1
-    redent: ^3.0.0
-    trim-newlines: ^3.0.0
-    type-fest: ^0.13.1
-    yargs-parser: ^18.1.3
-  checksum: 71dc7bff6dbafe09e002cf557b40527e19d3de57712859c55268b300743117515b4c37b7ee1bcf58fa661168e7df8af12e420692ce990cbf4874c99e826ccd15
   languageName: node
   linkType: hard
 
@@ -15343,17 +14766,6 @@ fsevents@~2.1.1:
   dependencies:
     brace-expansion: ^1.1.7
   checksum: 47eab9263962cacd5733e274ecad2d8e54b0f8e124ba35ae69189e296058f634a4967b87a98954f86fa5c830ff177caf827ce0136d28717ed3232951fb4fae62
-  languageName: node
-  linkType: hard
-
-"minimist-options@npm:^4.0.2":
-  version: 4.1.0
-  resolution: "minimist-options@npm:4.1.0"
-  dependencies:
-    arrify: ^1.0.1
-    is-plain-obj: ^1.1.0
-    kind-of: ^6.0.3
-  checksum: 51f1aba56f9c2c2986d85c98a29abec26c632019abd2966a151029cf2cf0903d81894781460e0d5755d4f899bb3884bc86fc9af36ab31469a38d82cf74f4f651
   languageName: node
   linkType: hard
 
@@ -18091,13 +17503,6 @@ fsevents@~2.1.1:
   version: 1.2.2
   resolution: "queue-microtask@npm:1.2.2"
   checksum: 563abf1b1d0916842c017a4c0784fffebd0dd7d5685ffd65356dfee8f084e34e2a9b449aa788dddb2767f7dc79d1834545bb75f8f643b8aa85aea20a9efabbec
-  languageName: node
-  linkType: hard
-
-"quick-lru@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "quick-lru@npm:4.0.1"
-  checksum: 91847e4b07453655f73513b96a3b49e3bb8bf37de1ce2075d44e5dddb2f08050c5dc858d97884d61618bb44487945880b4b481fe93e94a3622b43036f8b94e11
   languageName: node
   linkType: hard
 
@@ -21258,13 +20663,6 @@ resolve@1.18.1:
   languageName: node
   linkType: hard
 
-"trim-newlines@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "trim-newlines@npm:3.0.0"
-  checksum: 51bfbec0014ae58cdbf3c55e34cfe7f1a92a77d362990bb4cc8d6edf51f1c21f28b92e442adec3ef9cef69194b532b28c1a0a06d9ee78b2b0fd28d191a2b738e
-  languageName: node
-  linkType: hard
-
 "trim-trailing-lines@npm:^1.0.0":
   version: 1.1.4
   resolution: "trim-trailing-lines@npm:1.1.4"
@@ -21425,13 +20823,6 @@ resolve@1.18.1:
   version: 0.11.0
   resolution: "type-fest@npm:0.11.0"
   checksum: 02e5cadf13590a5724cacf8d9133320efd173f6fb1b695fcb29e56551a315bf0f07ca988a780a1999b7b55bb3eaaa7f37223615207236d393af17bba6749dc95
-  languageName: node
-  linkType: hard
-
-"type-fest@npm:^0.13.1":
-  version: 0.13.1
-  resolution: "type-fest@npm:0.13.1"
-  checksum: 11acce4f34c75a838914bdc4a0133d2dd0864e313897471974880df82624159521bae691a6100ff99f93be2d0f8871ecdab18573d2c67e61905cf2f5cbfa52a6
   languageName: node
   linkType: hard
 
@@ -22876,7 +22267,7 @@ resolve@1.18.1:
   languageName: node
   linkType: hard
 
-"yargs-parser@npm:^18.1.2, yargs-parser@npm:^18.1.3":
+"yargs-parser@npm:^18.1.2":
   version: 18.1.3
   resolution: "yargs-parser@npm:18.1.3"
   dependencies:

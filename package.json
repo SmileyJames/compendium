@@ -7,9 +7,7 @@
   "author": "James O'Toole",
   "workspaces": [
     "app",
-    "peer-party",
-    "games/*",
-    "components/*"
+    "peer-party"
   ],
   "devDependencies": {
     "@babel/preset-env": "^7.13.12",
