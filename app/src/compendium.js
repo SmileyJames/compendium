@@ -1,5 +1,5 @@
-import TicTacToe from "@compendium/tic-tac-toe";
-import Whist from "@compendium/whist";
+import TicTacToe from "./games/tic-tac-toe";
+import Whist from "./games/whist";
 
 const compendium = [
   TicTacToe,
