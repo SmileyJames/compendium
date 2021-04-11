@@ -67,7 +67,7 @@
       "last 1 safari version"
     ]
   },
-   "jest": {
+  "jest": {
     "moduleNameMapper": {
       "^games(.*)$": "<rootDir>/src/games$1",
       "^components(.*)$": "<rootDir>/src/components$1"
