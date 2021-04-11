@@ -32,7 +32,6 @@
   "scripts": {
     "lint": "yarn workspaces foreach -p run lint",
     "test": "yarn workspaces foreach -p run test",
-    "build:peer-party": "yarn workspace @compendium/peer-party run build",
     "build:app": "CI=false yarn workspace @compendium/app run build",
     "generate": "plop",
     "postinstall": "husky install"
