@@ -1,7 +1,8 @@
 import PeerJS from "peerjs";
 import { renderHook, act } from '@testing-library/react-hooks';
 import usePartyHost from "./usePartyHost";
-import { withRandom } from "../random";
+import { withRandom, shuffle } from "../random";
+import { withSecret, revealSecret } from "../secret";
 
 jest.useFakeTimers();
 jest.mock('peerjs')
@@ -30,7 +31,11 @@ PeerJS.mockImplementation(() => ({
   destroy: () => {},
 }))
 
-const start = jest.fn(() => ({ number: 0 }));
+const start = jest.fn(() => ({
+  number: 0,
+  connections: ["hello"],
+  deck: [1, 2, 3],
+}));
 const increment = jest.fn(({ args, state: { number } }) =>
   ({ number: number + ((args && args.value) || 1) }));
 const flipCoin = withRandom(
@@ -42,25 +47,60 @@ const flipCoin = withRandom(
   )
 );
 
+const dealCards = withRandom(withSecret(
+  jest.fn(
+      ({ state, random, contextId }) => {
+          const deck = shuffle({ random, array: state.deck });
+          const playerIndex = state.connections.findIndex(conn => conn === contextId);
+          const hand = deck.filter(() => playerIndex === 0);
+          return { ...state, deck: [], hand };
+      }
+  )
+))
+
+const revealACard = withSecret(
+  jest.fn(
+      ({ state, connectionId, contextId, revealSecret }) => {
+          const newState = { ...state };
+          const firstCard = revealSecret(connectionId, state => state.hand[0]);
+          if (connectionId === contextId) {
+              const [_, ...newHand] = state.hand;
+              newState.hand = newHand;
+          }
+          newState.revealedCard = firstCard;
+          return newState;
+      }
+  )
+)
+
 const game = {
   guestMoves: {
+    revealACard,
     increment,
     flipCoin,
   },
   hostMoves: {
+    dealCards,
     start,
     increment,
   }
 };
 
 describe("usePartyHost", () => {
+  beforeEach(() => {
+    window.localStorage.clear();
+  });
+
   test("The host can call moves locally and maintains a local state", () => {
-    const { unmount, result } = renderHook(() =>
+    const { rerender, unmount, result } = renderHook(() =>
       usePartyHost({ roomId: "room-id", game })
     );
 
     expect(result.current.state).toBeTruthy();
     expect(result.current.moves).toBeTruthy();
+
+    rerender();
+    rerender(); 
 
     act(() => {
       result.current.moves.start();
@@ -87,6 +127,8 @@ describe("usePartyHost", () => {
       roomId: "room-id",
       state: {
         number: 0,
+        connections: ["hello"],
+        deck: [1, 2, 3],
       }
     });
     expect(result.current.state.number).toBe(1);
@@ -154,5 +196,70 @@ describe("usePartyHost", () => {
     expect(mockSendSync).toHaveBeenCalled();
 
     unmount();
+  });
+
+  test("The host shares the results of secret moves with guests and maintains" + 
+       "a copy of everyone's state for validation and to create patches from the diff.", () => {
+    const { rerender, result } = renderHook(() =>
+      usePartyHost({ roomId: "room-id", game })
+    );
+
+    expect(result.current.state).toBeTruthy();
+    expect(result.current.moves).toBeTruthy();
+
+    act(() => {
+      result.current.moves.start();
+    });
+
+    expect(result.current.state.connections).toStrictEqual(["hello"]);
+
+    act(() => {
+      result.current.moves.dealCards();
+    });
+
+    expect(result.current.state).
+    toStrictEqual({
+      connections: ["hello"],
+      deck: [],
+      hand: [],
+      number: 0,
+    });
+
+    expect(mockSendSync).toHaveBeenLastCalledWith([
+      { index: 0, args: undefined, connectionId: "room-id", move: "start" },
+      { index: 1, args: undefined, connectionId: "room-id", move: "dealCards",
+      patch: { deck: {"_0": [1, 0, 0], "_1": [2,0,0], "_2": [3,0,0], "_t": "a"}, hand: [[3,2,1]] }, seed: 0.8619044772223384 },
+    ])
+
+    act(() => {
+      mockReceiveEmit({
+        index: 0,
+      })
+      mockReceiveEmit({
+        index: 1,
+        move: "revealACard",
+        args: {},
+      })
+    });
+
+    expect(result.current.state).toStrictEqual({
+      connections: [
+        "hello",
+      ],
+      deck: [],
+      hand: [],
+      number: 0,
+      revealedCard: 3,
+    });
+
+    expect(mockSendSync).toHaveBeenLastCalledWith([
+      { index: 2, args: {}, connectionId: "hello", move: "revealACard", patch: {
+        hand: {
+          "_0": [3,0,0],
+          "_t": "a",
+        },
+        revealedCard: [3],
+      } },
+    ]);
   });
 });

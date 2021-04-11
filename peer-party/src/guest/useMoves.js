@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { getMove, constructMoves, constructReducer } from "../shared";
-import { logSizeToIndex } from "./funcs";
+import { getMove, constructMoves  } from "../shared";
+import { logSizeToIndex, constructReducer } from "./funcs";
 import { isRandomMove } from "../random";
 import { isSecretMove } from "../secret";
 

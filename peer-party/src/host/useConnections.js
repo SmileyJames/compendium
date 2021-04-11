@@ -1,6 +1,5 @@
-import { useRef, useState, useEffect, useMemo } from "react";
+import { useRef, useState, useEffect, useMemo, useReducer } from "react";
 import { isString, isObject, isInteger } from "lodash";
-import { logEvent } from "./funcs";
 import usePeer from "../usePeer";
 
 const validateEvent = (event, validMoves) => (
@@ -22,16 +21,20 @@ const updateLogSizeMap = ({ conn, connectionLogSizeMap, size = 0 }) => {
   connectionLogSizeMap.current[conn.peer] = size
 }
 
-const useConnections = ({ game, roomId, eventLog, setEventLog, random }) => {
+const useConnections = ({ game, roomId }) => {
   const { peer } = usePeer(roomId);
   const [connections, setConnections] = useState([]);
   const connectionLogSizeMap = useRef({});
+  const [connectionIds, addConnectionId] = useReducer((state, connId) => [...state, connId], []);
+  const [onGuestEvent, setOnGuestEvent] = useState(() => () => {});
 
   useEffect(() => {
-    if (!peer) return;
+    if (!peer || !onGuestEvent) return;
+
     peer.on("connection", (conn) => {
       conn.on("open", () => {
         appendConnection({ setConnections, conn });
+        addConnectionId(conn.peer);
       });
 
       conn.on("data", ({ index, ...event }) => {
@@ -43,7 +46,7 @@ const useConnections = ({ game, roomId, eventLog, setEventLog, random }) => {
           (isInteger(index) || index === null) &&
           validateEvent(event, Object.keys(game.guestMoves))
         ) {
-          logEvent({ setEventLog, event, connectionId: conn.peer, roomId, game, random });
+          onGuestEvent({ ...event, connectionId: conn.peer });
         }
       })
 
@@ -55,10 +58,9 @@ const useConnections = ({ game, roomId, eventLog, setEventLog, random }) => {
         console.error(conn.peer, error)
       });
     })
+  }, [peer, game, roomId, onGuestEvent])
 
-  }, [peer, game, roomId])
-
-  return { connections, connectionLogSizeMap }
+  return { connections, connectionIds, connectionLogSizeMap, setOnGuestEvent }
 }
 
 export default useConnections;

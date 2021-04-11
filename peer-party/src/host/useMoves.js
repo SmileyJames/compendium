@@ -1,23 +1,16 @@
-import { useEffect, useState } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { constructMoves } from "../shared";
-import { logEvent } from "./funcs";
 
-const constructMovesHandler = ({ setMoves, game, roomId, setEventLog, random }) => {
-  const handleMove = ({ move, args }) => {
-    logEvent({ setEventLog, event: { move, args }, connectionId: roomId, roomId, game, random })
-  };
-  setMoves(() => constructMoves({ game, connectionId: roomId, roomId, handleMove }))
-}
-
-const useMoves = ({ roomId, game, setEventLog, random }) => {
-  const [moves, setMoves] = useState(null);
-
-  useEffect(() => {
-    if (!game) return;
-    constructMovesHandler({ setMoves, game, roomId, setEventLog, random });
-  }, [roomId, game, setEventLog]);
-
-  return { moves, setMoves }
+const useMoves = ({ roomId, game }) => {
+  const [onEvent, setOnHostEvent] = useState(() => {});
+  const handleMove = useCallback((event) => {
+    onEvent({ ...event, connectionId: roomId })
+  }, [onEvent]);
+  const moves = useMemo(() => {
+    if (!handleMove || !roomId  || !game) return {};
+    return constructMoves({ game, connectionId: roomId, roomId, handleMove });
+}, [roomId, game, handleMove]);
+  return { moves, setOnHostEvent };
 }
 
 export default useMoves;
