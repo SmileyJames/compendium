@@ -5,7 +5,7 @@ const useMoves = ({ roomId, game }) => {
   const [onEvent, setOnHostEvent] = useState(() => {});
   const handleMove = useCallback((event) => {
     onEvent({ ...event, connectionId: roomId })
-  }, [onEvent]);
+  }, [roomId, onEvent]);
   const moves = useMemo(() => {
     if (!handleMove || !roomId  || !game) return {};
     return constructMoves({ game, connectionId: roomId, roomId, handleMove });

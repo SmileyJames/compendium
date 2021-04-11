@@ -32,7 +32,7 @@ const reducer = ({ state, contextId, connectionId, roomId, random, game, move, a
 
 const useGameState = ({ roomId, game, random, connectionIds, logEvent }) => {
   const { states, setStates } = useStatesStore(roomId);
-  const hostState = useMemo(() => (states[roomId] || {}), [roomId, states[roomId]])
+  const hostState = useMemo(() => (states[roomId] || {}), [roomId, states])
   const input = useCallback(({ connectionId, move, args }) => {
     if (connectionIds == null);
     const revealSecret = (id, fn) => fn(states[id]);
@@ -59,7 +59,7 @@ const useGameState = ({ roomId, game, random, connectionIds, logEvent }) => {
         }
       }, {})
     ));
-  }, [connectionIds, states, roomId, game, random]);
+  }, [logEvent, connectionIds, states, roomId, game, random, setStates]);
 
   return { state: hostState, input };
 }

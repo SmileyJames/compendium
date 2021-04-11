@@ -8,19 +8,9 @@ const usePersist = (store, key, defaultValue) => {
     )
   );
 
-  const [storedValue, setStoredValue] = useState(() => {
-    try {
-      const item = window.localStorage.getItem(key);
-      return item ? JSON.parse(item) : defaultValue;
-    } catch (error) {
-      console.error(error);
-      return defaultValue;
-    }
-  });
-
   useEffect(() => {
     store.setItem(key, JSON.stringify(state));
-  }, [key, state]);
+  }, [key, state, store]);
 
   return [state, setState];
 }

@@ -13,7 +13,7 @@ const useConnection = ({ id, roomId }) => {
   const [attempts, countAttempt] = useReducer(a => a + 1, 0);
 
   useEffect(() => {
-    if (!open || connected) return;
+    if (!peer || !open || connected) return;
 
     connect({ conn, peer, roomId });
 
@@ -42,7 +42,7 @@ const useConnection = ({ id, roomId }) => {
       console.error(error)
     });
 
-  }, [attempts, open, connected, roomId]);
+  }, [attempts, open, connected, roomId, peer]);
 
   const clearData = () => setData([]);
   return { connected: open && connected, conn, data, clearData }

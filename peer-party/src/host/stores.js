@@ -22,6 +22,6 @@ export const useEventLogStore = (roomId) => {
       const logs = eventLogs[connectionId] || [];
       return { ...eventLogs, [connectionId]: [...logs, event] };
     });
-  }, []);
+  }, [setEventLogs]);
   return { eventLogs, logEvent };
 }

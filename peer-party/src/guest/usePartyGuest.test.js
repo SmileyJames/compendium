@@ -14,7 +14,7 @@ PeerJS.mockImplementation(() => ({
     on: (eventName, callback) => {
       if (eventName === "data") {
         mockReceiveSync = callback;
-      } else if (eventName == "open") {
+      } else if (eventName === "open") {
         callback();
       }
     },
@@ -61,7 +61,7 @@ const revealACard = withSecret(
           const newState = { ...state };
           const firstCard = revealSecret(connectionId, state => state.hand[0]);
           if (connectionId === contextId) {
-              const [_, ...newHand] = state.hand;
+              const newHand = state.hand.slice(1);
               newState.hand = newHand;
           }
           newState.revealedCard = firstCard;
@@ -88,7 +88,7 @@ describe("usePartyGuest", () => {
   });
 
   test("State is maintained correctly whilst emitting from guest and syncing from host", () => {
-    const { unmount, rerender, result } = renderHook(() =>
+    const { unmount, result } = renderHook(() =>
       usePartyGuest({ id: "hello", roomId: "hello-world", game })
     );
 

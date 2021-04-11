@@ -32,7 +32,7 @@ const useMoves = ({ connected, conn, id, setState, roomId, game, logSize }) => {
   useEffect(() => {
     if (!connected) return;
     constructMovesHandler({ conn, connectionId: id, setMoves, setState, roomId, game, logSize })
-  }, [connected, conn.current, id, setMoves, setState, roomId, game, logSize])
+  }, [connected, conn, id, setMoves, setState, roomId, game, logSize])
   return { moves };
 }
 

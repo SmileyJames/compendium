@@ -9,7 +9,7 @@ const useAck = ({ connected, conn, logSize }) => {
   useEffect(() => {
     if (!conn.current || !connected) return;
     ack({ conn, logSize })
-  }, [connected, conn.current, logSize]);
+  }, [connected, conn, logSize]);
 }
 
 export default useAck;

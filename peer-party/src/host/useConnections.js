@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useMemo, useReducer } from "react";
+import { useRef, useState, useEffect, useReducer } from "react";
 import { isString, isObject, isInteger } from "lodash";
 import usePeer from "../usePeer";
 

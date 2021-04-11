@@ -1,8 +1,8 @@
-import PeerJS from "peerjs";
+  import PeerJS from "peerjs";
 import { renderHook, act } from '@testing-library/react-hooks';
 import usePartyHost from "./usePartyHost";
 import { withRandom, shuffle } from "../random";
-import { withSecret, revealSecret } from "../secret";
+import { withSecret } from "../secret";
 
 jest.useFakeTimers();
 jest.mock('peerjs')
@@ -64,7 +64,7 @@ const revealACard = withSecret(
           const newState = { ...state };
           const firstCard = revealSecret(connectionId, state => state.hand[0]);
           if (connectionId === contextId) {
-              const [_, ...newHand] = state.hand;
+              const newHand = state.hand.slice(1);
               newState.hand = newHand;
           }
           newState.revealedCard = firstCard;
@@ -92,15 +92,12 @@ describe("usePartyHost", () => {
   });
 
   test("The host can call moves locally and maintains a local state", () => {
-    const { rerender, unmount, result } = renderHook(() =>
+    const { unmount, result } = renderHook(() =>
       usePartyHost({ roomId: "room-id", game })
     );
 
     expect(result.current.state).toBeTruthy();
     expect(result.current.moves).toBeTruthy();
-
-    rerender();
-    rerender(); 
 
     act(() => {
       result.current.moves.start();
@@ -200,7 +197,7 @@ describe("usePartyHost", () => {
 
   test("The host shares the results of secret moves with guests and maintains" + 
        "a copy of everyone's state for validation and to create patches from the diff.", () => {
-    const { rerender, result } = renderHook(() =>
+    const { result } = renderHook(() =>
       usePartyHost({ roomId: "room-id", game })
     );
 
@@ -217,8 +214,8 @@ describe("usePartyHost", () => {
       result.current.moves.dealCards();
     });
 
-    expect(result.current.state).
-    toStrictEqual({
+    expect(result.current.state)
+    .toStrictEqual({
       connections: ["hello"],
       deck: [],
       hand: [],

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useReducer } from "react";
+import { useEffect, useState, useReducer } from "react";
 import Peer from "peerjs";
 
 const destructPeer = ({ setPeer }) => {
@@ -46,7 +46,7 @@ const usePeer = (id) => {
       destructPeer({ setPeer });
       clearTimeout(timeout);
     }
-  }, [attempts, id])
+  }, [open, attempts, id])
 
   return { open, peer }
 }

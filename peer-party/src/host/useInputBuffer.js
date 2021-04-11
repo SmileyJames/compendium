@@ -12,12 +12,12 @@ const useInputBuffer = ({ setOnGuestEvent, setOnHostEvent, input }) => {
     }, [setOnGuestEvent, setOnHostEvent, setInputBuffer]);
     
     useEffect(() => {
-      if (!inputBuffer.length) return;
+      if (!inputBuffer.length || !input) return;
       setInputBuffer(([head, ...tail]) => {
         input(head)
         return tail;
       })
-    }, [inputBuffer]);
+    }, [inputBuffer, input]);
 }
 
 export default useInputBuffer;
