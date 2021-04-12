@@ -46,7 +46,7 @@ const usePeer = (id) => {
       destructPeer({ setPeer });
       clearTimeout(timeout);
     }
-  }, [open, attempts, id])
+  }, [attempts, id])
 
   return { open, peer }
 }
