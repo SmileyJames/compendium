@@ -8,7 +8,7 @@ const destructPeer = ({ setPeer }) => {
   })
 };
 
-const opts = { host: "peerjs.92k.de", secure: true };
+const opts = { host: "signalling.compendium.games", secure: true };
 
 const usePeer = (id) => {
   const [peer, setPeer] = useState();
