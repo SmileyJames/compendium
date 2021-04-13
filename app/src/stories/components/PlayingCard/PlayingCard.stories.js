@@ -1,9 +1,9 @@
 import React from 'react';
-import PlayingCard, { ACE, KING, QUEEN, PlayingCardBack, Hand, FeltTable } from "@compendium/playing-card";
+import PlayingCard, { ACE, KING, QUEEN, PlayingCardBack, Hand, FeltTable } from "components/playing-card";
 
 
 export default {
-  title: 'Playing Card',
+  title: 'Components/Playing Card',
   component: PlayingCard,
 };
 

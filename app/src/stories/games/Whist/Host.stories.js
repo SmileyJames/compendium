@@ -1,19 +1,19 @@
 import React from 'react';
-import Whist from "@compendium/whist";
+import Whist from "games/whist";
 
 
 export default {
-  title: 'Whist Guest',
-  component: Whist.Guest,
+  title: 'Games/Whist/Host',
+  component: Whist.Host,
 };
 
-const Template = (args) => <Whist.Guest {...args} />;
+const Template = (args) => <Whist.Host {...args} />;
 
 export const Beginning = Template.bind({});
 Beginning.args = {
   state: {},
   moves: {},
-  connectionId: "xxx",
+  connections: [2],
 };
 
 export const TwoPlayers = Template.bind({});
@@ -30,7 +30,7 @@ TwoPlayers.args = {
     }
   },
   moves: {},
-  connectionId: "aaa",
+  connections: ["xxx", "xox"],
 };
 
 export const FourPlayers = Template.bind({});
@@ -49,7 +49,7 @@ FourPlayers.args = {
     },
   },
   moves: {},
-  connectionId: "xxx",
+  connections: ["xxx", "xox", "oxo", "ooo"],
 };
 
 export const GameStarted = Template.bind({});
@@ -89,7 +89,7 @@ GameStarted.args = {
     ],
   },
   moves: {},
-  connectionId: "xxx",
+  connections: ["xxx", "xox", "oxo", "ooo"],
 };
 
 export const FirstTurn = Template.bind({});
@@ -129,7 +129,7 @@ FirstTurn.args = {
     ],
   },
   moves: {},
-  connectionId: "xxx",
+  connections: ["xxx", "xox", "oxo", "ooo"],
 };
 
 export const LateGame = Template.bind({});
@@ -173,5 +173,5 @@ LateGame.args = {
     ],
   },
   moves: {},
-  connectionId: "xxx",
+  connections: ["xxx", "xox", "oxo", "ooo"],
 };

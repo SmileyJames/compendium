@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import PlayingCard, { FeltTable, Hand } from "@compendium/playing-card";
+import PlayingCard, { FeltTable, Hand } from "components/playing-card";
 
 const Title = styled.h2`
   color: red;

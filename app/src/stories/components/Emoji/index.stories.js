@@ -1,5 +1,5 @@
 import React from 'react';
-import Emoji from "@compendium/emoji";
+import Emoji from "components/emoji";
 import styled from "styled-components";
 
 const Icon = styled.div`
@@ -8,7 +8,7 @@ const Icon = styled.div`
 `;
 
 export default {
-  title: 'Emoji',
+  title: 'Components/Emoji',
   component: Emoji,
 };
 

@@ -1,10 +1,9 @@
 import React from 'react';
-
-import TicTacToe from "@compendium/tic-tac-toe";
+import TicTacToe from "games/tic-tac-toe";
 
 
 export default {
-  title: 'Tic Tac Toe Host',
+  title: 'Games/Tic Tac Toe/Host',
   component: TicTacToe.Host,
 };
 

@@ -1,5 +1,5 @@
-import game from "@compendium/bourre-game";
-import { Host, Guest } from "@compendium/bourre-client";
+import game from "./game";
+import { Host, Guest } from "./client";
 
 const name = "Bourré";
 

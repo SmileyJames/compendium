@@ -1,9 +1,9 @@
 import React from 'react';
-import Players from "@compendium/players";
+import Players from "components/players";
 
 
 export default {
-  title: 'Players Host',
+  title: 'Components/Players/Host',
   component: Players.Host,
 };
 

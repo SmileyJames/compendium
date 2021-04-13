@@ -1,9 +1,9 @@
 import React from 'react';
-import Bourre from "@compendium/bourre";
+import Bourre from "games/bourre";
 
 
 export default {
-  title: 'Bourré Host',
+  title: 'Games/Bourré/Host',
   component: Bourre.Host,
 };
 

@@ -1,5 +1,5 @@
-import game from "@compendium/players-game";
-import { Host, Guest } from "@compendium/players-client";
+import game from "./game";
+import { Host, Guest } from "./client";
 
 const Players = { Host, Guest, game };
 
