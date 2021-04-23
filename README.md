@@ -1,6 +1,8 @@
-# Compendium
+# Compendium Games
 
-A compendium of games.
+### 🎲 [Play Games](https://www.compendium.games/)
+### 📚 [Documentation](https://www.compendium.games/docs)
+### 💅 [Storybook](https://www.compendium.games/storybook)
 
 ## Getting Started
 
