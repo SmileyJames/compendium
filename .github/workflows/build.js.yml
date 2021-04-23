@@ -14,17 +14,61 @@ jobs:
         node-version: [14.x]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: yarn install --immutable --immutable-cache
-    - run: yarn run lint
-    - run: yarn run test
-    - run: yarn run build:app
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@4.1.0
-      with:
-        branch: gh-pages
-        folder: app/build
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Use Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Node Packages
+        run: yarn install --immutable --immutable-cache
+
+      - name: Lint App
+        run: yarn run lint:app
+
+      - name: Test App
+        run: yarn run test:app
+
+      - name: Test Peer Party
+        run: yarn run test:peer-party
+
+      - name: Build Peer Party
+        run: yarn run build:peer-party
+
+      - name: Build Storybook
+        run: yarn run build:storybook
+
+      - name: Build App
+        run: yarn run build:app
+
+      - name: Build Docs
+        run: yarn run build:docs
+
+      - name: Deploy App
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./app/build
+          cname: www.compendium.games
+
+      - name: Deploy Storybook
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./app/storybook-static
+          destination_dir: storybook
+
+      - name: Deploy Documentation
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./peer-party/docs
+          destination_dir: docs
+
+
+
+      
+
+

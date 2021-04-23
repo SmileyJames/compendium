@@ -6725,7 +6725,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "typedoc",
-        "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:0.20.35"
+        "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:0.20.36"
       ],
       [
         "typedoc-default-themes",
@@ -18318,7 +18318,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:16.14.0"],
             ["react-scripts", "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:3.4.4"],
             ["seedrandom", "npm:3.0.5"],
-            ["typedoc", "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:0.20.35"],
+            ["typedoc", "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:0.20.36"],
             ["typescript", "patch:typescript@npm%3A3.9.9#builtin<compat/typescript>::version=3.9.9&hash=cc6730"],
             ["uuid", "npm:8.3.2"]
           ],
@@ -18367,7 +18367,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:29fd00f995b33745eab8128c4c7cef8f5a82c4bafc7d6475370328bde6c93f66f91aa22c6effebab97f04080e5a749b7dea8e6e98f6431e08b6183f4c84d066b#npm:16.14.0"],
             ["react-scripts", "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:3.4.4"],
             ["seedrandom", "npm:3.0.5"],
-            ["typedoc", "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:0.20.35"],
+            ["typedoc", "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:0.20.36"],
             ["typescript", "patch:typescript@npm%3A3.9.9#builtin<compat/typescript>::version=3.9.9&hash=cc6730"],
             ["uuid", "npm:8.3.2"]
           ],
@@ -45026,17 +45026,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["typedoc", [
-        ["npm:0.20.35", {
-          "packageLocation": "./.yarn/cache/typedoc-npm-0.20.35-3e222199ae-107295014b.zip/node_modules/typedoc/",
+        ["npm:0.20.36", {
+          "packageLocation": "./.yarn/cache/typedoc-npm-0.20.36-048bd47683-362a576dee.zip/node_modules/typedoc/",
           "packageDependencies": [
-            ["typedoc", "npm:0.20.35"]
+            ["typedoc", "npm:0.20.36"]
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:0.20.35", {
-          "packageLocation": "./.yarn/$$virtual/typedoc-virtual-22390f8da3/0/cache/typedoc-npm-0.20.35-3e222199ae-107295014b.zip/node_modules/typedoc/",
+        ["virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:0.20.36", {
+          "packageLocation": "./.yarn/$$virtual/typedoc-virtual-84d4d8a280/0/cache/typedoc-npm-0.20.36-048bd47683-362a576dee.zip/node_modules/typedoc/",
           "packageDependencies": [
-            ["typedoc", "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:0.20.35"],
+            ["typedoc", "virtual:192a67fece2e8b6945b005369d3837653468e34b9a9a031b5f56477f868cba2b5a9b4fc81adbb169ca377ac149d62153d865f36c7cee738dfb69be15f4f02334#npm:0.20.36"],
             ["@types/typescript", null],
             ["colors", "npm:1.4.0"],
             ["fs-extra", "npm:9.1.0"],

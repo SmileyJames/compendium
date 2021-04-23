@@ -33,3 +33,5 @@ yarn-error.log*
 
 dist
 app/build
+app/storybook-static
+peer-party/docs

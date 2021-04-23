@@ -32,9 +32,14 @@
     "typescript": "^3.7.5"
   },
   "scripts": {
-    "lint": "yarn workspaces foreach -p run lint",
-    "test": "yarn workspaces foreach -p run test",
+    "test": "yarn workspaces foreach run test",
+    "lint:app": "yarn workspace @compendium/app run lint",
+    "test:app": "yarn workspace @compendium/app run test",
     "build:app": "CI=false yarn workspace @compendium/app run build",
+    "test:peer-party": "yarn workspace @compendium/peer-party run test",
+    "build:peer-party": "yarn workspace @compendium/peer-party run build",
+    "build:storybook": "yarn workspace @compendium/app run build-storybook",
+    "build:docs": "yarn workspace @compendium/peer-party run build-docs",
     "generate": "plop",
     "postinstall": "husky install"
   },
