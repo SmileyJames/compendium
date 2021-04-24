@@ -1,4 +1,3 @@
-/* eslint-disable standard/no-callback-literal */
 import PeerJS from 'peerjs'
 import { renderHook, act } from '@testing-library/react-hooks'
 import usePartyHost from './usePartyHost'
@@ -11,9 +10,9 @@ jest.mock('peerjs')
 let mockReceiveEmit
 const mockSendSync = jest.fn()
 PeerJS.mockImplementation(() => ({
-  on: (eventName, callback) => {
+  on: (eventName, fn) => {
     if (eventName === 'connection') {
-      callback({
+      fn({
         peer: 'hello',
         on: (_eventName, _callback) => {
           if (_eventName === 'data') {
@@ -25,7 +24,7 @@ PeerJS.mockImplementation(() => ({
         send: mockSendSync
       })
     } else if (eventName === 'open') {
-      callback()
+      fn()
     }
   },
   id: 'room-id',
