@@ -1,6 +1,7 @@
 import usePersist from '../usePersist'
 import { v4 as uuid } from 'uuid'
-import { PeerId, State, LogSize } from '..'
+import { PeerId, State } from '..'
+import { LogSize } from '../types'
 import { CacheAndState, CacheAndStateSetter } from '.'
 
 import { Dispatch, SetStateAction } from 'react'

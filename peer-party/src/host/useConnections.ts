@@ -9,9 +9,9 @@ import {
 } from 'react'
 import { isString, isObject, isInteger } from 'lodash'
 import usePeer from '../usePeer'
-import { PeerId, Game, ConnectionList, Connection } from '../'
+import { PeerId, Game } from '..'
+import { LogSize, ConnectionList, Connection } from '../types'
 import { PeerAcks, InputerSetter, InputItem, Inputer } from '.'
-import { LogSize } from '..'
 
 const validateEvent = (event: InputItem, validMoves: string[]) =>
   event &&
@@ -25,11 +25,13 @@ type ConnectionArgs = {
 }
 
 const appendConnection = ({ setConnections, conn }: ConnectionArgs) => {
-  setConnections((conns) => [...conns, conn])
+  setConnections((conns: ConnectionList) => [...conns, conn])
 }
 
 const removeConnection = ({ setConnections, conn }: ConnectionArgs) => {
-  setConnections((conns) => conns.filter((c) => c !== conn))
+  setConnections((conns: ConnectionList) =>
+    conns.filter((c: Connection) => c !== conn)
+  )
 }
 
 type UpdateLogSizeMapArgs = {

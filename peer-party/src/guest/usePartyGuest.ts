@@ -3,9 +3,12 @@ import useSync from './useSync'
 import useMoves from './useMoves'
 import useConnection from './useConnection'
 import { useIdStore, useStateStore, useLogSizeStore } from './stores'
-import { UsePartyGuestArgs } from '.'
+import { UsePartyGuestArgs, UsePartyGuestReturn } from '..'
 
-const usePartyGuest = ({ roomId, game }: UsePartyGuestArgs) => {
+function usePartyGuest({
+  roomId,
+  game
+}: UsePartyGuestArgs): UsePartyGuestReturn {
   const { id } = useIdStore(roomId)
   const { cache, setState } = useStateStore(roomId)
   const { logSize, setLogSize } = useLogSizeStore(roomId)

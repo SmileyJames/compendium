@@ -1,5 +1,6 @@
 import has from 'lodash/has'
-import { PeerId, Game, Args, MoveHandler, Moves, Move } from '.'
+import { PeerId, Game, Args, Moves, Move } from '.'
+import { MoveHandler } from './types'
 
 interface GetMovesArgs {
   connectionId: PeerId

@@ -3,7 +3,8 @@ import { getMove, constructMoves } from '../shared'
 import { logSizeToIndex, constructReducer } from './funcs'
 import { isRandomMove } from '../random'
 import { isSecretMove } from '../secret'
-import { LogSize, Moves, ConnectionStatus, PeerId, Game, Args, Emit } from '..'
+import { Moves, PeerId, Game, Args, ConnectionStatus } from '..'
+import { LogSize, Emit } from '../types'
 import { CacheAndStateSetter, DataConnectionRef } from '.'
 
 const emit = ({ conn, emit }: { emit: Emit; conn: DataConnectionRef }) => {

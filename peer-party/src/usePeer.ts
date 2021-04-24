@@ -6,7 +6,7 @@ import {
   SetStateAction
 } from 'react'
 import Peer from 'peerjs'
-import { PeerId, ConnectionStatus } from '.'
+import { ConnectionStatus, PeerId } from '.'
 
 type PeerSetter = Dispatch<SetStateAction<Peer | null>>
 const destructPeer = ({

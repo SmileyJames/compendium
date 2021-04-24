@@ -5,13 +5,15 @@ import useConnections from './useConnections'
 import useMoves from './useMoves'
 import useSendSyncs from './useSendSyncs'
 import useInputBuffer from './useInputBuffer'
-
-import { PeerId, Game, Secret } from '../'
+import { Connection } from '../types'
 import useRandom from './useRandom'
+import { UsePartyHostArgs, UsePartyHostReturn } from '..'
 
-type HostArgs = { roomId: PeerId; game: Game; secret: Secret }
-
-const usePartyHost = ({ roomId, game, secret }: HostArgs) => {
+function usePartyHost({
+  roomId,
+  game,
+  secret
+}: UsePartyHostArgs): UsePartyHostReturn {
   // The host will need to make some random decisions
   const random = useRandom({ secret, roomId })
 
@@ -47,7 +49,7 @@ const usePartyHost = ({ roomId, game, secret }: HostArgs) => {
   useSendSyncs({ connections, connectionLogSizeMap, eventLogs })
 
   const activeConnectionIds = useMemo(
-    () => connections.map((conn) => conn.peer),
+    () => connections.map((conn: Connection) => conn.peer),
     [connections]
   )
 

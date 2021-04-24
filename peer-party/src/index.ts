@@ -1,38 +1,13 @@
 import usePartyHost from './host'
 import usePartyGuest from './guest'
 import { withRandom } from './random'
-import { DataConnection } from 'peerjs'
-
-export type ConnectionStatus = boolean
-export type Connection = DataConnection
-export type ConnectionList = DataConnection[]
+import { withSecret } from './secret'
 
 export type PeerId = string
-export type Secret = string
 export type Args = any
 export type State = any
-export type Index = number | null
-export type LogSize = number
-export type Seed = string
-export type Patch = any
-
-export interface Ack {
-  index: Index
-}
-export interface Emit {
-  index: Index
-  move: string
-  args: Args
-}
-export interface EventItem {
-  index: Index
-  connectionId: PeerId
-  move: string
-  args?: any
-  seed?: Seed
-  patch?: Patch
-}
-export type EventList = EventItem[]
+export type Secret = string
+export type ConnectionStatus = boolean
 
 export interface SimpleMoveArgs {
   state: State
@@ -90,8 +65,28 @@ export type Game = {
   guestMoves: Moves
 }
 
-export type MoveHandlerArgs = { move: string; args: Args }
-export type MoveHandler = (args: MoveHandlerArgs) => void
-export type MoveHandlerSetter = () => MoveHandler
+export interface UsePartyHostArgs {
+  roomId: PeerId
+  game: Game
+  secret: Secret
+}
 
-export { usePartyHost, usePartyGuest, withRandom }
+export interface UsePartyHostReturn {
+  state: State
+  moves: Moves | null
+  connections: PeerId[]
+}
+
+export interface UsePartyGuestArgs {
+  roomId: PeerId
+  game: Game
+}
+
+export interface UsePartyGuestReturn {
+  connectionId: PeerId
+  connected: ConnectionStatus
+  state: State
+  moves: Moves | null
+}
+
+export { usePartyHost, usePartyGuest, withRandom, withSecret }

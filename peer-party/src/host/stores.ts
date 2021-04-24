@@ -1,6 +1,7 @@
 import usePersist from '../usePersist'
 import { useCallback, Dispatch, SetStateAction } from 'react'
-import { PeerId, EventItem } from '..'
+import { PeerId } from '..'
+import { EventItem } from '../types'
 import { States, EventLogs, EventLogger } from '.'
 
 export function useStatesStore(

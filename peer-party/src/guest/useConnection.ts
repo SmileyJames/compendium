@@ -2,7 +2,8 @@ import { useEffect, useRef, useState, useReducer } from 'react'
 import usePeer from '../usePeer'
 import { DataConnectionRef } from '.'
 import Peer, { DataConnection } from 'peerjs'
-import { PeerId, EventList } from '..'
+import { PeerId } from '..'
+import { EventList } from '../types'
 
 function connect({
   roomId,

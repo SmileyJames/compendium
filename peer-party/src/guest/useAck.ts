@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { logSizeToIndex } from './funcs'
 import { DataConnectionRef } from '.'
-import { Index } from '..'
+import { Index } from '../types'
 
 const ack = ({ conn, index }: { conn: DataConnectionRef; index: Index }) => {
   conn.current?.send({ index })

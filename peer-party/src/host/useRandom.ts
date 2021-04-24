@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import seedrandom from 'seedrandom'
-import { Secret, PeerId, RandomNumberGenerator } from '..'
+import { PeerId, RandomNumberGenerator, Secret } from '..'
 
 function useRandom({
   secret,

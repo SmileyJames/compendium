@@ -1,4 +1,5 @@
-import { RandomNumberGenerator, Move, Seed } from '.'
+import { RandomNumberGenerator, Move } from '.'
+import { Seed } from './types'
 
 export const withRandom = (moveFn: Move) => {
   moveFn._isRandom = true

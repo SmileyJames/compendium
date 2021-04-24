@@ -3,16 +3,8 @@ import { patch } from 'jsondiffpatch'
 import { getMove } from '../shared'
 import { isRandomMove } from '../random'
 import { isSecretMove } from '../secret'
-import {
-  PeerId,
-  EventList,
-  Game,
-  SimpleMoveArgs,
-  RandomMove,
-  SimpleMove,
-  LogSize,
-  Index
-} from '..'
+import { Game, SimpleMoveArgs, RandomMove, SimpleMove, PeerId } from '..'
+import { EventList, LogSize, Index } from '../types'
 
 export function logSizeToIndex(logSize: LogSize): Index {
   const index = logSize - 1

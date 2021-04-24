@@ -1,9 +1,8 @@
 import usePartyGuest from './usePartyGuest'
 import { DataConnection } from 'peerjs'
-import { PeerId, Game, State, LogSize } from '..'
+import { State } from '..'
+import { LogSize } from '../types'
 import { MutableRefObject, Dispatch, SetStateAction } from 'react'
-
-export type UsePartyGuestArgs = { roomId: PeerId; game: Game }
 
 export type CacheAndState = { cache: State; state: State }
 

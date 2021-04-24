@@ -1,5 +1,6 @@
 import usePartyHost from './usePartyHost'
-import { PeerId, Args, State, EventList, EventItem } from '..'
+import { PeerId, Args, State } from '..'
+import { EventList, EventItem } from '../types'
 
 export type EventLogs = { [key: string]: EventList }
 export type EventLogger = ({

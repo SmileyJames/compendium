@@ -1,5 +1,5 @@
 import { useEffect, MutableRefObject } from 'react'
-import { ConnectionList } from '..'
+import { ConnectionList, EventItem } from '../types'
 import { EventLogs, PeerAcks } from '.'
 
 type UseSendSyncArgs = {
@@ -20,7 +20,7 @@ function useSendSyncs({
       if (eventLog.length > numSent) {
         const events = eventLog
           .slice(numSent)
-          .map((e, i) => ({ ...e, index: numSent + i }))
+          .map((e: EventItem, i: number) => ({ ...e, index: numSent + i }))
         connection.send(events)
       }
     }

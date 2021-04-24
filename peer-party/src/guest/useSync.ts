@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { constructReducer } from './funcs'
-import { Game, EventList, PeerId } from '..'
+import { Game, PeerId } from '..'
+import { EventList } from '../types'
 import { CacheAndStateSetter, LogSizeSetter } from '.'
 
 type SyncArgs = {

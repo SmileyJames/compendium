@@ -12,7 +12,6 @@ import {
   Args,
   RevealSecretFunction,
   Game,
-  EventItem,
   RandomMove,
   SecretMove,
   SimpleMove,
@@ -20,6 +19,7 @@ import {
   SecretArgsMixin,
   RandomSecretMove
 } from '..'
+import { EventItem } from '../types'
 import { EventLogger } from '.'
 
 type ReducerArgs = {
