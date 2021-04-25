@@ -31,7 +31,7 @@
     "typescript": "^4.2.4"
   },
   "scripts": {
-    "test": "yarn workspaces foreach run test",
+    "test:unit": "yarn workspaces foreach run test:unit",
     "lint:app": "yarn workspace @compendium/app run lint",
     "test:app": "yarn workspace @compendium/app run test",
     "build:app": "CI=false yarn workspace @compendium/app run build",
