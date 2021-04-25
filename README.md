@@ -36,9 +36,8 @@ The app README has helpful commands listed also.
 A compendium has many games! Let's make another!
 
 ```
-yarn plop
+yarn generate
 # Answer prompts for the plop template generator
 cd app
-yarn add @compendium/my-game
 yarn start-storybook # Your newly generated game's components will we run by storybook
 ```
