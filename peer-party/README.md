@@ -22,7 +22,7 @@ import { usePartyGuest, usePartyHost } from '@compendium/peer-party'
 
 const MyGamesRules = {
   guestMoves: {
-    makeGuestMove: ({ state }) => ({ ...state, title: "Guest's are better" })
+    makeGuestMove: ({ state }) => ({ ...state, title: "Guests are better" })
   },
   hostMoves: {
     makeHostMove: ({ state }) => ({ ...state, title: "Host is best" })
