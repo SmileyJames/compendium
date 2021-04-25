@@ -68,7 +68,7 @@ export type Game = {
 export interface UsePartyHostArgs {
   roomId: PeerId
   game: Game
-  secret: Secret
+  secret?: Secret
 }
 
 export interface UsePartyHostReturn {

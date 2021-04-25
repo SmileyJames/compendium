@@ -9,6 +9,11 @@ import { Connection } from '../types'
 import useRandom from './useRandom'
 import { UsePartyHostArgs, UsePartyHostReturn } from '..'
 
+/**
+ * A React hook that, provided the game rules and a shared room identifier,
+ * returns the host's state representation and an object with moves
+ * to call on the host's user action.
+ */
 function usePartyHost({
   roomId,
   game,

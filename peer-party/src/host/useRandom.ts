@@ -6,7 +6,7 @@ function useRandom({
   secret,
   roomId
 }: {
-  secret: Secret
+  secret?: Secret
   roomId: PeerId
 }): RandomNumberGenerator {
   const random = useMemo<RandomNumberGenerator>(

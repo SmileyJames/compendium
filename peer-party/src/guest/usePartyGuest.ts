@@ -5,6 +5,11 @@ import useConnection from './useConnection'
 import { useIdStore, useStateStore, useLogSizeStore } from './stores'
 import { UsePartyGuestArgs, UsePartyGuestReturn } from '..'
 
+/**
+ * A React hook that, provided the game rules and a shared room identifier,
+ * returns the guest's state representation and an object with moves
+ * to call on the guest's user action.
+ */
 function usePartyGuest({
   roomId,
   game

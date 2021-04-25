@@ -1,9 +1,20 @@
-import { RandomNumberGenerator, Move } from '.'
+import { RandomNumberGenerator, Move, RandomMove, RandomSecretMove } from '.'
 import { Seed } from './types'
 
-export const withRandom = (moveFn: Move) => {
+/**
+ * A higher order function to provide `random`, a random number generator, to a move defintion.
+ * ```js
+ * withRandom(({ random, state }) => {
+ *   const isHeads = random() > 0.5;
+ *   return ({ ...state, isHeads })
+ * })
+ * ```
+ * @param moveFn A game move definition, which will require randomness
+ * @return A random move definition
+ */
+export function withRandom(moveFn: Move): RandomMove | RandomSecretMove {
   moveFn._isRandom = true
-  return moveFn
+  return moveFn as RandomMove | RandomSecretMove
 }
 
 export const isRandomMove = (moveFn: Move) => moveFn._isRandom
