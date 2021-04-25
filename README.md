@@ -38,6 +38,8 @@ A compendium has many games! Let's make another!
 ```
 yarn generate
 # Answer prompts for the plop template generator
+
 cd app
-yarn start-storybook # Your newly generated game's components will we run by storybook
+yarn storybook
+# Your newly generated game's components will we run by storybook
 ```

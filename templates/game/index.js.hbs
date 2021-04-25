@@ -1,8 +1,11 @@
-import game from "@compendium/{{ packageName }}-game";
-import { Host, Guest } from "@compendium/{{ packageName }}-client";
+const game = {
+  guestMoves: {
+    // add moves here
+  },
+  
+  hostMoves: {
+    // add moves here
+  },
+}
 
-const name = "{{ verboseName }}";
-
-const {{ camelCasedName }} = { name, Host, Guest, game };
-
-export default {{ camelCasedName }};
+export default game;

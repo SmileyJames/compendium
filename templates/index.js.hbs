@@ -1,0 +1,10 @@
+import game from "./game";
+import { Host, Guest } from "./client";
+import presetTheme from '@rebass/preset'
+
+const name = "{{ verboseName }}";
+const theme = presetTheme;
+
+const {{ camelCasedName }} = { name, theme, Host, Guest, game };
+
+export default {{ camelCasedName }};
