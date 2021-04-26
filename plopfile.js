@@ -22,12 +22,12 @@ module.exports = function (plop) {
       // Stories
       {
         type: 'add',
-        path: 'app/src/stories/{{ camelCasedName }}/Host.stories.js',
+        path: 'app/src/stories/games/{{ camelCasedName }}/Host.stories.js',
         templateFile: 'templates/HostStory.js.hbs'
       },
       {
         type: 'add',
-        path: 'app/src/stories/{{ camelCasedName }}/Guest.stories.js',
+        path: 'app/src/stories/games/{{ camelCasedName }}/Guest.stories.js',
         templateFile: 'templates/GuestStory.js.hbs'
       },
       // Root directory
