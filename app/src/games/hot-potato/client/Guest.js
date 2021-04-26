@@ -1,8 +1,16 @@
 import React from "react";
 import Emoji from "components/emoji";
-import { Text, Button, Box } from "rebass/styled-components";
+import { Text, Button, Flex, Box } from "rebass/styled-components";
 
 const Container = Box
+
+const EmojiBox = ({ emoji = '♥'}) => (
+  <Flex>
+    <Box width="20vh" height="20vh">
+      <Emoji emoji={emoji}/>
+    </Box>
+  </Flex>
+)
 
 const Disconnected = () => (
   <Container>
@@ -18,7 +26,7 @@ const Disconnected = () => (
 
 const OpenHands = () => (
   <Container>
-    <Emoji />
+    <EmojiBox emoji={'👐'}/>
     <Text
       fontSize={[ 3, 4, 5 ]}
       fontWeight='bold'
@@ -31,7 +39,7 @@ const OpenHands = () => (
 
 const Potato = ({ onPassPotato = () => {} }) => (
   <Container>
-    <Emoji />
+    <EmojiBox emoji={'🥔'}/>
     <Text
       fontSize={[ 3, 4, 5 ]}
       fontWeight='bold'
@@ -45,7 +53,9 @@ const Potato = ({ onPassPotato = () => {} }) => (
 
 const Guest = ({ state, roomId, moves, connectionId, connected }) => {
   if (!connected) {
-    <Disconnected/>
+    return (
+      <Disconnected/>
+    );
   }
 
   if (state.hotPotato) {
@@ -56,7 +66,7 @@ const Guest = ({ state, roomId, moves, connectionId, connected }) => {
     return (
       <OpenHands/>
     )
-  }   
+  }  
 };
 
 export default Guest;

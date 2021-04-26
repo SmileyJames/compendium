@@ -8,9 +8,9 @@ export default {
 
 const Template = (args) => <HotPotato.Host {...args} />;
 
-export const MyFirstStory = Template.bind({});
-MyFirstStory.args = {
+export const StartOfGame = Template.bind({});
+StartOfGame.args = {
   state: {},
-  moves: {},
+  moves: { throwPotato: () => {} },
   connections: [],
 };

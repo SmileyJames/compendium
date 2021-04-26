@@ -1,15 +1,14 @@
 import React from "react";
-import { Text } from "rebass/styled-components";
+import { Button, Flex } from "rebass/styled-components";
 
-const Host = ({ state, roomId, moves, connections }) => {
+const Host = ({ moves }) => {
+  const onThrowPotato = () => moves.throwPotato();
   return (
-    <Text
-      fontSize={[ 3, 4, 5 ]}
-      fontWeight='bold'
-      color='primary'
-    >
-      Host
-    </Text>
+    <Flex>
+      <Button onClick={onThrowPotato} onKeyPress={onThrowPotato} variant='primary' mr={2}>
+        Throw the Hot Potato, to your Guests!
+       </Button>
+    </Flex>
   );
 };
 
