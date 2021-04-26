@@ -28,11 +28,8 @@ jobs:
       - name: Lint App
         run: yarn run lint:app
 
-      - name: Test App
-        run: yarn run test:app
-
-      - name: Test Peer Party
-        run: yarn run test:peer-party
+      - name: Run Tests
+        run: yarn run test:unit
 
       - name: Build Peer Party
         run: yarn run build:peer-party
