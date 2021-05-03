@@ -40,7 +40,7 @@ const Host = ({ state, roomId, moves, connections, maxPlayers, minPlayers, child
   }, [state.players, moves]);
 
   if (!state.players) return null;
-  if (state.players.everyonesIn) return children;
+  if (state.players.everyoneIsIn) return children;
   const canStartGame = checkIfCanStartGame({ state });
   return (
     <PlayerList players={state.players.list}>
@@ -49,8 +49,8 @@ const Host = ({ state, roomId, moves, connections, maxPlayers, minPlayers, child
         {canStartGame && (
           <Button
             my={2}
-            onClick={() => moves.startGame()}
-            onKeyPress={() => moves.startGame()}
+            onClick={() => moves.everyoneIsIn()}
+            onKeyPress={() => moves.everyoneIsIn()}
           >
             Start Game
           </Button>

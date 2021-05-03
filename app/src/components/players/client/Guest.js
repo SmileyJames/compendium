@@ -80,7 +80,7 @@ const Guest = ({ children, state, roomId, moves, connectionId }) => {
     moves.joinAsAPlayer({ name, emoji });
   }
 
-  if (state.players.everyonesIn) {
+  if (state.players.everyoneIsIn) {
     return isPlayer ? children : <Spectator/>;
   } else {
     const gameIsFull = checkIfGameIsFull({ state });
