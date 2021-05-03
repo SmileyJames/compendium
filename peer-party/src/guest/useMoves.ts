@@ -8,6 +8,7 @@ import { LogSize, Emit } from '../types'
 import { CacheAndStateSetter, DataConnectionRef } from '.'
 
 const emit = ({ conn, emit }: { emit: Emit; conn: DataConnectionRef }) => {
+  console.info('EMIT', emit)
   conn.current?.send(emit)
 }
 

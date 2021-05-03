@@ -7,7 +7,6 @@ import {
   State,
   PeerId,
   RandomNumberGenerator,
-  Args,
   RevealSecretFunction,
   Game,
   RandomMove,
@@ -18,18 +17,13 @@ import {
   RandomSecretMove
 } from '..'
 import { EventItem, EventList } from '../types'
+import { Action } from '.'
 
 export interface Controller {
   roomId: PeerId
   game: Game
   random: RandomNumberGenerator
   revealSecret: RevealSecretFunction
-}
-
-export interface Action {
-  move: string
-  connectionId: PeerId
-  args: Args
 }
 
 interface ReducerParameters {

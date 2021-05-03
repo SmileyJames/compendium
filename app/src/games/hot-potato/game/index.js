@@ -21,7 +21,7 @@ const game = {
     setBackgroundColour: ({ state, args }) => {
       return { ...state, backgroundColour: args.backgroundColour };
     },
-    throwPotato: withRandom(withSecret(({ state, random, contextId, revealSecret }) => {
+    throwPotato: withRandom(withSecret(({ state, random, contextId }) => {
       const numPlayers = state.players.list.length;
       const playerIndex = Math.floor(random() * numPlayers);
       const player = state.players.list[playerIndex];

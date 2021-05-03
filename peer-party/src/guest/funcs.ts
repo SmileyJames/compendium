@@ -30,10 +30,9 @@ export const constructReducer = ({
       })
 
       if (isSecretMove(moveFn)) {
-        if (event.patch == null) {
-          throw new Error('Secret moves require a state patch from the host')
+        if (event.patch != null) {
+          patch(o, event.patch)
         }
-        patch(o, event.patch)
         return o
       }
 

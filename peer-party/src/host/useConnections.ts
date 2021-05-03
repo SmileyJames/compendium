@@ -7,16 +7,16 @@ import {
   Dispatch,
   SetStateAction
 } from 'react'
-import { isString, isObject, isInteger } from 'lodash'
+import { isString, isInteger } from 'lodash'
 import usePeer from '../usePeer'
 import { PeerId, Game } from '..'
 import { LogSize, ConnectionList, Connection } from '../types'
 import { PeerAcks, InputerSetter, Action, Inputer } from '.'
 
+// TODO: refactor, event is now action, validMoves should be game probably..
 const validateEvent = (event: Action, validMoves: string[]) =>
   event &&
   isString(event.move) &&
-  isObject(event.args) &&
   validMoves.findIndex((m) => m === event.move) > -1
 
 type ConnectionArgs = {
@@ -76,7 +76,7 @@ function useConnections({
         addConnectionId(conn.peer)
       })
 
-      conn.on('data', ({ index, ...event }) => {
+      conn.on('data', ({ index, ...event } = {}) => {
         if (isInteger(index)) {
           updateLogSizeMap({ conn, connectionLogSizeMap, size: index + 1 })
         }

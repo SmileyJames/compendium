@@ -26,6 +26,7 @@ function useInputBuffer({
     if (!inputBuffer.length || !input) return
     setInputBuffer(([head, ...tail]) => {
       input(head)
+      console.info('INPUT ACTION', head)
       return tail
     })
   }, [inputBuffer, input, setInputBuffer])

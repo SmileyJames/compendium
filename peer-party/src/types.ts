@@ -15,13 +15,10 @@ export interface Ack {
 export interface Emit {
   index: Index
   move: string
-  args: Args
+  args?: Args
 }
-export interface EventItem {
-  index: Index
+export interface EventItem extends Emit {
   connectionId: PeerId
-  move: string
-  args?: any
   seed?: Seed
   patch?: Patch
 }
