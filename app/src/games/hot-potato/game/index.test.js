@@ -1,9 +1,16 @@
 import game from "./index"
 
+const players = { list: [
+    { connectionId: "1" },
+    { connectionId: "2" },
+    { connectionId: "3" },
+    { connectionId: "4" }
+]}
+
 describe("Hot Potato Game", () => {
         test("Pass the potato", () => {
             const connectionId = "2";
-            const state = { players: { list: ["1", "2", "3", "4"] }};
+            const state = { players }
             let contextId = "2"
             const revealSecret = (contextId) => (contextId === "2")
             const random = () => 0.2
@@ -15,7 +22,7 @@ describe("Hot Potato Game", () => {
         })
 
         test("Cannot pass potato if player doesn't have it", () => {
-            const state = { players: { list: ["1", "2", "3", "4"] }};
+            const state = { players }
             const contextId = "2"
             const revealSecret = (contextId) => (contextId === "2")
             const random = () => 0.2
@@ -32,7 +39,7 @@ describe("Hot Potato Game", () => {
         })
 
         test("Throw the potato to the guests", () => {
-            const state = { players: { list: ["1", "2", "3", "4"] }};
+            const state = { players }
             const contextId = "4"
             const random = () => 0.9;
             const result = game.hostMoves.throwPotato({ state, contextId, random });
@@ -40,7 +47,7 @@ describe("Hot Potato Game", () => {
         })
 
         test("Stop the music, hot potato holder is the loser", () => {
-            const state = { players: { list: ["1", "2", "3", "4"] }};
+            const state = { players }
             const revealSecret = (contextId) => (contextId === "3");
             const result = game.hostMoves.stopMusic({ state, revealSecret });
             expect(result).toStrictEqual({ ...state, loser: "3" })

@@ -8,9 +8,14 @@ export default {
 
 const Template = (args) => <HotPotato.Guest {...args} />;
 
+const players = {
+  list: [{ connectionId: "xxx" }],
+  everyoneIsIn: true,
+}
+
 export const Potato = Template.bind({});
 Potato.args = {
-  state: { hotPotato: true },
+  state: { hotPotato: true, players },
   moves: { passPotato: () => {} },
   connectionId: "xxx",
   connected: true,
@@ -18,7 +23,7 @@ Potato.args = {
 
 export const NoPotato = Template.bind({});
 NoPotato.args = {
-  state: { hotPotato: false },
+  state: { hotPotato: false, players },
   moves: {},
   connectionId: "xxx",
   connected: true,

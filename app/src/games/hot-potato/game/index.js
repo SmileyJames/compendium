@@ -9,7 +9,7 @@ const game = {
       const numPlayers = state.players.list.length;
       const playerIndex = Math.floor(random() * numPlayers);
       const player = state.players.list[playerIndex];
-      if (player === contextId) {
+      if (player.connectionId === contextId) {
         return { ...state, hotPotato: true }
       } else {
         return { ...state, hotPotato: false }
@@ -25,17 +25,17 @@ const game = {
       const numPlayers = state.players.list.length;
       const playerIndex = Math.floor(random() * numPlayers);
       const player = state.players.list[playerIndex];
-      if (player === contextId) {
+      if (player.connectionId === contextId) {
         return { ...state, hotPotato: true }
       } else {
         return { ...state, hotPotato: false }
       }
     })),
     stopMusic: withSecret(({ state, revealSecret }) => {
-      const hotPotatoPlayer = state.players.list.find(playerId => (
-        revealSecret(playerId, s => s.hotPotato)
+      const hotPotatoPlayer = state.players.list.find(({ connectionId  }) => (
+        revealSecret(connectionId, s => s.hotPotato)
       ));
-      return { ...state, loser: hotPotatoPlayer };
+      return { ...state, loser: hotPotatoPlayer.connectionId };
     }),
   },
 }
