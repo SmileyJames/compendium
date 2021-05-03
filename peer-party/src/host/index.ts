@@ -11,9 +11,9 @@ export type EventLogger = ({
   event: EventItem
 }) => void
 
-export type InputItem = { connectionId: PeerId; move: string; args: Args }
-export type InputList = InputItem[]
-export type Inputer = (input: InputItem) => void
+export type Action = { connectionId: PeerId; move: string; args: Args }
+export type ActionList = Action[]
+export type Inputer = (input: Action) => void
 export type InputerSetter = (inputer: () => Inputer) => void
 
 export type States = { [key: string]: State }

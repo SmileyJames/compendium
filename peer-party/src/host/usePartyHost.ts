@@ -1,12 +1,13 @@
 import { useMemo } from 'react'
+import uniq from 'lodash/uniq'
 import { useEventLogStore } from './stores'
 import useGameState from './useGameState'
 import useConnections from './useConnections'
 import useMoves from './useMoves'
 import useSendSyncs from './useSendSyncs'
 import useInputBuffer from './useInputBuffer'
-import { Connection } from '../types'
 import useRandom from './useRandom'
+import { Connection } from '../types'
 import { UsePartyHostArgs, UsePartyHostReturn } from '..'
 
 /**
@@ -44,7 +45,8 @@ function usePartyHost({
     game,
     logEvent,
     random,
-    connectionIds
+    connectionIds,
+    eventLogs
   })
 
   // Connect yet-to-be-validated guest and host events to the event handler
@@ -54,7 +56,7 @@ function usePartyHost({
   useSendSyncs({ connections, connectionLogSizeMap, eventLogs })
 
   const activeConnectionIds = useMemo(
-    () => connections.map((conn: Connection) => conn.peer),
+    () => uniq(connections.map((conn: Connection) => conn.peer)).sort(),
     [connections]
   )
 

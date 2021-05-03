@@ -1,19 +1,28 @@
 import usePersist from '../usePersist'
 import { useCallback, Dispatch, SetStateAction } from 'react'
-import { PeerId } from '..'
+import { PeerId, State } from '..'
 import { EventItem } from '../types'
 import { States, EventLogs, EventLogger } from '.'
 
+export type StateStoreSetter = Dispatch<SetStateAction<State>>
+
 export function useStatesStore(
   roomId: PeerId
-): { states: States; setStates: Dispatch<SetStateAction<States>> } {
+): { states: States; setState: StateStoreSetter } {
   const [states, setStates] = usePersist<States>(
     window.localStorage,
     `hostState-${roomId}`,
     {}
   )
 
-  return { states, setStates }
+  const setState = useCallback(
+    ({ contextId, state }: { contextId: PeerId; state: State }) => {
+      setStates((states) => ({ ...states, [contextId]: state }))
+    },
+    [setStates]
+  )
+
+  return { states, setState }
 }
 
 export function useEventLogStore(

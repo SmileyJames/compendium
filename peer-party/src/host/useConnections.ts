@@ -11,9 +11,9 @@ import { isString, isObject, isInteger } from 'lodash'
 import usePeer from '../usePeer'
 import { PeerId, Game } from '..'
 import { LogSize, ConnectionList, Connection } from '../types'
-import { PeerAcks, InputerSetter, InputItem, Inputer } from '.'
+import { PeerAcks, InputerSetter, Action, Inputer } from '.'
 
-const validateEvent = (event: InputItem, validMoves: string[]) =>
+const validateEvent = (event: Action, validMoves: string[]) =>
   event &&
   isString(event.move) &&
   isObject(event.args) &&

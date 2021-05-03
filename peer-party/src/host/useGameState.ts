@@ -1,146 +1,105 @@
-import { useCallback, useMemo } from 'react'
-import { diff } from 'jsondiffpatch'
-import seedrandom from 'seedrandom'
-import { useStatesStore } from './stores'
-import { isRandomMove, genSeed } from '../random'
-import { getMove } from '../shared'
-import { isSecretMove } from '../secret'
-import {
-  State,
-  PeerId,
-  RandomNumberGenerator,
-  Args,
-  RevealSecretFunction,
-  Game,
-  RandomMove,
-  SecretMove,
-  SimpleMove,
-  RandomArgsMixin,
-  SecretArgsMixin,
-  RandomSecretMove
-} from '..'
-import { EventItem } from '../types'
-import { EventLogger } from '.'
+import { useCallback, useEffect, useMemo } from 'react'
+import { StateStoreSetter, useStatesStore } from './stores'
+import { EventLogs, EventLogger, Inputer, Action, States } from '.'
+import { State, PeerId, RandomNumberGenerator, Game } from '..'
+import { applyActions, Controller } from './funcs'
 
-type ReducerArgs = {
-  state: State
-  contextId: PeerId
-  connectionId: PeerId
-  roomId: PeerId
-  random: RandomNumberGenerator
-  game: Game
-  move: string
-  args: Args
-  revealSecret: RevealSecretFunction
-}
-
-const reducer = ({
-  state,
-  contextId,
-  connectionId,
-  roomId,
-  random,
-  game,
-  move,
-  args,
-  revealSecret
-}: ReducerArgs) => {
-  const moveFn = getMove({ connectionId, roomId, game, move })
-  const event: EventItem = { index: null, connectionId, move, args }
-
-  let newState: State
-
-  const isRandom = isRandomMove(moveFn)
-  const isSecret = isSecretMove(moveFn)
-
-  if (isRandom) {
-    event.seed = genSeed(random)
-  }
-
-  const simpleMoveArgs = { state, roomId, connectionId, args }
-  const randomMixin: RandomArgsMixin | null = isRandom
-    ? { random: seedrandom(event.seed) }
-    : null
-  const secretMixin: SecretArgsMixin | null = isSecret
-    ? { contextId, revealSecret }
-    : null
-
-  if (randomMixin && !isSecret) {
-    const randomMoveFn = moveFn as RandomMove
-    newState = randomMoveFn({ ...simpleMoveArgs, ...randomMixin })
-    return { state: newState, event }
-  }
-
-  if (secretMixin) {
-    if (!isRandom) {
-      const secretMoveFn = moveFn as SecretMove
-      newState = secretMoveFn({ ...simpleMoveArgs, ...secretMixin })
-    }
-
-    if (randomMixin) {
-      const randomSecretMoveFn = moveFn as RandomSecretMove
-      newState = randomSecretMoveFn({
-        ...simpleMoveArgs,
-        ...secretMixin,
-        ...randomMixin
-      })
-    }
-
-    event.patch = diff(state, newState)
-    return { state: newState, event }
-  }
-
-  const simpleMoveFn = moveFn as SimpleMove
-  newState = simpleMoveFn(simpleMoveArgs)
-  return { state: newState, event }
-}
-
-type UseGameStateArgs = {
+interface UseGameStateParameters {
   roomId: PeerId
   game: Game
   random: RandomNumberGenerator
   connectionIds: PeerId[]
+  eventLogs: EventLogs
   logEvent: EventLogger
 }
-const useGameState = ({
+
+interface UseGameStateReturn {
+  state: State
+  input: Inputer
+}
+
+interface InternalGameStateHookParameters {
+  setState: StateStoreSetter
+  connectionIds: PeerId[]
+  controller: Controller
+  states: States
+  eventLogs: EventLogs
+  logEvent: EventLogger
+}
+
+function useInputCallback(params: InternalGameStateHookParameters): Inputer {
+  return useCallback(
+    (action: Action) => {
+      const contextIds = [...params.connectionIds, params.controller.roomId]
+      for (const contextId of contextIds) {
+        const result = applyActions({
+          initialState: params.states[contextId],
+          actions: [action],
+          controller: params.controller,
+          contextId
+        })
+
+        result.eventLog.forEach((event) =>
+          params.logEvent({ connectionId: contextId, event })
+        )
+        params.setState({ contextId, state: result.state })
+      }
+    },
+    [params]
+  )
+}
+
+function useNewConnectionEffect(params: InternalGameStateHookParameters): void {
+  useEffect(() => {
+    const [newConnection] = params.connectionIds.filter(
+      (peer) => !params.states[peer] && !params.eventLogs[peer]?.length
+    )
+    if (!newConnection) return
+
+    const hostEvents =
+      params.eventLogs[params.controller.roomId] ?? ([] as Action[])
+
+    const result = applyActions({
+      actions: hostEvents as Action[],
+      controller: params.controller,
+      contextId: newConnection
+    })
+
+    result.eventLog.forEach((event) =>
+      params.logEvent({ connectionId: newConnection, event })
+    )
+    params.setState({ contextId: newConnection, state: result.state })
+  }, [params])
+}
+
+function useGameState({
   roomId,
   game,
   random,
   connectionIds,
+  eventLogs,
   logEvent
-}: UseGameStateArgs) => {
-  const { states, setStates } = useStatesStore(roomId)
+}: UseGameStateParameters): UseGameStateReturn {
+  const { states, setState } = useStatesStore(roomId)
+
+  const params = useMemo(() => {
+    const revealSecret = (id: PeerId, fn: (s: State) => State) => fn(states[id])
+    const controller = { roomId, game, random, revealSecret }
+    return { logEvent, setState, connectionIds, controller, states, eventLogs }
+  }, [
+    states,
+    eventLogs,
+    roomId,
+    game,
+    random,
+    logEvent,
+    setState,
+    connectionIds
+  ])
+
+  useNewConnectionEffect(params)
+  const input = useInputCallback(params)
   const hostState = useMemo(() => states[roomId] || {}, [roomId, states])
-  const input = useCallback(
-    ({ connectionId, move, args }) => {
-      if (connectionIds == null) return
-      const revealSecret = (id: PeerId, fn: (s: State) => State) =>
-        fn(states[id])
-      setStates((states) =>
-        [...connectionIds, roomId].reduce((newStates, contextId) => {
-          try {
-            const { state, event } = reducer({
-              state: states[contextId] || {},
-              connectionId,
-              args,
-              move,
-              roomId,
-              game,
-              contextId,
-              random,
-              revealSecret
-            })
-            newStates[contextId] = state
-            logEvent({ connectionId: contextId, event })
-          } catch (error) {
-            console.error('Invalid Event', error)
-          }
-          return newStates
-        }, {})
-      )
-    },
-    [logEvent, connectionIds, states, roomId, game, random, setStates]
-  )
 
   return { state: hostState, input }
 }

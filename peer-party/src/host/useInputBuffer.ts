@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { InputerSetter, Inputer, InputList, InputItem } from '.'
+import { InputerSetter, Inputer, ActionList, Action } from '.'
 
 type UseInputBufferArgs = {
   setOnGuestEvent: InputerSetter
@@ -12,11 +12,11 @@ function useInputBuffer({
   setOnHostEvent,
   input
 }: UseInputBufferArgs) {
-  const [inputBuffer, setInputBuffer] = useState<InputList>([])
+  const [inputBuffer, setInputBuffer] = useState<ActionList>([])
 
   useEffect(() => {
-    const pushInput = (inputItem: InputItem) => {
-      setInputBuffer((buffer: InputList) => [...buffer, inputItem])
+    const pushInput = (inputItem: Action) => {
+      setInputBuffer((buffer: ActionList) => [...buffer, inputItem])
     }
     setOnGuestEvent(() => pushInput)
     setOnHostEvent(() => pushInput)
