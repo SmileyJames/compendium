@@ -25,11 +25,11 @@ describe("Players Host component", () => {
     }
     const moves = {
       initPlayers: jest.fn(),
-      startGame: jest.fn(),
+      everyoneIsIn: jest.fn(),
     };
     const { getByText } = render(<Host moves={moves} state={state} />);
     userEvent.click(getByText("Start Game"))
-    expect(moves.startGame).toHaveBeenCalled();
+    expect(moves.everyoneIsIn).toHaveBeenCalled();
   });
 
   test("Cannot start game if not enough players", () => {
