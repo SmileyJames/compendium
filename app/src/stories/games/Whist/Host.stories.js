@@ -24,27 +24,25 @@ TwoPlayers.args = {
       minPlayers: 4,
       everyonesIn: false,
       list: [
-        { connectionId: "xxx", name: "SmileyJames", emoji: null },
-        { connectionId: "xox", name: "SmoloyJimes", emoji: null },
+        { connectionId: "xxx", name: "SmileyJames", emoji: "🍆" },
+        { connectionId: "xox", name: "SmoloyJimes", emoji: "🚗" },
       ]
     }
   },
   moves: {},
   connections: ["xxx", "xox"],
 };
-
-export const FourPlayers = Template.bind({});
-FourPlayers.args = {
+export const FourPlayers = Template.bind({}); FourPlayers.args = {
   state: {
     players: {
       maxPlayers: 4,
       minPlayers: 4,
       everyonesIn: false,
       list: [
-        { connectionId: "xxx", name: "SmileyJames", emoji: null },
-        { connectionId: "xox", name: "SmoloyJimes", emoji: null },
-        { connectionId: "oxo", name: "SmaliyJomes", emoji: null },
-        { connectionId: "ooo", name: "JamesSmiley", emoji: null },
+        { connectionId: "xxx", name: "SmileyJames", emoji: "🍆" },
+        { connectionId: "xox", name: "SmoloyJimes", emoji: "🚗" },
+        { connectionId: "oxo", name: "SmaliyJomes", emoji: "🧘" },
+        { connectionId: "ooo", name: "JamesSmiley", emoji: "😍" },
       ]
     },
   },
@@ -60,10 +58,10 @@ GameStarted.args = {
       minPlayers: 4,
       everyonesIn: true,
       list: [
-        { connectionId: "xxx", name: "SmileyJames", emoji: null },
-        { connectionId: "xox", name: "SmoloyJimes", emoji: null },
-        { connectionId: "oxo", name: "SmaliyJomes", emoji: null },
-        { connectionId: "ooo", name: "JamesSmiley", emoji: null },
+        { connectionId: "xxx", name: "SmileyJames", emoji: "🍆" },
+        { connectionId: "xox", name: "SmoloyJimes", emoji: "🚗" },
+        { connectionId: "oxo", name: "SmaliyJomes", emoji: "🧘" },
+        { connectionId: "ooo", name: "JamesSmiley", emoji: "😍" },
       ]
     },
     trick: 0,
@@ -100,10 +98,10 @@ FirstTurn.args = {
       minPlayers: 4,
       everyonesIn: true,
       list: [
-        { connectionId: "xxx", name: "SmileyJames", emoji: null },
-        { connectionId: "xox", name: "SmoloyJimes", emoji: null },
-        { connectionId: "oxo", name: "SmaliyJomes", emoji: null },
-        { connectionId: "ooo", name: "JamesSmiley", emoji: null },
+        { connectionId: "xxx", name: "SmileyJames", emoji: "🍆" },
+        { connectionId: "xox", name: "SmoloyJimes", emoji: "🚗" },
+        { connectionId: "oxo", name: "SmaliyJomes", emoji: "🧘" },
+        { connectionId: "ooo", name: "JamesSmiley", emoji: "😍" }
       ]
     },
     trick: 0,
@@ -140,10 +138,10 @@ LateGame.args = {
       minPlayers: 4,
       everyonesIn: true,
       list: [
-        { connectionId: "xxx", name: "SmileyJames", emoji: null },
-        { connectionId: "xox", name: "SmoloyJimes", emoji: null },
-        { connectionId: "oxo", name: "SmaliyJomes", emoji: null },
-        { connectionId: "ooo", name: "JamesSmiley", emoji: null },
+        { connectionId: "xxx", name: "SmileyJames", emoji: "🍆" },
+        { connectionId: "xox", name: "SmoloyJimes", emoji: "🚗" },
+        { connectionId: "oxo", name: "SmaliyJomes", emoji: "🧘" },
+        { connectionId: "ooo", name: "JamesSmiley", emoji: "😍" },
       ]
     },
     trick: 10,

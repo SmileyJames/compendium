@@ -40,7 +40,7 @@ const Host = ({ state, roomId, moves, connections, maxPlayers, minPlayers, child
   }, [state.players, moves]);
 
   if (!state.players) return null;
-  if (state.players.everyoneIsIn) return children;
+  if (state.players.everyonesIn) return children;
   const canStartGame = checkIfCanStartGame({ state });
   return (
     <PlayerList players={state.players.list}>
