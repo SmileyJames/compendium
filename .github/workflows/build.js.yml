@@ -44,7 +44,7 @@ jobs:
         with:
           workingDir: app
           token: ${{ secrets.GITHUB_TOKEN }}
-          storybookBuildDir: app/storybook-static
+          storybookBuildDir: storybook-static
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
       - name: Build App
