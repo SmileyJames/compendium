@@ -3,6 +3,7 @@
 ### 🎲 [Play Games](https://www.compendium.games/)
 ### 📚 [Documentation](https://www.compendium.games/docs)
 ### 💅 [Storybook](https://www.compendium.games/storybook)
+### 📸 [Chromatic](https://www.chromatic.com/builds?appId=60a93df61f3f79003b2be148)
 
 ## Getting Started
 
