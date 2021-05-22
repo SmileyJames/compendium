@@ -37,6 +37,14 @@ jobs:
       - name: Build Storybook
         run: yarn run build:storybook
 
+      - name: Run Visual Regression Tests on Chromatic
+        uses: chromaui/action@v1
+        with:
+          workingDir: app
+          token: ${{ secrets.GITHUB_TOKEN }}
+          storybookBuildDir: app/storybook-static
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
       - name: Build App
         run: yarn run build:app
 
