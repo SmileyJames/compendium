@@ -1,6 +1,6 @@
 import usePartyHost from './host'
 import usePartyGuest from './guest'
-import { withRandom } from './random'
+import { withRandom, shuffle } from './random'
 import { withSecret } from './secret'
 
 export type PeerId = string
@@ -89,4 +89,4 @@ export interface UsePartyGuestReturn {
   moves: Moves | null
 }
 
-export { usePartyHost, usePartyGuest, withRandom, withSecret }
+export { usePartyHost, usePartyGuest, withRandom, shuffle, withSecret }

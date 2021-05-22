@@ -1,6 +1,6 @@
 import { diff } from 'jsondiffpatch'
 import seedrandom from 'seedrandom'
-import { isRandomMove, genSeed } from '../random'
+import { isRandomMove } from '../random'
 import { getMove } from '../shared'
 import { isSecretMove } from '../secret'
 import {
@@ -16,7 +16,7 @@ import {
   SecretArgsMixin,
   RandomSecretMove
 } from '..'
-import { EventItem, EventList } from '../types'
+import { EventItem, EventList, Seed } from '../types'
 import { Action } from '.'
 
 export interface Controller {
@@ -31,6 +31,7 @@ interface ReducerParameters {
   contextId: PeerId
   action: Action
   controller: Controller
+  seed?: Seed
 }
 
 interface ReducerReturn {
@@ -42,7 +43,8 @@ export function reducer({
   state,
   contextId,
   action,
-  controller
+  controller,
+  seed
 }: ReducerParameters): ReducerReturn {
   const moveFn = getMove({
     move: action.move,
@@ -57,8 +59,8 @@ export function reducer({
   const isRandom = isRandomMove(moveFn)
   const isSecret = isSecretMove(moveFn)
 
-  if (isRandom) {
-    event.seed = genSeed(controller.random)
+  if (isRandom && seed) {
+    event.seed = seed
   }
 
   const simpleMoveArgs = {
@@ -112,12 +114,14 @@ interface ApplyActionsParameters {
   controller: Controller
   initialState?: State
   initialEventLog?: EventList
+  seed?: Seed
 }
 
 export function applyActions({
   actions,
   contextId,
   controller,
+  seed,
   initialState = {}
 }: ApplyActionsParameters): Result {
   const result = actions.reduce(
@@ -127,7 +131,8 @@ export function applyActions({
           state: accumulator.state,
           contextId,
           action,
-          controller
+          controller,
+          seed
         })
         const eventLog: EventList = [...accumulator.eventLog, event]
         return { state, eventLog }

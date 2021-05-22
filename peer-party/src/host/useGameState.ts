@@ -3,6 +3,8 @@ import { StateStoreSetter, useStatesStore } from './stores'
 import { EventLogs, EventLogger, Inputer, Action, States } from '.'
 import { State, PeerId, RandomNumberGenerator, Game } from '..'
 import { applyActions, Controller } from './funcs'
+import { getMove } from '../shared'
+import { genSeed, isRandomMove } from '../random'
 
 interface UseGameStateParameters {
   roomId: PeerId
@@ -27,16 +29,31 @@ interface InternalGameStateHookParameters {
   logEvent: EventLogger
 }
 
+const actionUsesRandomMove = (action: Action, controller: Controller) => {
+  const move = getMove({
+    connectionId: action.connectionId,
+    move: action.move,
+    roomId: controller.roomId,
+    game: controller.game
+  })
+  return isRandomMove(move)
+}
+
 function useInputCallback(params: InternalGameStateHookParameters): Inputer {
   return useCallback(
     (action: Action) => {
+      let seed
+      if (actionUsesRandomMove(action, params.controller)) {
+        seed = genSeed(params.controller.random)
+      }
       const contextIds = [...params.connectionIds, params.controller.roomId]
       for (const contextId of contextIds) {
         const result = applyActions({
           initialState: params.states[contextId],
           actions: [action],
           controller: params.controller,
-          contextId
+          contextId,
+          seed
         })
 
         result.eventLog.forEach((event) =>
