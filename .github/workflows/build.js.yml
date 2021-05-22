@@ -21,6 +21,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+          fetch-depth: 0 # Required by Chromatic
 
       - name: Install Node Packages
         run: yarn install --immutable --immutable-cache
