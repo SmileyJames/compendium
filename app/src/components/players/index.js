@@ -3,9 +3,9 @@ import { Host, Guest, withGuestPlayers, withHostPlayers } from "./client";
 
 const Players = { Host, Guest, game };
 
-export const withPlayers = ({ Host: OriginalHost, Guest: OriginalGuest, game: originalGame, ...rest }) => {
+export const withPlayers = (options, { Host: OriginalHost, Guest: OriginalGuest, game: originalGame, ...rest }) => {
     const NewGuest = withGuestPlayers(OriginalGuest)
-    const NewHost = withHostPlayers(OriginalHost)
+    const NewHost = withHostPlayers(options, OriginalHost)
     const newGame = {
         guestMoves: {
             ...game.guestMoves,

@@ -1,8 +1,7 @@
 import React from "react";
-import { withHostPlayers } from "components/players/client"
 import PlayingCard, { PlayingCardBack, FeltTable, Hand } from "components/playing-card";
 
-const Host = withHostPlayers({ maxPlayers: 4, minPlayers: 4 }, ({ state, roomId, moves, connections }) => {
+const Host = ({ state, roomId, moves, connections }) => {
   return (
     <FeltTable>
       <PlayingCardBack colour="R"/>
@@ -13,6 +12,6 @@ const Host = withHostPlayers({ maxPlayers: 4, minPlayers: 4 }, ({ state, roomId,
       </Hand>
     </FeltTable>
   );
-})
+}
 
 export default Host;

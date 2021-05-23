@@ -1,8 +1,7 @@
 import React from "react";
-import { withGuestPlayers } from "components/players/client"
 import PlayingCard, { FeltTable, Hand } from "components/playing-card";
 
-const Guest = withGuestPlayers(({ state, roomId, moves, connectionId }) => {
+const Guest = ({ state, roomId, moves, connectionId }) => {
   return (
     <FeltTable>
       <Hand>
@@ -12,6 +11,6 @@ const Guest = withGuestPlayers(({ state, roomId, moves, connectionId }) => {
       </Hand>
     </FeltTable>
   );
-})
+}
 
 export default Guest;

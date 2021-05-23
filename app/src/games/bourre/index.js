@@ -4,6 +4,11 @@ import { withPlayers } from "components/players"
 
 const name = "Bourré";
 
-const Bourre = withPlayers({ name, Host, Guest, game });
+const playersOptions = {
+    minPlayers: 2,
+    maxPlayers: 7,
+}
+
+const Bourre = withPlayers(playersOptions, { name, Host, Guest, game });
 
 export default Bourre;

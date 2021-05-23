@@ -1,4 +1,3 @@
-import playersGame from "components/players/game"
 import { constructDeckOfCards } from "components/playing-card";
 import { withRandom, withSecret, shuffle } from "@compendium/peer-party";
 
@@ -37,11 +36,7 @@ const deal = withRandom(withSecret(({ state, random, roomId, connectionId, revea
 }))
 
 const game = {
-  guestMoves: {
-    ...playersGame.guestMoves,
-  },
   hostMoves: {
-    ...playersGame.hostMoves,
     startGame,
     deal,
   },
