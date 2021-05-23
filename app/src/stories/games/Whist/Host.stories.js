@@ -22,7 +22,7 @@ TwoPlayers.args = {
     players: {
       maxPlayers: 4,
       minPlayers: 4,
-      everyonesIn: false,
+      everyoneIsIn: false,
       list: [
         { connectionId: "xxx", name: "SmileyJames", emoji: "🍆" },
         { connectionId: "xox", name: "SmoloyJimes", emoji: "🚗" },
@@ -37,7 +37,7 @@ export const FourPlayers = Template.bind({}); FourPlayers.args = {
     players: {
       maxPlayers: 4,
       minPlayers: 4,
-      everyonesIn: false,
+      everyoneIsIn: false,
       list: [
         { connectionId: "xxx", name: "SmileyJames", emoji: "🍆" },
         { connectionId: "xox", name: "SmoloyJimes", emoji: "🚗" },
@@ -56,7 +56,7 @@ GameStarted.args = {
     players: {
       maxPlayers: 4,
       minPlayers: 4,
-      everyonesIn: true,
+      everyoneIsIn: true,
       list: [
         { connectionId: "xxx", name: "SmileyJames", emoji: "🍆" },
         { connectionId: "xox", name: "SmoloyJimes", emoji: "🚗" },
@@ -96,7 +96,7 @@ FirstTurn.args = {
     players: {
       maxPlayers: 4,
       minPlayers: 4,
-      everyonesIn: true,
+      everyoneIsIn: true,
       list: [
         { connectionId: "xxx", name: "SmileyJames", emoji: "🍆" },
         { connectionId: "xox", name: "SmoloyJimes", emoji: "🚗" },
@@ -136,7 +136,7 @@ LateGame.args = {
     players: {
       maxPlayers: 4,
       minPlayers: 4,
-      everyonesIn: true,
+      everyoneIsIn: true,
       list: [
         { connectionId: "xxx", name: "SmileyJames", emoji: "🍆" },
         { connectionId: "xox", name: "SmoloyJimes", emoji: "🚗" },

@@ -22,7 +22,7 @@ TwoPlayers.args = {
     players: {
       maxPlayers: 4,
       minPlayers: 4,
-      everyonesIn: false,
+      everyoneIsIn: false,
       list: [
         { connectionId: "xxx", name: "SmileyJames", emoji: null },
         { connectionId: "xox", name: "SmoloyJimes", emoji: null },
@@ -39,7 +39,7 @@ FourPlayers.args = {
     players: {
       maxPlayers: 4,
       minPlayers: 4,
-      everyonesIn: false,
+      everyoneIsIn: false,
       list: [
         { connectionId: "xxx", name: "SmileyJames", emoji: null },
         { connectionId: "xox", name: "SmoloyJimes", emoji: null },
@@ -58,7 +58,7 @@ GameStarted.args = {
     players: {
       maxPlayers: 4,
       minPlayers: 4,
-      everyonesIn: true,
+      everyoneIsIn: true,
       list: [
         { connectionId: "xxx", name: "SmileyJames", emoji: null },
         { connectionId: "xox", name: "SmoloyJimes", emoji: null },
@@ -98,7 +98,7 @@ FirstTurn.args = {
     players: {
       maxPlayers: 4,
       minPlayers: 4,
-      everyonesIn: true,
+      everyoneIsIn: true,
       list: [
         { connectionId: "xxx", name: "SmileyJames", emoji: null },
         { connectionId: "xox", name: "SmoloyJimes", emoji: null },
@@ -138,7 +138,7 @@ LateGame.args = {
     players: {
       maxPlayers: 4,
       minPlayers: 4,
-      everyonesIn: true,
+      everyoneIsIn: true,
       list: [
         { connectionId: "xxx", name: "SmileyJames", emoji: null },
         { connectionId: "xox", name: "SmoloyJimes", emoji: null },

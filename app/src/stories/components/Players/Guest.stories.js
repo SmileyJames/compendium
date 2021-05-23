@@ -23,7 +23,7 @@ NoPlayers.args = {
     players: {
       maxPlayers: 4,
       minPlayers: 4,
-      everyonesIn: false,
+      everyoneIsIn: false,
       list: []
     }
   },
@@ -38,7 +38,7 @@ OnePlayer.args = {
     players: {
       maxPlayers: 4,
       minPlayers: 4,
-      everyonesIn: false,
+      everyoneIsIn: false,
       list: [
         { connectionId: "xxx", name: "SmileyJames", emoji: null },
       ],
@@ -55,7 +55,7 @@ ManyPlayers.args = {
     players: {
       maxPlayers: 4,
       minPlayers: 4,
-      everyonesIn: false,
+      everyoneIsIn: false,
       list: [
         { connectionId: "xxx", name: "SmileyJames", emoji: null },
         { connectionId: "xox", name: "SmoloyJimes", emoji: null },
@@ -75,7 +75,7 @@ EveryoneIsIn.args = {
     players: {
       maxPlayers: 4,
       minPlayers: 4,
-      everyonesIn: true,
+      everyoneIsIn: true,
       list: [
         { connectionId: "xxx", name: "SmileyJames", emoji: null },
         { connectionId: "xox", name: "SmoloyJimes", emoji: null },
@@ -95,7 +95,7 @@ Spectate.args = {
     players: {
       maxPlayers: 4,
       minPlayers: 4,
-      everyonesIn: true,
+      everyoneIsIn: true,
       list: [
         { connectionId: "xxx", name: "SmileyJames", emoji: null },
         { connectionId: "xox", name: "SmoloyJimes", emoji: null },

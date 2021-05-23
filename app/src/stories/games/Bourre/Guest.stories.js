@@ -22,7 +22,7 @@ Board.args = {
     players: {
       maxPlayers: 7,
       minPlayers: 2,
-      everyonesIn: true,
+      everyoneIsIn: true,
       list: [
         { connectionId: "xxx", name: "SmileyJames", emoji: null },
         { connectionId: "xox", name: "Max", emoji: null },

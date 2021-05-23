@@ -27,7 +27,7 @@ const PlayerList = ({ children, players }) => {
 }
 
 const HowToJoin = ({ roomId }) => (
-  <Text fontSize={[ 3, 4, 5 ]} fontWeight='bold' color='secondary'>
+  <Text as="h1" fontSize={[ 3, 4, 5 ]} fontWeight='bold' color='secondary'>
     Join: {roomId}
   </Text>
 )
@@ -40,7 +40,7 @@ const Host = ({ state, roomId, moves, connections, maxPlayers, minPlayers, child
   }, [state.players, moves]);
 
   if (!state.players) return null;
-  if (state.players.everyonesIn) return children;
+  if (state.players.everyoneIsIn) return children;
   const canStartGame = checkIfCanStartGame({ state });
   return (
     <PlayerList players={state.players.list}>

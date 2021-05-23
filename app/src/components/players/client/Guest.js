@@ -55,7 +55,7 @@ const Spectator = () => (
 
 const Waiting = () => (
   <Flex height="100vh" justifyContent="center" alignItems="center">
-    <Text fontSize={[ 3, 4, 5 ]} fontWeight='bold' color='primary'>
+    <Text as="h1" fontSize={[ 3, 4, 5 ]} fontWeight='bold' color='primary'>
       Be patient, the host is setting up your game.
     </Text>
   </Flex>
@@ -80,7 +80,7 @@ const Guest = ({ children, state, roomId, moves, connectionId }) => {
     moves.joinAsAPlayer({ name, emoji });
   }
 
-  if (state.players.everyonesIn) {
+  if (state.players.everyoneIsIn) {
     return isPlayer ? children : <Spectator/>;
   } else {
     const gameIsFull = checkIfGameIsFull({ state });
