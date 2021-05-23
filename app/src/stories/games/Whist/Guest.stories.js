@@ -9,10 +9,12 @@ export default {
 
 const Template = (args) => <Whist.Guest {...args} />;
 
+const moves = { startGame: () => {}, deal: () => {} }
+
 export const Beginning = Template.bind({});
 Beginning.args = {
   state: {},
-  moves: {},
+  moves,
   connectionId: "xxx",
 };
 
@@ -29,7 +31,7 @@ TwoPlayers.args = {
       ]
     }
   },
-  moves: {},
+  moves,
   connectionId: "aaa",
 };
 
@@ -48,7 +50,7 @@ FourPlayers.args = {
       ]
     },
   },
-  moves: {},
+  moves,
   connectionId: "xxx",
 };
 
@@ -88,7 +90,7 @@ GameStarted.args = {
       { value: 13, suit: "C" },
     ],
   },
-  moves: {},
+  moves,
   connectionId: "xxx",
 };
 
@@ -128,7 +130,7 @@ FirstTurn.args = {
       { value: 13, suit: "C" },
     ],
   },
-  moves: {},
+  moves,
   connectionId: "xxx",
 };
 
@@ -172,6 +174,6 @@ LateGame.args = {
       { value: 13, suit: "C" },
     ],
   },
-  moves: {},
+  moves,
   connectionId: "xxx",
 };

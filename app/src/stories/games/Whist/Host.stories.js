@@ -9,10 +9,12 @@ export default {
 
 const Template = (args) => <Whist.Host {...args} />;
 
+const moves = { startGame: () => {}, deal: () => {} }
+
 export const Beginning = Template.bind({});
 Beginning.args = {
   state: {},
-  moves: {},
+  moves,
   connections: [2],
 };
 
@@ -29,7 +31,7 @@ TwoPlayers.args = {
       ]
     }
   },
-  moves: {},
+  moves,
   connections: ["xxx", "xox"],
 };
 export const FourPlayers = Template.bind({}); FourPlayers.args = {
@@ -46,7 +48,7 @@ export const FourPlayers = Template.bind({}); FourPlayers.args = {
       ]
     },
   },
-  moves: {},
+  moves,
   connections: ["xxx", "xox", "oxo", "ooo"],
 };
 
@@ -86,7 +88,7 @@ GameStarted.args = {
       { value: 13, suit: "C" },
     ],
   },
-  moves: {},
+  moves,
   connections: ["xxx", "xox", "oxo", "ooo"],
 };
 
@@ -126,7 +128,7 @@ FirstTurn.args = {
       { value: 13, suit: "C" },
     ],
   },
-  moves: {},
+  moves,
   connections: ["xxx", "xox", "oxo", "ooo"],
 };
 
@@ -170,6 +172,6 @@ LateGame.args = {
       { value: 13, suit: "C" },
     ],
   },
-  moves: {},
+  moves,
   connections: ["xxx", "xox", "oxo", "ooo"],
 };
