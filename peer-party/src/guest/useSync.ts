@@ -41,6 +41,7 @@ function useSync({
 }: UseSyncArgs): void {
   useEffect(() => {
     if (!data || !data.length) return
+    console.info('SYNC', data)
     const events = [...data]
     clearData()
     updateLogSize({ setLogSize, events })
