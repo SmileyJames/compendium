@@ -30,14 +30,13 @@ const players = {
   everyoneIsIn: true,
 }
 const roomId = "123";
-const connections = ["xxx", "xox", "oxo", "ooo"];
 
 describe("whist game rules", () => {
   describe("Everyone is in, let's start the game...", () => {
 
     test("from the host's perspective", () => {
       const state = { players }
-      const result = whist.hostMoves.startGame({ state, connectionId: roomId, roomId });
+      const result = whist.hostMoves.startGame({ state, contextId: roomId, roomId });
       expect(result).toStrictEqual({
         players,
         deck: orderedDeckOfPlayingCards,
@@ -62,7 +61,7 @@ describe("whist game rules", () => {
     test("from the host's perspective", () => {
       const state = { players, discard: [], deck: orderedDeckOfPlayingCards };
       const revealSecret = (_, fn) => fn(state)
-      const result = whist.hostMoves.deal({ state, random, revealSecret, connectionId: roomId, roomId });
+      const result = whist.hostMoves.deal({ state, random, revealSecret, contextId: roomId, roomId });
       expect(result).toStrictEqual({
         players,
         deck: [],
@@ -74,7 +73,7 @@ describe("whist game rules", () => {
       const hostState = { players, discard: [], deck: orderedDeckOfPlayingCards };
       const guestState = { players, discard: [] };
       const revealSecret = (_, fn) => fn(hostState)
-      const result = whist.hostMoves.deal({ state: guestState, random, revealSecret, connectionId: "xxx", roomId });
+      const result = whist.hostMoves.deal({ state: guestState, random, revealSecret, contextId: "xxx", roomId });
       expect(result.hand.length).toBe(13)
       expect(result).toStrictEqual({
         players,

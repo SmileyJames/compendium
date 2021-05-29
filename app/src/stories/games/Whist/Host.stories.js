@@ -66,6 +66,7 @@ GameStarted.args = {
         { connectionId: "ooo", name: "JamesSmiley", emoji: "😍" },
       ]
     },
+    deck: [{}, {}],
     trick: 0,
     turn: 0,
     wonLastTrick: null,

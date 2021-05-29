@@ -1,13 +1,13 @@
 import { constructDeckOfCards } from "components/playing-card";
 import { withRandom, withSecret, shuffle } from "@compendium/peer-party";
 
-const connectionIsHosts = ({ roomId, connectionId }) => (
-  roomId === connectionId
+const contextIsHosts = ({ roomId, contextId }) => (
+  roomId === contextId 
 );
 
-const startGame = withSecret(({ state, roomId, connectionId }) => {
+const startGame = withSecret(({ state, roomId, contextId }) => {
   const newState = { ...state, discard: [] };
-  const isHost = connectionIsHosts({ roomId, connectionId });
+  const isHost = contextIsHosts({ roomId, contextId });
   if (isHost) {
     newState.deck = constructDeckOfCards();
   } else {
@@ -16,15 +16,15 @@ const startGame = withSecret(({ state, roomId, connectionId }) => {
   return newState;
 })
 
-const deal = withRandom(withSecret(({ state, random, roomId, connectionId, revealSecret }) => {
+const deal = withRandom(withSecret(({ state, random, roomId, contextId, revealSecret }) => {
   const deck = revealSecret(roomId, s => s.deck)
   const shuffledDeck = shuffle({ random, array: deck })
-  const isHost = connectionIsHosts({ roomId, connectionId })
+  const isHost = contextIsHosts({ roomId, contextId })
   if (isHost) {
     return { ...state, deck: [] }
   } else {
     const playerIndex = state.players.list.findIndex(
-      player => player.connectionId === connectionId
+      player => player.connectionId === contextId
     )
     const hand = shuffledDeck.filter(
       (_, index) => {
