@@ -1,8 +1,8 @@
-const joinAsAPlayer = ({ state, connectionId, args }) => {
+const joinAsAPlayer = ({ state, callerId, args }) => {
   if (state.players.list.length >= state.players.maxPlayers) {
     throw new Error("The number of players has reached it's maximum");
   }
-  const player = { connectionId, name: args.name, emoji: args.emoji };
+  const player = { connectionId: callerId, name: args.name, emoji: args.emoji };
   const playerList = [...state.players.list, player];
   const players = { ...state.players, list: playerList };
   return { ...state, players };
