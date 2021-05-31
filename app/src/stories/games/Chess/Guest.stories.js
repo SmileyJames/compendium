@@ -8,9 +8,9 @@ export default {
 
 const Template = (args) => <Chess.Guest {...args} />;
 
-export const MyFirstStory = Template.bind({});
-MyFirstStory.args = {
-  state: {},
+export const MidGame = Template.bind({});
+MidGame.args = {
+  state: { board: 'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2'},
   moves: {},
   connectionId: "xxx",
 };

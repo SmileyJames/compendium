@@ -8,9 +8,18 @@ export default {
 
 const Template = (args) => <Chess.Host {...args} />;
 
-export const MyFirstStory = Template.bind({});
-MyFirstStory.args = {
+export const Join = Template.bind({});
+Join.args = {
   state: {},
   moves: {},
+  roomId: "hello-world",
   connections: [],
+};
+
+export const Start = Template.bind({});
+Start.args = {
+  state: {},
+  moves: {},
+  roomId: "hello-world",
+  connections: ["freind"],
 };
