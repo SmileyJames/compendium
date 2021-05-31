@@ -12,8 +12,8 @@ export type ConnectionStatus = boolean
 export interface SimpleMoveArgs {
   state: State
   args: Args
-  connectionId: PeerId
-  roomId: PeerId
+  callerId: PeerId
+  hostId: PeerId
 }
 
 export type RandomNumberGenerator = () => number

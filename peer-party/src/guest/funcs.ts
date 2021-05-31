@@ -32,8 +32,8 @@ export const constructReducer = ({
 
       const moveArgs: SimpleMoveArgs = {
         state: o,
-        roomId,
-        connectionId: event.connectionId,
+        hostId: roomId,
+        callerId: event.connectionId,
         args: event.args
       }
 
