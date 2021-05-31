@@ -95,8 +95,8 @@ describe('usePartyGuest', () => {
     expect(game.start).toHaveBeenLastCalledWith({
       state: {},
       args: undefined,
-      connectionId: result.current.connectionId,
-      roomId: 'hello-world'
+      callerId: result.current.connectionId,
+      hostId: 'hello-world'
     })
     expect(result.current.state.number).toBe(0)
     expect(mockSendEmit).toHaveBeenCalledWith({
@@ -112,8 +112,8 @@ describe('usePartyGuest', () => {
     expect(game.increment).toHaveBeenLastCalledWith({
       state: { number: 0 },
       args: undefined,
-      connectionId: result.current.connectionId,
-      roomId: 'hello-world'
+      callerId: result.current.connectionId,
+      hostId: 'hello-world'
     })
     expect(result.current.state.number).toBe(1)
     expect(mockSendEmit).toHaveBeenLastCalledWith({
