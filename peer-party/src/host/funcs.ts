@@ -59,8 +59,8 @@ export function reducer({
 
   const simpleMoveArgs = {
     state,
-    roomId: controller.roomId,
-    connectionId: action.connectionId,
+    hostId: controller.roomId,
+    callerId: action.connectionId,
     args: action.args
   }
   const randomMixin: RandomArgsMixin | null = isRandom
