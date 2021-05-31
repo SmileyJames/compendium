@@ -1,7 +1,6 @@
 import { diff } from 'jsondiffpatch'
 import seedrandom from 'seedrandom'
 import { isRandomMove } from '../random'
-import { getMove } from '../shared'
 import { isSecretMove } from '../secret'
 import {
   State,
@@ -46,12 +45,7 @@ export function reducer({
   controller,
   seed
 }: ReducerParameters): ReducerReturn {
-  const moveFn = getMove({
-    move: action.move,
-    connectionId: action.connectionId,
-    roomId: controller.roomId,
-    game: controller.game
-  })
+  const moveFn = controller.game[action.move]
   const event: EventItem = { index: null, ...action }
 
   let newState: State

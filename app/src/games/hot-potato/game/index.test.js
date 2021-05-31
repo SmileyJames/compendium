@@ -14,10 +14,10 @@ describe("Hot Potato Game", () => {
             let contextId = "2"
             const revealSecret = (contextId) => (contextId === "2")
             const random = () => 0.2
-            let result = game.guestMoves.passPotato({ state, contextId, revealSecret, random, connectionId });
+            let result = game.passPotato({ state, contextId, revealSecret, random, connectionId });
             expect(result).toStrictEqual({ ...state, hotPotato: false });
             contextId = "1"
-            result = game.guestMoves.passPotato({ state, contextId, revealSecret, random, connectionId });
+            result = game.passPotato({ state, contextId, revealSecret, random, connectionId });
             expect(result).toStrictEqual({ ...state, hotPotato: true })
         })
 
@@ -27,14 +27,14 @@ describe("Hot Potato Game", () => {
             const revealSecret = (contextId) => (contextId === "2")
             const random = () => 0.2
             expect(() => {
-                game.guestMoves.passPotato({ state, contextId, revealSecret, random, connectionId: "1" });
+                game.passPotato({ state, contextId, revealSecret, random, connectionId: "1" });
             }).toThrowError();
         })
 
         test("Set the background colour", () => {
             const state = { other: "key" }
             const args = { backgroundColour: "red" }
-            const result = game.hostMoves.setBackgroundColour({ state, args });
+            const result = game.setBackgroundColour({ state, args });
             expect(result).toStrictEqual({ backgroundColour: "red", other: "key" });
         })
 
@@ -42,14 +42,14 @@ describe("Hot Potato Game", () => {
             const state = { players }
             const contextId = "4"
             const random = () => 0.9;
-            const result = game.hostMoves.throwPotato({ state, contextId, random });
+            const result = game.throwPotato({ state, contextId, random });
             expect(result).toStrictEqual({ ...state, hotPotato: true })
         })
 
         test("Stop the music, hot potato holder is the loser", () => {
             const state = { players }
             const revealSecret = (contextId) => (contextId === "3");
-            const result = game.hostMoves.stopMusic({ state, revealSecret });
+            const result = game.stopMusic({ state, revealSecret });
             expect(result).toStrictEqual({ ...state, loser: "3" })
         })
 })

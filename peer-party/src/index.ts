@@ -60,10 +60,7 @@ export type RandomSecretMove = {
 export type Move = SimpleMove | SecretMove | RandomMove | RandomSecretMove
 
 export type Moves = { [key: string]: Move }
-export type Game = {
-  hostMoves: Moves
-  guestMoves: Moves
-}
+export type Game = Moves
 
 export interface UsePartyHostArgs {
   roomId: PeerId

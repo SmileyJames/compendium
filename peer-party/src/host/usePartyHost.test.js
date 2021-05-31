@@ -73,16 +73,11 @@ const revealACard = withSecret(
 )
 
 const game = {
-  guestMoves: {
-    revealACard,
-    increment,
-    flipCoin
-  },
-  hostMoves: {
-    dealCards,
-    start,
-    increment
-  }
+  revealACard,
+  increment,
+  flipCoin,
+  dealCards,
+  start
 }
 
 describe('usePartyHost', () => {

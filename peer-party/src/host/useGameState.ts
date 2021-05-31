@@ -3,7 +3,6 @@ import { StateStoreSetter, useStatesStore } from './stores'
 import { EventLogs, EventLogger, Inputer, Action, States } from '.'
 import { State, PeerId, RandomNumberGenerator, Game } from '..'
 import { applyActions, Controller } from './funcs'
-import { getMove } from '../shared'
 import { genSeed, isRandomMove } from '../random'
 
 interface UseGameStateParameters {
@@ -30,12 +29,7 @@ interface InternalGameStateHookParameters {
 }
 
 const actionUsesRandomMove = (action: Action, controller: Controller) => {
-  const move = getMove({
-    connectionId: action.connectionId,
-    move: action.move,
-    roomId: controller.roomId,
-    game: controller.game
-  })
+  const move = controller.game[action.move]
   return isRandomMove(move)
 }
 

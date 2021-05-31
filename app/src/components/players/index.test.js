@@ -5,13 +5,7 @@ import { withPlayers } from "."
 const Guest = () => <h1>Guest component</h1>
 const Host = () => <h1>Host component</h1>
 
-const gameRules = {
-    hostMoves: [],
-    guestMoves: []
-}
-
-const mockGame = { Guest, Host, game: gameRules }
-
+const mockGame = { Guest, Host, game: {} }
 const GameWithPlayers = withPlayers({ minPlayers: 2, maxPlayers: 2 }, mockGame)
 
 describe("Players higher order component: withPlayers", () => {

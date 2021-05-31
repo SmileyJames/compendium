@@ -35,14 +35,9 @@ const everyoneIsIn = ({ state }) => {
 }
 
 const game = {
-  guestMoves: {
-    joinAsAPlayer,
-  },
-  
-  hostMoves: {
-    initPlayers,
-    everyoneIsIn,
-  },
+  initPlayers,
+  everyoneIsIn,
+  joinAsAPlayer,
 }
 
 export default game;

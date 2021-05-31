@@ -13,7 +13,7 @@ describe("Players Component", () => {
       };
       const args = { name: "SmileyJames", emoji: null };
       const connectionId = "xxx";
-      const newState = game.guestMoves.joinAsAPlayer({ state, args, connectionId });
+      const newState = game.joinAsAPlayer({ state, args, connectionId });
       expect(newState).toEqual({
         players: {
           maxPlayers: 4,
@@ -32,7 +32,7 @@ describe("Players Component", () => {
       const state = { iLove: "you" };
       const connectionId = "xxx";
       const args = { maxPlayers: 4, minPlayers: 4 };
-      const newState = game.hostMoves.initPlayers({ state, args, connectionId });
+      const newState = game.initPlayers({ state, args, connectionId });
       expect(newState).toEqual({
         iLove: "you",
         players: {
@@ -58,7 +58,7 @@ describe("Players Component", () => {
         }
       };
       const connectionId = "xxx";
-      const newState = game.hostMoves.everyoneIsIn({ state, connectionId });
+      const newState = game.everyoneIsIn({ state, connectionId });
       expect(newState).toEqual({
         players: {
           maxPlayers: 3,

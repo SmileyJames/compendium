@@ -21,12 +21,8 @@ import React from 'react'
 import { usePartyGuest, usePartyHost } from '@compendium/peer-party'
 
 const MyGamesRules = {
-  guestMoves: {
-    makeGuestMove: ({ state }) => ({ ...state, title: "Guests are better" })
-  },
-  hostMoves: {
-    makeHostMove: ({ state }) => ({ ...state, title: "Host is best" })
-  }
+  makeGuestMove: ({ state }) => ({ ...state, title: "Guests are better" })
+  makeHostMove: ({ state }) => ({ ...state, title: "Host is best" })
 }
 
 const GuestComponent = ({ roomId }) => {

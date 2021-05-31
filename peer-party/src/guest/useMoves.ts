@@ -1,5 +1,5 @@
 import { useEffect, useState, Dispatch, SetStateAction } from 'react'
-import { getMove, constructMoves } from '../shared'
+import { constructMoves } from '../shared'
 import { logSizeToIndex, constructReducer } from './funcs'
 import { isRandomMove } from '../random'
 import { isSecretMove } from '../secret'
@@ -58,7 +58,7 @@ function constructMovesHandler({
   roomId
 }: ConstructMovesHandlerArgs): void {
   const handleMove = ({ move, args }: { move: string; args: Args }) => {
-    const moveFn = getMove({ connectionId, roomId, game, move })
+    const moveFn = game[move]
     if (!isRandomMove(moveFn) && !isSecretMove(moveFn)) {
       preempt({ setState, game, move, args, roomId, connectionId })
     }

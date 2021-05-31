@@ -1,31 +1,11 @@
 import has from 'lodash/has'
-import { PeerId, Game, Args, Moves, Move } from '.'
+import { PeerId, Game, Args, Moves } from '.'
 import { MoveHandler } from './types'
 
-interface GetMovesArgs {
+interface ConstructMovesArgs {
   connectionId: PeerId
   roomId: PeerId
   game: Game
-}
-
-function getMoves({ connectionId, roomId, game }: GetMovesArgs): Moves {
-  return connectionId === roomId ? game.hostMoves : game.guestMoves
-}
-
-interface GetMoveArgs extends GetMovesArgs {
-  move: string
-}
-
-export function getMove({
-  connectionId,
-  roomId,
-  game,
-  move
-}: GetMoveArgs): Move {
-  return getMoves({ connectionId, roomId, game })[move]
-}
-
-interface ConstructMovesArgs extends GetMovesArgs {
   handleMove: MoveHandler
 }
 
@@ -39,11 +19,10 @@ export function constructMoves({
     {},
     {
       get: (target, key, receiver) => {
-        const moves = getMoves({ connectionId, roomId, game })
-        if (has(moves, key)) {
+        if (has(game, key)) {
           return (args: Args) => handleMove({ move: key.toString(), args })
-        } else if (key === Symbol.iterator && moves) {
-          return Object.keys(moves)[Symbol.iterator].bind(target)
+        } else if (key === Symbol.iterator && game) {
+          return Object.keys(game)[Symbol.iterator].bind(target)
         } else {
           return Reflect.get(target, key, receiver)
         }

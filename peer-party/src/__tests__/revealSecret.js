@@ -42,7 +42,7 @@ const revealHostWinner = withSecret(({ state, revealSecret, roomId }) => {
   return { ...state, hostWinner }
 })
 
-const game = { hostMoves: { addWinner, revealHostWinner } }
+const game = { addWinner, revealHostWinner }
 
 describe('Host multiple guests', () => {
   test('Host a game with a secret random move for two guest connections', () => {

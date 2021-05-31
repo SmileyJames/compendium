@@ -67,15 +67,11 @@ const revealACard = withSecret(
 )
 
 const game = {
-  guestMoves: {
-    start,
-    increment,
-    flipCoin,
-    revealACard
-  },
-  hostMoves: {
-    dealCards
-  }
+  start,
+  increment,
+  flipCoin,
+  revealACard,
+  dealCards
 }
 
 describe('usePartyGuest', () => {
@@ -96,7 +92,7 @@ describe('usePartyGuest', () => {
       result.current.moves.start()
     })
 
-    expect(game.guestMoves.start).toHaveBeenLastCalledWith({
+    expect(game.start).toHaveBeenLastCalledWith({
       state: {},
       args: undefined,
       connectionId: result.current.connectionId,
@@ -113,7 +109,7 @@ describe('usePartyGuest', () => {
       result.current.moves.increment()
     })
 
-    expect(game.guestMoves.increment).toHaveBeenLastCalledWith({
+    expect(game.increment).toHaveBeenLastCalledWith({
       state: { number: 0 },
       args: undefined,
       connectionId: result.current.connectionId,
@@ -159,7 +155,7 @@ describe('usePartyGuest', () => {
       result.current.moves.flipCoin()
     })
 
-    expect(game.guestMoves.flipCoin).not.toHaveBeenCalled()
+    expect(game.flipCoin).not.toHaveBeenCalled()
     // state stays the same
     expect(result.current.state.number).toBe(6)
     expect(result.current.state.flipped).toBe(undefined)

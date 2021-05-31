@@ -42,7 +42,7 @@ const throwPotato = withRandom(
   })
 )
 
-const game = { hostMoves: { throwPotato } }
+const game = { throwPotato }
 
 describe('Host multiple guests', () => {
   test('Host a game with a secret random move for two guest connections', () => {

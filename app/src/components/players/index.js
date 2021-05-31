@@ -6,16 +6,7 @@ const Players = { Host, Guest, game };
 export const withPlayers = (options, { Host: OriginalHost, Guest: OriginalGuest, game: originalGame, ...rest }) => {
     const NewGuest = withGuestPlayers(OriginalGuest)
     const NewHost = withHostPlayers(options, OriginalHost)
-    const newGame = {
-        guestMoves: {
-            ...game.guestMoves,
-            ...originalGame.guestMoves
-        },
-        hostMoves: {
-            ...game.hostMoves,
-            ...originalGame.hostMoves
-        }
-    }
+    const newGame = { ...game, ...originalGame }
     return { Guest: NewGuest, Host: NewHost, game: newGame, ...rest  }
 }
 

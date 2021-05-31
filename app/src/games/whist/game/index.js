@@ -36,10 +36,8 @@ const deal = withRandom(withSecret(({ state, random, roomId, contextId, revealSe
 }))
 
 const game = {
-  hostMoves: {
-    startGame,
-    deal,
-  },
+  startGame,
+  deal,
 }
 
 export default game;

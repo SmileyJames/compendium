@@ -1,6 +1,5 @@
 import seedrandom, { State } from 'seedrandom'
 import { patch } from 'jsondiffpatch'
-import { getMove } from '../shared'
 import { isRandomMove } from '../random'
 import { isSecretMove } from '../secret'
 import { Game, SimpleMoveArgs, RandomMove, SimpleMove, PeerId } from '..'
@@ -22,12 +21,7 @@ export const constructReducer = ({
 }) => (state: State) => {
   try {
     return events.reduce((o, event) => {
-      const moveFn = getMove({
-        connectionId: event.connectionId,
-        roomId,
-        game,
-        move: event.move
-      })
+      const moveFn = game[event.move]
 
       if (isSecretMove(moveFn)) {
         if (event.patch != null) {

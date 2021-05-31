@@ -83,7 +83,7 @@ function useConnections({
 
         if (
           (isInteger(index) || index === null) &&
-          validateEvent(event, Object.keys(game.guestMoves))
+          validateEvent(event, Object.keys(game))
         ) {
           onGuestEvent({ ...event, connectionId: conn.peer })
         }

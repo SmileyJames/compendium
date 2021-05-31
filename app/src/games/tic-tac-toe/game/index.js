@@ -31,13 +31,8 @@ const fillSquare = ({ state, connectionId, args }) => {
 }
 
 const TicTacToe = {
-  guestMoves: {
-    fillSquare,
-  },
-  
-  hostMoves: {
-    startGame,
-  },
+  fillSquare,
+  startGame,
 }
 
 export default TicTacToe;

@@ -7,13 +7,8 @@ const flipCoin = ({ state, connectionId, args }) => (random) => {
 }
 
 const game = {
-  guestMoves: {
-    flipCoin,
-  },
-  
-  hostMoves: {
-    startGame,
-  },
+  flipCoin,
+  startGame,
 }
 
 export default game;
