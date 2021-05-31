@@ -1,17 +1,17 @@
 export const NOUGHTS = 1;
 export const CROSSES = 2;
 
-const startGame = ({ state, connectionId, args }) => ({
+const startGame = ({ state, callerId, args }) => ({
   crossesPlayer: args.crossesConnId,
   noughtsPlayer: args.noughtsConnId,
   board: Array(9).fill(null),
 });
 
-const fillSquare = ({ state, connectionId, args }) => {
+const fillSquare = ({ state, callerId, args }) => {
   let player = null
-  if (connectionId === state.crossesPlayer) {
+  if (callerId === state.crossesPlayer) {
     player = CROSSES;
-  } else if (connectionId === state.noughtsPlayer) {
+  } else if (callerId === state.noughtsPlayer) {
     player = NOUGHTS;
   } else {
     throw new Error('Connection is not a player');

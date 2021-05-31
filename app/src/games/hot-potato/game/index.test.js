@@ -1,23 +1,23 @@
 import game from "./index"
 
 const players = { list: [
-    { connectionId: "1" },
-    { connectionId: "2" },
-    { connectionId: "3" },
-    { connectionId: "4" }
+    { callerId: "1" },
+    { callerId: "2" },
+    { callerId: "3" },
+    { callerId: "4" }
 ]}
 
 describe("Hot Potato Game", () => {
         test("Pass the potato", () => {
-            const connectionId = "2";
+            const callerId = "2";
             const state = { players }
             let contextId = "2"
             const revealSecret = (contextId) => (contextId === "2")
             const random = () => 0.2
-            let result = game.passPotato({ state, contextId, revealSecret, random, connectionId });
+            let result = game.passPotato({ state, contextId, revealSecret, random, callerId });
             expect(result).toStrictEqual({ ...state, hotPotato: false });
             contextId = "1"
-            result = game.passPotato({ state, contextId, revealSecret, random, connectionId });
+            result = game.passPotato({ state, contextId, revealSecret, random, callerId });
             expect(result).toStrictEqual({ ...state, hotPotato: true })
         })
 
@@ -27,7 +27,7 @@ describe("Hot Potato Game", () => {
             const revealSecret = (contextId) => (contextId === "2")
             const random = () => 0.2
             expect(() => {
-                game.passPotato({ state, contextId, revealSecret, random, connectionId: "1" });
+                game.passPotato({ state, contextId, revealSecret, random, callerId: "1" });
             }).toThrowError();
         })
 

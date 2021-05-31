@@ -1,14 +1,14 @@
 import { withSecret, withRandom } from "@compendium/peer-party";
 
 const game = {
-  passPotato: withRandom(withSecret(({ connectionId, revealSecret, state, random, contextId }) => {
-    if (!revealSecret(connectionId, s => s.hotPotato)) {
+  passPotato: withRandom(withSecret(({ callerId, revealSecret, state, random, contextId }) => {
+    if (!revealSecret(callerId, s => s.hotPotato)) {
       throw new Error("Must have potato to throw it");
     }
     const numPlayers = state.players.list.length;
     const playerIndex = Math.floor(random() * numPlayers);
     const player = state.players.list[playerIndex];
-    if (player.connectionId === contextId) {
+    if (player.callerId === contextId) {
       return { ...state, hotPotato: true }
     } else {
       return { ...state, hotPotato: false }
@@ -23,7 +23,7 @@ const game = {
     const numPlayers = state.players.list.length;
     const playerIndex = Math.floor(random() * numPlayers);
     const player = state.players.list[playerIndex];
-    if (player.connectionId === contextId) {
+    if (player.callerId === contextId) {
       return { ...state, hotPotato: true }
     } else {
       return { ...state, hotPotato: false }
@@ -31,10 +31,10 @@ const game = {
   })),
 
   stopMusic: withSecret(({ state, revealSecret }) => {
-    const hotPotatoPlayer = state.players.list.find(({ connectionId  }) => (
-      revealSecret(connectionId, s => s.hotPotato)
+    const hotPotatoPlayer = state.players.list.find(({ callerId  }) => (
+      revealSecret(callerId, s => s.hotPotato)
     ));
-    return { ...state, loser: hotPotatoPlayer.connectionId };
+    return { ...state, loser: hotPotatoPlayer.callerId };
   }),
 }
 

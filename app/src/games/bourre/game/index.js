@@ -1,8 +1,8 @@
-const startGame = ({ state, connectionId, args }) => {
+const startGame = ({ state, callerId, args }) => {
   return { board: [] };
 }
 
-const flipCoin = ({ state, connectionId, args }) => (random) => {
+const flipCoin = ({ state, callerId, args }) => (random) => {
   return { ...state, isHeads: random() > 0.5 }
 }
 

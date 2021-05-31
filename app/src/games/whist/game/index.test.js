@@ -22,21 +22,21 @@ const random = () => 0.5;
 
 const players = {
   list: [
-    { name: "JJ", emoji: null, connectionId: "xxx" },
-    { name: "JO", emoji: null, connectionId: "xxx" },
-    { name: "OJ", emoji: null, connectionId: "xxx" },
-    { name: "OO", emoji: null, connectionId: "xxx" },
+    { name: "JJ", emoji: null, callerId: "xxx" },
+    { name: "JO", emoji: null, callerId: "xxx" },
+    { name: "OJ", emoji: null, callerId: "xxx" },
+    { name: "OO", emoji: null, callerId: "xxx" },
   ],
   everyoneIsIn: true,
 }
-const roomId = "123";
+const hostId = "123";
 
 describe("whist game rules", () => {
   describe("Everyone is in, let's start the game...", () => {
 
     test("from the host's perspective", () => {
       const state = { players }
-      const result = whist.startGame({ state, contextId: roomId, roomId });
+      const result = whist.startGame({ state, contextId: hostId, hostId });
       expect(result).toStrictEqual({
         players,
         deck: orderedDeckOfPlayingCards,
@@ -46,7 +46,7 @@ describe("whist game rules", () => {
 
     test("from a guest's perspective", () => {
       const state = { players }
-      const result = whist.startGame({ state, connectionId: "xxx", roomId });
+      const result = whist.startGame({ state, callerId: "xxx", hostId });
       expect(result).toStrictEqual({
         players,
         discard: [],
@@ -61,7 +61,7 @@ describe("whist game rules", () => {
     test("from the host's perspective", () => {
       const state = { players, discard: [], deck: orderedDeckOfPlayingCards };
       const revealSecret = (_, fn) => fn(state)
-      const result = whist.deal({ state, random, revealSecret, contextId: roomId, roomId });
+      const result = whist.deal({ state, random, revealSecret, contextId: hostId, hostId });
       expect(result).toStrictEqual({
         players,
         deck: [],
@@ -73,7 +73,7 @@ describe("whist game rules", () => {
       const hostState = { players, discard: [], deck: orderedDeckOfPlayingCards };
       const guestState = { players, discard: [] };
       const revealSecret = (_, fn) => fn(hostState)
-      const result = whist.deal({ state: guestState, random, revealSecret, contextId: "xxx", roomId });
+      const result = whist.deal({ state: guestState, random, revealSecret, contextId: "xxx", hostId });
       expect(result.hand.length).toBe(13)
       expect(result).toStrictEqual({
         players,
