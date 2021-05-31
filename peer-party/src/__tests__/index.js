@@ -36,7 +36,6 @@ const winnerMap = {
 const throwPotato = withRandom(
   withSecret(({ state, random, contextId }) => {
     const randNum = random()
-    console.log('random', randNum)
     const hotPotato = winnerMap[contextId] === randNum
     return { ...state, hotPotato }
   })

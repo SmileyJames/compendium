@@ -60,10 +60,10 @@ const dealCards = withRandom(
 )
 
 const revealACard = withSecret(
-  jest.fn(({ state, connectionId, contextId, revealSecret }) => {
+  jest.fn(({ state, callerId, contextId, revealSecret }) => {
     const newState = { ...state }
-    const firstCard = revealSecret(connectionId, (state) => state.hand[0])
-    if (connectionId === contextId) {
+    const firstCard = revealSecret(callerId, (state) => state.hand[0])
+    if (callerId === contextId) {
       const newHand = state.hand.slice(1)
       newState.hand = newHand
     }
@@ -99,8 +99,8 @@ describe('usePartyHost', () => {
 
     expect(start).toHaveBeenLastCalledWith({
       args: undefined,
-      connectionId: 'room-id',
-      roomId: 'room-id',
+      callerId: 'room-id',
+      hostId: 'room-id',
       state: {}
     })
     expect(result.current.state.number).toBe(0)
@@ -114,8 +114,8 @@ describe('usePartyHost', () => {
 
     expect(increment).toHaveBeenLastCalledWith({
       args: undefined,
-      connectionId: 'room-id',
-      roomId: 'room-id',
+      callerId: 'room-id',
+      hostId: 'room-id',
       state: {
         number: 0,
         connections: ['hello'],
@@ -142,8 +142,8 @@ describe('usePartyHost', () => {
 
     expect(increment).toHaveBeenLastCalledWith({
       args: undefined,
-      connectionId: 'room-id',
-      roomId: 'room-id',
+      callerId: 'room-id',
+      hostId: 'room-id',
       state: {
         number: 1
       }
@@ -163,8 +163,8 @@ describe('usePartyHost', () => {
 
     expect(increment).toHaveBeenLastCalledWith({
       args: { value: 2 },
-      connectionId: 'hello',
-      roomId: 'room-id',
+      callerId: 'hello',
+      hostId: 'room-id',
       state: {
         number: 2
       }
