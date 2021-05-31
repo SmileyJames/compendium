@@ -1,18 +1,14 @@
 import has from 'lodash/has'
-import { PeerId, Game, Args, Moves } from '.'
+import { Game, Args, Moves } from '.'
 import { MoveHandler } from './types'
 
 interface ConstructMovesArgs {
-  connectionId: PeerId
-  roomId: PeerId
   game: Game
   handleMove: MoveHandler
 }
 
 export function constructMoves({
   game,
-  connectionId,
-  roomId,
   handleMove
 }: ConstructMovesArgs): Moves {
   return new Proxy(

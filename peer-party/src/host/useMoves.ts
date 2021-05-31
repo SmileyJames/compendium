@@ -18,9 +18,9 @@ function useMoves({ roomId, game }: UseMovesArgs): UseMovesReturn {
   )
 
   const moves = useMemo(() => {
-    if (!handleMove || !roomId || !game) return {}
-    return constructMoves({ game, connectionId: roomId, roomId, handleMove })
-  }, [roomId, game, handleMove])
+    if (!handleMove || !game) return {}
+    return constructMoves({ game, handleMove })
+  }, [game, handleMove])
 
   return { moves, setOnHostEvent }
 }

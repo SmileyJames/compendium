@@ -65,7 +65,7 @@ function constructMovesHandler({
     const index = logSizeToIndex(logSize)
     emit({ conn, emit: { move, args, index } })
   }
-  setMoves(() => constructMoves({ game, connectionId, roomId, handleMove }))
+  setMoves(() => constructMoves({ game, handleMove }))
 }
 
 type UseMovesArgs = {
