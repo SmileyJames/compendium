@@ -4,12 +4,12 @@ import { Move, SecretMove, RandomSecretMove } from '.'
  * A higher order function to provide `contextId` and `revealASecret`, enabling the move
  * to return a different state for different peers.
  * ```js
- * withSecret(({ contextId, roomId, revealSecret, state }) => {
- *   const isHostContext = roomId === contextId
+ * withSecret(({ contextId, hostId, revealSecret, state }) => {
+ *   const isHostContext = hostId === contextId
  *   if (isHostContext) {
  *     return ({ ...state, deck: state.deck.slice(1) })
  *   } else {
- *     const topCardOfDeck = revealSecret(roomId, s => s.deck[0])
+ *     const topCardOfDeck = revealSecret(hostId, s => s.deck[0])
  *     return ({ ...state, revealedCard: topCardOfDeck })
  *   }
  * })
