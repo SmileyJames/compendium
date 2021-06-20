@@ -11,49 +11,6 @@ const Template = (args) => <Whist.Guest {...args} />;
 
 const moves = { startGame: () => {}, deal: () => {} }
 
-export const Beginning = Template.bind({});
-Beginning.args = {
-  state: {},
-  moves,
-  connectionId: "xxx",
-};
-
-export const TwoPlayers = Template.bind({});
-TwoPlayers.args = {
-  state: {
-    players: {
-      maxPlayers: 4,
-      minPlayers: 4,
-      everyoneIsIn: false,
-      list: [
-        { connectionId: "xxx", name: "SmileyJames", emoji: null },
-        { connectionId: "xox", name: "SmoloyJimes", emoji: null },
-      ]
-    }
-  },
-  moves,
-  connectionId: "aaa",
-};
-
-export const FourPlayers = Template.bind({});
-FourPlayers.args = {
-  state: {
-    players: {
-      maxPlayers: 4,
-      minPlayers: 4,
-      everyoneIsIn: false,
-      list: [
-        { connectionId: "xxx", name: "SmileyJames", emoji: null },
-        { connectionId: "xox", name: "SmoloyJimes", emoji: null },
-        { connectionId: "oxo", name: "SmaliyJomes", emoji: null },
-        { connectionId: "ooo", name: "JamesSmiley", emoji: null },
-      ]
-    },
-  },
-  moves,
-  connectionId: "xxx",
-};
-
 export const GameStarted = Template.bind({});
 GameStarted.args = {
   state: {

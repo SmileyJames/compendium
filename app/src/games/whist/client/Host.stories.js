@@ -11,47 +11,6 @@ const Template = (args) => <Whist.Host {...args} />;
 
 const moves = { startGame: () => {}, deal: () => {} }
 
-export const Beginning = Template.bind({});
-Beginning.args = {
-  state: {},
-  moves,
-  connections: [2],
-};
-
-export const TwoPlayers = Template.bind({});
-TwoPlayers.args = {
-  state: {
-    players: {
-      maxPlayers: 4,
-      minPlayers: 4,
-      everyoneIsIn: false,
-      list: [
-        { connectionId: "xxx", name: "SmileyJames", emoji: "🍆" },
-        { connectionId: "xox", name: "SmoloyJimes", emoji: "🚗" },
-      ]
-    }
-  },
-  moves,
-  connections: ["xxx", "xox"],
-};
-export const FourPlayers = Template.bind({}); FourPlayers.args = {
-  state: {
-    players: {
-      maxPlayers: 4,
-      minPlayers: 4,
-      everyoneIsIn: false,
-      list: [
-        { connectionId: "xxx", name: "SmileyJames", emoji: "🍆" },
-        { connectionId: "xox", name: "SmoloyJimes", emoji: "🚗" },
-        { connectionId: "oxo", name: "SmaliyJomes", emoji: "🧘" },
-        { connectionId: "ooo", name: "JamesSmiley", emoji: "😍" },
-      ]
-    },
-  },
-  moves,
-  connections: ["xxx", "xox", "oxo", "ooo"],
-};
-
 export const GameStarted = Template.bind({});
 GameStarted.args = {
   state: {
