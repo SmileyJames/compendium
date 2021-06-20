@@ -23,9 +23,13 @@ const Client = ({ orientation, state, moves }) => {
     moves.chessMove({ chessMove: move })
   }
 
+  const calcWidth = ({ screenWidth, screenHeight }) => (
+    Math.min(screenWidth * 0.9, screenHeight * 0.9)
+  );
+
   return (
-    <Flex justifyContent="center" p={4}>
-        <Chessboard orientation={orientation} onDrop={onDrop} position={state.board ?? "start"} />
+    <Flex justifyContent="center">
+        <Chessboard calcWidth={calcWidth} orientation={orientation} onDrop={onDrop} position={state.board ?? "start"} />
     </Flex>
   );
 };
