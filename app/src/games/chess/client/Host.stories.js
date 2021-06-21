@@ -8,18 +8,23 @@ export default {
 
 const Template = (args) => <Chess.Host {...args} />;
 
-export const Join = Template.bind({});
-Join.args = {
-  state: {},
+export const MidGame = Template.bind({});
+MidGame.args = {
+  state: { board: 'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2'},
   moves: {},
-  roomId: "hello-world",
-  connections: [],
+  connections: ["freind"],
 };
 
-export const Start = Template.bind({});
-Start.args = {
-  state: {},
+export const CheckMate = Template.bind({});
+CheckMate.args = {
+  state: { board: 'rnb1kbnr/pppp1ppp/8/4p3/5PPq/8/PPPPP2P/RNBQKBNR w KQkq - 1 3' },
   moves: {},
-  roomId: "hello-world",
+  connections: ["freind"],
+};
+
+export const Draw = Template.bind({});
+Draw.args = {
+  state: { board: '4k3/4P3/4K3/8/8/8/8/8 b - - 0 78' },
+  moves: {},
   connections: ["freind"],
 };

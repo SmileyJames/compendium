@@ -2,14 +2,50 @@
 import React from "react";
 import Chessboard from "chessboardjsx"
 import Chess from 'chess.js';
-import { Flex } from "rebass/styled-components";
+import { Flex, Text } from "rebass/styled-components";
+
+const Container = ({ children }) => (
+  <Flex flexDirection="column" alignItems="center" pt="1">{children}</Flex>
+)
+
+const EndGame = ({ game, isMyTurn }) => {
+  let text = "";
+  if (game.in_stalemate()) {
+    text = "Stalemate"
+  }
+  if (game.in_threefold_repetition()) {
+    text = "Three-fold repetition"
+  }
+  if (game.insufficient_material()) {
+    text = "Infufficient Material"
+  }
+  if (game.in_checkmate()) {
+    if (isMyTurn) {
+      text = "Win"
+    } else {
+      text = "Lose"
+    }
+  } 
+  if (game.in_draw()) {
+    text = "Draw"
+  }
+  return (
+    <Text fontSize={5} mt={2} mb={3}>{text}</Text>
+  );
+};
+
+const Comment = ({ game }) => (
+  <Text>{game.get_comment()}</Text>
+);
 
 const Client = ({ orientation, state, moves }) => {
   const game = new Chess(state.board);
+  const isGameOver = game.game_over();
+  const isMyTurn = game.turn()[0] === orientation[0]
 
   const onDrop = ({ sourceSquare, targetSquare, piece }) => {
-    // not our peice
-    if (piece[0] !== orientation[0]) return null;
+    const isMyPeice = piece[0] !== orientation[0];
+    if (isGameOver || !isMyPeice || !isMyTurn) return;
 
     const move = game.move({
       from: sourceSquare,
@@ -28,9 +64,16 @@ const Client = ({ orientation, state, moves }) => {
   );
 
   return (
-    <Flex justifyContent="center" pt="1">
-        <Chessboard calcWidth={calcWidth} orientation={orientation} onDrop={onDrop} position={state.board ?? "start"} />
-    </Flex>
+    <Container>
+      {isGameOver && <EndGame isMyTurn={isMyTurn} game={game}/>}
+      <Chessboard
+        draggable={!isGameOver && isMyTurn}
+        calcWidth={calcWidth}
+        orientation={orientation}
+        onDrop={onDrop}
+        position={state.board ?? "start"}
+      />
+    </Container>
   );
 };
 
