@@ -28,7 +28,7 @@ const Client = ({ orientation, state, moves }) => {
   );
 
   return (
-    <Flex justifyContent="center">
+    <Flex justifyContent="center" pt="1">
         <Chessboard calcWidth={calcWidth} orientation={orientation} onDrop={onDrop} position={state.board ?? "start"} />
     </Flex>
   );
