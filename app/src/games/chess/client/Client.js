@@ -1,5 +1,4 @@
-
-import React from "react";
+import React, { useState } from "react";
 import Chessboard from "chessboardjsx"
 import Chess from 'chess.js';
 import { Flex, Text } from "rebass/styled-components";
@@ -39,12 +38,14 @@ const Comment = ({ game }) => (
 );
 
 const Client = ({ orientation, state, moves }) => {
+  const [validMoves, setValidMoves] = useState([]);
   const game = new Chess(state.board);
   const isGameOver = game.game_over();
   const isMyTurn = game.turn()[0] === orientation[0]
 
   const onDrop = ({ sourceSquare, targetSquare, piece }) => {
-    const isMyPeice = piece[0] !== orientation[0];
+    setValidMoves([])
+    const isMyPeice = piece[0] === orientation[0];
     if (isGameOver || !isMyPeice || !isMyTurn) return;
 
     const move = game.move({
@@ -55,13 +56,32 @@ const Client = ({ orientation, state, moves }) => {
 
     // invalid move
     if (move === null) return;
-
     moves.chessMove({ chessMove: move })
   }
 
   const calcWidth = ({ screenWidth, screenHeight }) => (
     Math.min(screenWidth * 0.9, screenHeight * 0.9)
   );
+
+  const onSquareClick = (square) => {
+    if (isGameOver || !isMyTurn) return;
+
+    const move = validMoves.find(validMove => validMove.slice(-2) === square);
+    if (move) {
+      moves.chessMove({ chessMove: move })
+      setValidMoves([])
+    } else {
+      const moves = game.moves({ square });
+      setValidMoves(moves);
+    }
+  }
+
+  const squareStyles = validMoves.reduce((o, validMove) => {
+    o[validMove.slice(-2)] = {
+      boxShadow: "yellow 0 0 1px 4px inset",
+    };
+    return o;
+  }, {})
 
   return (
     <Container>
@@ -71,7 +91,10 @@ const Client = ({ orientation, state, moves }) => {
         calcWidth={calcWidth}
         orientation={orientation}
         onDrop={onDrop}
+        onDragOverSquare={() => setValidMoves([])}
         position={state.board ?? "start"}
+        onSquareClick={onSquareClick}
+        squareStyles={squareStyles}
       />
     </Container>
   );
