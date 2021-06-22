@@ -33,10 +33,6 @@ const EndGame = ({ game, isMyTurn }) => {
   );
 };
 
-const Comment = ({ game }) => (
-  <Text>{game.get_comment()}</Text>
-);
-
 const Client = ({ orientation, state, moves }) => {
   const [validMoves, setValidMoves] = useState([]);
   const game = new Chess(state.board);
