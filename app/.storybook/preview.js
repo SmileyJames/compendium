@@ -1,4 +1,5 @@
 import rebassPreset from "@rebass/preset";
+import { MemoryRouter } from "react-router-dom";
 import { withThemesProvider } from "themeprovider-storybook";
 
 export const parameters = {
@@ -12,4 +13,7 @@ const themes = [
   }
 ]
 
-export const decorators = [withThemesProvider(themes)]
+export const decorators = [
+  withThemesProvider(themes),
+  (Story) => (<MemoryRouter><Story/></MemoryRouter>),
+]

@@ -21,8 +21,8 @@ function NavLink({ children, onKeyPress, onClick, href="#", ...rest }) {
     <Flex {...rest} py={2} px={3}>
       <Link
         variant="nav"
-        onClick={prepareHandler(onClick)}
-        onKeyPress={prepareHandler(onKeyPress)}
+        onClick={onClick && prepareHandler(onClick)}
+        onKeyPress={onKeyPress && prepareHandler(onKeyPress)}
         href={href}
       >
         {children}
@@ -31,9 +31,9 @@ function NavLink({ children, onKeyPress, onClick, href="#", ...rest }) {
   )
 }
 
-function MenuItem ({ children }) {
+function MenuItem ({ children, ...rest }) {
   return (
-    <NavLink flexGrow="1" justifyContent="center">{children}</NavLink>
+    <NavLink flexGrow="1" justifyContent="center" {...rest}>{children}</NavLink>
   )
 }
 
@@ -74,8 +74,12 @@ function NavBar ({
         </NavLink>
       </Nav>
       <NavMenu hidden={menuIsHidden}>
-        {toPairs(menuItems).map(([label, fn]) => (
-          <MenuItem onClick={fn} onKeyPress={fn}>{label}</MenuItem>
+        {toPairs(menuItems).map(([label, handler]) => (
+          handler.constructor === String ? (
+            <MenuItem href={handler}>{label}</MenuItem>
+          ) : (
+            <MenuItem onClick={handler} onKeyPress={handler}>{label}</MenuItem>
+          )
         ))}
       </NavMenu>
     </>
