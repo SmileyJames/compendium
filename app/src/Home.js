@@ -29,7 +29,7 @@ const Home = () => {
   return (
     <>
       <NavBar menuIsHidden={hideMenu} onMenuToggle={toggleMenu} menuItems={menuItems} />
-      <Flex flexDirection="row" justifyContent="space-evenly">
+      <Flex flexWrap="wrap" flexDirection="row" justifyContent="space-evenly">
         <HostForm compendium={compendium} onNewGame={onNewGame} />
         <JoinForm onJoinGame={onJoinGame} />
       </Flex>

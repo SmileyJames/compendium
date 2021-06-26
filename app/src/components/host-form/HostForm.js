@@ -13,7 +13,7 @@ const HostForm = ({ compendium = [], onNewGame = () => {} }) => {
   const onSubmit = () => onNewGame(value);
 
   return (
-    <Box my={4} width={['100%', '80%', '25em']}>
+    <Box minWidth="10em" px={2} my={4} width={['60%', '50%', '20em']}>
       <Label my={2}>
         Choose a game to host...
       </Label>

@@ -39,7 +39,7 @@ function MenuItem ({ children, ...rest }) {
 
 function Nav ({ children }) {
   return (
-    <Flex p={1} backgroundColor={"muted"}>
+    <Flex flexWrap="wrap" p={1} backgroundColor={"muted"}>
       {children}
     </Flex>
   )
@@ -48,7 +48,7 @@ function Nav ({ children }) {
 function NavMenu ({ children, hidden }) {
   if (hidden) return null;
   return (
-    <Flex p={1} backgroundColor={"highlight"}>
+    <Flex flexWrap="wrap" p={1} backgroundColor={"highlight"}>
       {children}
     </Flex>
   )
