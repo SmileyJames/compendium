@@ -13,14 +13,14 @@ const JoinForm = ({ onJoinGame = () => {} }) => {
   const onSubmit = () => onJoinGame(value);
 
   return (
-    <Box my={4} width={['100%', '80%', '35em']}>
+    <Box px={2} my={4} width={['100%', '80%', '25em']}>
       <Box>
-        <Label>
-          Room Password
+        <Label my={2}>
+	  Enter the code to join a game
         </Label>
-        <Input onChange={onChange} value={value}/>
+        <Input my={2} onChange={onChange} value={value}/>
       </Box>
-      <Button m={1} onClick={onSubmit} onKeyPress={onSubmit}>Join Game</Button>
+      <Button my={2} onClick={onSubmit} onKeyPress={onSubmit}>Join Game</Button>
     </Box>
   );
 }
