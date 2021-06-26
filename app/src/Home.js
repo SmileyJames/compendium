@@ -2,10 +2,11 @@ import { useReducer } from "react";
 import { useHistory } from "react-router-dom";
 import { createRoomId } from "./rooms";
 import compendium from "./compendium";
-import { Heading, Flex } from "rebass/styled-components";
-import JoinForm from "components/join-form"
-import HostForm from "components/host-form"
-import NavBar from "components/navbar"
+import { Flex } from "rebass/styled-components";
+import JoinForm from "components/join-form";
+import HostForm from "components/host-form";
+import NavBar from "components/navbar";
+import TypedBanner from "components/typed-banner";
 
 const Home = () => {
   const { push } = useHistory();
@@ -26,6 +27,9 @@ const Home = () => {
     Storybook: "/storybook",
   }
 
+  const typedSentences = 
+    compendium.map(o => o.name).map(name => `Remotely play a game of ${name}!`)
+
   return (
     <>
       <NavBar menuIsHidden={hideMenu} onMenuToggle={toggleMenu} menuItems={menuItems} />
@@ -33,6 +37,7 @@ const Home = () => {
         <HostForm compendium={compendium} onNewGame={onNewGame} />
         <JoinForm onJoinGame={onJoinGame} />
       </Flex>
+      <TypedBanner typedSentences={typedSentences}/>
     </>
   )
 }

@@ -3116,6 +3116,7 @@ __metadata:
     react-dom: ^17.0.2
     react-router-dom: ^5.2.0
     react-scripts: 4.0.3
+    react-typed: ^1.2.0
     rebass: ^4.0.7
     styled-components: ^5.2.3
     themeprovider-storybook: ^1.7.1
@@ -22519,6 +22520,19 @@ fsevents@~2.1.1:
   languageName: node
   linkType: hard
 
+"react-typed@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "react-typed@npm:1.2.0"
+  dependencies:
+    prop-types: ^15.6.0
+    typed.js: ^2.0.6
+  peerDependencies:
+    react: ^16.3.0
+    react-dom: ^16.3.0
+  checksum: 7119015dc1325f1b4f518998e4d67bfa8a4f2ce162d1d56445e60defed160d3e1d051d8e333ebb52ff3c7e8c70dab3ca08025c637e6fdf22535228d65af800fc
+  languageName: node
+  linkType: hard
+
 "react@npm:*, react@npm:^17.0.2":
   version: 17.0.2
   resolution: "react@npm:17.0.2"
@@ -25977,6 +25991,13 @@ resolve@^2.0.0-next.3:
   version: 2.3.0
   resolution: "type@npm:2.3.0"
   checksum: e4976037e71df2550cbd84a5e3ff764f3706ebcb21b7c10deb671db5a2d58468cc6604633cf480b816d7649832d9d78a5edad40019b0fa48051e5f3d4bcc8038
+  languageName: node
+  linkType: hard
+
+"typed.js@npm:^2.0.6":
+  version: 2.0.12
+  resolution: "typed.js@npm:2.0.12"
+  checksum: b17ed74438fc525877252e156c6a5471b352e7a74ff72be51c73a7b223159d5d0f38ef8f83ac5913fce16cbb66193f67ae6dc29b2609a655a92b042cb9d12342
   languageName: node
   linkType: hard
 

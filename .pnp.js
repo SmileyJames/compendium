@@ -5920,6 +5920,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "virtual:3fd680200b86fd46e9da32d702b35f1cc4c9a191da90ba62d41735cd8b4c16191cad97c4dfc9332374fdb12db597a85eb4393480bb458c85b037dd790426c049#npm:8.3.2"
       ],
       [
+        "react-typed",
+        "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:1.2.0"
+      ],
+      [
         "read-pkg",
         "npm:3.0.0"
       ],
@@ -6914,6 +6918,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [
         "type-is",
         "npm:1.6.18"
+      ],
+      [
+        "typed.js",
+        "npm:2.0.12"
       ],
       [
         "typedarray",
@@ -17835,6 +17843,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.2"],
             ["react-router-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:5.2.0"],
             ["react-scripts", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:4.0.3"],
+            ["react-typed", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:1.2.0"],
             ["rebass", "npm:4.0.7"],
             ["styled-components", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:5.2.3"],
             ["themeprovider-storybook", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:1.7.1"],
@@ -41733,6 +41742,34 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["react-typed", [
+        ["npm:1.2.0", {
+          "packageLocation": "./.yarn/cache/react-typed-npm-1.2.0-8feca2dd12-7119015dc1.zip/node_modules/react-typed/",
+          "packageDependencies": [
+            ["react-typed", "npm:1.2.0"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:1.2.0", {
+          "packageLocation": "./.yarn/$$virtual/react-typed-virtual-b7ccb2dacf/0/cache/react-typed-npm-1.2.0-8feca2dd12-7119015dc1.zip/node_modules/react-typed/",
+          "packageDependencies": [
+            ["react-typed", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:1.2.0"],
+            ["@types/react", null],
+            ["@types/react-dom", null],
+            ["prop-types", "npm:15.7.2"],
+            ["react", "npm:17.0.2"],
+            ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.2"],
+            ["typed.js", "npm:2.0.12"]
+          ],
+          "packagePeers": [
+            "@types/react-dom",
+            "@types/react",
+            "react-dom",
+            "react"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["read-pkg", [
         ["npm:2.0.0", {
           "packageLocation": "./.yarn/cache/read-pkg-npm-2.0.0-4715901f4f-ddf911317f.zip/node_modules/read-pkg/",
@@ -45740,6 +45777,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["type-is", "npm:1.6.18"],
             ["media-typer", "npm:0.3.0"],
             ["mime-types", "npm:2.1.29"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["typed.js", [
+        ["npm:2.0.12", {
+          "packageLocation": "./.yarn/cache/typed.js-npm-2.0.12-7618b42dfc-b17ed74438.zip/node_modules/typed.js/",
+          "packageDependencies": [
+            ["typed.js", "npm:2.0.12"]
           ],
           "linkType": "HARD",
         }]
