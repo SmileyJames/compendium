@@ -5,7 +5,7 @@ import { Flex, Text, Link } from "rebass/styled-components";
 
 function NavHeading({ children }) {
   return (
-    <Flex flexGrow={2} justifyContent="center">
+    <Flex flexGrow={2} justifyContent="center" alignItems="center">
       <Text>{children}</Text>
     </Flex>
   ) 
@@ -18,7 +18,7 @@ function NavLink({ children, onKeyPress, onClick, href="#", ...rest }) {
     return false;
   }
   return (
-    <Flex {...rest}>
+    <Flex {...rest} py={2} px={3}>
       <Link
         variant="nav"
         onClick={prepareHandler(onClick)}
@@ -39,7 +39,7 @@ function MenuItem ({ children }) {
 
 function Nav ({ children }) {
   return (
-    <Flex>
+    <Flex p={1} backgroundColor={"muted"}>
       {children}
     </Flex>
   )
@@ -48,7 +48,7 @@ function Nav ({ children }) {
 function NavMenu ({ children, hidden }) {
   if (hidden) return null;
   return (
-    <Flex>
+    <Flex p={1} backgroundColor={"highlight"}>
       {children}
     </Flex>
   )
