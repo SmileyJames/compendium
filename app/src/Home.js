@@ -9,7 +9,7 @@ import NavBar from "components/navbar"
 
 const Home = () => {
   const { push } = useHistory();
-  const [hideMenu, toggleMenu] = useReducer(o => !o, false)
+  const [hideMenu, toggleMenu] = useReducer(o => !o, true)
 
   const onNewGame = (compendiumIndex) => {
     const roomId = createRoomId(compendiumIndex);
