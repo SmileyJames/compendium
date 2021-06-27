@@ -11,4 +11,5 @@ const Template = (props) => (
 
 export const HomeStory = Template.bind({});
 HomeStory.args = {
+  stopped: true,
 };

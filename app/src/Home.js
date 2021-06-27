@@ -9,7 +9,7 @@ import NavBar from "components/navbar";
 import TypedBanner from "components/typed-banner";
 import CallToActionCard from "components/cta-card"
 
-const Home = () => {
+const Home = ({ stopped }) => {
   const { push } = useHistory();
   const [hideMenu, toggleMenu] = useReducer(o => !o, true)
 
@@ -40,7 +40,7 @@ const Home = () => {
         <HostForm compendium={compendium} onNewGame={onNewGame} />
         <JoinForm onJoinGame={onJoinGame} />
       </Flex>
-      <TypedBanner typedSentences={typedSentences}/>
+      <TypedBanner stopped={stopped} typedSentences={typedSentences}/>
       <Flex justifyContent="space-around" flexDirection="row" flexWrap="wrap">
         {
           compendium.map(

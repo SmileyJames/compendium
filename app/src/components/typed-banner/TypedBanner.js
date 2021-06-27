@@ -1,7 +1,7 @@
 import ReactTyped from "react-typed";
 import { Heading, Flex } from "rebass/styled-components";
 
-const TypedBanner = ({ typedSentences }) => (
+const TypedBanner = ({ typedSentences, stopped = false }) => (
   <Flex px="20%" py={5} my={4} backgroundColor="secondary">
     <Heading color="muted" sx={{ userSelect: "none" }}>
       <ReactTyped
@@ -11,6 +11,7 @@ const TypedBanner = ({ typedSentences }) => (
         backDelay={1}
         loop
         smartBackspace
+        stopped={stopped}
       />
     </Heading>
   </Flex>
