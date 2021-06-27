@@ -22,6 +22,8 @@ const Home = () => {
     push(`/guest/${roomId}`)
   }
 
+  const onGoHome = () => push("/");
+
   const menuItems = {
     GitHub: "https://www.github.com/SmileyJames/compendium",
     Documentation: "/docs",
@@ -33,7 +35,7 @@ const Home = () => {
 
   return (
     <>
-      <NavBar menuIsHidden={hideMenu} onMenuToggle={toggleMenu} menuItems={menuItems} />
+      <NavBar leftButtonHandler={onGoHome} menuIsHidden={hideMenu} onMenuToggle={toggleMenu} menuItems={menuItems} />
       <Flex flexWrap="wrap" flexDirection="row" justifyContent="space-evenly">
         <HostForm compendium={compendium} onNewGame={onNewGame} />
         <JoinForm onJoinGame={onJoinGame} />
@@ -44,6 +46,7 @@ const Home = () => {
           compendium.map(
             ({ name, image, description }, index) => (
               <CallToActionCard
+                key={index}
                 size={index === 0 ? 2 : 1}
                 headingText={name}
                 imageSrc={image.src}

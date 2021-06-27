@@ -1,5 +1,4 @@
 import toPairs from "lodash/toPairs";
-import { useReducer } from "react";
 import { useHistory } from "react-router-dom"
 import { Flex, Text, Link } from "rebass/styled-components";
 
@@ -62,23 +61,23 @@ function NavBar ({
   menuIsHidden = false,
   menuItems = {}
  }) {
-  const history = useHistory();
-  const goHome = () => history.push("/")
+  // const history = useHistory();
+  // const goHome = () => history.push("/")
   return (
     <>
       <Nav>
-        <NavLink onClick={goHome} onKeyPress={goHome}>Home</NavLink>
+        <NavLink onClick={leftButtonHandler} onKeyPress={leftButtonHandler}>{leftButtonLabel}</NavLink>
         <NavHeading>{title}</NavHeading>
         <NavLink onClick={onMenuToggle} onKeyPress={onMenuToggle}>
           {menuIsHidden ? "Menu" : "Close"}
         </NavLink>
       </Nav>
       <NavMenu hidden={menuIsHidden}>
-        {toPairs(menuItems).map(([label, handler]) => (
+        {toPairs(menuItems).map(([label, handler], index) => (
           handler.constructor === String ? (
-            <MenuItem href={handler}>{label}</MenuItem>
+            <MenuItem key={index} href={handler}>{label}</MenuItem>
           ) : (
-            <MenuItem onClick={handler} onKeyPress={handler}>{label}</MenuItem>
+            <MenuItem key={index} onClick={handler} onKeyPress={handler}>{label}</MenuItem>
           )
         ))}
       </NavMenu>
