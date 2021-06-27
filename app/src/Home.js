@@ -7,6 +7,7 @@ import JoinForm from "components/join-form";
 import HostForm from "components/host-form";
 import NavBar from "components/navbar";
 import TypedBanner from "components/typed-banner";
+import CallToActionCard from "components/cta-card"
 
 const Home = () => {
   const { push } = useHistory();
@@ -38,6 +39,23 @@ const Home = () => {
         <JoinForm onJoinGame={onJoinGame} />
       </Flex>
       <TypedBanner typedSentences={typedSentences}/>
+      <Flex justifyContent="space-around" flexDirection="row" flexWrap="wrap">
+        {
+          compendium.map(
+            ({ name, image, description }, index) => (
+              <CallToActionCard
+                size={index === 0 ? 2 : 1}
+                headingText={name}
+                imageSrc={image.src}
+                imageAlt={image.alt}
+                bodyText={description}
+                onCallToAction={() => onNewGame(index)}
+                buttonLabel={`Start ${name}`}
+              />
+            )
+          )
+        }
+      </Flex>
     </>
   )
 }

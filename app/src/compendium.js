@@ -4,10 +4,10 @@ import HotPotato from "games/hot-potato";
 import Chess from "games/chess";
 
 const compendium = [
-  TicTacToe,
-  Whist,
-  HotPotato,
   Chess,
+  TicTacToe,
+  HotPotato,
+  Whist,
 ];
 
 export default compendium;
