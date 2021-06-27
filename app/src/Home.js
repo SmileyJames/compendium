@@ -49,7 +49,7 @@ const Home = () => {
                 imageSrc={image.src}
                 imageAlt={image.alt}
                 bodyText={description}
-                onCallToAction={() => onNewGame(index)}
+                onAction={() => onNewGame(index)}
                 buttonLabel={`Start ${name}`}
                 variant="secondary"
               />

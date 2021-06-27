@@ -16,7 +16,7 @@ const CallToActionCard = ({
   imageAlt,
   headingText,
   bodyText,
-  onCallToAction = () => {},
+  onAction = () => {},
   buttonLabel,
   variant,
 }) => (
@@ -30,8 +30,8 @@ const CallToActionCard = ({
         <Text>{bodyText}</Text>
         <Flex justifyContent="end" mt={3}>
           <Button
-            onClick={onCallToAction}
-            onKeyPress={onCallToAction}
+            onClick={onAction}
+            onKeyPress={onAction}
             variant={variant ?? "primary"}
           >
             {buttonLabel}
