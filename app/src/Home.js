@@ -51,6 +51,7 @@ const Home = () => {
                 bodyText={description}
                 onCallToAction={() => onNewGame(index)}
                 buttonLabel={`Start ${name}`}
+                variant="secondary"
               />
             )
           )
