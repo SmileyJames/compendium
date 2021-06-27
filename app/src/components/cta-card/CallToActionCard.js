@@ -16,10 +16,11 @@ const CallToActionCard = ({
   imageAlt,
   headingText,
   bodyText,
-  onCallToAction,
-  buttonLabel
+  onCallToAction = () => {},
+  buttonLabel,
+  variant,
 }) => (
-  <Card m={3}>
+  <Card m={3} display="inline-flex">
     <Flex flexDirection="row" height="100%">
       <Flex width={sizeToLeftWidth(size)} backgroundColor="gray" alignItems="center" justifyContent="center" m={3}>
         <Image src={imageSrc} alt={imageAlt} />
@@ -31,7 +32,7 @@ const CallToActionCard = ({
           <Button
             onClick={onCallToAction}
             onKeyPress={onCallToAction}
-            variant="primary"
+            variant={variant ?? "primary"}
           >
             {buttonLabel}
           </Button>
