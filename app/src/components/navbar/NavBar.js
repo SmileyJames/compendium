@@ -18,7 +18,7 @@ function NavLink({ children, onKeyPress, onClick, href="#", ...rest }) {
   return (
     <Flex {...rest} py={2} px={3}>
       <Link
-        fontFamily="body"
+        fontFamily="heading"
         variant="nav"
         onClick={onClick && prepareHandler(onClick)}
         onKeyPress={onKeyPress && prepareHandler(onKeyPress)}
