@@ -14,7 +14,7 @@ const HostForm = ({ compendium = [], onNewGame = () => {} }) => {
 
   return (
     <Box minWidth="10em" px={2} my={4} width={['60%', '50%', '20em']}>
-      <Label my={2}>
+      <Label fontFamily="body" my={2}>
         Choose a game to host...
       </Label>
       <Select my={2} onChange={onChange} value={value}>

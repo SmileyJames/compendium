@@ -1,11 +1,10 @@
 import toPairs from "lodash/toPairs";
-import { useHistory } from "react-router-dom"
-import { Flex, Text, Link } from "rebass/styled-components";
+import { Flex, Heading, Link } from "rebass/styled-components";
 
 function NavHeading({ children }) {
   return (
     <Flex flexGrow={2} justifyContent="center" alignItems="center">
-      <Text>{children}</Text>
+      <Heading>{children}</Heading>
     </Flex>
   ) 
 }
@@ -19,6 +18,7 @@ function NavLink({ children, onKeyPress, onClick, href="#", ...rest }) {
   return (
     <Flex {...rest} py={2} px={3}>
       <Link
+        fontFamily="body"
         variant="nav"
         onClick={onClick && prepareHandler(onClick)}
         onKeyPress={onKeyPress && prepareHandler(onKeyPress)}

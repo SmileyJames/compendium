@@ -27,7 +27,7 @@ const CallToActionCard = ({
       </Flex>
       <Box width={sizeToRightWidth(size)} m={3} pt={2}>
         <Heading>{headingText}</Heading>
-        <Text>{bodyText}</Text>
+        <Text fontFamily="body" as="p">{bodyText}</Text>
         <Flex justifyContent="end" mt={3}>
           <Button
             onClick={onAction}

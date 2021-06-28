@@ -15,7 +15,7 @@ const JoinForm = ({ onJoinGame = () => {} }) => {
   return (
     <Box minWidth="10em" px={2} my={4} width={['60%', '50%', '20em']}>
       <Box>
-        <Label my={2}>
+        <Label fontFamily="body" my={2}>
 	  Enter the code to join a game
         </Label>
         <Input my={2} onChange={onChange} value={value}/>
