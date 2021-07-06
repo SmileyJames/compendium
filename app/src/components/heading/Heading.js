@@ -13,7 +13,7 @@ const withPrimary = (Component) => (props) => (
 )
 
 const withSecondary = (Component) => (props) => (
-  <Component as="h1" fontSize={[3,4,5]} {...props}/>
+  <Component as="h2" fontSize={[3,4,5]} {...props}/>
 )
 
 const PrimaryHeader = withPrimary(Header);
