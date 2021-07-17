@@ -1,3 +1,2 @@
-import { PrimaryHeader, SecondaryHeader } from "./Heading";
-export default PrimaryHeader;
-export { PrimaryHeader, SecondaryHeader };
+import Heading from "./Heading";
+export default Heading;

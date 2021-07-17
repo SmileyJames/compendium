@@ -1,22 +1,23 @@
 import { Heading } from "rebass/styled-components";
 
-function Header({ children, ...props }) {
+const fontSizeVariants = {
+  primary: [4,5,6],
+  secondary: [3,4,5],
+}
+
+const asVariants = {
+  primary: "h1",
+  secondary: "h2",
+}
+
+function Header({ children, variant = "primary", ...props }) {
+  const fontSize = fontSizeVariants[variant];
+  const as = asVariants[variant];
   return (
-    <Heading color="text" fontFamily="heading" {...props}>
+    <Heading color="text" fontFamily="heading" fontSize={fontSize} as={as} {...props}>
       {children}
     </Heading>
   );
 }
 
-const withPrimary = (Component) => (props) => (
-  <Component as="h1" fontSize={[4,5,6]} {...props}/>
-)
-
-const withSecondary = (Component) => (props) => (
-  <Component as="h2" fontSize={[3,4,5]} {...props}/>
-)
-
-const PrimaryHeader = withPrimary(Header);
-const SecondaryHeader = withSecondary(Header);
-
-export { PrimaryHeader, SecondaryHeader };
+export default Header;
