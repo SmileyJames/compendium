@@ -8,7 +8,7 @@ export default {
 
 const imageAlt = "React code";
 const imageSrc = "https://via.placeholder.com/600x400";
-const headerText = "Hello world";
+const headingText = "Hello world";
 const bodyText = "Lorem ipsum delorem a bit a sundo mundo wondom. El du darious oh fohlm du tousch.";
 const buttonLabel = "Call to Action"
 
@@ -16,32 +16,22 @@ const Template = (props) => (
   <CallToActionCard {...props}/>
 );
 
-export const SmallCard = Template.bind({});
-SmallCard.args = {
-  size: 1,
+export const PrimaryCard = Template.bind({});
+PrimaryCard.args = {
+  variant: "primary",
   imageSrc,
   imageAlt,
   bodyText,
-  headerText,
+  headingText,
   buttonLabel,
 };
 
-export const BigCard = Template.bind({});
-BigCard.args = {
-  size: 2,
-  imageSrc,
-  imageAlt,
-  bodyText,
-  headerText,
-  buttonLabel,
-};
-
-export const SecondaryVariant = Template.bind({});
-SecondaryVariant.args = {
+export const SecondaryCard = Template.bind({});
+SecondaryCard.args = {
   variant: "secondary",
   imageSrc,
   imageAlt,
   bodyText,
-  headerText,
+  headingText,
   buttonLabel,
 };
