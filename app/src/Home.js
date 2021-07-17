@@ -47,14 +47,13 @@ const Home = ({ stopped }) => {
             ({ name, image, description }, index) => (
               <CallToActionCard
                 key={index}
-                size={index === 0 ? 2 : 1}
+                variant={index === 0 ? "primary" : "secondary"}
                 headingText={name}
                 imageSrc={image.src}
                 imageAlt={image.alt}
                 bodyText={description}
                 onAction={() => onNewGame(index)}
                 buttonLabel={`Start ${name}`}
-                variant="secondary"
               />
             )
           )
