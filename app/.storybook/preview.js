@@ -1,4 +1,4 @@
-import rebassPreset from "@rebass/preset";
+import theme from "../src/theme";
 import { MemoryRouter } from "react-router-dom";
 import { withThemesProvider } from "themeprovider-storybook";
 
@@ -9,7 +9,7 @@ export const parameters = {
 const themes = [
   {
     name: "Rebass Preset",
-    ...rebassPreset,
+    ...theme,
   }
 ]
 
