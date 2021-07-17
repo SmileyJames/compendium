@@ -1252,6 +1252,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:1.5.4"
       ],
       [
+        "@types/qrcode.react",
+        "npm:1.0.2"
+      ],
+      [
         "@types/qs",
         "npm:6.9.6"
       ],
@@ -5726,6 +5730,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [
         "q",
         "npm:1.5.1"
+      ],
+      [
+        "qr.js",
+        "npm:0.0.0"
+      ],
+      [
+        "qrcode.react",
+        "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:1.0.1"
       ],
       [
         "qs",
@@ -17820,6 +17832,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/react", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:11.2.6"],
             ["@testing-library/user-event", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:13.1.5"],
             ["@types/chess.js", "npm:0.11.0"],
+            ["@types/qrcode.react", "npm:1.0.2"],
             ["@typescript-eslint/eslint-plugin", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:4.22.0"],
             ["@typescript-eslint/parser", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:4.22.0"],
             ["babel-eslint", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:10.1.0"],
@@ -17838,6 +17851,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-testing-library", "virtual:ca87c91178934c687596dff1cedd225cbbe74353844613c7ae40d66863edc8fecaa47aea33ba59da9954cf26ddf882ff3b35dcd8ace287325580b34a453a9f1f#npm:4.1.1"],
             ["lodash", "npm:4.17.21"],
             ["prop-types", "npm:15.7.2"],
+            ["qrcode.react", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:1.0.1"],
             ["random-words", "npm:1.1.1"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:17.0.2"],
@@ -21947,6 +21961,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-q-npm-1.5.4-af8ca8cb0d-1a19cf2c41.zip/node_modules/@types/q/",
           "packageDependencies": [
             ["@types/q", "npm:1.5.4"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/qrcode.react", [
+        ["npm:1.0.2", {
+          "packageLocation": "./.yarn/cache/@types-qrcode.react-npm-1.0.2-f8cabf6225-539a944bd3.zip/node_modules/@types/qrcode.react/",
+          "packageDependencies": [
+            ["@types/qrcode.react", "npm:1.0.2"],
+            ["@types/react", "npm:17.0.2"]
           ],
           "linkType": "HARD",
         }]
@@ -40590,6 +40614,40 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/q-npm-1.5.1-a28b3cfeaf-f610c1295a.zip/node_modules/q/",
           "packageDependencies": [
             ["q", "npm:1.5.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["qr.js", [
+        ["npm:0.0.0", {
+          "packageLocation": "./.yarn/cache/qr.js-npm-0.0.0-eea89f459b-83e1d6140e.zip/node_modules/qr.js/",
+          "packageDependencies": [
+            ["qr.js", "npm:0.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["qrcode.react", [
+        ["npm:1.0.1", {
+          "packageLocation": "./.yarn/cache/qrcode.react-npm-1.0.1-ddb3a7650e-add74eb8a1.zip/node_modules/qrcode.react/",
+          "packageDependencies": [
+            ["qrcode.react", "npm:1.0.1"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:1.0.1", {
+          "packageLocation": "./.yarn/$$virtual/qrcode.react-virtual-6e3bc31cbd/0/cache/qrcode.react-npm-1.0.1-ddb3a7650e-add74eb8a1.zip/node_modules/qrcode.react/",
+          "packageDependencies": [
+            ["qrcode.react", "virtual:1ebb249fdebce7c9ab8f1f3cda4920abc4dd03a0a9e40d34c14380c7b40620356a6114929f67d441b49945aed80050ee67394aaf0d2cfaccf48aef1f03727f9d#npm:1.0.1"],
+            ["@types/react", null],
+            ["loose-envify", "npm:1.4.0"],
+            ["prop-types", "npm:15.7.2"],
+            ["qr.js", "npm:0.0.0"],
+            ["react", "npm:17.0.2"]
+          ],
+          "packagePeers": [
+            "@types/react",
+            "react"
           ],
           "linkType": "HARD",
         }]

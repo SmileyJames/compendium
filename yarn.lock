@@ -3093,6 +3093,7 @@ __metadata:
     "@testing-library/react": ^11.2.6
     "@testing-library/user-event": ^13.1.5
     "@types/chess.js": ^0
+    "@types/qrcode.react": ^1
     "@typescript-eslint/eslint-plugin": ^4.22.0
     "@typescript-eslint/parser": ^4.22.0
     babel-eslint: ^10.1.0
@@ -3111,6 +3112,7 @@ __metadata:
     eslint-plugin-testing-library: ^4.1.1
     lodash: ^4.17.21
     prop-types: ^15.7.2
+    qrcode.react: ^1.0.1
     random-words: ^1.1.1
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -6107,6 +6109,15 @@ __metadata:
   version: 1.5.4
   resolution: "@types/q@npm:1.5.4"
   checksum: 1a19cf2c41648b862bd25a4c26ba33dc7206f14fcf50c5b78031b59090d21176e703cd10aff8af409eafbefcebb288607d30af765ee3859637cf3fae6e875648
+  languageName: node
+  linkType: hard
+
+"@types/qrcode.react@npm:^1":
+  version: 1.0.2
+  resolution: "@types/qrcode.react@npm:1.0.2"
+  dependencies:
+    "@types/react": "*"
+  checksum: 539a944bd362d49b6261897c34e1ea57185e7bf054ef20731f8d298918114d4fabf43df84f2faf25df465fdaa72039bc96d06b5a855d933c94299d1c49cae184
   languageName: node
   linkType: hard
 
@@ -21740,6 +21751,26 @@ fsevents@~2.1.1:
   version: 1.5.1
   resolution: "q@npm:1.5.1"
   checksum: f610c1295a4f1b334affbe5333bc8c6160b907d011a62f1c6d05d4ca985535ea271fd8684e1e655b4659cc5b71f5be9ac4ccc84482d869b5a0576955598a7dca
+  languageName: node
+  linkType: hard
+
+"qr.js@npm:0.0.0":
+  version: 0.0.0
+  resolution: "qr.js@npm:0.0.0"
+  checksum: 83e1d6140ec8781d0def39a70d7ef9e7a7ff455697d8e078b86aeeb773dd33fd5235d4f94710b871fc3cfdefb806165503b8241cd4cd9b18a4b9b4160f48db43
+  languageName: node
+  linkType: hard
+
+"qrcode.react@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "qrcode.react@npm:1.0.1"
+  dependencies:
+    loose-envify: ^1.4.0
+    prop-types: ^15.6.0
+    qr.js: 0.0.0
+  peerDependencies:
+    react: ^15.5.3 || ^16.0.0 || ^17.0.0
+  checksum: add74eb8a1a6967054bdcc090c0e858338be5e89c5cf6659827037e9bf297c0fafff5e47371288fa7ec863ee9620ed291b1564e3cd978d22e8be5d502a759d68
   languageName: node
   linkType: hard
 
