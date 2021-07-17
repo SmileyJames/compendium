@@ -1,0 +1,2 @@
+(this["webpackJsonp@compendium/app"]=this["webpackJsonp@compendium/app"]||[]).push([[7],{247:function(t,o,e){"use strict";e.r(o);e(0);var n=e(4),r=e(1);o.default=function(t){var o=t.moves,e=function(){return o.throwPotato()};return Object(r.jsx)(n.Flex,{children:Object(r.jsx)(n.Button,{onClick:e,onKeyPress:e,variant:"primary",mr:2,children:"Throw the Hot Potato, to your Guests!"})})}}}]);
+//# sourceMappingURL=7.1ed6d957.chunk.js.map
