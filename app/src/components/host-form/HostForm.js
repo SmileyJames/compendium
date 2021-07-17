@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Box, Button } from "rebass/styled-components";
-import { Label, Select } from "@rebass/forms/styled-components";
+import Dropdown from "components/dropdown";
 
 const HostForm = ({ compendium = [], onNewGame = () => {} }) => {
   const [value, set] = useState(0);
@@ -12,15 +12,11 @@ const HostForm = ({ compendium = [], onNewGame = () => {} }) => {
 
   const onSubmit = () => onNewGame(value);
 
+  const options = compendium.map(({ name }) => name);
+
   return (
     <Box minWidth="10em" px={2} my={4} width={['60%', '50%', '20em']}>
-      <Label fontFamily="body" my={2}>
-        Choose a game to host...
-      </Label>
-      <Select my={2} onChange={onChange} value={value}>
-        {compendium.map(({ name }, index) =>
-          <option value={index} key={index}>{name}</option>)}
-      </Select>
+      <Dropdown options={options} label="Choose a game to host..." onChange={onChange} value={value} />
       <Button my={2} onClick={onSubmit} onKeyPress={onSubmit}>Host New Game</Button>
     </Box>
   )
