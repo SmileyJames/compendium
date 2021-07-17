@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, Button } from "rebass/styled-components";
-import { Input, Label } from "@rebass/forms/styled-components";
+import Input from "components/input"
 
 const JoinForm = ({ onJoinGame = () => {} }) => {
   const [value, set] = useState();
@@ -14,12 +14,7 @@ const JoinForm = ({ onJoinGame = () => {} }) => {
 
   return (
     <Box minWidth="10em" px={2} my={4} width={['60%', '50%', '20em']}>
-      <Box>
-        <Label fontFamily="body" my={2}>
-	  Enter the code to join a game
-        </Label>
-        <Input my={2} onChange={onChange} value={value}/>
-      </Box>
+      <Input onChange={onChange} value={value} label="Enter the code to join a game"/>
       <Button my={2} onClick={onSubmit} onKeyPress={onSubmit}>Join Game</Button>
     </Box>
   );
