@@ -4,7 +4,7 @@ import { Flex, Box, Link } from "rebass/styled-components";
 import QRCode from "qrcode.react";
 
 const roomCodeToUrl = (roomCode) => (
-  `${window.location.host}/guest/${roomCode}`
+  `${window.location.host}/#/guest/${roomCode}`
 );
 
 const roomCodeToHref = (roomCode) => (
@@ -54,7 +54,7 @@ function JoinScreen({ roomCode, ...props }) {
   return (
     <Flex flexWrap="wrap">
       <FullWidthColumn>
-        <Heading>How to join the game</Heading>
+        <Heading mt={3}>How to join the game</Heading>
       </FullWidthColumn>
       <HalfWidthColumn>
         <TextRoomCode roomCode={roomCode}/>

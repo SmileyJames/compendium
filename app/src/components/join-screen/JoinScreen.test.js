@@ -17,9 +17,9 @@ describe("Join screen", () => {
     const textCode = queryByText("XVXV");
     expect(textCode).toBeInTheDocument();
 
-    expect(qrValue).toBe("http://localhost/guest/XVXV")
+    expect(qrValue).toBe("http://localhost/#/guest/XVXV")
     
     const link = getByRole("link");
-    expect(link.href).toBe("http://localhost/guest/XVXV")
+    expect(link.href).toBe("http://localhost/#/guest/XVXV")
   })
 })
