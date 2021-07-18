@@ -1,2 +1,0 @@
-(this["webpackJsonp@compendium/app"]=this["webpackJsonp@compendium/app"]||[]).push([[11],{258:function(e,n,t){"use strict";t.r(n);t(0);var a=t(77),c=t(1);n.default=function(e){var n=e.state;e.roomId,e.moves,e.connectionId;return Object(c.jsx)(a.a,{children:Object(c.jsx)(a.b,{children:n.hand&&n.hand.map((function(e){var n=e.suit,t=e.value;return Object(c.jsx)(a.e,{suit:n,value:t})}))})})}}}]);
-//# sourceMappingURL=11.a952a512.chunk.js.map
