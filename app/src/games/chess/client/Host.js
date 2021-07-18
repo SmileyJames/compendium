@@ -1,11 +1,11 @@
 import React from "react";
 import Client from "./Client";
-import JoinScreen from "components/join-screen"
+import HowToJoin from "components/how-to-join"
 
 const Host = (props) => {
   if (props.connections.length < 1) {
     return (
-      <JoinScreen roomCode={props.roomId}/>
+      <HowToJoin roomCode={props.roomId}/>
     )
   }
 

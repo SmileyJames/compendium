@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import JoinScreen from "./index";
+import HowToJoin from "./index";
 import QRCode from "qrcode.react"
 
 let qrValue;
@@ -11,7 +11,7 @@ jest.mock('qrcode.react', () => ({ value }) => {
 describe("Join screen", () => {
 	test("Renders code as text, QR and link", () => {
     const { queryByText, getByRole } = render(
-      <JoinScreen roomCode="XVXV"/>
+      <HowToJoin roomCode="XVXV"/>
     );
 
     const textCode = queryByText("XVXV");

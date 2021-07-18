@@ -50,7 +50,7 @@ const HalfWidthColumn = ({ children }) => (
   </Flex>
 );
 
-function JoinScreen({ roomCode, ...props }) {
+function HowToJoin({ roomCode, ...props }) {
   return (
     <Flex flexWrap="wrap">
       <FullWidthColumn>
@@ -69,4 +69,4 @@ function JoinScreen({ roomCode, ...props }) {
   );
 }
 
-export default JoinScreen;
+export default HowToJoin;
