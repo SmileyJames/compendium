@@ -13,8 +13,8 @@ const roomCodeToHref = (roomCode) => (
 
 const TextRoomCode = ({ roomCode }) => (
   <>
-    <Heading py={3} variant="secondary">{roomCode}</Heading>
-    <Paragraph>Enter this room code on the home page</Paragraph>
+    <Heading py={3}>{roomCode}</Heading>
+    <Paragraph>Enter this room code</Paragraph>
   </>
 )
 
@@ -53,9 +53,6 @@ const HalfWidthColumn = ({ children }) => (
 function HowToJoin({ roomCode, ...props }) {
   return (
     <Flex flexWrap="wrap">
-      <FullWidthColumn>
-        <Heading mt={3}>How to join the game</Heading>
-      </FullWidthColumn>
       <HalfWidthColumn>
         <TextRoomCode roomCode={roomCode}/>
       </HalfWidthColumn>

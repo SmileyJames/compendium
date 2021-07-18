@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import Emoji from "components/emoji";
-import { Flex, Box, Button, Text } from "rebass/styled-components";
+import { Flex, Box, Button } from "rebass/styled-components";
+import HowToJoin from "components/how-to-join";
+import Paragraph from "components/paragraph";
 
 const checkIfCanStartGame = ({ state: { players } }) => (
   players.list.length >= players.minPlayers
@@ -8,29 +10,25 @@ const checkIfCanStartGame = ({ state: { players } }) => (
 
 const PlayerList = ({ children, players }) => {
   return (
-    <Flex>
-      <Box flexGrow={1}>
+    <Flex flexWrap="wrap">
+      <Flex flexGrow={2} flexDirection="column">
         {players.map(({ name, emoji }, index) => (
-          <Flex alignItems="center"  key={index}>
+          <Flex alignItems="center" key={index} px={2}>
             <Box width="2em" height="2em" my={2} mx={3}>
               {emoji && <Emoji emoji={emoji}/>}
             </Box>
-            {name}
+            <Paragraph>
+              {name}
+            </Paragraph>
           </Flex>
         ))}
-      </Box>
-      <Box flexGrow={3}>
+      </Flex>
+      <Flex flexGrow={1}>
         {children}
-      </Box>
+      </Flex>
     </Flex>
   );
 }
-
-const HowToJoin = ({ roomId }) => (
-  <Text as="h1" fontSize={[ 3, 4, 5 ]} fontWeight='bold' color='secondary'>
-    Join: {roomId}
-  </Text>
-)
 
 const Host = ({ state, roomId, moves, connections, maxPlayers, minPlayers, children }) => {
   useEffect(() => {
@@ -44,8 +42,7 @@ const Host = ({ state, roomId, moves, connections, maxPlayers, minPlayers, child
   const canStartGame = checkIfCanStartGame({ state });
   return (
     <PlayerList players={state.players.list}>
-      <Flex height="100%" flexDirection="column" alignItems="center" justifyContent="space-around">
-        <HowToJoin roomId={roomId}/>
+      <Flex flexDirection="column" alignItems="center">
         {canStartGame && (
           <Button
             my={2}
@@ -55,6 +52,7 @@ const Host = ({ state, roomId, moves, connections, maxPlayers, minPlayers, child
             Start Game
           </Button>
         )}
+        <HowToJoin roomCode={roomId}/>
       </Flex>
     </PlayerList>
   )

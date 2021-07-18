@@ -27,6 +27,7 @@ NoPlayers.args = {
       list: []
     }
   },
+  roomId: "XVXV",
   moves: {},
   connections: ["xxx", "xox", "oxo", "ooo"],
   children: "Hello World",
@@ -44,6 +45,7 @@ OnePlayer.args = {
       ],
     },
   },
+  roomId: "XVXV",
   moves: {},
   connections: ["xxx", "xox", "oxo", "ooo"],
   children: "Hello World",
@@ -64,6 +66,7 @@ ManyPlayers.args = {
       ]
     }
   },
+  roomId: "XVXV",
   moves: {},
   connections: ["xxx", "xox", "oxo", "ooo"],
   children: "Hello World",
@@ -84,6 +87,7 @@ EveryoneIsIn.args = {
       ]
     }
   },
+  roomId: "XVXV",
   moves: {},
   connections: ["xxx", "xox", "oxo", "ooo"],
   children: "Hello World",
