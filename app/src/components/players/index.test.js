@@ -19,7 +19,7 @@ describe("Players higher order component: withPlayers", () => {
     test("Host is wrapped", () => {
         const state = { players: { list: [], minPlayers: 2 } }
         const { getByRole } = render(<GameWithPlayers.Host roomId="room-id" state={state}></GameWithPlayers.Host>)
-        expect(getByRole('heading')).toHaveTextContent("Join: room-id")
+        expect(getByRole('heading')).toHaveTextContent("room-id")
     })
 
     test("Guest returns children", () => {
