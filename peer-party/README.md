@@ -38,7 +38,7 @@ const GuestComponent = ({ roomId }) => {
 }
 
 const HostComponent = ({ roomId }) => {
-  const { state, moves } = usePartyHost({ roomId, game: MyGame });
+  const { state, moves } = usePartyHost({ roomId, game: MyGameRules });
   return (
     <div>
       <h1>{state.title}</h1>
