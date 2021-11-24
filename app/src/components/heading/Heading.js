@@ -15,7 +15,7 @@ function Header({ children, variant = "primary", ...props }) {
   const as = asVariants[variant];
   return (
     <Heading color="text" fontFamily="heading" fontSize={fontSize} as={as} {...props}>
-      {children}
+      {children}!
     </Heading>
   );
 }
